@@ -6,11 +6,9 @@
 
 %section#bills
   .container
-    %h3 법안1
+    %h3 최저임금 1만
     %p 첫번째는 최저임금 1만원법이야. 올해 시급은 6030원이야. 하루에 8시간, 주40시간 아르바이트를 하면 126만270원의 월급이 들어와. 정말 굶어 죽지 않을 정도의 최최최저임금이야. 인간적으로 최소한 시급 1만원은 돼야 하는 거 아냐?
-    .vote-buttons
-      %a.btn.bnt-lg.btn-default 찬성 203,300명
-      %a.btn.bnt-lg.btn-danger 반대 3명
+    = render 'vote_button', bill: Bill.minimun_wage
     .comments
       %h4 comments (30,002)
       .comment
@@ -21,9 +19,7 @@
         %a(href='#') more
     %h3 법안2
     %p 두번째 전월세 상한법! 간단해. 세입자가 재계약을 할 때 전세금이나 월세를 5%이상 올리지 못하게 하는 거야. 여기에 하나 더! 세입자가 원하면 재계약은 2년이 아니라 4년마다 하게 해달란 거야. 사람이 이집저집 옮겨다니는 메뚜기가 아니잖아. 서울 아파트 평균 전세금이 4억원이 넘었대. 월급은 쥐꼬린데, 2년마다 5천만원, 1억원씩 올려달라면, 부루마불 하는 것도 아니고 어쩌라는 거야. 목돈이 없으면 월세를 살아야 하는데, 50만원, 100만원씩 매달 월세 내고 나면 남는 게 없어요. 그래서 필요한 법이 전월세 상한법이야.
-    .vote-buttons
-      %a.btn.bnt-lg.btn-default 찬성 50,000명
-      %a.btn.bnt-lg.btn-default 반대 300명
+    = render 'vote_button', bill: Bill.rent_ceiling
     .comments
       %h4 comments (30,002)
       .comment
@@ -34,9 +30,7 @@
         %a(href='#') more
     %h3 법안3
     %p 세번째는 데이트폭력 처벌 강화법! 연인에 의한 폭력은 너무나 흔해. 작년(2015년)에만 7692건의 데이트폭력이 일어났어. 상해, 폭행, 성폭행은 기본이고, 목숨을 잃은 사람도 102명이나 돼. 사랑한다는 이유로 연인을 때리고 죽이는 건 정말 악질범죄야. 그런데도 지금은 데이트 폭력 신고를 받아도 경찰이 할 수 있는 게 없어. 그러니까 경찰이 피해자를 가해자로부터 분리시켜 보호하고, 가해자는 가중처벌하거나 치료하자는 거야. 필요하면 데이트중인 상대방의 전과를 조회할 수 있게 하는 것도 데이트 폭력 처벌 강화법의 일부지.
-    .vote-buttons
-      %a.btn.bnt-lg.btn-primary 찬성 100,202명
-      %a.btn.bnt-lg.btn-default 반대 500명
+    = render 'vote_button', bill: Bill.date_violence
     .comments
       %h4 comments (30,002)
       .comment
@@ -47,9 +41,7 @@
         %a(href='#') more
     %h3 법안4
     %p 안전한 먹거리도 빼놓을 수 없지. GMO 완전 표시제법이야. GMO는, 생산량을 늘리기 위해 농약이나 벌레, 추위에 강하도록 유전자를 변형시킨 식품이야. (아바투르 등장) 우리나라는 일본과 식용 GMO 수입 1,2위를 다투고 있어. 우리 국민 한 명이 1년에 먹는 GMO콩의 양은 무려 20킬로그램! GMO옥수수는 25킬로그램이나 먹고 있다고. 그런데 이 GMO의 안전성 논란이 끊이지 않아서 불안해. 우리가 먹는 제품에 어떤 GMO 농산물이 얼마나 들어갔는지 정확히 알려달라는 건 정당한 요구야. 지금은 아주 일부만 알려주고 있거든.
-    .vote-buttons
-      %a.btn.bnt-lg.btn-primary 찬성 70,000명
-      %a.btn.bnt-lg.btn-default 반대 100명
+    = render 'vote_button', bill: Bill.gmo_mark
     .comments
       %h4 comments (30,002)
       .comment
