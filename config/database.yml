@@ -1,0 +1,17 @@
+<%
+  branch = `git rev-parse --abbrev-ref HEAD`.strip rescue nil
+%>
+
+default: &default
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: db/development_<%= branch %>.sqlite3
+
+test:
+  <<: *default
+  database: db/test_<%= branch %>.sqlite3
+
