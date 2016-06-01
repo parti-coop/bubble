@@ -18,6 +18,7 @@ gem 'haml-rails', '~> 0.9.0'
 
 # util
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'envyable', '~> 0.2.0'
 
 group :development, :test do
   gem 'byebug'
