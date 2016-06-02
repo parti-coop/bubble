@@ -1,0 +1,30 @@
+ko:
+  date:
+    formats:
+      default: '%Y.%m.%d'
+  time:
+    formats:
+      default: "%Y.%m.%d %H:%M"
+  errors:
+    messages:
+      not_saved: 저장되지 않았습니다
+      blank: 값을 입력해 주세요
+  activerecord:
+    models:
+      comment: 댓글
+    attributes:
+      comment:
+        email: 이메일
+        name: 이름
+        body: 내용
+    errors:
+      messages:
+        record_invalid: "오류가 있습니다: %{errors}"
+  views:
+    pagination:
+      first: "&laquo; 처음"
+      last: "마지막 &raquo;"
+      next: "다음"
+      previous: "이전"
+      truncate: "&hellip;"
+

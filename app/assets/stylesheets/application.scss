@@ -1,3 +1,14 @@
 // base
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.form-control.error {
+  border-color: $brand-danger;
+}
+
+
+#hiddenRecaptcha-error {
+  color: $brand-danger;
+  font-weight: bold;
+}

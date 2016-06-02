@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601071935) do
+ActiveRecord::Schema.define(version: 20160602004709) do
 
   create_table "bills", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "upvotes_count", default: 0
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "email"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
