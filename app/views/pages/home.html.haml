@@ -39,12 +39,7 @@
           .recaptcha
             = recaptcha_tags hl: :ko
           = f.submit '게시'
-      - Comment.all.each do |comment|
-        .comment
-          .comment-body= comment.body
-          .comment-created-at= date_f comment.created_at
-          .comment-name= comment. name
-      .comment-more
-        %a(href='#') more
+      .comments-page
+        = render 'comments'
 
 

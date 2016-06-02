@@ -1,0 +1,6 @@
+- @comments.each do |comment|
+  .comment
+    .comment-body= comment.body
+    .comment-created-at= date_f comment.created_at
+    .comment-name= comment. name
+= paginate @comments, remote: true

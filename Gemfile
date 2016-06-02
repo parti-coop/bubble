@@ -22,6 +22,7 @@ gem 'envyable', '~> 0.2.0'
 gem 'seed-fu', '~> 2.3', '>= 2.3.5'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'kaminari', '~> 0.16.3'
 
 group :development, :test do
   gem 'byebug'
