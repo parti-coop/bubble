@@ -158,8 +158,6 @@ section#banner {
 }
 
 section.bill {
-  background-repeat: no-repeat;
-  background-position: center;
   margin-top: 40px;
   height: 330px;
 
@@ -168,6 +166,12 @@ section.bill {
     height: 100%;
     padding-top: 40px;
     padding-bottom: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width: 768px) {
+      background-size: cover;
+    }
     p.bill-description {
       font-weight: 100;
       bottom: 20px;
