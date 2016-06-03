@@ -23,6 +23,7 @@ gem 'seed-fu', '~> 2.3', '>= 2.3.5'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem "recaptcha", require: "recaptcha/rails"
 gem 'kaminari', '~> 0.16.3'
+gem 'video_info', '~> 2.6', '>= 2.6.1'
 
 group :development, :test do
   gem 'byebug'

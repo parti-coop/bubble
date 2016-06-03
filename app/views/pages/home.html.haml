@@ -13,16 +13,16 @@
 %section#intro
   .container{style: 'padding-top: 95px; text-align: center;'}
     .title
-      %span{style: 'font-size: 1.5em; padding: 15px 45px; border: 3px solid #966dfe; border-radius: 40px; color: #686868;'} 시민 입법 프로젝트
-      %h1{style: 'font-size: 10em; font-weight: 100; color: #585858;line-height: 1.3em; margin: 55px 0;'}
+      %span{style: 'font-size: 24px; padding: 15px 45px; border: 3px solid #966dfe; border-radius: 40px; color: #686868;'} 시민 입법 프로젝트
+      %h1{style: 'font-size: 100px; font-weight: 100; color: #585858;line-height: 120px; margin: 55px 0;'}
         바글시민
         %br<>
         와글입법
     .bumgun-image
       = image_tag 'bumgun.png'
-%section#description{style: "text-align: center; background-image: url(#{image_url('description-background.png')}); background-size: cover; background-repeat: no-repeat; height: 600px;"}
+%section#description{style: "text-align: center; background-image: url(#{image_url('description-background.png')}); background-size: cover; background-repeat: no-repeat; height: 540px;"}
   .container
-    %h2{style: 'font-size: 2.3em; font-weight: 200; color: #5d5d5d; line-height: 1.8em;'}
+    %h2{style: 'font-size: 30px; font-weight: 200; color: #5d5d5d; line-height: 50px;'}
       %span{style: 'color: #bdb9e9;'}<> 범근뉴스
       의 법안 설명을 듣고
       %br
@@ -32,35 +32,35 @@
       %br
       2016년, 시민이 올리는 시민의 법안을 만들자!
 %section#navigator
-  .container{style: 'padding: 0; width: 100%' }
+  .container{style: 'width: 100%' }
     .row{style: 'text-align: center;'}
-      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 2em; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 30px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
         %a{href: '#'}
           최저임금 1만원법
-      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 2em; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 30px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
         %a{href: '#'}
           전월세 상한제법
-      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 2em; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 30px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
         %a{href: '#'}
           데이트폭력 처벌강화법
-      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 2em; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 30px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
         %a{href: '#'}
           GMO 완전표시제법
-%section#video
+%section#video{style: 'background-color: rgb(152, 190, 242); padding-bottom: 40px;'}
   .container
-    %h2{style: 'font-szie: 4em;'
+    %h2{style: 'color: #fff; font-size: 56px; text-align: center; font-weight: 100; margin-top: 70px; margin-bottom: 40px;'}
       범근뉴스의 4가지 법안 소개
-    }
-    %p
-      범근뉴스를 한 번이라도
+    %p{style: 'font-size: 18px; line-height: 48px; text-align: center; color: rgb(93, 93, 93)'}
+      범근뉴스를 한 번이라도 들어봤다면
       %br
-      들어봤다면 얼마나 쉽게 설명해주는지 알겠지? 우선 들어봐!
-    .player
-    %p
+      얼마나 쉽게 설명해주는지 알겠지? 우선 들어봐!
+    .player{style: 'position: relative; width: 100%; height: 0; padding-bottom: 56.25%; margin-bottom: 64px; margin-top: 74px;'}
+      = raw VideoInfo.new('http://www.youtube.com/watch?v=mZqGqE0D0n4').embed_code(iframe_attributes: { style: 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;'})
+      /https://www.youtube.com/watch?v=n139g-IGSHo/
+    %p{style: 'font-size: 18px; line-height: 48px; text-align: center; color: rgb(93, 93, 93)'}
       4개의 법안 중 최종법안을 정해서
       %br
       7개월 동안 입법과정을 같이 지켜볼거야!
-
 
 %section#temp
   .container
