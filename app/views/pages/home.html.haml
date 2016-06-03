@@ -1,44 +1,16 @@
-:scss
-  #navigator {
-    .row .col-xs-6 {
-      &:hover {
-        background-color: #66cfcd !important;
-      }
-      a, a:active, a:visited, a:hover, a:focus {
-        color: #5d5d5d;
-        text-decoration: none;
-      }
-    }
-  }
-  p,
-  .result {
-    font-size: 18px;
-    line-height: 48px;
-  }
-  .vote-buttons {
-    text-align: center;
-    a {
-      font-size: 35px;
-      padding: 30px 50px;
-      border-radius: 10px;
-      box-shadow: 3px 4px 5px 0px rgba(4, 0, 0, 0.2);
-      color: #966dfe;
-      font-weight: 100;
-    }
-  }
 %section#intro
   .container{style: 'padding-top: 95px; text-align: center;'}
     .title
-      %span{style: 'font-size: 24px; padding: 15px 45px; border: 3px solid #966dfe; border-radius: 40px; color: #686868;'} 시민 입법 프로젝트
-      %h1{style: 'font-size: 100px; font-weight: 100; color: #585858;line-height: 120px; margin: 55px 0;'}
+      %span{style: 'font-size: 18px; padding: 10px 28px; border: 3px solid #966dfe; border-radius: 40px; color: #686868;'} 시민 입법 프로젝트
+      %h1{style: 'font-size: 68px; font-weight: 100; color: #585858;line-height: 80px; margin: 55px 0;'}
         바글시민
         %br<>
         와글입법
     .bumgun-image
       = image_tag 'bumgun.png'
-%section#description{style: "text-align: center; background-image: url(#{image_url('description-background.png')}); background-size: cover; background-repeat: no-repeat; height: 540px;"}
+%section#description{style: "text-align: center; background-image: url(#{image_url('description-background.png')}); background-size: contain; background-repeat: no-repeat; background-position: bottom; height: 310px;"}
   .container
-    %h2{style: 'font-size: 30px; font-weight: 200; color: #5d5d5d; line-height: 50px;'}
+    %h2{style: 'font-size: 16px; font-weight: 200; color: #5d5d5d; line-height: 30px;'}
       %span{style: 'color: #bdb9e9;'}<> 범근뉴스
       의 법안 설명을 듣고
       %br
@@ -50,27 +22,27 @@
 %section#navigator
   .container{style: 'width: 100%' }
     .row{style: 'text-align: center;'}
-      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 30px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 14px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
         %a{href: '#'}
           최저임금 1만원법
-      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 30px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 14px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
         %a{href: '#'}
           전월세 상한제법
-      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 30px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 14px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
         %a{href: '#'}
           데이트폭력 처벌강화법
-      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 30px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 14px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
         %a{href: '#'}
           GMO 완전표시제법
-%section#video{style: 'background-color: rgb(152, 190, 242); padding-top: 50px;  padding-bottom: 50px'}
+%section#video{style: 'background-color: rgb(152, 190, 242); padding-top: 40px;  padding-bottom: 50px'}
   .container
-    %h2{style: 'color: #fff; font-size: 56px; text-align: center; font-weight: 100; margin-top: 20px; margin-bottom: 40px;'}
+    %h2{style: 'color: #fff; font-size: 24px; text-align: center; font-weight: 100; margin-top: 20px; margin-bottom: 30px;'}
       범근뉴스의 4가지 법안 소개
     %p{style: 'text-align: center; color: rgb(93, 93, 93)'}
       범근뉴스를 한 번이라도 들어봤다면
       %br
       얼마나 쉽게 설명해주는지 알겠지? 우선 들어봐!
-    .player{style: 'position: relative; width: 100%; height: 0; padding-bottom: 56.25%; margin-bottom: 64px; margin-top: 74px;'}
+    .player{style: 'position: relative; width: 100%; height: 0; padding-bottom: 56.25%; margin-bottom: 40px; margin-top: 40px;'}
       = raw VideoInfo.new('http://www.youtube.com/watch?v=mZqGqE0D0n4').embed_code(iframe_attributes: { style: 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;'})
       /https://www.youtube.com/watch?v=n139g-IGSHo/
     %p{style: 'text-align: center; color: rgb(93, 93, 93);'}
@@ -78,73 +50,146 @@
       %br
       7개월 동안 입법과정을 같이 지켜볼거야!
 
-%section#banner{style: 'padding-top: 50px;  padding-bottom: 50px'}
+%section#banner{style: 'padding-top: 20px;  padding-bottom: 34px'}
   .container
-    %h2{style: 'color: rgb(101,101,101); font-size: 56px; text-align: center; font-weight: 100; margin-top: 20px; margin-bottom: 40px;'} 자, 이제 너희의 법안에 투표해
+    %h2{style: 'color: rgb(101,101,101); font-size: 22px; text-align: center; font-weight: 100; margin-top: 20px; margin-bottom: 20px;'} 자, 이제 너희의 법안에 투표해!
     %p{style: 'text-align: center; color: rgb(93, 93, 93);'}
       투표 일정 : 6월 7일(화) ~ 6월 26일(일)
       %br
       결과 공개 : 7월 4일
 
-%section#bill1{style: 'background-color: gray; padding-top: 50px;  padding-bottom: 50px'}
+%section.bill{style: "background-image: url(#{image_url('minimum_wage.png')});"}
   .container
-    %h2{style: 'color: #fff; font-size: 56px; font-weight: 100; margin-top: 10px; margin-bottom: 40px;'}
+    %h2
       최저임금 1만원법
-    %p{style: 'color: #fff; margin-top: 300px;'}
+    %p.bill-description
       첫번째는 최저임금 1만원법이야. 올해 시급은 6030원이야. 하루에 8시간, 주40시간 아르바이트를 하면 126만270원의 월급이 들어와. 정말 굶어 죽지 않을 정도의 최최최저임금이야. 인간적으로 최소한 시급 1만원은 돼야 하는 거 아냐?
-%section#bill1-vote{style: 'background-color: rgb(102, 207, 205); padding-top: 40px;  padding-bottom: 40px'}
+%section.bill-vote{style: 'background-color: rgb(102, 207, 205); '}
   .container
-    .bar{style: 'height: 25px; background-color: rgb(239, 241, 246);'}
-      .bar-voted{style: 'height: 100%; width: 30%; background-color: rgb(150, 109, 254);'}
-    .result.clearfix{ style: 'color: rgb(88, 88, 88); margin-top: 40px; margin-bottom: 50px;'}
+    .bar
+      .bar-voted
+    .result.clearfix
       %span.target
         목표 2016명, 00% 달성
       %span.pull-right
-        %span.count{ style: 'font-size: 42px;' }
+        %span.count
           0000명
-        %span{ style: 'font-size: 30px;' } 참여
+        %span.count-label
+          참여
     = render 'vote_button', bill: Bill.minimun_wage
 
-%section#temp
+%section.bill{style: "background-image: url(#{image_url('rent_ceiling.png')});"}
   .container
-    .jumbotron
-      %h1 한겨레21 Bubble 프로젝트
-      %p '시민법안의 탄생'프로젝트를 시작합니다. 4개의 법안 찬성수가 가장 높은 하나의 법안을 가지고 실제로 본회의 표결까지 가봅니다
-
-%section#bills
+    %h2
+      전월세 상한제법
+    %p.bill-description
+      두번째 전월세 상한법! 간단해. 세입자가 재계약을 할 때 전세금이나 월세를 5%이상 올리지 못하게 하는 거야. 여기에 하나 더! 세입자가 원하면 재계약은 2년이 아니라 4년마다 하게 해달란 거야. 사람이 이집저집 옮겨다니는 메뚜기가 아니잖아. 서울 아파트 평균 전세금이 4억원이 넘었대. 월급은 쥐꼬린데, 2년마다 5천만원, 1억원씩 올려달라면, 부루마불 하는 것도 아니고 어쩌라는 거야. 목돈이 없으면 월세를 살아야 하는데, 50만원, 100만원씩 매달 월세 내고 나면 남는 게 없어요. 그래서 필요한 법이 전월세 상한법이야.
+%section.bill-vote{style: 'background-color: rgb(105, 122, 138); '}
   .container
-    %h3 최저임금 1만
-    %p 첫번째는 최저임금 1만원법이야. 올해 시급은 6030원이야. 하루에 8시간, 주40시간 아르바이트를 하면 126만270원의 월급이 들어와. 정말 굶어 죽지 않을 정도의 최최최저임금이야. 인간적으로 최소한 시급 1만원은 돼야 하는 거 아냐?
-    = render 'vote_button', bill: Bill.minimun_wage
-    %h3 법안2
-    %p 두번째 전월세 상한법! 간단해. 세입자가 재계약을 할 때 전세금이나 월세를 5%이상 올리지 못하게 하는 거야. 여기에 하나 더! 세입자가 원하면 재계약은 2년이 아니라 4년마다 하게 해달란 거야. 사람이 이집저집 옮겨다니는 메뚜기가 아니잖아. 서울 아파트 평균 전세금이 4억원이 넘었대. 월급은 쥐꼬린데, 2년마다 5천만원, 1억원씩 올려달라면, 부루마불 하는 것도 아니고 어쩌라는 거야. 목돈이 없으면 월세를 살아야 하는데, 50만원, 100만원씩 매달 월세 내고 나면 남는 게 없어요. 그래서 필요한 법이 전월세 상한법이야.
+    .bar
+      .bar-voted
+    .result.clearfix
+      %span.target{style: 'color: #fff'}
+        목표 2016명, 00% 달성
+      %span.pull-right
+        %span.count{style: 'color: #fff'}
+          0000명
+        %span.count-label{style: 'color: #fff'}
+          참여
     = render 'vote_button', bill: Bill.rent_ceiling
-    %h3 법안3
-    %p 세번째는 데이트폭력 처벌 강화법! 연인에 의한 폭력은 너무나 흔해. 작년(2015년)에만 7692건의 데이트폭력이 일어났어. 상해, 폭행, 성폭행은 기본이고, 목숨을 잃은 사람도 102명이나 돼. 사랑한다는 이유로 연인을 때리고 죽이는 건 정말 악질범죄야. 그런데도 지금은 데이트 폭력 신고를 받아도 경찰이 할 수 있는 게 없어. 그러니까 경찰이 피해자를 가해자로부터 분리시켜 보호하고, 가해자는 가중처벌하거나 치료하자는 거야. 필요하면 데이트중인 상대방의 전과를 조회할 수 있게 하는 것도 데이트 폭력 처벌 강화법의 일부지.
+
+%section.bill{style: "background-image: url(#{image_url('date_violence.png')});"}
+  .container
+    %h2
+      데이트폭력 처벌강화법
+    %p.bill-description
+      세번째는 데이트폭력 처벌 강화법! 연인에 의한 폭력은 너무나 흔해. 작년(2015년)에만 7692건의 데이트폭력이 일어났어. 상해, 폭행, 성폭행은 기본이고, 목숨을 잃은 사람도 102명이나 돼. 사랑한다는 이유로 연인을 때리고 죽이는 건 정말 악질범죄야. 그런데도 지금은 데이트 폭력 신고를 받아도 경찰이 할 수 있는 게 없어. 그러니까 경찰이 피해자를 가해자로부터 분리시켜 보호하고, 가해자는 가중처벌하거나 치료하자는 거야. 필요하면 데이트중인 상대방의 전과를 조회할 수 있게 하는 것도 데이트 폭력 처벌 강화법의 일부지.
+%section.bill-vote{style: 'background-color: rgb(191, 117, 118); '}
+  .container
+    .bar
+      .bar-voted
+    .result.clearfix
+      %span.target{style: 'color: #fff'}
+        목표 2016명, 00% 달성
+      %span.pull-right
+        %span.count{style: 'color: #fff'}
+          0000명
+        %span.count-label{style: 'color: #fff'}
+          참여
     = render 'vote_button', bill: Bill.date_violence
-    %h3 법안4
-    %p 안전한 먹거리도 빼놓을 수 없지. GMO 완전 표시제법이야. GMO는, 생산량을 늘리기 위해 농약이나 벌레, 추위에 강하도록 유전자를 변형시킨 식품이야. (아바투르 등장) 우리나라는 일본과 식용 GMO 수입 1,2위를 다투고 있어. 우리 국민 한 명이 1년에 먹는 GMO콩의 양은 무려 20킬로그램! GMO옥수수는 25킬로그램이나 먹고 있다고. 그런데 이 GMO의 안전성 논란이 끊이지 않아서 불안해. 우리가 먹는 제품에 어떤 GMO 농산물이 얼마나 들어갔는지 정확히 알려달라는 건 정당한 요구야. 지금은 아주 일부만 알려주고 있거든.
+
+%section.bill{style: "background-image: url(#{image_url('gmo_mark.png')});"}
+  .container
+    %h2
+      GMO 완전표시법
+    %p.bill-description
+      안전한 먹거리도 빼놓을 수 없지. GMO 완전 표시제법이야. GMO는, 생산량을 늘리기 위해 농약이나 벌레, 추위에 강하도록 유전자를 변형시킨 식품이야. (아바투르 등장) 우리나라는 일본과 식용 GMO 수입 1,2위를 다투고 있어. 우리 국민 한 명이 1년에 먹는 GMO콩의 양은 무려 20킬로그램! GMO옥수수는 25킬로그램이나 먹고 있다고. 그런데 이 GMO의 안전성 논란이 끊이지 않아서 불안해. 우리가 먹는 제품에 어떤 GMO 농산물이 얼마나 들어갔는지 정확히 알려달라는 건 정당한 요구야. 지금은 아주 일부만 알려주고 있거든.
+%section.bill-vote{style: 'background-color: rgb(250, 205, 137); '}
+  .container
+    .bar
+      .bar-voted
+    .result.clearfix
+      %span.target
+        목표 2016명, 00% 달성
+      %span.pull-right
+        %span.count
+          0000명
+        %span.count-label
+          참여
     = render 'vote_button', bill: Bill.gmo_mark
 
-    %hr
+%section#comments{style: 'padding-bottom: 30px'}
+  .container
+    %h2{style: 'color: #966fd6; text-align: center; font-size: 26px; font-weight: 100; margin-top: 20px; margin-bottom: 40px;'}
+      법안에 대한 의견을 남겨봐!
+    %p{style: 'color: #5d5d5d; text-align: center; margin-bottom: 30px;'}
+      투표한 4가지 법안 중 선택된 최종 법안은
+      %br
+      7개월 동안 입법과정에 반영할 수 있는 기회를 얻게 되.
+      %br
+      궁금한 점을 적어봐.
+    .comment-button-container
+      %a.btn.btn-default{href: '#', data: { target: '#comment-form', toggle: 'modal'}, type: 'button'}
+        의견 남기기
+
 
     .comments
-      %h4 댓글 (#{Comment.count})
-      .comment-form
-        = form_for Comment.new do |f|
-          = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
-          .form-group
-            = f.label :email
-            = f.email_field :email, class: 'form-control'
-            %p.help-block 이메일은 선택사항입니다. 입력해 주시면 이후 진행 상황을 알려 드립니다.
-          .form-group
-            = f.label :name
-            = f.text_field :name, class: 'form-control', data: {'rule-required': true}, placeholder: '이름을 입력해 주세요'
-          .form-group
-            = f.label :body
-            = f.text_area :body, class: 'form-control', data: {'rule-required': true},  placeholder: '내용을 입력해 주세요'
-          .recaptcha
-            /= recaptcha_tags hl: :ko
-          = f.submit '게시'
       .comments-page
         = render 'comments'
+
+%section#footer
+  .container
+    %ul.list-inline.logos
+      %li= image_tag 'parti-logo.png'
+      %li= image_tag 'hani-logo.png'
+      %li= image_tag 'bumgun-logo.png'
+
+
+
+#comment-form.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "comment-formLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog
+    = form_for Comment.new do |f|
+      .modal-content
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} &#215;
+          %h4#comment-formLabel.modal-title 의견 남기기
+        .modal-body
+          .comment-form
+            = form_for Comment.new do |f|
+              = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
+              .form-group
+                = f.label :name
+                = f.text_field :name, class: 'form-control input-lg', data: {'rule-required': true}
+              .form-group
+                = f.label :body
+                = f.text_area :body, class: 'form-control input-lg', data: {'rule-required': true}
+              .form-group
+                = f.label :email
+                = f.email_field :email, class: 'form-control input-lg'
+                %p.help-block  * 이메일은 선택사항입니다. 이후 진행 상황을 알려 드립니다.
+              .recaptcha
+                = recaptcha_tags hl: :ko
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} 취소
+          = f.submit '게시', class: 'btn btn-primary'

@@ -1,6 +1,11 @@
+%hr
 - @comments.each do |comment|
   .comment
-    .comment-body= comment.body
-    .comment-created-at= date_f comment.created_at
-    .comment-name= comment. name
-= paginate @comments, remote: true
+    .comment-meta
+      %span.comment-name= comment.name
+      %span.comment-created-at= date_f comment.created_at
+    .comment-body
+      = simple_format comment.body
+  %hr
+.comments-pagination
+  = paginate @comments, remote: true
