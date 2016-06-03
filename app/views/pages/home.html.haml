@@ -10,6 +10,22 @@
       }
     }
   }
+  p,
+  .result {
+    font-size: 18px;
+    line-height: 48px;
+  }
+  .vote-buttons {
+    text-align: center;
+    a {
+      font-size: 35px;
+      padding: 30px 50px;
+      border-radius: 10px;
+      box-shadow: 3px 4px 5px 0px rgba(4, 0, 0, 0.2);
+      color: #966dfe;
+      font-weight: 100;
+    }
+  }
 %section#intro
   .container{style: 'padding-top: 95px; text-align: center;'}
     .title
@@ -46,21 +62,48 @@
       .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 30px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
         %a{href: '#'}
           GMO 완전표시제법
-%section#video{style: 'background-color: rgb(152, 190, 242); padding-bottom: 40px;'}
+%section#video{style: 'background-color: rgb(152, 190, 242); padding-top: 50px;  padding-bottom: 50px'}
   .container
-    %h2{style: 'color: #fff; font-size: 56px; text-align: center; font-weight: 100; margin-top: 70px; margin-bottom: 40px;'}
+    %h2{style: 'color: #fff; font-size: 56px; text-align: center; font-weight: 100; margin-top: 20px; margin-bottom: 40px;'}
       범근뉴스의 4가지 법안 소개
-    %p{style: 'font-size: 18px; line-height: 48px; text-align: center; color: rgb(93, 93, 93)'}
+    %p{style: 'text-align: center; color: rgb(93, 93, 93)'}
       범근뉴스를 한 번이라도 들어봤다면
       %br
       얼마나 쉽게 설명해주는지 알겠지? 우선 들어봐!
     .player{style: 'position: relative; width: 100%; height: 0; padding-bottom: 56.25%; margin-bottom: 64px; margin-top: 74px;'}
       = raw VideoInfo.new('http://www.youtube.com/watch?v=mZqGqE0D0n4').embed_code(iframe_attributes: { style: 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;'})
       /https://www.youtube.com/watch?v=n139g-IGSHo/
-    %p{style: 'font-size: 18px; line-height: 48px; text-align: center; color: rgb(93, 93, 93)'}
+    %p{style: 'text-align: center; color: rgb(93, 93, 93);'}
       4개의 법안 중 최종법안을 정해서
       %br
       7개월 동안 입법과정을 같이 지켜볼거야!
+
+%section#banner{style: 'padding-top: 50px;  padding-bottom: 50px'}
+  .container
+    %h2{style: 'color: rgb(101,101,101); font-size: 56px; text-align: center; font-weight: 100; margin-top: 20px; margin-bottom: 40px;'} 자, 이제 너희의 법안에 투표해
+    %p{style: 'text-align: center; color: rgb(93, 93, 93);'}
+      투표 일정 : 6월 7일(화) ~ 6월 26일(일)
+      %br
+      결과 공개 : 7월 4일
+
+%section#bill1{style: 'background-color: gray; padding-top: 50px;  padding-bottom: 50px'}
+  .container
+    %h2{style: 'color: #fff; font-size: 56px; font-weight: 100; margin-top: 10px; margin-bottom: 40px;'}
+      최저임금 1만원법
+    %p{style: 'color: #fff; margin-top: 300px;'}
+      첫번째는 최저임금 1만원법이야. 올해 시급은 6030원이야. 하루에 8시간, 주40시간 아르바이트를 하면 126만270원의 월급이 들어와. 정말 굶어 죽지 않을 정도의 최최최저임금이야. 인간적으로 최소한 시급 1만원은 돼야 하는 거 아냐?
+%section#bill1-vote{style: 'background-color: rgb(102, 207, 205); padding-top: 40px;  padding-bottom: 40px'}
+  .container
+    .bar{style: 'height: 25px; background-color: rgb(239, 241, 246);'}
+      .bar-voted{style: 'height: 100%; width: 30%; background-color: rgb(150, 109, 254);'}
+    .result.clearfix{ style: 'color: rgb(88, 88, 88); margin-top: 40px; margin-bottom: 50px;'}
+      %span.target
+        목표 2016명, 00% 달성
+      %span.pull-right
+        %span.count{ style: 'font-size: 42px;' }
+          0000명
+        %span{ style: 'font-size: 30px;' } 참여
+    = render 'vote_button', bill: Bill.minimun_wage
 
 %section#temp
   .container
