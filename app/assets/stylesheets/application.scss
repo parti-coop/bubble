@@ -158,11 +158,16 @@ section.bill {
 
   .container {
     position: relative;
+    height: 100%;
     p.bill-description {
       font-weight: 200;
-      bottom: 0;
+      bottom: -20px;
+      left: 0;
       font-size: 12px;
       color: #fff;
+      position: absolute;
+      width: 90%;
+      margin: 0 20px;
     }
   }
 
@@ -212,6 +217,7 @@ section.bill-vote {
       box-shadow: 3px 4px 5px 0px rgba(4, 0, 0, 0.2);
       color: #966dfe;
       font-weight: 100;
+      outline: none;
     }
   }
 }
@@ -238,7 +244,8 @@ section#comments {
 
 .comment-button-container {
   text-align: center;
-  a {
+  a, a:active, a:focus, a.active, a.active:focus {
+    outline: 0;
     font-size: 22px;
     padding: 14px 26px;
     border-radius: 10px;
