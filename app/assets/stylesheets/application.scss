@@ -1,6 +1,14 @@
 // base
 @import "bootstrap-sprockets";
 $container-sm: 760px;
+$container-desktop: 760px;
+$container-lg: 760px;
+
+@media (min-width: 768px) {
+  .container{
+    max-width: 970px;
+  }
+}
 
 @import "bootstrap";
 
@@ -13,11 +21,11 @@ $container-sm: 760px;
   font-weight: bold;
 }
 
-
 p,
 .result {
-  font-size: 14px;
+  font-size: 1.1em;
   line-height: 22px;
+  font-weight: 200;
   &.help-block {
   }
 }
@@ -80,7 +88,7 @@ section#navigator {
       .col-xs-6 {
         padding-top: 70px;
         padding-bottom: 70px;
-        font-size: 14px;
+        font-size: 1.2em;
         color: #d2d2d2;
         background-color: #eff1f6;
         border: 2px solid #fff;
@@ -106,7 +114,7 @@ section#video {
 
     h2 {
       color: #fff;
-      font-size: 24px;
+      font-size: 26px;
       text-align: center;
       font-weight: 100;
       margin-top: 20px;
@@ -136,7 +144,7 @@ section#banner {
   .container {
     h2 {
       color: rgb(101,101,101);
-      font-size: 22px;
+      font-size: 26px;
       text-align: center;
       font-weight: 100;
       margin-top: 20px;
@@ -151,22 +159,21 @@ section#banner {
 
 section.bill {
   background-repeat: no-repeat;
-  background-size: cover;
-  padding-top: 10px;
-  padding-bottom: 50px;
+  background-position: center;
+  margin-top: 40px;
   height: 330px;
 
   .container {
     position: relative;
     height: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
     p.bill-description {
-      font-weight: 200;
-      bottom: -20px;
+      font-weight: 100;
+      bottom: 20px;
       left: 0;
-      font-size: 12px;
       color: #fff;
       position: absolute;
-      width: 90%;
       margin: 0 20px;
     }
   }
@@ -181,12 +188,62 @@ section.bill {
 }
 
 section.bill-vote {
-  padding-top: 26px;
-  padding-bottom: 36px;
-  margin-bottom: 42px;
+  padding-top: 0;
+
+  .container {
+    position: relative;
+    padding-bottom: 40px;
+  }
+
+  &--minimum-wage {
+    background-color: rgb(102, 207, 205);
+
+    @media (min-width: 768px) {
+      background: none;
+      .container {
+        background-color: rgb(102, 207, 205);
+      }
+    }
+  }
+
+  &--rent-ceiling {
+    background-color: rgb(105, 122, 138);
+
+    @media (min-width: 768px) {
+      background: none;
+      .container {
+        background-color: rgb(105, 122, 138);
+      }
+    }
+  }
+
+  &--date-violence {
+    background-color: rgb(191, 117, 118);
+
+    @media (min-width: 768px) {
+      background: none;
+      .container {
+        background-color: rgb(191, 117, 118);
+      }
+    }
+  }
+
+  &--gmo-mark {
+    background-color: rgb(250, 205, 137);
+
+    @media (min-width: 768px) {
+      background: none;
+      .container {
+        background-color: rgb(250, 205, 137);
+      }
+    }
+  }
 
   .bar {
+    position: absolute;
     height: 10px;
+    width: 100%;
+    left: 0;
     background-color: rgb(239, 241, 246);
   }
 
@@ -198,7 +255,7 @@ section.bill-vote {
 
   .result {
     color: rgb(88, 88, 88);
-    margin-top: 12px;
+    margin-top: 30px;
     margin-bottom: 28px;
     .count {
       font-size: 26px;
@@ -295,32 +352,7 @@ section#footer {
 }
 
 #comment-form {
-  .modal-content {
-  }
-  .modal-title {
-  }
-  label {
-  }
-  input.form-control {
-  }
-  textarea.form-control {
-  }
-  .comment-form {
-  }
   .help-block {
     color: #999;
-  }
-  .form-group {
-  }
-  .modal-footer .btn {
-  }
-  .rc-anchor-light {
-  }
-}
-
-@media (min-width: 768px) {
-  #comment-form {
-    .modal-dialog {
-    }
   }
 }
