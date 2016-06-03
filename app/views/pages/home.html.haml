@@ -1,4 +1,67 @@
+:scss
+  #navigator {
+    .row .col-xs-6 {
+      &:hover {
+        background-color: #66cfcd !important;
+      }
+      a, a:active, a:visited, a:hover, a:focus {
+        color: #5d5d5d;
+        text-decoration: none;
+      }
+    }
+  }
 %section#intro
+  .container{style: 'padding-top: 95px; text-align: center;'}
+    .title
+      %span{style: 'font-size: 1.5em; padding: 15px 45px; border: 3px solid #966dfe; border-radius: 40px; color: #686868;'} 시민 입법 프로젝트
+      %h1{style: 'font-size: 5em; font-weight: 100; color: #585858;line-height: 1.3em; margin: 55px 0;'}
+        바글시민
+        %br<>
+        와글입법
+    .bumgun-image
+      = image_tag 'bumgun.png'
+%section#description{style: "text-align: center; background-image: url(#{image_url('description-background.png')}); background-size: cover; background-repeat: no-repeat; height: 600px;"}
+  .container
+    %h2{style: 'font-size: 1.3em; font-weight: 200; color: #5d5d5d; line-height: 1.7em;'}
+      %span{style: 'color: #bdb9e9;'}<> 범근뉴스
+      의 법안 설명을 듣고
+      %br
+      꼭 되었으면하는 법안에 '
+      %span{style: 'color: #8ec8c7;'}<> 띄워요
+      '해
+      %br
+      2016년, 시민이 올리는 시민의 법안을 만들자!
+%section#navigator
+  .container
+    .row{style: 'text-align: center;'}
+      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 24px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+        %a{href: '#'}
+          최저임금 1만원법
+      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 24px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+        %a{href: '#'}
+          전월세 상한제법
+      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 24px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+        %a{href: '#'}
+          데이트폭력 처벌강화법
+      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 24px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+        %a{href: '#'}
+          GMO 완전표시제법
+%section#video
+  .container
+    %h2
+      범근뉴스의 4가지 법안 소개
+    %p
+      범근뉴스를 한 번이라도
+      %br
+      들어봤다면 얼마나 쉽게 설명해주는지 알겠지? 우선 들어봐!
+    .player
+    %p
+      4개의 법안 중 최종법안을 정해서
+      %br
+      7개월 동안 입법과정을 같이 지켜볼거야!
+
+
+%section#temp
   .container
     .jumbotron
       %h1 한겨레21 Bubble 프로젝트
@@ -41,5 +104,3 @@
           = f.submit '게시'
       .comments-page
         = render 'comments'
-
-

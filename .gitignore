@@ -8,3 +8,5 @@
 
 # DB
 db/*.sqlite3
+
+.sass-cache
