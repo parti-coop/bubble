@@ -1,59 +1,60 @@
 %section#intro
-  .container{style: 'padding-top: 95px; text-align: center;'}
+  .container
     .title
-      %span{style: 'font-size: 18px; padding: 10px 28px; border: 3px solid #966dfe; border-radius: 40px; color: #686868;'} 시민 입법 프로젝트
-      %h1{style: 'font-size: 68px; font-weight: 100; color: #585858;line-height: 80px; margin: 55px 0;'}
+      %span
+        시민 입법 프로젝트
+      %h1
         바글시민
         %br<>
         와글입법
     .bumgun-image
       = image_tag 'bumgun.png'
-%section#description{style: "text-align: center; background-image: url(#{image_url('description-background.png')}); background-size: contain; background-repeat: no-repeat; background-position: bottom; height: 310px;"}
+%section#description
   .container
-    %h2{style: 'font-size: 16px; font-weight: 200; color: #5d5d5d; line-height: 30px;'}
-      %span{style: 'color: #bdb9e9;'}<> 범근뉴스
+    %h2
+      %span.color1<> 범근뉴스
       의 법안 설명을 듣고
       %br
       꼭 되었으면하는 법안에 '
-      %span{style: 'color: #8ec8c7;'}<> 띄워요
+      %span.color2<> 띄워요
       '해
       %br
       2016년, 시민이 올리는 시민의 법안을 만들자!
 %section#navigator
-  .container{style: 'width: 100%' }
-    .row{style: 'text-align: center;'}
-      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 14px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+  .container
+    .row
+      .col-xs-6
         %a{href: '#'}
           최저임금 1만원법
-      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 14px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+      .col-xs-6
         %a{href: '#'}
           전월세 상한제법
-      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 14px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+      .col-xs-6
         %a{href: '#'}
           데이트폭력 처벌강화법
-      .col-xs-6{style: 'padding-top: 70px; padding-bottom: 70px; font-size: 14px; color: #d2d2d2; background-color: #eff1f6; border: 2px solid #fff;'}
+      .col-xs-6
         %a{href: '#'}
           GMO 완전표시제법
-%section#video{style: 'background-color: rgb(152, 190, 242); padding-top: 40px;  padding-bottom: 50px'}
+%section#video
   .container
-    %h2{style: 'color: #fff; font-size: 24px; text-align: center; font-weight: 100; margin-top: 20px; margin-bottom: 30px;'}
+    %h2
       범근뉴스의 4가지 법안 소개
-    %p{style: 'text-align: center; color: rgb(93, 93, 93)'}
+    %p
       범근뉴스를 한 번이라도 들어봤다면
       %br
       얼마나 쉽게 설명해주는지 알겠지? 우선 들어봐!
-    .player{style: 'position: relative; width: 100%; height: 0; padding-bottom: 56.25%; margin-bottom: 40px; margin-top: 40px;'}
-      = raw VideoInfo.new('http://www.youtube.com/watch?v=mZqGqE0D0n4').embed_code(iframe_attributes: { style: 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;'})
-      /https://www.youtube.com/watch?v=n139g-IGSHo/
-    %p{style: 'text-align: center; color: rgb(93, 93, 93);'}
+    .player
+      = raw VideoInfo.new('http://www.youtube.com/watch?v=n139g-IGSHo').embed_code(iframe_attributes: { style: 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;'})
+    %p
       4개의 법안 중 최종법안을 정해서
       %br
       7개월 동안 입법과정을 같이 지켜볼거야!
 
-%section#banner{style: 'padding-top: 20px;  padding-bottom: 34px'}
+%section#banner
   .container
-    %h2{style: 'color: rgb(101,101,101); font-size: 22px; text-align: center; font-weight: 100; margin-top: 20px; margin-bottom: 20px;'} 자, 이제 너희의 법안에 투표해!
-    %p{style: 'text-align: center; color: rgb(93, 93, 93);'}
+    %h2
+      자, 이제 너희의 법안에 투표해!
+    %p
       투표 일정 : 6월 7일(화) ~ 6월 26일(일)
       %br
       결과 공개 : 7월 4일
@@ -76,7 +77,7 @@
           0000명
         %span.count-label
           참여
-    = render 'vote_button', bill: Bill.minimun_wage
+    = render 'vote_button', bill: Bill.minimum_wage
 
 %section.bill{style: "background-image: url(#{image_url('rent_ceiling.png')});"}
   .container
@@ -138,11 +139,11 @@
           참여
     = render 'vote_button', bill: Bill.gmo_mark
 
-%section#comments{style: 'padding-bottom: 30px'}
+%section#comments{style: ''}
   .container
-    %h2{style: 'color: #966fd6; text-align: center; font-size: 26px; font-weight: 100; margin-top: 20px; margin-bottom: 40px;'}
+    %h2{style: ''}
       법안에 대한 의견을 남겨봐!
-    %p{style: 'color: #5d5d5d; text-align: center; margin-bottom: 30px;'}
+    %p.desc{style: ''}
       투표한 4가지 법안 중 선택된 최종 법안은
       %br
       7개월 동안 입법과정에 반영할 수 있는 기회를 얻게 되.

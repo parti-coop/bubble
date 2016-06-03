@@ -9,7 +9,7 @@ class Bill < ActiveRecord::Base
     find_by(slug: Bill::RENT_CEILING)
   end
 
-  def self.minimun_wage
+  def self.minimum_wage
     find_by(slug: Bill::MINIMUM_WAGE)
   end
 

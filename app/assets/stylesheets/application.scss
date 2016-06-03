@@ -4,28 +4,16 @@ $container-sm: 760px;
 
 @import "bootstrap";
 
-
 .form-control.error {
   border-color: $brand-danger;
 }
-
 
 #hiddenRecaptcha-error {
   color: $brand-danger;
   font-weight: bold;
 }
 
-#navigator {
-  .row .col-xs-6 {
-    &:hover {
-      background-color: #66cfcd !important;
-    }
-    a, a:active, a:visited, a:hover, a:focus {
-      color: #5d5d5d;
-      text-decoration: none;
-    }
-  }
-}
+
 p,
 .result {
   font-size: 14px;
@@ -33,6 +21,134 @@ p,
   &.help-block {
   }
 }
+
+section#intro {
+  .container {
+    padding-top: 95px;
+    text-align: center;
+
+    .title {
+      span {
+        font-size: 18px;
+        padding: 10px 28px;
+        border: 3px solid #966dfe;
+        border-radius: 40px;
+        color: #686868;
+      }
+      h1 {
+        font-size: 68px;
+        font-weight: 100;
+        color: #585858;
+        line-height: 80px;
+        margin: 55px 0;
+      }
+    }
+  }
+}
+
+section#description {
+  text-align: center;
+  background-image: image_url('description-background.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position:
+  bottom; height: 310px;
+
+  .container {
+    h2 {
+      font-size: 16px;
+      font-weight: 200;
+      color: #5d5d5d;
+      line-height: 30px;
+      span.color1 {
+        color: #bdb9e9;
+      }
+      span.color2 {
+        color: #8ec8c7;
+      }
+    }
+  }
+}
+
+section#navigator {
+  .container{
+    width: 100%;
+
+    .row{
+      text-align: center;
+
+      .col-xs-6 {
+        padding-top: 70px;
+        padding-bottom: 70px;
+        font-size: 14px;
+        color: #d2d2d2;
+        background-color: #eff1f6;
+        border: 2px solid #fff;
+
+        &:hover {
+          background-color: #66cfcd !important;
+        }
+        a, a:active, a:visited, a:hover, a:focus {
+          color: #5d5d5d;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+section#video {
+  background-color: rgb(152, 190, 242);
+  padding-top: 40px;
+  padding-bottom: 50px;
+
+  .container {
+
+    h2 {
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+      font-weight: 100;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      text-align: center;
+      color: rgb(93, 93, 93);
+    }
+
+    .player {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+  }
+}
+
+section#banner {
+  padding-top: 20px;
+  padding-bottom: 34px;
+
+  .container {
+    h2 {
+      color: rgb(101,101,101);
+      font-size: 22px;
+      text-align: center;
+      font-weight: 100;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    p {
+      text-align: center;
+      color: rgb(93, 93, 93);
+    }
+  }
+}
+
 section.bill {
   background-repeat: no-repeat;
   background-size: cover;
@@ -100,6 +216,26 @@ section.bill-vote {
   }
 }
 
+section#comments {
+  padding-bottom: 30px;
+
+  .container {
+    h2 {
+      color: #966fd6;
+      text-align: center;
+      font-size: 26px;
+      font-weight: 100;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    p.desc {
+      color: #5d5d5d;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  }
+}
+
 .comment-button-container {
   text-align: center;
   a {
@@ -117,6 +253,7 @@ section.bill-vote {
 .comments {
   margin-top: 30px;
   .comment {
+    text-align: left;
     color: #5d5d5d;
   }
   .comments-pagination {
