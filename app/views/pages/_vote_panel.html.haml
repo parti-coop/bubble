@@ -1,0 +1,18 @@
+%section.bill-vote{class: "bill-vote--#{bill.slug.dasherize}"}
+  .container
+    .bar
+      .bar-voted{style: "width: #{bill.upvotes_count >= 2016 ? '100%' : number_to_percentage(bill.upvotes_percentage, precision: 0, strip_insignificant_zeros: true)}"}
+    .result.clearfix
+      %span.target
+        목표 2016명, #{number_to_percentage(bill.upvotes_percentage, precision: 1, strip_insignificant_zeros: true)} 달성
+      %span.pull-right
+        %span.count
+          #{bill.upvotes_count}명
+        %span.count-label
+          참여
+    .vote-buttons
+      = link_to upvote_bill_path(slug: bill.slug), method: :post, remote: true, data: { disable_with: "투표 중..." }, class: "btn btn-default #{'disabled' if upvoted?(bill)}" do
+        - if upvoted?(bill)
+          띄웠어요
+        - else
+          띄워요

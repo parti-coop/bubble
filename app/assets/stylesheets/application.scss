@@ -62,18 +62,27 @@ section#description {
   background-position:
   bottom; height: 310px;
 
+
   .container {
-    h2 {
+    h2, h2 a, h2 a:hover, h2 a:focus, h2 a:active {
+      outline: 0;
+      text-decoration: none;
       font-size: 16px;
       font-weight: 200;
       color: #5d5d5d;
       line-height: 30px;
+
+
       span.color1 {
         color: #bdb9e9;
       }
       span.color2 {
         color: #8ec8c7;
       }
+    }
+
+    h2 a:hover {
+      text-decoration: underline;
     }
   }
 }
@@ -86,8 +95,7 @@ section#navigator {
       text-align: center;
 
       .col-xs-6 {
-        padding-top: 70px;
-        padding-bottom: 70px;
+        padding: 70px 0;
         font-size: 1.2em;
         color: #d2d2d2;
         background-color: #eff1f6;
@@ -119,6 +127,7 @@ section#video {
       font-weight: 100;
       margin-top: 20px;
       margin-bottom: 30px;
+      line-height: 30px;
     }
 
     p {
@@ -159,7 +168,7 @@ section#banner {
 
 section.bill {
   margin-top: 40px;
-  height: 330px;
+  height: 450px;
 
   .container {
     position: relative;
@@ -253,7 +262,6 @@ section.bill-vote {
 
   .bar-voted {
     height: 100%;
-    width: 30%;
     background-color: rgb(150, 109, 254);
   }
 
@@ -267,6 +275,10 @@ section.bill-vote {
     .count-label {
       font-size: 16px;
     }
+  }
+  &.bill-vote--rent-ceiling .result,
+  &.bill-vote--date-violence .result {
+    color: #fff;
   }
 
   .vote-buttons {

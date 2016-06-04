@@ -1,1 +1,1 @@
-$("#bill-upvote-button-<%= @bill.id %>").html("<%= escape_javascript(render 'pages/vote_button', bill: @bill) %>");
+$(".bill-vote.bill-vote--<%= @bill.slug.dasherize %>").replaceWith("<%= escape_javascript(render 'pages/vote_panel', bill: @bill) %>");

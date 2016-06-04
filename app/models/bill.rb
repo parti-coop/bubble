@@ -21,4 +21,8 @@ class Bill < ActiveRecord::Base
     find_by(slug: Bill::GMO_MARK)
   end
 
+  def upvotes_percentage
+    upvotes_count / 2016.0 * 100
+  end
+
 end
