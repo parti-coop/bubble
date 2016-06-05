@@ -1,5 +1,6 @@
 // base
 @import "bootstrap-sprockets";
+$brand-primary: #966fd6;
 $container-sm: 768px;
 $container-desktop: 768px;
 $container-lg: 768px;
@@ -366,7 +367,7 @@ section#comments-list {
 
   .container {
     h2 {
-      color: #966fd6;
+      color: $brand-primary;
       text-align: center;
       font-size: 26px;
       font-weight: 100;
@@ -391,7 +392,7 @@ section#comments-list {
       box-shadow: 3px 4px 5px 0px rgba(4, 0, 0, 0.2);
       color: #966dfe;
       font-weight: 100;
-      background-color: #966fd6;
+      background-color: $brand-primary;
       color: #fff;
     }
   }
@@ -468,7 +469,7 @@ section#share {
   background-color: #eff1f6;
 
   h2 {
-    color: #966fd6;
+    color: $brand-primary;
     text-align: center;
     font-size: 26px;
     line-height: 30px;
@@ -491,14 +492,16 @@ section#share {
       margin-right: 5px;
       background-color: #fff;
       box-shadow: 1px 2px 5px 1px rgba(4, 0, 0, 0.2);
-      color: #3A5793;
       .jssocials-share-count {
         display: none;
       }
       .jssocials-shares {
         margin: 0;
         .jssocials-share-facebook i {
-          color: #3A5793;
+          color: #3a5793;
+        }
+        .jssocials-share-twitter i {
+          color: #55acee;
         }
       }
       &.share-kakao-link .icon-katalk {
