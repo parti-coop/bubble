@@ -1,16 +1,11 @@
 // base
 @import "bootstrap-sprockets";
-$container-sm: 760px;
-$container-desktop: 760px;
-$container-lg: 760px;
-
-@media (min-width: 768px) {
-  .container{
-    max-width: 970px;
-  }
-}
+$container-sm: 768px;
+$container-desktop: 768px;
+$container-lg: 768px;
 
 @import "bootstrap";
+@import "jssocials";
 
 .form-control.error {
   border-color: $brand-danger;
@@ -19,6 +14,13 @@ $container-lg: 760px;
 #hiddenRecaptcha-error {
   color: $brand-danger;
   font-weight: bold;
+}
+
+.g-recaptcha {
+  transform: scale(0.88);
+  -webkit-transform: scale(0.88);
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
 }
 
 p,
@@ -30,6 +32,36 @@ p,
   }
 }
 
+section#nav {
+  -webkit-box-shadow: 0px 5px 30px -5px rgba(210,210,210,1);
+  -moz-box-shadow: 0px 5px 30px -5px rgba(210,210,210,1);
+  box-shadow: 0px 1px 20px -5px rgba(210,210,210,1);
+  ul {
+    max-width: 500px;
+    margin: 0 auto;
+
+    li {
+      text-align: center;
+      width: 33.3%;
+    }
+    li + li {
+      margin-left: 0
+    }
+    a {
+      border-bottom: 4px solid #fff;
+      font-size: 14px;
+      color: #b297e4;
+      padding: 20px 0;
+      &:hover, a:focus {
+        border-bottom: 4px solid #9672fb;
+        border-radius: 0;
+        font-weight: bold;
+        background: none;
+        color: #262626;
+      }
+    }
+  }
+}
 section#intro {
   .container {
     padding-top: 95px;
@@ -72,7 +104,6 @@ section#description {
       color: #5d5d5d;
       line-height: 30px;
 
-
       span.color1 {
         color: #bdb9e9;
       }
@@ -101,6 +132,14 @@ section#navigator {
         background-color: #eff1f6;
         border: 2px solid #fff;
 
+        &:nth-child(odd) {
+          border-left-width: 0;
+        }
+
+        &:nth-child(even) {
+          border-right-width: 0;
+        }
+
         &:hover {
           background-color: #66cfcd !important;
         }
@@ -115,7 +154,7 @@ section#navigator {
 
 section#video {
   background-color: rgb(152, 190, 242);
-  padding-top: 40px;
+  padding-top: 20px;
   padding-bottom: 50px;
 
   .container {
@@ -181,13 +220,15 @@ section.bill {
     @media (min-width: 768px) {
       background-size: cover;
     }
-    p.bill-description {
-      font-weight: 100;
-      bottom: 20px;
+    .bill-description {
+      margin: 0;
+      bottom: 0;
       left: 0;
-      color: #fff;
+      padding: 20px;
       position: absolute;
-      margin: 0 20px;
+      background: rgba(0,0,0,0.3);
+      color: #fff;
+      font-weight: 100;
     }
   }
 
@@ -295,7 +336,32 @@ section.bill-vote {
   }
 }
 
-section#comments {
+section#article {
+  margin-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 34px;
+  background-color: #9672d3;
+
+  .container {
+    h2 {
+      color: #fff;
+      font-size: 26px;
+      text-align: center;
+      font-weight: 100;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    p {
+      text-align: center;
+      a {
+        color: #fbe232;
+      }
+    }
+  }
+}
+
+section#comments-list {
+  padding-top: 20px;
   padding-bottom: 30px;
 
   .container {
@@ -313,51 +379,53 @@ section#comments {
       text-align: center;
     }
   }
-}
 
-.comment-button-container {
-  text-align: center;
-  a, a:active, a:focus, a.active, a.active:focus {
-    outline: 0;
-    font-size: 22px;
-    padding: 14px 26px;
-    border-radius: 10px;
-    box-shadow: 3px 4px 5px 0px rgba(4, 0, 0, 0.2);
-    color: #966dfe;
-    font-weight: 100;
-    background-color: #966fd6;
-    color: #fff;
+  .comment-button-container {
+    text-align: center;
+    margin-bottom: 40px;
+    a, a:active, a:focus, a.active, a.active:focus {
+      outline: 0;
+      font-size: 22px;
+      padding: 14px 26px;
+      border-radius: 10px;
+      box-shadow: 3px 4px 5px 0px rgba(4, 0, 0, 0.2);
+      color: #966dfe;
+      font-weight: 100;
+      background-color: #966fd6;
+      color: #fff;
+    }
   }
-}
 
-.comments {
-  margin-top: 30px;
-  .comment {
-    text-align: left;
-    color: #5d5d5d;
-  }
-  .comments-pagination {
-    text-align: center;
-    color: #5d5d5d;
-    text-align: center;
-    font-size: 12px;
-    a, a:hover, a:visited, a:active, a:focus {
+  .comments {
+    margin-top: 30px;
+    .comment {
+      text-align: left;
       color: #5d5d5d;
-      font-weight: bold;
     }
-    li.next a, li.prev a {
-      float: initial;
+    .comments-pagination {
+      text-align: center;
+      color: #5d5d5d;
+      text-align: center;
+      font-size: 12px;
+      a, a:hover, a:visited, a:active, a:focus {
+        color: #5d5d5d;
+        font-weight: bold;
+      }
+      li.next a, li.prev a {
+        float: initial;
+      }
     }
-  }
-  hr {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    hr {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
   }
 }
 
 section#footer {
   .container {
     text-align: center;
+    margin-top: 40px;
     margin-bottom: 30px;
   }
   .logos li {
@@ -368,7 +436,76 @@ section#footer {
 }
 
 #comment-form {
+  .modal-header {
+    background-color: #9672d3;
+    color: #fff;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    h4 {
+      text-align: center;
+      font-weight: 200;
+    }
+  }
   .help-block {
     color: #999;
+    font-weight: 100;
+    font-size: 14px;
+  }
+  label {
+    font-weight: 100;
+  }
+}
+
+section#share {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #eff1f6;
+
+  h2 {
+    color: #966fd6;
+    text-align: center;
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: 100;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  .share-box {
+    text-align: center;
+    .share-item {
+      border-radius: 50%;
+      padding: 1px 10px;
+      font-size: 24px;
+      line-height: 24px;
+      width: 44px;
+      height: 43px;
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+      background-color: #fff;
+      box-shadow: 1px 2px 5px 1px rgba(4, 0, 0, 0.2);
+      color: #3A5793;
+      .jssocials-shares {
+        margin: 0;
+        .jssocials-share-facebook i {
+          color: #3A5793;
+        }
+      }
+      &.share-kakao-link .icon-katalk {
+        width: 20px;
+        padding-top: 12px;
+      }
+      &.share-kakao-story .icon-kas {
+        padding-top: 11px;
+        width: 10px;
+      }
+    }
   }
 }

@@ -1,3 +1,16 @@
+%section#nav
+  .container
+    %ul.nav.nav-pills
+      %li
+        %a{:href => "#bumgun-video"}
+          영상 보기
+      %li
+        %a{:href => "#vote-banner"}
+          투표 하기
+      %li
+        %a{:href => "#comments"}
+          의견 쓰기
+
 %section#intro
   .container
     .title
@@ -21,11 +34,12 @@
       ' 눌러서
       %br
       2016년, 시민이 올리는 시민의 법안을 만들자!
+
 %section#video
   %a{id: 'bumgun-video'}
   .container
     %h2
-      범근뉴스가 설명하는
+      범근뉴스가 소개하는
       %br
       시민의 법안 후보
     %p
@@ -33,16 +47,17 @@
       %br
       얼마나 쉽게 설명해주는지 알겠지? 우선 들어봐!
     .player
-      = raw VideoInfo.new('http://www.youtube.com/watch?v=n139g-IGSHo').embed_code(iframe_attributes: { style: 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;'})
+      = raw VideoInfo.new('https://youtu.be/cq4b2a5oEdM').embed_code(iframe_attributes: { style: 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;'})
     %p
       4개의 법안 중 최종법안을 정해서
       %br
       7개월 동안 입법과정을 같이 지켜볼거야!
 
 %section#banner
+  %a{id: 'vote-banner'}
   .container
     %h2
-      자, 이제 너희의 법안에 투표해!
+      자, 이제 너희 법안에 투표해!
     %p
       투표 일정 : 6월 7일(화) ~ 6월 26일(일)
       %br
@@ -99,10 +114,20 @@
       안전한 먹거리도 빼놓을 수 없지. GMO 완전 표시제법이야. GMO는, 생산량을 늘리기 위해 농약이나 벌레, 추위에 강하도록 유전자를 변형시킨 식품이야. (아바투르 등장) 우리나라는 일본과 식용 GMO 수입 1,2위를 다투고 있어. 우리 국민 한 명이 1년에 먹는 GMO콩의 양은 무려 20킬로그램! GMO옥수수는 25킬로그램이나 먹고 있다고. 그런데 이 GMO의 안전성 논란이 끊이지 않아서 불안해. 우리가 먹는 제품에 어떤 GMO 농산물이 얼마나 들어갔는지 정확히 알려달라는 건 정당한 요구야. 지금은 아주 일부만 알려주고 있거든.
 = render 'vote_panel', bill: Bill.gmo_mark
 
-%section#comments
+%section#article
+  .container
+    %h2 법안이 더 궁금해?
+    %p
+      %a(href="#") 한겨레21 기사 보러가기
+
+%section#comments-list
+  %a{id: 'comments'}
   .container
     %h2
       법안에 대한 의견을 남겨봐!
+    .comment-button-container
+      %a.btn.btn-default{href: '#', data: { target: '#comment-form', toggle: 'modal'}, type: 'button'}
+        의견 쓰기
     %p.desc
       투표한 4가지 법안 중 선택된 최종 법안은
       %br
@@ -111,14 +136,31 @@
       기회를 얻게 되지.
     %p.desc
       궁금한 점을 적어봐.
-    .comment-button-container
-      %a.btn.btn-default{href: '#', data: { target: '#comment-form', toggle: 'modal'}, type: 'button'}
-        의견 남기기
-
 
     .comments
       .comments-page
         = render 'comments'
+
+%section#share
+  .container
+    %h2
+      시민의 법안, 함께하면
+      %br
+      더 즐거워요!
+    %ul.share-box.list-inline
+      - data = {action: 'bubble-share', 'share-url': root_url, 'share-text': "시민 입법 프로젝트 '바글시민 와글입법' - 2016년, 시민이 올리는 시민의 법안을 만들자!" }
+      - %w(facebook twitter kakao-link kakao-story).each do |provider|
+
+        - data = data.merge('share-provider': provider)
+
+        - if provider == 'kakao-link'
+          - hide_kakao_link = (! browser.device.mobile?) ? ' hide' : ''
+          - data = data.merge('share-image': image_url('seo.png'), 'share-image-width': '1200', 'share-image-height': '630')
+        %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
+          - if provider == 'kakao-story'
+            = image_tag 'icon_kas.png', class: 'icon-kas'
+          - if provider == 'kakao-link'
+            = image_tag 'icon_katalk.png', class: 'icon-katalk'
 
 %section#footer
   .container
@@ -133,8 +175,6 @@
         %a(href='https://www.facebook.com/profile.php?id=100001923176001' target='_blank')
           = image_tag 'bumgun-logo.png'
 
-
-
 #comment-form.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "comment-formLabel", :role => "dialog", :tabindex => "-1"}
   .modal-dialog
     = form_for Comment.new do |f|
@@ -142,7 +182,7 @@
         .modal-header
           %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
             %span{"aria-hidden" => "true"} &#215;
-          %h4#comment-formLabel.modal-title 의견 남기기
+          %h4#comment-formLabel.modal-title 의견 쓰기
         .modal-body
           .comment-form
             = form_for Comment.new do |f|
@@ -158,7 +198,8 @@
                 = f.email_field :email, class: 'form-control input-lg'
                 %p.help-block  * 이메일은 선택사항입니다. 이후 진행 상황을 알려 드립니다.
               .recaptcha
-                = recaptcha_tags hl: :ko
+                = recaptcha_tags hl: :ko, size: '100px'
         .modal-footer
           %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} 취소
           = f.submit '게시', class: 'btn btn-primary', data: { disable_with: "게시 중..." }
+
