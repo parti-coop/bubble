@@ -492,6 +492,9 @@ section#share {
       background-color: #fff;
       box-shadow: 1px 2px 5px 1px rgba(4, 0, 0, 0.2);
       color: #3A5793;
+      .jssocials-share-count {
+        display: none;
+      }
       .jssocials-shares {
         margin: 0;
         .jssocials-share-facebook i {
