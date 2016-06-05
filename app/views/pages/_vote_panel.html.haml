@@ -13,6 +13,7 @@
     .vote-buttons
       = link_to upvote_bill_path(slug: bill.slug), method: :post, remote: true, data: { disable_with: "투표 중..." }, class: "btn btn-default #{'disabled' if upvoted?(bill)}" do
         - if upvoted?(bill)
+          %i.fa.fa-check
           띄웠어요
         - else
           띄워요
