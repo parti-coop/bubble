@@ -1,6 +1,6 @@
 - if @comments.any?
   %hr
-- @comments.each do |comment|
+- @comments.recent.each do |comment|
   .comment
     .comment-meta
       %span.comment-name= comment.name

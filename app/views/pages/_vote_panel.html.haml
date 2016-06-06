@@ -1,9 +1,12 @@
-.bill-bar
-  .bill-bar-voted{style: "width: #{bill.upvotes_count >= 2016 ? '100%' : number_to_percentage(bill.upvotes_percentage, precision: 0, strip_insignificant_zeros: true)}"}
 .bill-vote
+  .bill-bar
+    .bill-bar-voted{style: "width: #{bill.upvotes_count >= 2016 ? '100%' : number_to_percentage(bill.upvotes_percentage, precision: 0, strip_insignificant_zeros: true)}"}
   .result.clearfix
     %span.target
-      목표 2016명, #{number_to_percentage(bill.upvotes_percentage, precision: 1, strip_insignificant_zeros: true)} 달성
+      목표 2016명,
+      %span.percentage
+        #{number_to_percentage(bill.upvotes_percentage, precision: 1, strip_insignificant_zeros: true)}
+      달성
     %span.pull-right
       %span.count
         #{bill.upvotes_count}명

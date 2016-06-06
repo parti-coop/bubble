@@ -1,6 +1,7 @@
 // base
 @import "bootstrap-sprockets";
 $brand-primary: #966fd6;
+
 $container-sm: 768px;
 $container-desktop: 768px;
 $container-lg: 768px;
@@ -24,13 +25,10 @@ $container-lg: 768px;
   -webkit-transform-origin: 0 0;
 }
 
-p,
-.result {
+p {
   font-size: 1.1em;
   line-height: 22px;
   font-weight: 200;
-  &.help-block {
-  }
 }
 
 section#nav {
@@ -123,41 +121,6 @@ section#description {
   }
 }
 
-section#navigator {
-  margin-bottom: 70px;
-  .container{
-    width: 100%;
-
-    .row{
-      text-align: center;
-
-      .col-xs-6 {
-        padding: 70px 0;
-        font-size: 1.2em;
-        color: #d2d2d2;
-        background-color: #eff1f6;
-        border: 2px solid #fff;
-
-        &:nth-child(odd) {
-          border-left-width: 0;
-        }
-
-        &:nth-child(even) {
-          border-right-width: 0;
-        }
-
-        &:hover {
-          background-color: #66cfcd !important;
-        }
-        a, a:active, a:visited, a:hover, a:focus {
-          color: #5d5d5d;
-          text-decoration: none;
-        }
-      }
-    }
-  }
-}
-
 section#video {
   background-color: rgb(152, 190, 242);
   padding-top: 20px;
@@ -199,6 +162,7 @@ section#video {
 }
 
 section#banner {
+  background-color: #eff1f6;
   padding-top: 20px;
   padding-bottom: 34px;
 
@@ -219,7 +183,11 @@ section#banner {
 }
 
 section.bill {
-  margin-bottom: 70px;
+  background-color: #eff1f6;
+  padding-bottom: 2px;
+  @media (min-width: 768px) {
+    padding-bottom: 40px;
+  }
 
   .container {
     @media (min-width: 768px) {
@@ -262,6 +230,7 @@ section.bill {
   }
 
   .bill-bar {
+    margin-bottom: 30px;
     height: 10px;
     left: 0;
     background-color: rgb(239, 241, 246);
@@ -279,12 +248,19 @@ section.bill {
       padding-left: 50px;
       padding-right: 50px;
     }
-    padding-top: 30px;
     padding-bottom: 50px;
     color: #fff;
 
     .result {
+      font-size: 1.1em;
+      line-height: 22px;
+      font-weight: 200;
       margin-bottom: 28px;
+
+      .percentage,
+      .count {
+        color: $brand-primary;
+      }
       .count {
         font-size: 26px;
       }
@@ -332,6 +308,10 @@ section.bill {
   }
 
   &.bill--gmo-mark {
+    @media (min-width: 768px) {
+      padding-bottom: 40px;
+    }
+
     h2 {
       color: #585858;
     }
@@ -346,7 +326,6 @@ section.bill {
 }
 
 section#article {
-  margin-top: 40px;
   padding-top: 20px;
   padding-bottom: 34px;
   background-color: #9672d3;
@@ -436,10 +415,12 @@ section#comments-list {
 }
 
 section#footer {
+  border-top: 1px solid #d2d2d2;
+  background-color: #eff1f6;
+  padding-top: 40px;
+  padding-bottom: 30px;
   .container {
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 30px;
   }
   .logos li {
     padding: 0;

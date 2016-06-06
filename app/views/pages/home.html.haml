@@ -47,7 +47,7 @@
       %br
       얼마나 쉽게 설명해주는지 알겠지? 우선 들어봐!
     .player
-      = raw VideoInfo.new('https://youtu.be/cq4b2a5oEdM').embed_code(iframe_attributes: { style: 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;'})
+      = raw VideoInfo.new('https://www.youtube.com/watch?v=zdtN1zYfiG0').embed_code(iframe_attributes: { style: 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;'})
     %p
       4개의 법안 중 최종법안을 정해서
       %br
@@ -62,21 +62,6 @@
       투표 일정 : 6월 7일(화) ~ 6월 26일(일)
       %br
       결과 공개 : 7월 4일
-%section#navigator.visible-xs-block.hidden-sm
-  .container
-    .row
-      .col-xs-6
-        %a{href: '#minimum-wage'}
-          최저임금 1만원법
-      .col-xs-6
-        %a{href: '#rent-ceiling'}
-          전월세 상한제법
-      .col-xs-6
-        %a{href: '#date-violence'}
-          데이트폭력 처벌강화법
-      .col-xs-6
-        %a{href: '#gmo-mark'}
-          GMO 완전표시제법
 
 - bill = Bill.minimum_wage
 - dom_id = bill.slug.dasherize

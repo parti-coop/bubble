@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @comments = Comment.all.page(params[:page]).per(3)
+    @comments = Comment.all.page(params[:page])
   end
 end
