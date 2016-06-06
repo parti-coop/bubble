@@ -22,6 +22,14 @@ class ApplicationController < ActionController::Base
       description: description,
       keywords:    "빠띠, 한겨레21, 국범근, 쥐픽쳐스, 정치, 법률, 입법, 시민, 최저임금 1만원법, 전월세, 전월세 상한제법, 데이트폭력, 데이트폭력 처벌강화법, GMO, GMO 완전표시제법",
       canonical:   url,
+      twitter: {
+        site_name: site_name,
+        site: '@parti_xyz',
+        card: 'summary_card',
+        title: title,
+        description: description,
+        image: image
+      },
       og: {
         url: url,
         site_name: site_name,
