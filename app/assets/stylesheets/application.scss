@@ -124,6 +124,7 @@ section#description {
 }
 
 section#navigator {
+  margin-bottom: 70px;
   .container{
     width: 100%;
 
@@ -221,7 +222,9 @@ section.bill {
   margin-bottom: 70px;
 
   .container {
-    background-size: cover;
+    @media (min-width: 768px) {
+      background-size: cover;
+    }
     background-position-x: center;
     padding-right: 0;
     padding-left: 0;
@@ -229,7 +232,7 @@ section.bill {
 
   h2 {
     color: #fff;
-    font-size: 45px;
+    font-size: 2em;
     font-weight: 100;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -240,14 +243,21 @@ section.bill {
     height: 435px;
     position: relative;
     .bill-description {
-      color: #fff;
+      p {
+        color: #fff;
+        font-weight: 100;
+      }
       width: 100%;
       position: absolute;
       bottom: 0;
       padding-top: 20px;
       padding-bottom: 20px;
-      padding-left: 50px;
-      padding-right: 50px;
+      padding-left: 15px;
+      padding-right: 15px;
+      @media (min-width: 768px) {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
     }
   }
 
@@ -263,8 +273,12 @@ section.bill {
   }
 
   .bill-vote {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    @media (min-width: 768px) {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
     padding-top: 30px;
     padding-bottom: 50px;
     color: #fff;
@@ -310,8 +324,10 @@ section.bill {
   &.bill--date-violence {
     .bill-show .bill-description,
     .bill-vote {
-      color: #585858;
       background-color: rgba(234, 191, 192, 0.95);
+      p, span {
+        color: #585858;
+      }
     }
   }
 
@@ -321,8 +337,10 @@ section.bill {
     }
     .bill-show .bill-description,
     .bill-vote {
-      color: #585858;
       background-color: rgba(252, 218, 166, 0.94);
+      p, span {
+        color: #585858;
+      }
     }
   }
 }
