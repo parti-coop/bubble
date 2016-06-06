@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def build_meta_options
     site_name = "시민 입법 프로젝트"
-    title = "시민 입법 프로젝트 '버글시민 와글입법'"
+    title = "시민 입법 프로젝트 '바글시민 와글입법'"
     image = view_context.image_url('seo.png')
     url = 'http://up.parti.xyz'
 
