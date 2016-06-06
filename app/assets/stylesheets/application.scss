@@ -213,7 +213,10 @@ section.bill {
     .bill-description {
       p {
         color: #fff;
-        font-weight: 100;
+        font-weight: 200;
+        @media (min-width: 768px) {
+          font-weight: 100;
+        }
       }
       width: 100%;
       position: absolute;
