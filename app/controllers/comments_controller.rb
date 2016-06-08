@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.save if verify_recaptcha(model: @comment)
-    redirect_to root_path
+    redirect_to root_path(anchor: 'comments-form')
   end
 
   private
