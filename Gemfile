@@ -27,6 +27,10 @@ gem 'video_info', '~> 2.6', '>= 2.6.1'
 gem 'browser', '~> 2.0', '>= 2.0.2'
 gem 'meta-tags', '~> 2.1.0'
 
+# monitor
+gem 'newrelic_rpm'
+gem 'ey_config'
+
 group :development, :test do
   gem 'byebug'
 end
