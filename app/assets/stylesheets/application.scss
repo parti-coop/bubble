@@ -233,6 +233,7 @@ section.bill {
   }
 
   .bill-bar {
+    display: none;
     margin-bottom: 30px;
     height: 10px;
     left: 0;
@@ -247,6 +248,7 @@ section.bill {
   .bill-vote {
     padding-left: 15px;
     padding-right: 15px;
+    position: relative;
     @media (min-width: 768px) {
       padding-left: 50px;
       padding-right: 50px;
@@ -285,9 +287,22 @@ section.bill {
       }
     }
     .parti-link {
-      padding-left: 14px;
-      margin-top: 16px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px 0;
+      left: 0;
+      background-color: #966dfe;
       text-align: center;
+      a, a:active, a:hover, a:visited, a:focus {
+        font-weight: 100;
+        color: #fff;
+        text-decoration: none;
+      }
+      a:hover {
+        font-weight: 200;
+        text-decoration: underline;
+      }
     }
   }
 
