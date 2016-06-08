@@ -3,7 +3,6 @@ class BillsController < ApplicationController
 
   def upvote
     @bill = Bill.find_by slug: params[:slug]
-    @billname = slug: params[:slug]
 
     @upvoted = false
     return if upvoted?(@bill)
