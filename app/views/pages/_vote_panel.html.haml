@@ -19,3 +19,15 @@
         띄웠어요
       - else
         띄워요
+  .parti-link
+    - if bill.slug == 'rent_ceiling'
+      - bill_name = '전월세 상한제법'
+    - elsif bill.slug == 'minimum_wage'
+      - bill_name = '최저임금 1만원법'
+    - elsif bill.slug == 'date_violence'
+      - bill_name = '데이트폭력 처벌강화법'
+    - elsif bill.slug == 'gmo_mark'
+      - bill_name = 'GMO 완전표시법'
+    - else
+      - bill_name = ''
+    = link_to "'#{bill_name}' 띄우려는 사람은 여기로 와!", "http://parti.xyz/p/#{bill.slug}", target: '_blank'

@@ -284,7 +284,13 @@ section.bill {
         outline: none;
       }
     }
+    .parti-link {
+      padding-left: 14px;
+      margin-top: 16px;
+      text-align: center;
+    }
   }
+
 
   &.bill--minimum-wage {
     .bill-show .bill-description,
