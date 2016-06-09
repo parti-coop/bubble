@@ -337,6 +337,10 @@ section.bill {
     .bill-show .bill-description,
     .bill-vote {
       background-color: rgba(234, 191, 192, 0.95);
+    }
+    .bill-show .bill-description,
+    .bill-vote,
+    .result {
       p, span {
         color: #585858;
       }
@@ -354,6 +358,10 @@ section.bill {
     .bill-show .bill-description,
     .bill-vote {
       background-color: rgba(252, 218, 166, 0.94);
+    }
+    .bill-show .bill-description,
+    .bill-vote,
+    .result {
       p, span {
         color: #585858;
       }
