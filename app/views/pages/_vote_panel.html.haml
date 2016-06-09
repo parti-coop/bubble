@@ -1,17 +1,17 @@
 .bill-vote
   .bill-bar
-    .bill-bar-voted{style: "width: #{bill.upvotes_count >= 2016 ? '100%' : number_to_percentage(bill.upvotes_percentage, precision: 0, strip_insignificant_zeros: true)}"}
+    .bill-bar-voted{style: "width: #{bill.upvotes_count >= 4032 ? '100%' : number_to_percentage(bill.upvotes_percentage - 100, precision: 0, strip_insignificant_zeros: true)}"}
   .result.clearfix
-    %span.target
+    %span
       목표 2016명,
-      %span.percentage
-        #{number_to_percentage(bill.upvotes_percentage, precision: 1, strip_insignificant_zeros: true)}
-      달성
-    %span.pull-right
       %span.count
         #{bill.upvotes_count}명
       %span.count-label
         참여
+    %span.target.pull-right
+      %span.percentage
+        #{number_to_percentage(bill.upvotes_percentage, precision: 1, strip_insignificant_zeros: true)}
+      달성
   .vote-button
     = link_to upvote_bill_path(slug: bill.slug), method: :post, remote: true, data: { disable_with: "투표 중..." }, class: "btn btn-default #{'disabled' if upvoted?(bill)}" do
       - if upvoted?(bill) or @upvoted
