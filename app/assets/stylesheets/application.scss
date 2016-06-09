@@ -263,14 +263,20 @@ section.bill {
       font-weight: 200;
       margin-bottom: 28px;
 
-      .target {
+      .ratio {
         @media (min-width: 768px) {
           text-align: right;
         }
+      }
+
+      .person,
+      .ratio {
         @media (max-width: 768px) {
           margin-top: 10px;
+          text-align: center;
         }
       }
+
       .percentage,
       .count {
         color: $brand-primary-dark;
