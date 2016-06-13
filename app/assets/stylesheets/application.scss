@@ -1,8 +1,10 @@
 // base
 @import "bootstrap-sprockets";
 $brand-primary: #966fd6;
+$brand-primary-lighter:   lighten($brand-primary, 30%);
 $brand-primary-light:   lighten($brand-primary, 15%);
 $brand-primary-dark:    darken($brand-primary, 15%);
+$brand-primary-darker:    darken($brand-primary, 30%);
 
 $container-sm: 768px;
 $container-desktop: 768px;
@@ -238,9 +240,15 @@ section.bill {
     margin-bottom: 30px;
     height: 10px;
     left: 0;
-    background-color: $brand-primary-light;
+    background-color: $brand-primary-lighter;
 
-    .bill-bar-voted {
+    .bill-bar-base {
+      height: 100%;
+      background-color: $brand-primary;
+      float: left;
+    }
+
+    .bill-bar-over {
       height: 100%;
       background-color: $brand-primary-dark;
     }

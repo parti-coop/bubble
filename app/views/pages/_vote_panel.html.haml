@@ -1,6 +1,8 @@
 .bill-vote
   .bill-bar
-    .bill-bar-voted{style: "width: #{bill.upvotes_count >= 4032 ? '100%' : number_to_percentage(bill.upvotes_percentage - 100, precision: 0, strip_insignificant_zeros: true)}"}
+    - zoom_out = 4
+    .bill-bar-base{style: "width: #{100/zoom_out}%"}
+    .bill-bar-over{style: "width: #{bill.upvotes_count >= (2016.0 * zoom_out) ? '100%' : number_to_percentage(bill.upvotes_percentage/zoom_out, precision: 0, strip_insignificant_zeros: true)}"}
   .row.result.clearfix
     .col-sm-6.person
       %span 목표 2016명,
