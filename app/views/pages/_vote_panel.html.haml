@@ -1,8 +1,14 @@
 .bill-vote
-  .bill-bar
-    - zoom_out = 4
-    .bill-bar-base{style: "width: #{100/zoom_out}%"}
-    .bill-bar-over{style: "width: #{bill.upvotes_count >= (2016.0 * zoom_out) ? '100%' : number_to_percentage(bill.upvotes_percentage/zoom_out, precision: 0, strip_insignificant_zeros: true)}"}
+  .bill-bar-group
+    - (bill.upvotes_percentage/100).to_i.times.each do |i|
+      .bill-bar
+        .bill-voted{style: "width: 100%"}
+    - remainder = (bill.upvotes_percentage%100)
+    - if remainder > 0
+      - remainder_percentage = number_to_percentage(remainder, precision: 0, strip_insignificant_zeros: true)
+      - remainder_percentage = '1%' if remainder_percentage == '0%'
+      .bill-bar
+        .bill-voted{style: "width: #{remainder_percentage}"}
   .row.result.clearfix
     .col-sm-6.person
       %span 목표 2016명,

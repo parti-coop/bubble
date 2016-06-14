@@ -236,21 +236,17 @@ section.bill {
     }
   }
 
-  .bill-bar {
+  .bill-bar-group {
     margin-bottom: 30px;
-    height: 10px;
-    left: 0;
-    background-color: $brand-primary-lighter;
-
-    .bill-bar-base {
-      height: 100%;
-      background-color: $brand-primary;
-      float: left;
-    }
-
-    .bill-bar-over {
-      height: 100%;
-      background-color: $brand-primary-dark;
+    .bill-bar {
+      height: 10px;
+      left: 0;
+      margin-bottom: 2px;
+      background-color: $brand-primary-lighter;
+      .bill-voted {
+        height: 100%;
+        background-color: $brand-primary;
+      }
     }
   }
 
