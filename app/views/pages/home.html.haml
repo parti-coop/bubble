@@ -42,6 +42,7 @@
       시민의 법안 후보
     .bumgun-image
       = image_tag 'bumgun.png'
+
     %p
       범근뉴스를 한 번이라도 들어봤다면
       %br
@@ -51,11 +52,13 @@
       .item
         .clearfix
           %ul#image-gallery.gallery.list-unstyled.cS-hidden
-            - %w(https://www.youtube.com/watch?v=zdtN1zYfiG0 https://youtu.be/fh-uDxgawEU).each do |video_url|
+            - %w(https://www.youtube.com/watch?v=zdtN1zYfiG0 https://youtu.be/fh-uDxgawEU).each_with_index do |video_url, index|
               - video = VideoInfo.new(video_url)
               %li{"data-thumb": video.thumbnail_small}
                 .player
-                  = raw video.embed_code(iframe_attributes: { style: 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;'})
+                  %iframe(id="video-#{index}"src="#{video.embed_url}?enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen")
+
+
 
     %p
       4개의 법안 중 최종법안을 정해서

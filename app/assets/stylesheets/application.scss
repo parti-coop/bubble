@@ -159,19 +159,25 @@ section#video {
       .item{
         margin-bottom: 60px;
       }
-      .lSSlideOuter .lSPager.lSGallery li {
-        border-radius: 0;
-        border: none;
+      .lSSlideOuter {
+        text-align: center;
+        ul.lSPager.lSGallery {
+          display: inline-block;
+          li {
+            border-radius: 0;
+            border: none;
 
-        img {
-          border: 2px solid rgb(152, 190, 242);
-        }
-        &.active img,
-        &.active:hover img {
-          border: 2px solid $brand-primary-dark;
-        }
-        &:hover img {
-          border: 2px solid $brand-primary-light;
+            img {
+              border: 4px solid rgb(152, 190, 242);
+            }
+            &.active img,
+            &.active:hover img {
+              border: 4px solid $brand-primary-dark;
+            }
+            &:hover img {
+              border: 4px solid $brand-primary-light;
+            }
+          }
         }
       }
       .player {
@@ -180,6 +186,12 @@ section#video {
         height: 0;
         padding-bottom: 56.25%;
         margin-top: 40px;
+        iframe {
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%;
+          height: 100%;
+        }
       }
     }
 
