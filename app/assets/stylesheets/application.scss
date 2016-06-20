@@ -12,6 +12,7 @@ $container-lg: 768px;
 
 @import "bootstrap";
 @import "jssocials";
+@import "lightslider";
 
 .form-control.error {
   border-color: $brand-danger;
@@ -154,14 +155,34 @@ section#video {
       }
     }
 
-    .player {
-      position: relative;
-      width: 100%;
-      height: 0;
-      padding-bottom: 56.25%;
-      margin-bottom: 40px;
-      margin-top: 40px;
+    .video-slider {
+      .item{
+        margin-bottom: 60px;
+      }
+      .lSSlideOuter .lSPager.lSGallery li {
+        border-radius: 0;
+        border: none;
+
+        img {
+          border: 2px solid rgb(152, 190, 242);
+        }
+        &.active img,
+        &.active:hover img {
+          border: 2px solid $brand-primary-dark;
+        }
+        &:hover img {
+          border: 2px solid $brand-primary-light;
+        }
+      }
+      .player {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        margin-top: 40px;
+      }
     }
+
   }
 }
 

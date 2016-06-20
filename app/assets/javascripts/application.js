@@ -4,6 +4,7 @@
 //= require jquery.validate
 //= require kakao
 //= require jssocials
+//= require lightslider
 
 $.is_blank = function (obj) {
   if (!obj || $.trim(obj) === "") return true;
@@ -85,6 +86,25 @@ $(function(){
         text: text,
         url: url
       });
+    }
+  });
+  $("#content-slider").lightSlider({
+    loop:true,
+    keyPress:true
+  });
+
+  $('#image-gallery').lightSlider({
+    gallery: true,
+    item: 1,
+    thumbItem: 9,
+    slideMargin: 0,
+    speed: 500,
+    pause: 10000,
+    auto: true,
+    loop: true,
+    thumbItem: 6,
+    onSliderLoad: function() {
+      $('#image-gallery').removeClass('cS-hidden');
     }
   });
 });

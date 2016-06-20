@@ -46,8 +46,17 @@
       범근뉴스를 한 번이라도 들어봤다면
       %br
       얼마나 쉽게 설명해주는지 알겠지? 우선 들어봐!
-    .player
-      = raw VideoInfo.new('https://www.youtube.com/watch?v=zdtN1zYfiG0').embed_code(iframe_attributes: { style: 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;'})
+
+    .video-slider
+      .item
+        .clearfix
+          %ul#image-gallery.gallery.list-unstyled.cS-hidden
+            - %w(https://www.youtube.com/watch?v=zdtN1zYfiG0 https://youtu.be/fh-uDxgawEU).each do |video_url|
+              - video = VideoInfo.new(video_url)
+              %li{"data-thumb": video.thumbnail_small}
+                .player
+                  = raw video.embed_code(iframe_attributes: { style: 'position: absolute; top: 0; left: 0; width: 100%; height: 100%;'})
+
     %p
       4개의 법안 중 최종법안을 정해서
       %br
