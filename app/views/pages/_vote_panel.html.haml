@@ -19,8 +19,8 @@
         #{number_to_percentage(bill.upvotes_percentage, precision: 1, strip_insignificant_zeros: true)}
       %span 달성
   .vote-button
-    = link_to upvote_bill_path(slug: bill.slug), method: :post, remote: true, data: { disable_with: "투표 중..." }, class: "btn btn-default #{'disabled' if upvoted?(bill)}" do
-      - if upvoted?(bill) or @upvoted
+    = link_to upvote_bill_path(slug: bill.slug), method: :post, remote: true, data: { disable_with: "투표 중..." }, class: "btn btn-default #{'disabled' if bill_upvoted?(bill)}" do
+      - if bill_upvoted?(bill) or @upvoted
         %i.fa.fa-check
         띄웠어요
       - else

@@ -7,12 +7,24 @@ module ApplicationHelper
     end
   end
 
-  def upvoted?(bill)
+  def bill_upvoted?(bill)
     voted_bills.include? bill.id
   end
 
-  def mark_upvoted(bill)
+  def bill_mark_upvoted(bill)
     cookies.permanent.signed[:qus_qus] = JSON.generate(voted_bills << bill.id)
+  end
+
+  def party_name_upvoted?(party_name = nil)
+    if party_name.nil?
+      voted_party_name.present?
+    else
+      voted_party_name == party_name.slug
+    end
+  end
+
+  def party_name_mark_upvoted(party_name)
+    cookies.permanent.signed[:berry_berry] = party_name.slug
   end
 
   private
@@ -24,5 +36,9 @@ module ApplicationHelper
       voted_bills = JSON.parse(cookie_voted_bills)
     end
     voted_bills
+  end
+
+  def voted_party_name
+    cookies.permanent.signed[:berry_berry].presence
   end
 end
