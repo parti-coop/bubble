@@ -1,0 +1,8 @@
+%hr
+%a{id: 'post-form-anchor'}
+= render 'posts/form'
+
+.post-page
+  = render 'posts/post_page'
+  - unless @posts.last_page?
+    = link_to '더보기', posts_path

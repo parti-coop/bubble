@@ -22,6 +22,7 @@ gem "mini_magick"
 gem 'file_validators', '~> 2.0', '>= 2.0.2'
 
 # auth
+gem 'cancancan', '~> 1.10'
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'omniauth', '~> 1.3', '>= 1.3.1'
 gem 'omniauth-facebook', '~> 3.0'

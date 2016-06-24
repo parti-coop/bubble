@@ -157,26 +157,25 @@
 
       %hr
       #comments-form
-        = form_for Comment.new do |f|
-          .comment-form
-            = form_for Comment.new do |f|
-              = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
-              .row
-                .col-xs-6
-                  .form-group
-                    = f.text_field :name, class: 'form-control', placeholder: '이름' ,data: {'rule-required': true}
-                .col-xs-6
-                  .form-group
-                    = f.email_field :email, class: 'form-control' , placeholder: '이메일(선택사항)'
-              .form-group
-                = f.text_area :body, class: 'form-control', placeholder: '내용' , data: {'rule-required': true}
-              .row
-                .col-sm-8
-                  .form-group.recaptcha
-                    .help-block 스팸 방지를 위해 사람인지 확인합니다. 아래 체크 박스를 클릭해 주세요.
-                    = recaptcha_tags hl: :ko, size: '100px'
-                .col-sm-4
-                  = f.submit '의견 남기기', class: 'btn btn-primary btn-lg btn-block', data: { disable_with: "게시 중..." }
+        .comment-form
+          = form_for Comment.new do |f|
+            = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
+            .row
+              .col-xs-6
+                .form-group
+                  = f.text_field :name, class: 'form-control', placeholder: '이름' ,data: {'rule-required': true}
+              .col-xs-6
+                .form-group
+                  = f.email_field :email, class: 'form-control' , placeholder: '이메일(선택사항)'
+            .form-group
+              = f.text_area :body, class: 'form-control', placeholder: '내용' , data: {'rule-required': true}
+            .row
+              .col-sm-8
+                .form-group.recaptcha
+                  .help-block 스팸 방지를 위해 사람인지 확인합니다. 아래 체크 박스를 클릭해 주세요.
+                  = recaptcha_tags hl: :ko, size: '100px'
+              .col-sm-4
+                = f.submit '의견 남기기', class: 'btn btn-primary btn-lg btn-block', data: { disable_with: "게시 중..." }
 
       .comments
         .comments-page
