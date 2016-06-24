@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable,
          :omniauthable, :omniauth_providers => [:facebook, :twitter, :naver]
 
+  acts_as_sequenced
+
   # mount
   mount_uploader :image, UserImageUploader
   mount_uploader :card, UserCardUploader
