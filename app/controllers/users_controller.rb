@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def card
     @user = User.find(params[:id])
+    image = user_card_url(@user, format: :png)
+    prepare_meta_tags url: root_url, image: image
+
     respond_to do |format|
       format.png do
         if params[:no_cached]
@@ -17,7 +20,10 @@ class UsersController < ApplicationController
           send_file(@user.card.path, :type => "image/png", :disposition => 'inline')
         end
       end
-      format.html { render(layout: nil) }
+      format.html {
+        redirect_to(root_path) and return unless browser.bot?
+        render(layout: nil)
+      }
     end
   end
 
@@ -26,4 +32,10 @@ class UsersController < ApplicationController
   def render_card
     IMGKit.new(render_to_string(layout: nil), width: 1200, height: 630, quality: 10).to_png
   end
+end
+
+
+def destroy
+  @note.try(:destroy)
+  redirect_to issue_notes_path(@note.issue)
 end

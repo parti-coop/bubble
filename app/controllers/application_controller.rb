@@ -24,14 +24,14 @@ class ApplicationController < ActionController::Base
     render file: "#{Rails.root}/public/404.html", layout: false, status: 404
   end
 
-  def prepare_meta_tags
-    set_meta_tags build_meta_options
+  def prepare_meta_tags(options={})
+    set_meta_tags build_meta_options(options)
   end
 
-  def build_meta_options
+  def build_meta_options(options)
     site_name = "시민 입법 프로젝트"
     title = "시민 입법 프로젝트 '바글시민 와글입법'"
-    image = view_context.image_url('seo.png')
+    image = options[:image] || view_context.image_url('seo.png')
     url = 'http://up.parti.xyz'
 
     description = "2016년, 시민이 올리는 시민의 법안을 만들자!"

@@ -7,6 +7,20 @@
   .well
     = current_user.name
     = image_tag user_card_path(current_user, format: :png)
-    = link_to '당원증 받기', user_card_path(current_user, format: :png)
+    = link_to '당원증 다운로드 받기', user_card_path(current_user, format: :png)
+    .share-card
+      %h4 당원증 공유한당
+      - data = {action: 'bubble-share', 'share-url': user_card_url(current_user), 'share-text': "시민 입법 프로젝트 '바글시민 와글입법' - 2016년, 시민이 올리는 시민의 법안을 만들자!" }
+      - %w(facebook twitter kakao-link kakao-story).each do |provider|
+        - data = data.merge('share-provider': provider)
+
+        - if provider == 'kakao-link'
+          - hide_kakao_link = (! browser.device.mobile?) ? ' hide' : ''
+          - data = data.merge('share-image': user_card_url(current_user, format: :png), 'share-image-width': '1200', 'share-image-height': '630')
+        %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
+          - if provider == 'kakao-story'
+            = image_tag 'icon_kas.png', class: 'icon-kas'
+          - if provider == 'kakao-link'
+            = image_tag 'icon_katalk.png', class: 'icon-katalk'
     = link_to destroy_user_session_path, method: :delete do
       로그아웃
