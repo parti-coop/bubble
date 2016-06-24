@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   # mount
   mount_uploader :image, UserImageUploader
+  mount_uploader :card, UserCardUploader
 
   def self.parse_omniauth(data)
     {provider: data['provider'], uid: data['uid'], email: data['info']['email'], image: data['info']['image'], name: data['info']['name']}
@@ -21,5 +22,9 @@ class User < ActiveRecord::Base
     end
     user.remember_me = parsed_data[:remember_me]
     user
+  end
+
+  def admin?
+    %w(account@parti.xyz rest515@parti.xyz berry@parti.xyz dalikim@parti.xyz lulu@parti.xyz qus@parti.xyz).include? email
   end
 end

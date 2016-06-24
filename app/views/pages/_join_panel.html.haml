@@ -6,5 +6,7 @@
 - else
   .well
     = current_user.name
+    = image_tag user_card_path(current_user, format: :png)
+    = link_to '당원증 받기', user_card_path(current_user, format: :png)
     = link_to destroy_user_session_path, method: :delete do
       로그아웃

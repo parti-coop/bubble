@@ -1,0 +1,12 @@
+!!!
+%html{:lang => I18n.locale}
+  %head
+    %meta{:charset => "utf-8"}
+    = stylesheet_link_tag asset_data_base64('application.css')
+    %link{href: "http://fonts.googleapis.com/earlyaccess/notosanskr.css", rel: "stylesheet"}
+  %body(style='padding: 0;')
+    %section.user-card{ style: "background-image: url(#{asset_data_base64('user-card-background.png')});" }
+      .info
+        #{@user.name}
+      .image
+        = image_tag image_base64(@user.image.file.path)

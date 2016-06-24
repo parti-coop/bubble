@@ -5,6 +5,25 @@ class ApplicationController < ActionController::Base
   before_action :prepare_meta_tags, if: "request.get?"
   after_filter :prepare_unobtrusive_flash
 
+  if Rails.env.production? or Rails.env.staging?
+    rescue_from ActiveRecord::RecordNotFound do |exception|
+      render_404
+    end
+    rescue_from CanCan::AccessDenied do |exception|
+      self.response_body = nil
+      redirect_to root_url, :alert => exception.message
+    end
+    rescue_from ActionController::InvalidCrossOriginRequest, ActionController::InvalidAuthenticityToken do |exception|
+      self.response_body = nil
+      redirect_to root_url, :alert => I18n.t('errors.messages.invalid_auth_token')
+    end
+  end
+
+  def render_404
+    self.response_body = nil
+    render file: "#{Rails.root}/public/404.html", layout: false, status: 404
+  end
+
   def prepare_meta_tags
     set_meta_tags build_meta_options
   end

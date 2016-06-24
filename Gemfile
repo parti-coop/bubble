@@ -43,6 +43,12 @@ gem 'browser', '~> 2.0', '>= 2.0.2'
 gem 'meta-tags', '~> 2.1.0'
 gem 'unobtrusive_flash', '~> 3.1'
 
+# image
+gem 'imgkit', '~> 1.6', '>= 1.6.1'
+group :development, :test do
+  gem 'wkhtmltoimage-binary', '~> 0.12.2'
+end
+
 # monitor
 gem 'newrelic_rpm'
 gem 'ey_config'
