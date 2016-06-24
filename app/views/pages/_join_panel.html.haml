@@ -1,0 +1,10 @@
+- unless user_signed_in?
+  .well
+    = link_to '페이스북 아이디로 입당', user_omniauth_authorize_path(provider: :facebook)
+    = link_to '트위터 아이디로 입당', user_omniauth_authorize_path(provider: :twitter)
+    = link_to '네이버 아이디로 입당', user_omniauth_authorize_path(provider: :naver)
+- else
+  .well
+    = current_user.name
+    = link_to destroy_user_session_path, method: :delete do
+      로그아웃

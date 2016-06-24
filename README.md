@@ -11,6 +11,19 @@ production:
   RECAPTCHA_PRIVATE_KEY: 'yyy'
 ```
 
+페이스북, 트위터, 네이버를 연결합니다. 각 키는 /data/bubble/shared/config/env.yml에 등록합니다. 트위터는 사용자 email을 얻어오기 위해 twitter에 따로 요청해야합니다.
+
+```
+production:
+  ...
+  FACEBOOK_APP_ID: xx
+  FACEBOOK_APP_SECRET: xx
+  TWITTER_APP_ID: xx
+  TWITTER_APP_SECRET: xx
+  NAVER_KEY: xx
+  NAVER_SECRET: xx
+```
+
 ## 로컬 개발 환경 구축 방법
 
 기본적인 Rail 개발 환경에 rbenv를 이용합니다.

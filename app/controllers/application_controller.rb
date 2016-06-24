@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :prepare_meta_tags, if: "request.get?"
+  after_filter :prepare_unobtrusive_flash
 
   def prepare_meta_tags
     set_meta_tags build_meta_options

@@ -5,6 +5,11 @@
 //= require kakao
 //= require jssocials
 //= require lightslider
+//= require unobtrusive_flash
+//= require unobtrusive_flash_bootstrap
+
+
+UnobtrusiveFlash.flashOptions['timeout'] = 2000;
 
 $.is_blank = function (obj) {
   if (!obj || $.trim(obj) === "") return true;

@@ -12,11 +12,18 @@ ko:
   activerecord:
     models:
       comment: 댓글
+      user: 당원
     attributes:
       comment:
         email: 이메일
         name: 이름
         body: 내용
+      user:
+        uid: 아이디
+        email: 이메일
+        name: 이름
+        image: 프로필 사진
+        provider: 서비스
     errors:
       messages:
         record_invalid: "오류가 있습니다: %{errors}"

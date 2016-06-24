@@ -1,18 +1,19 @@
 .party-names
-  - if party_name_upvoted?
-    .options.options--upvoted
-    - PartyName.all.each do |option|
-      .option{id: "option-#{option.slug}", class: ('option--upvoted' if party_name_upvoted?(option))}
-        = option.name
-        = option.upvotes_count
-    .upvoted_total_count
-      총
-      %span.upvoted_total_count__count= PartyName.all.sum(:upvotes_count)
-      표
-  - else
-    .options.options--not-yet
+  .well
+    - if party_name_upvoted?
+      .options.options--upvoted
       - PartyName.all.each do |option|
-        = link_to upvote_party_name_path(slug: option.slug), method: :post, remote: true do
-          .option{id: "option-#{option.slug}"}
-            = option.name
+        .option{id: "option-#{option.slug}", class: ('option--upvoted' if party_name_upvoted?(option))}
+          = option.name
+          = option.upvotes_count
+      .upvoted_total_count
+        총
+        %span.upvoted_total_count__count= PartyName.all.sum(:upvotes_count)
+        표
+    - else
+      .options.options--not-yet
+        - PartyName.all.each do |option|
+          = link_to upvote_party_name_path(slug: option.slug), method: :post, remote: true do
+            .option{id: "option-#{option.slug}"}
+              = option.name
 

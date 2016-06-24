@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'pages#home'
+
   get 'step1', to: 'pages#step1'
 
   post 'bills/:slug/upvote', to: 'bills#upvote', as: :upvote_bill
