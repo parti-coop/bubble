@@ -19,12 +19,7 @@
         #{number_to_percentage(bill.upvotes_percentage, precision: 1, strip_insignificant_zeros: true)}
       %span 달성
   .vote-button
-    = link_to upvote_bill_path(slug: bill.slug), method: :post, remote: true, data: { disable_with: "투표 중..." }, class: "btn btn-default #{'disabled' if bill_upvoted?(bill)}" do
-      - if bill_upvoted?(bill) or @upvoted
-        %i.fa.fa-check
-        띄웠어요
-      - else
-        띄워요
+    %button.btn.disabled 투표가 종료되었습니다
   .parti-link
     - if bill.slug == 'rent_ceiling'
       - bill_name = '전월세 상한제법'
