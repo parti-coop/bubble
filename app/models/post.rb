@@ -2,6 +2,7 @@ class Post < ActiveRecord::Base
   paginates_per 5
 
   belongs_to :user
+  has_many :comments
   scope :recent, -> { order(created_at: :desc) }
 
   def name
