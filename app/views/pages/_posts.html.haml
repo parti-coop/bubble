@@ -2,6 +2,7 @@
 %a{id: 'post-form-anchor'}
 = render 'posts/form'
 
+%a{id: 'posts-anchor'}
 .post-page
   = render 'posts/post_page'
   - unless @posts.last_page?

@@ -1,19 +1,25 @@
 .party-names
-  .well
-    - if party_name_upvoted?
-      .options.options--upvoted
+  %h3.section-title 이름 짓는 당
+  - if party_name_upvoted?
+    .options.options--upvoted
       - PartyName.all.each do |option|
-        .option{id: "option-#{option.slug}", class: ('option--upvoted' if party_name_upvoted?(option))}
-          = option.name
-          = option.upvotes_count
-      .upvoted_total_count
-        총
-        %span.upvoted_total_count__count= PartyName.all.sum(:upvotes_count)
-        표
-    - else
-      .options.options--not-yet
+        .option{class: ('option--upvoted' if party_name_upvoted?(option))}
+          .party-name-label{id: "option-#{option.slug}"}= option.name
+          .option-graph{style: "height: #{number_to_percentage(option.percentage, precision: 0)}"}
+          .option-stat
+            .option-stat-percentage
+              = number_to_percentage(option.percentage, precision: 0)
+            .option-stat-count
+              #{option.upvotes_count}표
+      .form-submit
+        = submit_tag '이미 투표했음', disabled: true, class: 'disabled'
+  - else
+    .options.options--not-yet
+      = form_tag upvote_party_name_path, remote: true do
         - PartyName.all.each do |option|
-          = link_to upvote_party_name_path(slug: option.slug), method: :post, remote: true do
-            .option{id: "option-#{option.slug}"}
-              = option.name
-
+          %label.option
+            .party-name-label{id: "option-#{option.slug}"}= option.name
+            = radio_button_tag :slug, option.slug
+            %span
+        .form-submit
+          = submit_tag '투표하기'

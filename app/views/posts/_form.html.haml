@@ -3,29 +3,22 @@
     - @post = Post.new
   = form_for @post do |f|
     = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
-    .well
-      - if user_signed_in?
-        당원 :
+    - if user_signed_in?
+      .user-info
+        당원
         = current_user.name
-      - else
-        .row
-          .col-xs-6
-            .form-group
-              = f.text_field :guest_name, class: 'form-control', placeholder: '이름' ,data: {'rule-required': true}
-          .col-xs-6
-            .form-group
-              = f.email_field :guest_email, class: 'form-control' , placeholder: '이메일(선택사항)'
-        %hr
-          %p
-            또는 이미 당원이시라면
-            = link_to '페이스북 아이디로 로그인', user_omniauth_authorize_path(provider: :facebook)
-            = link_to '트위터 아이디로 로그인', user_omniauth_authorize_path(provider: :twitter)
-            = link_to '네이버 아이디로 로그인', user_omniauth_authorize_path(provider: :naver)
-
+    - else
+      .row
+        .col-xs-6
+          .form-group
+            = f.text_field :guest_name, class: 'form-control', placeholder: '이름' ,data: {'rule-required': true}
+        .col-xs-6
+          .form-group
+            = f.email_field :guest_email, class: 'form-control' , placeholder: '이메일(선택사항)'
     .form-group
       = f.text_field :title, class: 'form-control', placeholder: '제목' , data: {'rule-required': true}
     .form-group
-      = f.text_area :body, class: 'form-control', placeholder: '내용' , data: {'rule-required': true}
+      = f.text_area :body, class: 'form-control', placeholder: '내용' , data: {'rule-required': true}, data: { action: 'parti-autoresize'}
     .row
       .col-sm-8
         - unless user_signed_in?
@@ -33,4 +26,4 @@
             .help-block 스팸 방지를 위해 사람인지 확인합니다. 아래 체크 박스를 클릭해 주세요.
             = recaptcha_tags hl: :ko, size: '100px'
       .col-sm-4
-        = f.submit '의견 남기기', class: 'btn btn-primary btn-lg btn-block', data: { disable_with: "게시 중..." }
+        = f.submit '등록', class: 'btn btn-lg btn-block btn-post-submit', data: { disable_with: "게시 중..." }

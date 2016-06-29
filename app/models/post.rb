@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  paginates_per 5
+  paginates_per 20
 
   belongs_to :user
   has_many :comments

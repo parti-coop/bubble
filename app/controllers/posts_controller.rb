@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def create
     @post.user = current_user if user_signed_in?
     @post.save if verify_recaptcha(model: @post) or user_signed_in?
-    redirect_to root_path(anchor: 'post-form-anchor')
+    redirect_to root_path(anchor: 'posts-anchor')
   end
 
   def update

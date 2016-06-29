@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @posts = Post.recent.page(1).per 3
+    @posts = Post.recent.page(params[:page])
   end
 
   def step1

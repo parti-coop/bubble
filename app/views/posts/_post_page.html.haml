@@ -1,1 +1,14 @@
-= render @posts
+%table
+  %thead
+    %tr
+      %th 순서
+      %th 제목
+      %th 이름
+  %tbody
+    = render @posts
+    - if @posts.empty?
+      %tr
+        %td.empty(colspan=3)
+          첫 번째로 의견을 남겨 보세요
+          %i !
+= paginate @posts, params: { anchor: 'post-panel-anchor' }

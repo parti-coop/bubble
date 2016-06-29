@@ -1,4 +1,4 @@
-%section#step1
+%section#project-step1
   %section#nav
     .container
       %ul.nav.nav-pills
@@ -158,15 +158,17 @@
       %hr
       #comments-form
         .comment-form
-          = form_for Comment.new do |f|
+          = form_for Post.new do |f|
             = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
             .row
               .col-xs-6
                 .form-group
-                  = f.text_field :name, class: 'form-control', placeholder: '이름' ,data: {'rule-required': true}
+                  = f.text_field :guest_name, class: 'form-control', placeholder: '이름' ,data: {'rule-required': true}
               .col-xs-6
                 .form-group
-                  = f.email_field :email, class: 'form-control' , placeholder: '이메일(선택사항)'
+                  = f.email_field :guest_email, class: 'form-control' , placeholder: '이메일(선택사항)'
+            .form-group
+              = f.text_field :title, class: 'form-control', placeholder: '제목' , data: {'rule-required': true}
             .form-group
               = f.text_area :body, class: 'form-control', placeholder: '내용' , data: {'rule-required': true}
             .row

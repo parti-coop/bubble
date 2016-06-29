@@ -1,27 +1,74 @@
-- unless user_signed_in?
-  .well
-    = link_to '페이스북 아이디로 입당', user_omniauth_authorize_path(provider: :facebook)
-    = link_to '트위터 아이디로 입당', user_omniauth_authorize_path(provider: :twitter)
-    = link_to '네이버 아이디로 입당', user_omniauth_authorize_path(provider: :naver)
-- else
-  .well
-    = current_user.name
-    #{current_user.sequential_id} 번째 가입
-    = image_tag user_card_path(current_user, format: :png)
-    = link_to '당원증 다운로드 받기', user_card_path(current_user, format: :png)
-    .share-card
-      %h4 당원증 공유한당
-      - data = {action: 'bubble-share', 'share-url': user_card_url(current_user), 'share-text': "시민 입법 프로젝트 '바글시민 와글입법' - 2016년, 시민이 올리는 시민의 법안을 만들자!" }
-      - %w(facebook twitter kakao-link kakao-story).each do |provider|
-        - data = data.merge('share-provider': provider)
+.party-join
+  %h3.section-title 가입한 당
+  %p.description
+    국회의원도
+    %span
+      %span.important> 300
+      명, 우리도 최소
+    %span
+      %span.important<> 300
+      명. 영화 ‘
+      %span.important<> 300
+      ’도 있잖아.
+    %br
+    페르시아 수십만 대군과 싸운 스파르타의 최정예 병사도 300명
+    %i !
+    %br
+    300명은 당원이 되어줬으면 해. 물론 500명, 1000명이면 더 좋겠지
+    %i !
+  %p.info
+    * 수집된 정보는 7개월 후에 삭제됩니다.
+  - unless user_signed_in?
+    .card.clearfix
+      .card-intro
+        몇번째
+        %br
+        당원인지
+        %br
+        궁금해?
+      .join-buttons
+        = link_to user_omniauth_authorize_path(provider: :facebook), class: 'btn btn-join btn-join-facebook btn-block' do
+          %i.fa.fa-facebook.fa-fw
+          %span.hidden-xs 페이스북으로
+          당원가입 / 로그인
+        = link_to user_omniauth_authorize_path(provider: :twitter), class: 'btn btn-join btn-join-twitter btn-block' do
+          %i.fa.fa-twitter.fa-fw
+          %span.hidden-xs 트위터로
+          당원가입 / 로그인
+        = link_to user_omniauth_authorize_path(provider: :naver), class: 'btn btn-join btn-join-naver btn-block' do
+          %i.fa.fa-facebook.fa-fw
+          %span.hidden-xs 네이버로
+          당원가입 / 로그인
+  - else
+    .card
+      .card-text
+        %span
+          나는
+        %span.bill-name> GMO완전표시제
+        를
+        %br
+        지지하는
+        %span
+          %span.count> #{current_user.sequential_id}
+          번째
+        %br
+        당원입니다.
+      .share-card
+        %span.help-text
+          친구에게 공유해
+          %span(style='white-space: nowrap')
+            보세요
+            %i !
+        - data = {action: 'bubble-share', 'share-url': user_card_url(current_user), 'share-text': "시민 입법 프로젝트 '바글시민 와글입법' - 2016년, 시민이 올리는 시민의 법안을 만들자!" }
+        %ul.list-inline
+          - %w(facebook twitter kakao-link kakao-story).each do |provider|
+            - data = data.merge('share-provider': provider)
 
-        - if provider == 'kakao-link'
-          - hide_kakao_link = (! browser.device.mobile?) ? ' hide' : ''
-          - data = data.merge('share-image': user_card_url(current_user, format: :png), 'share-image-width': '1200', 'share-image-height': '630')
-        %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
-          - if provider == 'kakao-story'
-            = image_tag 'icon_kas.png', class: 'icon-kas'
-          - if provider == 'kakao-link'
-            = image_tag 'icon_katalk.png', class: 'icon-katalk'
-    = link_to destroy_user_session_path, method: :delete do
-      로그아웃
+            - if provider == 'kakao-link'
+              - hide_kakao_link = (! browser.device.mobile?) ? ' hide' : ''
+              - data = data.merge('share-image': user_card_url(current_user, format: :png), 'share-image-width': '1200', 'share-image-height': '630')
+            %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
+              - if provider == 'kakao-story'
+                = image_tag 'icon_kas.png', class: 'icon-kas'
+              - if provider == 'kakao-link'
+                = image_tag 'icon_katalk.png', class: 'icon-katalk'
