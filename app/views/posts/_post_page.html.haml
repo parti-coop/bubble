@@ -11,4 +11,4 @@
         %td.empty(colspan=3)
           첫 번째로 의견을 남겨 보세요
           %i !
-= paginate @posts, params: { anchor: 'post-panel-anchor' }
+= paginate @posts, params: { board_slug: board_slug, anchor: 'post-panel-anchor' }

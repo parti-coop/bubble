@@ -160,6 +160,7 @@
         .comment-form
           = form_for Post.new do |f|
             = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
+            = f.hidden_field :board_slug, value: Post::BOARD_SLUG_BILL_CHOICE
             .row
               .col-xs-6
                 .form-group
@@ -181,8 +182,9 @@
 
       .comments
         .comments-page
-          = render 'comments'
-
+      %a{id: 'posts-anchor'}
+      .post-page
+        = render 'posts/post_page', board_slug: Post::BOARD_SLUG_BILL_CHOICE
   %section#share
     .container
       %h2

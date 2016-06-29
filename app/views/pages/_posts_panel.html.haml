@@ -32,7 +32,7 @@
 
   %a{id: 'posts-anchor'}
   .post-page
-    = render 'posts/post_page'
+    = render 'posts/post_page', board_slug: Post::BOARD_SLUG_PARTY_BUILDING
 
   .post-search
     %form#post-search-form

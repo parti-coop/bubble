@@ -465,6 +465,85 @@ section#project-step1 {
         margin-bottom: 10px;
       }
     }
+
+    .post-page {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 40px;
+        @media (max-width: 767px) {
+          font-size: $font-size-smaller;
+          line-height: $line-height-smaller;
+        }
+        table {
+          width: 100%;
+          thead tr th {
+            height: 46px;
+            @media (max-width: 767px) {
+              height: 23px;
+            }
+            text-align: center;
+            background-color: $brand-primary;
+            color: #fff;
+          }
+          tbody {
+            tr {
+              cursor: pointer;
+              height: 46px;
+              @media (max-width: 767px) {
+                height: 23px;
+              }
+            }
+            .post-id,
+            .post-name {
+              text-align: center;
+            }
+            .post-id {
+              width: 15%
+            }
+            .post-title {
+              padding: 0 10px;
+              width: 65%;
+            }
+            & > tr > td {
+              border: 1px solid #eee;
+              &.empty {
+                text-align: center;
+                height: 30px;
+                cursor: initial;
+              }
+            }
+            & > tr:hover {
+              background-color: $brand-primary-light;
+              a {
+                color: $brand-primary;
+              }
+            }
+          }
+          a {
+            color: #000;
+          }
+        }
+
+        .pagination-wrapper {
+          text-align: center;
+          .pagination  {
+            li > a {
+              border-radius: 4px;
+              color: #000;
+            }
+            li {
+              padding-right: 5px;
+              padding-left: 5px;
+              &.next,
+              &.prev {
+                a {
+                  float: initial;
+                }
+              }
+            }
+          }
+        }
+      }
   }
 
   section#footer {

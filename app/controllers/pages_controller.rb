@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
   def home
-    @posts = Post.recent.page(params[:page])
+    @posts = Post.recent.in_party_building_board.page(params[:page])
   end
 
   def step1
-    @comments = Comment.all.page(params[:page])
+    @posts = Post.recent.in_bill_choice_board.page(params[:page])
   end
 end

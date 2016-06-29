@@ -3,6 +3,7 @@
     - @post = Post.new
   = form_for @post do |f|
     = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
+    = f.hidden_field :board_slug, value: Post::BOARD_SLUG_PARTY_BUILDING
     - if user_signed_in?
       .user-info
         당원
