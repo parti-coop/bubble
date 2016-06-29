@@ -1,5 +1,7 @@
 .post-form
-  = form_for Post.new do |f|
+  - if @post.nil?
+    - @post = Post.new
+  = form_for @post do |f|
     = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
     .well
       - if user_signed_in?

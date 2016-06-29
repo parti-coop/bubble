@@ -3,3 +3,7 @@
     = post.title
     = date_f post.created_at
   = post.name
+  - if can? :update, post
+    = link_to '수정', [:edit, post]
+  - if can? :destroy, post
+    = link_to '삭제', post, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' }

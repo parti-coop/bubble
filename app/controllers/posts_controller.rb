@@ -11,6 +11,20 @@ class PostsController < ApplicationController
     redirect_to root_path(anchor: 'post-form-anchor')
   end
 
+  def update
+    @post.assign_attributes(post_params)
+    if @post.save
+      redirect_to root_path(anchor: 'post-list-anchor')
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @post.try(:destroy)
+    redirect_to root_path(anchor: 'post-list-anchor')
+  end
+
   private
 
   def post_params
