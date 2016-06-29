@@ -66,7 +66,8 @@ $(function(){
   $.validator.addMethod("recaptcha", function(value, element) {
     return grecaptcha.getResponse().length > 0;
   }, '');
-  $('#new_comment').validate({
+
+  $('form#new_comment, form.edit_comment').validate({
     ignore: ".ignore",
     rules: {
       "hiddenRecaptcha": {
@@ -87,7 +88,7 @@ $(function(){
     }
   });
 
-  $('#new_post').validate({
+  $('form#new_post').validate({
     ignore: ".ignore",
     rules: {
       "hiddenRecaptcha": {

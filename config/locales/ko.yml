@@ -11,12 +11,17 @@ ko:
       blank: 값을 입력해 주세요
   activerecord:
     models:
+      post: 바라는점
       comment: 댓글
       user: 당원
     attributes:
       comment:
-        email: 이메일
-        name: 이름
+        guest_email: 이메일
+        guest_name: 이름
+        body: 내용
+      post:
+        guest_name: 이메일
+        guest_email: 이름
         body: 내용
       user:
         uid: 아이디

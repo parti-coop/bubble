@@ -1,5 +1,6 @@
 %section#post
   .container
+
     = @post.title
     = @post.body
     = date_f @post.created_at
@@ -9,31 +10,7 @@
         = link_to '페이스북 아이디로 로그인', user_omniauth_authorize_path(provider: :facebook)
         = link_to '트위터 아이디로 로그인', user_omniauth_authorize_path(provider: :twitter)
         = link_to '네이버 아이디로 로그인', user_omniauth_authorize_path(provider: :naver)
-    .comment-form
-      %h4 댓글
-      = form_for Comment.new do |f|
-        = f.hidden_field :post_id, value: @post.id
-        - if user_signed_in?
-          .well
-            = current_user.name
-        - else
-          .form-group
-            = f.label :guest_name
-            = f.text_field :guest_name, class: 'form-control'
-          .form-group
-            = f.label :guest_email
-            = f.email_field :guest_email, class: 'form-control'
-        .form-group
-          = f.label :body
-          = f.text_area :body, class: 'form-control'
-        .row
-          .col-sm-8
-            - unless user_signed_in?
-              .form-group.recaptcha
-                .help-block 스팸 방지를 위해 사람인지 확인합니다. 아래 체크 박스를 클릭해 주세요.
-                = recaptcha_tags hl: :ko, size: '100px'
-          .col-sm-4
-            = f.submit '의견 남기기', class: 'btn btn-primary btn-lg btn-block', data: { disable_with: "게시 중..." }
+    = render 'comments/form', post: @post
     .comment-list
       %h4
         댓글목록
@@ -42,3 +19,8 @@
           = comment.name
           = comment.body
           = comment.created_at
+          - if can? :update, comment
+            = link_to '수정', [:edit, comment]
+          - if can? :destroy, comment
+            = link_to '삭제', comment, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' }
+

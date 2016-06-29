@@ -10,3 +10,6 @@
       %li
         %a{:href => "#comments"}
           ?
+    - if user_signed_in?
+      .logout
+        = link_to '로그아웃', destroy_user_session_path, method: :delete
