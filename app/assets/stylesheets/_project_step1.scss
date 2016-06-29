@@ -494,15 +494,22 @@ section#project-step1 {
               }
             }
             .post-id,
-            .post-name {
+            .post-name,
+            .post-created-at {
               text-align: center;
             }
             .post-id {
+              width: 10%
+            }
+            .post-created-at {
               width: 15%
+            }
+            .post-name {
+              width: 20%
             }
             .post-title {
               padding: 0 10px;
-              width: 65%;
+              width: 55%;
             }
             & > tr > td {
               border: 1px solid #eee;
