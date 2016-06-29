@@ -1,7 +1,9 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+
   def create
-    @comment = Comment.new(comment_params)
-    @comment.save if verify_recaptcha(model: @comment)
+    @comment.user = current_user if user_signed_in?
+    @comment.save if verify_recaptcha(model: @comment) or user_signed_in?
     redirect_to @comment.post
   end
 

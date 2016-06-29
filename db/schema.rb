@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160628080105) do
+ActiveRecord::Schema.define(version: 20160629012538) do
 
   create_table "bills", force: :cascade do |t|
     t.string   "slug",          limit: 255,             null: false
@@ -21,15 +21,17 @@ ActiveRecord::Schema.define(version: 20160628080105) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string   "name",       limit: 255,   null: false
-    t.string   "email",      limit: 255
-    t.text     "body",       limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.integer  "post_id",    limit: 4,     null: false
+    t.string   "guest_name",  limit: 255
+    t.string   "guest_email", limit: 255
+    t.text     "body",        limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "post_id",     limit: 4,     null: false
+    t.integer  "user_id",     limit: 4
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "party_names", force: :cascade do |t|
     t.string   "slug",          limit: 255,             null: false
