@@ -28,6 +28,7 @@ section#project-step2 {
       left: 0;
       margin-right: auto;
       margin-left: auto;
+      zoom: 0.5;
     }
   }
 
@@ -711,31 +712,105 @@ section#project-step2 {
       }
     }
   }
-}
 
-section#post-detail {
-  margin-top: 40px;
-
-  .intro {
-    text-align: center;
-    padding-bottom: 40px;
-
-    .intro-title {
-      p {
-        font-size: 30px;
-        font-weight: 900;
+  &.project-step2-post {
+    section#posts {
+      .posts-panel {
+        padding-bottom: 65px;
+        .post-detail {
+          .post-meta-wrapper {
+            background-color: $brand-base-color;
+            border: 1px solid $brand-green-color;
+            border-left: none;
+            border-right: none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 5%;
+            padding-right: 5%;
+            .post-meta-label {
+              color: $brand-green-color;
+            }
+            .post-meta-value {
+              color: #5d5d5d;
+            }
+          }
+          .post-meta-wrapper:first-child {
+            border-bottom: none;
+          }
+          .post-body {
+            padding: 35px 5%;
+            color: #5d5d5d;
+            font-size: $font-size-base;
+            border-bottom: 1px solid #d2d2d2;
+          }
+        }
+        .comments-panel {
+          .comment-form {
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 20px;
+            background-color: #f8f8f8;
+            padding: 15px;
+            padding-bottom: 0;
+            border: 1px solid #eeeeee;
+            .user-info {
+              height: 36px;
+              text-align: center;
+              color: gray;
+              @media (max-width: 767px) {
+                font-size: $font-size-small;
+                line-height: $line-height-small;
+              }
+            }
+            .btn-comment-submit {
+              background-color: $brand-lime-color;
+              color: #fff;
+              padding-top: 15px;
+              padding-bottom: 15px;
+              margin-bottom: 20px;
+              @media (max-width: 767px) {
+                font-size: $font-size-small;
+                line-height: $line-height-small;
+                padding-top: 5px;
+                padding-bottom: 5px;
+              }
+            }
+          }
+          .comments {
+            padding-top: 20px;
+            padding-left: 5%;
+            padding-right: 5%;
+            .comment {
+              border-top: 1px solid #d5d5d5;
+              border-bottom: 1px solid #d5d5d5;
+              padding-top: 13px;
+              padding-bottom: 13px;
+              .comment-name {
+                font-size: 14px;
+                font-weight: bold;
+                display: inline-block;
+              }
+              .comment-created-at {
+                display: inline-block;
+                color: #777;
+                font-size: 12px;
+                margin-left: 5px;
+              }
+              .comment-body {
+                padding-top: 8px;
+              }
+            }
+          }
+        }
+        .navigation-button {
+          text-align: center;
+          margin-top: 25px;
+          .btn {
+            background-color: #eaf4eb;
+          }
+        }
       }
     }
   }
-
-  .content {
-    .content-body {
-      padding-top: 12px;
-      padding-bottom: 20px;
-    }
-  }
-
-  .comment-form {
-    padding-top: 20px;
-  }
 }
+

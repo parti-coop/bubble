@@ -1,20 +1,5 @@
-%section#project-step2
-  %section#header
-    .container.container-xs-space
-      .top-menu
-        %span
-          = link_to '홈', root_path
-        %span.pull-right
-          - if user_signed_in?
-            = link_to '로그아웃', destroy_user_session_path, method: :delete
-          - else
-            = link_to '당원가입 / 로그인', '#anchor-join'
-  %section#steps
-    .container
-      .project-steps
-        = image_tag 'step2/header-menu.png', usemap: "#menu-map"
-      %map#menu-map(name="menu-map")
-        %area(alt="법안 정하기" title="법안 정하기" href="#{step1_path}" shape="rect" coords="34,50,129,173")
+%section#project-step2.project-step2-home
+  = render 'pages/step2_header'
 
   %section#intro
     .container
@@ -111,20 +96,4 @@
         - else
           = image_tag 'step2/process.png'
 
-  %section#banners
-    .container
-      .banner-panel
-        %a(href="http://h21.hani.co.kr/arti/SERIES/236/" target="_blank")
-          = image_tag 'step2/article-banner.png'
-        %a(href="http://parti.xyz/p/gmo_mark" target="_blank")
-          = image_tag 'step2/parti-banner.png'
-  %section#footer
-    .container
-      .footer-logos
-        %ul.list-inline.logos
-          %li
-            %a(href='http://h21.hani.co.kr/' target='_blank')
-              = image_tag 'step2/footer-hani-logo.png'
-          %li
-            %a(href='http://parti.xyz/' target='_blank')
-              = image_tag 'step2/footer-parti-logo.png'
+  = render 'pages/step2_footer'

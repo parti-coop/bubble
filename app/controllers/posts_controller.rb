@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   def update
     @post.assign_attributes(post_params)
     if @post.save
-      redirect_to root_path(anchor: 'post-list-anchor')
+      redirect_to root_path(anchor: 'posts-anchor')
     else
       render 'edit'
     end
@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.try(:destroy)
-    redirect_to root_path(anchor: 'post-list-anchor')
+    redirect_to root_path(anchor: 'posts-anchor')
   end
 
   private

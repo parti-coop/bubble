@@ -1,0 +1,33 @@
+- unless user_signed_in?
+  %p.description
+    이미 당원이라면 소셜 미디어로 쉽게 로그인 해봐!
+    = link_to root_path(anchor: 'anchor-join') do
+      %i.fa.fa-sign-in
+      당원가입 / 로그인
+
+.comment-form
+  = form_for Comment.new do |f|
+    = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
+    = f.hidden_field :post_id, value: post.id
+    - if user_signed_in?
+      .user-info
+        당원
+        = current_user.name
+    - else
+      .row
+        .col-xs-6
+          .form-group
+            = f.text_field :guest_name, class: 'form-control', placeholder: '이름' ,data: {'rule-required': true}
+        .col-xs-6
+          .form-group
+            = f.email_field :guest_email, class: 'form-control' , placeholder: '이메일(선택사항)'
+    .form-group
+      = f.text_area :body, class: 'form-control', placeholder: '내용' , data: {'rule-required': true}, data: { action: 'parti-autoresize'}
+    .row
+      .col-sm-8
+        - unless user_signed_in?
+          .form-group.recaptcha
+            .help-block 스팸 방지를 위해 사람인지 확인합니다. 아래 체크 박스를 클릭해 주세요.
+            = recaptcha_tags hl: :ko, size: '100px'
+      .col-sm-4
+        = f.submit '등록', class: 'btn btn-lg btn-block btn-comment-submit', data: { disable_with: "게시 중..." }

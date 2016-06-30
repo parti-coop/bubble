@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  paginates_per 20
+  paginates_per 10
 
   BOARD_SLUG_BILL_CHOICE = 'bill-choice'
   BOARD_SLUG_PARTY_BUILDING = 'party-building'
