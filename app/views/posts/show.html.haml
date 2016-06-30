@@ -1,30 +1,55 @@
-%section#post
+%section#post-detail
   .container
+    .intro
+      .intro-title
+        %p 적는당
+      .intro-body
+        %span
+          너의 의견을 남겨줘
+          %br
+          법안에 어떤 내용이 담겼으면 하는지.
+          %br
+          우리 당이 어떻게 활동했으면 좋겠는지 모두 다 괜찮아!
+    .content
+      .content-title
+        .row
+          .col-xs-2
+            제목
+          .col-xs-10
+            = @post.title
+      .cotent-writer
+        .row
+          .col-xs-2
+            작성자
+          .col-xs-10
+          = @post.name
+      .content-body
+        = @post.body
     - if can? :update, @post
       = link_to '수정', [:edit, @post]
     - if can? :destroy, @post
       = link_to '삭제', @post, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' }
+    = render 'comments/form', post: @post
 
-    = @post.title
-    = @post.body
-    = date_f @post.created_at
-    = @post.name
     - unless user_signed_in?
       .login-form
         = link_to '페이스북 아이디로 로그인', user_omniauth_authorize_path(provider: :facebook)
         = link_to '트위터 아이디로 로그인', user_omniauth_authorize_path(provider: :twitter)
         = link_to '네이버 아이디로 로그인', user_omniauth_authorize_path(provider: :naver)
-    = render 'comments/form', post: @post
+
     .comment-list
-      %h4
-        댓글목록
       - @post.comments.recent.each do |comment|
         .comment
-          = comment.name
-          = comment.body
-          = comment.created_at
+          .comment-writer
+            %span 이름
+            = comment.name
+            = date_f comment.created_at
+          .comment-body
+            = comment.body
           - if can? :update, comment
             = link_to '수정', [:edit, comment]
           - if can? :destroy, comment
             = link_to '삭제', comment, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' }
+    .move-to-list
+      = link_to '목록으로', root_path(anchor: 'post-list-anchor')
 

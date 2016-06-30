@@ -63,7 +63,6 @@ section#project-step2 {
 
   section#intro {
     .intro-panel-wrapper {
-      background-color: $brand-green-color;
     }
     .intro-panel {
       padding-top: 30px;
@@ -79,7 +78,8 @@ section#project-step2 {
         color: $brand-green-color;
         padding: 11px 16px;
         border-radius: 16px;
-        font-weight: 200;
+        font-size: 18px;
+        font-weight: 100;
       }
       .main-title {
         font-size: 30px;
@@ -673,6 +673,8 @@ section#project-step2 {
     }
   }
 
+
+
   section#process {
     .process-panel {
       margin-right: 5%;
@@ -697,14 +699,43 @@ section#project-step2 {
       padding-top: 30px;
       padding-bottom: 30px;
       li {
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 30px;
+        padding-right: 30px;
         @media (max-width: 767px) {
+          padding-left: 15px;
+          padding-right: 15px;
           img {
             zoom: 0.5;
           }
         }
       }
     }
+  }
+}
+
+section#post-detail {
+  margin-top: 40px;
+
+  .intro {
+    text-align: center;
+    padding-bottom: 40px;
+
+    .intro-title {
+      p {
+        font-size: 30px;
+        font-weight: 900;
+      }
+    }
+  }
+
+  .content {
+    .content-body {
+      padding-top: 12px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .comment-form {
+    padding-top: 20px;
   }
 }

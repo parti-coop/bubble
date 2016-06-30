@@ -28,14 +28,7 @@
             %strong GMO완전표시제 도입
             %span> 을 위해 뭉친
             %br
-            %strong ‘온라인 정당’
-            %span> 의 이름에 투표해줘.
-            %br
-            법안이 국회에서 통과되든 안 되면 연말까지
-            %br
-            불꽃처럼 활동하고 연기처럼 사라질
-            %strong ‘프로젝트 정당’
-            %span> 이야.
+            %span> 프로젝트 정당의 이름에 투표하자 !
           .videos
             - videos_urls = %w(https://www.youtube.com/watch?v=zdtN1zYfiG0 https://youtu.be/fh-uDxgawEU https://youtu.be/fh-uDxgawEU)
             - video_titles = ['국범근 4대 법안 소개', '프로젝트 취지 소개', '온라인 정당 만들기']
@@ -113,7 +106,11 @@
   %section#process
     .container
       .process-panel
-        = image_tag 'step2/process.png'
+        - if (browser.device.mobile?)
+          = image_tag 'step2/process_mobile.png'
+        - else
+          = image_tag 'step2/process.png'
+
   %section#banners
     .container
       .banner-panel

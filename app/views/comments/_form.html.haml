@@ -1,28 +1,38 @@
 .comment-form
-  %h4 댓글
-  - if @comment.nil?
-    - @comment = Comment.new
-  = form_for @comment do |f|
-    = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
-    = f.hidden_field :post_id, value: post.id
-    - if user_signed_in?
-      .well
-        = current_user.name
-    - else
-      .form-group
-        = f.label :guest_name
-        = f.text_field :guest_name, class: 'form-control', data: { 'rule-required': "true" }
-      .form-group
-        = f.label :guest_email
-        = f.email_field :guest_email, class: 'form-control'
-    .form-group
-      = f.label :body
-      = f.text_area :body, class: 'form-control', data: { 'rule-required': "true" }
-    .row
-      .col-sm-8
-        - unless user_signed_in?
-          .form-group.recaptcha
-            .help-block 스팸 방지를 위해 사람인지 확인합니다. 아래 체크 박스를 클릭해 주세요.
-            = recaptcha_tags hl: :ko, size: '100px'
-      .col-sm-4
-        = f.submit '의견 남기기', class: 'btn btn-primary btn-lg btn-block', data: { disable_with: "게시 중..." }
+  .row
+    - if @comment.nil?
+      - @comment = Comment.new
+    = form_for @comment do |f|
+      .col-xs-10
+        = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
+        = f.hidden_field :post_id, value: post.id
+        - if user_signed_in?
+          .row
+            .col-xs-2
+              이름
+            .col-xs-10
+              = current_user.name
+        - else
+          .row
+            .col-xs-2
+              = f.label :guest_name
+            .col-xs-10
+              = f.text_field :guest_name, class: 'form-control', data: { 'rule-required': "true" }
+          .row
+            .col-xs-2
+              = f.label :guest_email
+            .col-xs-10
+              = f.email_field :guest_email, class: 'form-control'
+        .row
+          .col-xs-2
+            = f.label :body
+          .col-xs-10
+            = f.text_area :body, class: 'form-control', data: { 'rule-required': "true" }
+        .row
+          - unless user_signed_in?
+            .form-group.recaptcha
+              .help-block 스팸 방지를 위해 사람인지 확인합니다. 아래 체크 박스를 클릭해 주세요.
+              = recaptcha_tags hl: :ko, size: '100px'
+      .col-xs-2
+        = f.submit '등록', data: { disable_with: "게시 중..." }
+
