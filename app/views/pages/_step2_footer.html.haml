@@ -1,10 +1,19 @@
-%section#banners
+%section#article-banners
   .container
-    .banner-panel
+    .banner-panel.banner-panel-article
       %a(href="http://h21.hani.co.kr/arti/SERIES/236/" target="_blank")
-        = image_tag 'step2/article-banner.png'
+        - if browser.device.mobile?
+          = image_tag 'step2/article-banner-mobile.png'
+        - else
+          = image_tag 'step2/article-banner.png'
+%section#parti-banners
+  .container
+    .banner-panel.banner-panel-parti
       %a(href="http://parti.xyz/p/gmo_mark" target="_blank")
-        = image_tag 'step2/parti-banner.png'
+        - if browser.device.mobile?
+          = image_tag 'step2/parti-banner-mobile.png'
+        - else
+          = image_tag 'step2/parti-banner.png'
 %section#footer
   .container
     .footer-logos

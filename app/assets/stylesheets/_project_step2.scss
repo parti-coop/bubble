@@ -48,12 +48,16 @@ section#project-step2 {
       margin-bottom: 18px;
       a {
         font-size: $font-size-base;
-        color: $menu-text-color;
+        color: $brand-green-color;
       }
     }
   }
 
   section#steps {
+    background-image :asset_url('step2/top-background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     .project-steps {
       img {
         width: 100%;
@@ -79,8 +83,12 @@ section#project-step2 {
         color: $brand-green-color;
         padding: 11px 16px;
         border-radius: 16px;
-        font-size: 18px;
+        font-size: $font-size-large;
         font-weight: 100;
+        @media (max-width: 767px) {
+          font-size: $font-size-small;
+          padding: 5px 8px;
+        }
       }
       .main-title {
         font-size: 30px;
@@ -90,8 +98,19 @@ section#project-step2 {
           font-size: 20px;
         }
       }
+      @media (max-width: 767px) {
+        img.key-visaul-300 {
+          zoom: 0.6;
+        }
+      }
       .subtitle {
+        font-size: $font-size-large;
         color: #217b72;
+        padding-left: 5%;
+        padding-right: 5%;
+        @media (max-width: 767px) {
+          font-size: $font-size-base
+        }
       }
     }
     $video-border: 3px solid $brand-red-color;
@@ -131,6 +150,7 @@ section#project-step2 {
         padding-left: 5%;
         padding-right: 5%;
         .video-thumbnail {
+          cursor: pointer;
           display: inline-block;
           width: 23%;
           .img-thumbnail {
@@ -143,7 +163,7 @@ section#project-step2 {
           }
           .video-title {
             margin-top: 20px;
-            color: #fff;
+            color: $brand-green-color;
             word-break: keep-all;
             @media (max-width: 767px) {
               font-size: $font-size-base;
@@ -164,9 +184,8 @@ section#project-step2 {
   }
 
   section#naming {
+    background-color: $brand-green-color;
     .party-names {
-      background-color: $brand-green-color;
-      margin-top: 3px;
       .options {
         text-align: center;
         padding-top: 15px;
@@ -191,8 +210,13 @@ section#project-step2 {
           .party-name-label {
             font-size: $font-size-h3;
             color: #fff;
-            margin-top: 20px;
+            top: 15px;
             font-weight: 200;
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 1;
+            word-break: keep-all;
             @media (max-width: 767px) {
               font-size: $font-size-base;
             }
@@ -234,7 +258,7 @@ section#project-step2 {
           }
           .option-stat {
             position: absolute;
-            top: 80px;
+            top: 90px;
             right: 0;
             left: 0;
             margin-right: auto;
@@ -252,9 +276,9 @@ section#project-step2 {
           padding-top: 40px;
           padding-bottom: 40px;
           background-image: asset_url('step2/naming-bar.png');
-          background-repeat: no-repeat;
+          background-repeat: repeat-x;
           background-position: center;
-          ackground-size: contain;
+          background-size: contain;
           [type="submit"] {
             -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.1);
             -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.1);
@@ -482,8 +506,8 @@ section#project-step2 {
   }
 
   section#posts {
+    background-color: #fff;
     .posts-panel {
-      background-color: #fff;
       p.description {
         text-align: center;
         color: $brand-lime-color;
@@ -527,6 +551,14 @@ section#project-step2 {
             }
             &-naver {
               background-color: $brand-lime-color;
+            }
+            @media (max-width: 767px) {
+              font-size: $font-size-base;
+              padding-top: 5px;
+              padding-bottom: 5px;
+              i {
+                font-size: $font-size-base;
+              }
             }
           }
         }
@@ -686,12 +718,21 @@ section#project-step2 {
     }
   }
 
-  section#banners {
+  section#article-banners,
+  section#parti-banners {
     .banner-panel {
       img {
         width: 100%
       }
     }
+  }
+
+  section#article-banners {
+    background-color: #ec6941;
+  }
+
+  section#parti-banners {
+    background-color: $brand-green-color;
   }
 
   section#footer {
@@ -702,11 +743,14 @@ section#project-step2 {
       li {
         padding-left: 30px;
         padding-right: 30px;
+        img {
+          zoom: 0.5;
+        }
         @media (max-width: 767px) {
           padding-left: 15px;
           padding-right: 15px;
           img {
-            zoom: 0.5;
+            zoom: 0.4;
           }
         }
       }

@@ -7,13 +7,20 @@
         .intro-panel
           .badge 한겨레21 X 빠띠
           %h1.main-title 바글시민 와글입법 두번째 프로젝트
-          = image_tag 'step2/300.png'
+          = image_tag 'step2/300.png', class: 'key-visaul-300'
           %p.subtitle
             오로지
             %strong GMO완전표시제 도입
             %span> 을 위해 뭉친
             %br
-            %span> 프로젝트 정당의 이름에 투표하자 !
+            %strong ‘온라인 정당’
+            %span> 의 이름에 투표해줘.
+            %br
+            법안이 국회에서 통과되든 안 되면 연말까지
+            %br
+            불꽃처럼 활동하고 연기처럼 사라질
+            %strong ‘프로젝트 정당’
+            %span> 이야.
           .videos
             - videos_urls = %w(https://www.youtube.com/watch?v=zdtN1zYfiG0 https://youtu.be/fh-uDxgawEU https://youtu.be/fh-uDxgawEU)
             - video_titles = ['국범근 4대 법안 소개', '프로젝트 취지 소개', '온라인 정당 만들기']
@@ -48,22 +55,22 @@
         .notice-head
           당원
           %br
-          해택
+          혜택
         .notice-body
           %p
             온라인 프로젝트 정당의 당원만이 누릴 수 있는 혜택도 있어
-            %br
+            %br.hidden-xs
             일단 바글시민 와글입법 프로젝트의 진행상황을
             %br
             %span.important 수시로 알려주는 소식지를 받아볼 수 있어.
 
           %p
             또 &lt;한겨레21&gt; 기자와 함께
-            %br
+            %br.hidden-xs
             %span.important 국회 상임위원회 회의나 공청회 등에 취재를 갈 수도 있어.
-            %br
+            %br.hidden-xs
             국회가 시민법안을 어떻게 다루는지
-            %br
+            %br.hidden-xs
             생생하게 목격할 수 있는 기회지.
 
           %p

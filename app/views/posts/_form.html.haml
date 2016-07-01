@@ -12,15 +12,18 @@
     .btn-login-wrapper
       = link_to user_omniauth_authorize_path(provider: :facebook), class: 'btn btn-default btn-login btn-login-facebook' do
         %i.fa.fa-facebook
-        페이스북 로그인
+        %span.hidden-xs 페이스북
+        로그인
     .btn-login-wrapper.text-center
       = link_to user_omniauth_authorize_path(provider: :twitter), class: 'btn btn-default btn-login btn-login-twitter' do
         %i.fa.fa-twitter
-        트위터 로그인
+        %span.hidden-xs 트위터
+        로그인
     .btn-login-wrapper.text-right
       = link_to user_omniauth_authorize_path(provider: :naver), class: 'btn btn-default btn-login btn-login-naver' do
         %i.fa.fa-twitter
-        네이버 로그인
+        %span.hidden-xs 네이버
+        로그인
 
   %p.description
     이미 당원이라면 소셜 미디어로 쉽게 로그인
