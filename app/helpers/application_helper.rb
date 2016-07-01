@@ -73,4 +73,14 @@ module ApplicationHelper
       return content, content_type
     end
   end
+
+  def videos_urls
+    %w(https://www.youtube.com/watch?v=zdtN1zYfiG0 https://youtu.be/fh-uDxgawEU https://youtu.be/fh-uDxgawEU)
+  end
+
+  def video_titles
+    ['국범근 4대 법안 소개', '프로젝트 취지 소개', '온라인 정당 만들기']
+  end
+
+
 end

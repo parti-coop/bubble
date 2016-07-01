@@ -30,17 +30,17 @@ class ApplicationController < ActionController::Base
 
   def build_meta_options(options)
     site_name = "시민 입법 프로젝트"
-    title = "시민 입법 프로젝트 '바글시민 와글입법'"
+    title = "시민 입법 프로젝트 '바글시민 와글입법 두 번째 프로젝트'"
     image = options[:image] || view_context.image_url('seo.png')
     url = 'http://up.parti.xyz'
 
-    description = "2016년, 시민이 올리는 시민의 법안을 만들자!"
+    description = "GMO완전표시제 도입을 위한 프로젝트 정당만들기!"
     {
       title:       title,
       reverse:     true,
       image:       image,
       description: description,
-      keywords:    "빠띠, 한겨레21, 국범근, 쥐픽쳐스, 정치, 법률, 입법, 시민, 최저임금 1만원법, 전월세, 전월세 상한제법, 데이트폭력, 데이트폭력 처벌강화법, GMO, GMO 완전표시제법",
+      keywords:    "빠띠, 한겨레21, 정치, 법률, 입법, 시민, GMO, GMO 완전표시제법, 디지털 민주주의",
       canonical:   url,
       twitter: {
         site_name: site_name,

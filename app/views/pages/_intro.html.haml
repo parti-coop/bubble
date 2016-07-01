@@ -1,0 +1,26 @@
+.intro-panel-wrapper
+  .intro-panel
+    .badge 한겨레21 X 빠띠
+    %h1.main-title 바글시민 와글입법 두번째 프로젝트
+    = image_tag 'step2/300.png', class: 'key-visaul-300'
+    %p.subtitle
+      오로지
+      %strong GMO완전표시제 도입
+      %span> 을 위해 뭉친
+      %br
+      %strong ‘온라인 정당’
+      %span> 의 이름에 투표해줘.
+      %br
+      법안이 국회에서 통과되든 안 되면 연말까지
+      %br
+      불꽃처럼 활동하고 연기처럼 사라질
+      %strong ‘프로젝트 정당’
+      %span> 이야.
+    .videos
+      %ul.list-inline.player-wrapper
+        - videos_urls.each_with_index do |video_url, index|
+          - video = VideoInfo.new(video_url)
+          %li(style="#{'display: none' unless index == (videos_urls.size - 1)}" id="up-video-#{index}")
+            .player
+              %iframe(id="video-#{index}"src="#{video.embed_url}?enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen")
+

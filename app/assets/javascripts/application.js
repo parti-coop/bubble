@@ -180,6 +180,11 @@ $(function(){
     }
   });
 
+  $('[data-action="bubble-naming-option"]').change(function() {
+    $($(this).data('sibling')).removeClass("selected")
+    $(this).closest("label").toggleClass("selected", this.checked);
+  });
+
   prepare_posts_list($('html'))
 
   autosize($('[data-action="parti-autoresize"]'));

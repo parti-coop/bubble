@@ -3,6 +3,7 @@ class Comment < ActiveRecord::Base
   belongs_to :post
   belongs_to :user
   scope :recent, -> { order(created_at: :desc) }
+  scope :earlier, -> { order(created_at: :asc) }
   validate :should_have_name
   validates :body, presence: true
 

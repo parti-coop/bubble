@@ -1,9 +1,12 @@
 class MigrateCommentsToPosts < ActiveRecord::Migration
   def up
     ActiveRecord::Base.transaction do
-      Comment.all.each do |comment|
-        Post.create(board_slug: 'bill-choice', guest_name: comment.name, guest_email: comment.email, title: comment.title, body: comment.body, created_at: comment.created_at, updated_at: comment.updated_at)
-      end
+      query = """
+         INSERT INTO posts(board_slug, guest_name, guest_email, title, body, created_at, updated_at)
+         SELECT 'bill-choice', name, email, left(body, 20), body, created_at, updated_at FROM comments
+      """
+      ActiveRecord::Base.connection.execute query
+      say query
 
       Comment.destroy_all
     end

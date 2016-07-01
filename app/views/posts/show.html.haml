@@ -1,11 +1,14 @@
 %section#project-step2.project-step2-post
-  = render 'pages/step2_header', white: true
+
+  - if @post.bill_choice_board?
+    = render 'pages/step1_header'
+  - else
+    = render 'pages/step2_header'
 
   %section#posts
     .container
       %a{id: 'post-panel-anchor'}
       .posts-panel
-        %h3.section-title 적는 당
         .post-detail
           .post-meta-wrapper.post-title-wrapper
             .row
@@ -26,11 +29,15 @@
             = simple_format(@post.body)
 
         .comments-panel
-          = render 'comments/new_form', post: @post
           .comments
-            = render @post.comments
+            = render @post.comments.earlier
+          = render 'comments/new_form', post: @post
         .navigation-button
-          = link_to root_path(anchor: 'posts-anchor'), class: 'btn btn-default' do
-            목록으로
+          - if @post.bill_choice_board?
+            = link_to step1_path(anchor: 'posts-anchor'), class: 'btn btn-default' do
+              목록으로
+          - else
+            = link_to root_path(anchor: 'posts-anchor'), class: 'btn btn-default' do
+              목록으로
 
   = render 'pages/step2_footer'

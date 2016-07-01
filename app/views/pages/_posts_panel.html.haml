@@ -9,10 +9,4 @@
   .post-page
     = render 'posts/post_page', board_slug: Post::BOARD_SLUG_PARTY_BUILDING
 
-  .post-search
-    %form#post-search-form
-      .form-group
-        %input.search-query{:type => "text"}
-        %button.btn{:type => "submit"}
-          %i.fa.fa-search
 

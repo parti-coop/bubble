@@ -19,7 +19,7 @@
         - PartyName.all.each do |option|
           %label.option
             .party-name-label{id: "option-#{option.slug}"}= option.name
-            = radio_button_tag :slug, option.slug
+            = radio_button_tag :slug, option.slug, '', data: { action: 'bubble-naming-option', sibling: '.party-names .options .option'}
             %span
         .form-submit
           = submit_tag '투표하기'

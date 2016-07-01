@@ -7,10 +7,10 @@
         - if user_signed_in?
           = link_to '로그아웃', destroy_user_session_path, method: :delete
         - else
-          = link_to '당원가입 / 로그인', '#anchor-join'
+          = link_to '당원가입 / 로그인', root_path(anchor: 'anchor-join')
 %section#steps
   .container
     .project-steps
-      = image_tag 'step2/header-menu.png', usemap: "#menu-map"
+      = image_tag 'header-menu.png', usemap: "#menu-map"
     %map#menu-map(name="menu-map")
-      %area(alt="법안 정하기" title="법안 정하기" href="#{step1_path}" shape="rect" coords="34,50,129,173")
+      %area(alt="정당 만들기" title="정당 만들기" href="#{step2_path}" shape="rect" coords="636,55,728,166")

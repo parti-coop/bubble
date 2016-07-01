@@ -1,7 +1,23 @@
 section#project-step1 {
 
+  section#header {
+    .top-menu {
+      margin-top: 20px;
+      margin-bottom: 18px;
+      padding-left: 5%;
+      padding-right: 5%;
+      a {
+        font-size: $font-size-base;
+        color: $brand-primary;
+      }
+    }
+  }
+
   section#steps {
-    padding-top: 20px;
+    background-image: asset_url('step2/top-background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     .project-steps {
       img {
         width: 100%;

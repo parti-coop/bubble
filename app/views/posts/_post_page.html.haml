@@ -9,7 +9,7 @@
     = render @posts
     - if @posts.empty?
       %tr
-        %td.empty(colspan=3)
+        %td.empty(colspan=4)
           첫 번째로 의견을 남겨 보세요
           %i !
 = paginate @posts, params: { board_slug: board_slug, anchor: 'posts-anchor' }

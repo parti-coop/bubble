@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
-  paginates_per 10
+  paginates_per 20
+  acts_as_sequenced scope: :board_slug
 
   BOARD_SLUG_BILL_CHOICE = 'bill-choice'
   BOARD_SLUG_PARTY_BUILDING = 'party-building'
@@ -16,6 +17,10 @@ class Post < ActiveRecord::Base
 
   def name
     user.try(:name) || guest_name
+  end
+
+  def bill_choice_board?
+    board_slug == Post::BOARD_SLUG_BILL_CHOICE
   end
 
   private

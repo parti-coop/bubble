@@ -1,23 +1,5 @@
 %section#project-step1
-  %section#steps
-    .container
-      .project-steps
-        = image_tag 'header-menu.png', usemap: "#menu-map"
-      %map#menu-map(name="menu-map")
-        %area(alt="정당 만들기" title="정당 만들기" href="#{step2_path}" shape="rect" coords="636,55,728,166")
-
-  %section#nav
-    .container
-      %ul.nav.nav-pills
-        %li
-          %a{:href => "#bumgun-video"}
-            영상 보기
-        %li
-          %a{:href => "#vote-banner"}
-            투표 하기
-        %li
-          %a{:href => "#comments"}
-            의견 쓰기
+  = render 'pages/step1_header'
 
   %section#intro
     .container

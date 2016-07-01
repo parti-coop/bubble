@@ -46,6 +46,8 @@ section#project-step2 {
     .top-menu {
       margin-top: 20px;
       margin-bottom: 18px;
+      padding-left: 5%;
+      padding-right: 5%;
       a {
         font-size: $font-size-base;
         color: $brand-green-color;
@@ -66,12 +68,11 @@ section#project-step2 {
     }
   }
 
+  $video-border: 3px solid $brand-red-color;
   section#intro {
-    .intro-panel-wrapper {
-    }
     .intro-panel {
       padding-top: 30px;
-      padding-bottom: 30px;
+      padding-bottom: 0;
       background-image: asset_url('step2/key-visual.png');
       background-repeat: no-repeat;
       background-position-x: center;
@@ -113,7 +114,6 @@ section#project-step2 {
         }
       }
     }
-    $video-border: 3px solid $brand-red-color;
     .videos {
       margin-top: 50px;
       .player-wrapper {
@@ -137,46 +137,51 @@ section#project-step2 {
           }
         }
       }
-      .video-thumbnails {
-        margin-left: 0;
-        margin-top: 30px;
-        background-image: asset_url('step2/video-bar.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position-y: 30%;
-        @media (max-width: 767px) {
-          background-position-y: 13%;
+    }
+  }
+  section#video-navigation {
+    background-image: asset_url('step2/video-bar.png');
+    background-size: initial;
+    background-repeat: repeat-x;
+    background-position-y: 30%;
+    @media (max-width: 767px) {
+      background-size: 5%;
+      background-position-y: 20%;
+    }
+    .video-thumbnails {
+      text-align: center;
+      margin-left: 0;
+      margin-top: 10px;
+      margin-bottom: 25px;
+      padding-left: 5%;
+      padding-right: 5%;
+      .video-thumbnail {
+        cursor: pointer;
+        display: inline-block;
+        width: 23%;
+        .img-thumbnail {
+          border: 3px solid #fff;
+          padding: 0;
+          border-radius: 0;
+          @media (max-width: 767px) {
+            max-width: 60px;
+          }
         }
-        padding-left: 5%;
-        padding-right: 5%;
-        .video-thumbnail {
-          cursor: pointer;
-          display: inline-block;
-          width: 23%;
+        .video-title {
+          margin-top: 20px;
+          color: $brand-green-color;
+          word-break: keep-all;
+          @media (max-width: 767px) {
+            font-size: $font-size-base;
+          }
+        }
+        &.active,
+        &:hover {
           .img-thumbnail {
-            border: 3px solid #fff;
-            padding: 0;
-            border-radius: 0;
-            @media (max-width: 767px) {
-              max-width: 60px;
-            }
+            border: $video-border;
           }
           .video-title {
-            margin-top: 20px;
-            color: $brand-green-color;
-            word-break: keep-all;
-            @media (max-width: 767px) {
-              font-size: $font-size-base;
-            }
-          }
-          &.active,
-          &:hover {
-            .img-thumbnail {
-              border: $video-border;
-            }
-            .video-title {
-              color: $video-text-color;
-            }
+            color: $video-text-color;
           }
         }
       }
@@ -185,12 +190,23 @@ section#project-step2 {
 
   section#naming {
     background-color: $brand-green-color;
+    background-image: asset_url('step2/naming-bar.png');
+    background-repeat: repeat-x;
+    background-position-y: 90%;
+    background-size: initial;
+    @media (max-width: 767px) {
+      background-position-y: 86.5%;
+      background-size: 5%;
+    }
     .party-names {
       .options {
         text-align: center;
         padding-top: 15px;
         .option {
           background-image: asset_url('step2/option-background.png');
+          &.selected {
+            background-image: asset_url('step2/option-selected-background.png');
+          }
           display: inline-block;
           position: relative;
           cursor: pointer;
@@ -200,9 +216,13 @@ section#project-step2 {
           height: 230px;
           @media (max-width: 767px) {
             height: 180px;
+            width: 22%;
+            margin-right: 1px;
+            margin-left: 1px;
           }
           border: 3px solid #fff;
           text-align: center;
+
           &:hover,
           &--upvoted {
             border-color: $brand-red-color;
@@ -275,10 +295,6 @@ section#project-step2 {
         .form-submit {
           padding-top: 40px;
           padding-bottom: 40px;
-          background-image: asset_url('step2/naming-bar.png');
-          background-repeat: repeat-x;
-          background-position: center;
-          background-size: contain;
           [type="submit"] {
             -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.1);
             -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.1);
@@ -506,8 +522,10 @@ section#project-step2 {
   }
 
   section#posts {
+    padding-bottom: 30px;
     background-color: #fff;
     .posts-panel {
+      margin-top: 20px;
       p.description {
         text-align: center;
         color: $brand-lime-color;
@@ -761,6 +779,12 @@ section#project-step2 {
     section#posts {
       .posts-panel {
         padding-bottom: 65px;
+        padding-left: 5%;
+        padding-right: 5%;
+        @media (max-width: 767px) {
+          padding-left: 0;
+          padding-right: 0;
+        }
         .post-detail {
           .post-meta-wrapper {
             background-color: $brand-base-color;
@@ -785,13 +809,10 @@ section#project-step2 {
             padding: 35px 5%;
             color: #5d5d5d;
             font-size: $font-size-base;
-            border-bottom: 1px solid #d2d2d2;
           }
         }
         .comments-panel {
           .comment-form {
-            margin-left: 5%;
-            margin-right: 5%;
             margin-top: 20px;
             background-color: #f8f8f8;
             padding: 15px;
@@ -822,13 +843,10 @@ section#project-step2 {
           }
           .comments {
             padding-top: 20px;
-            padding-left: 5%;
-            padding-right: 5%;
             .comment {
+              padding: 13px 5%;
               border-top: 1px solid #d5d5d5;
               border-bottom: 1px solid #d5d5d5;
-              padding-top: 13px;
-              padding-bottom: 13px;
               .comment-name {
                 font-size: 14px;
                 font-weight: bold;
