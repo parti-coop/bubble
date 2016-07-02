@@ -814,6 +814,12 @@ section#project-step2 {
                 padding-bottom: 5px;
               }
             }
+            .help-block {
+              .login-link {
+                text-decoration: underline;
+                color: $brand-lime-color;
+              }
+            }
           }
           .comments {
             padding-top: 20px;
