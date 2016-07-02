@@ -887,6 +887,13 @@ section#project-step2 {
     }
   }
 
+  hr {
+    margin-top: 0px;
+    margin-bottom: 16px;
+    border: 0;
+    border-top: 1px solid #fff;
+  }
+
   section#share {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -902,12 +909,7 @@ section#project-step2 {
       margin-bottom: 15px;
     }
 
-    hr {
-      margin-top: 27px;
-      margin-bottom: 0px;
-      border: 0;
-      border-top: 1px solid #fff;
-    }
+
 
     .share-box {
       text-align: center;
