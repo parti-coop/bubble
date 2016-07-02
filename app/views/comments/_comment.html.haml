@@ -6,7 +6,7 @@
           = link_to '수정', [:edit, comment]
         \|
         %span
-          = link_to '삭제', comment, method: :delete
+          = link_to '삭제', comment, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' }
     .comment-meta
       .comment-name= comment.name
       .comment-created-at= date_f comment.created_at

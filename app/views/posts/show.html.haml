@@ -31,7 +31,8 @@
                 = link_to '수정', [:edit, @post]
               \|
               %span
-                = link_to '삭제', @post, method: :delete
+                = link_to '삭제', @post, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' }
+
           .post-body
             = simple_format(@post.body)
 
