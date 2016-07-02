@@ -20,7 +20,7 @@
       = f.text_area :body, class: 'form-control', placeholder: '댓글 내용' , data: {'rule-required': true}, data: { action: 'parti-autoresize'}
     .row
       .col-sm-8
-        - unless user_signed_in?
+        - if !user_signed_in? and @comment.new_record?
           .form-group.recaptcha
             .help-block 스팸 방지를 위해 사람인지 확인합니다. 아래 체크 박스를 클릭해 주세요.
             = recaptcha_tags hl: :ko, size: '100px'
