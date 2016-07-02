@@ -405,7 +405,10 @@ section#project-step2 {
               background-color: $brand-lime-color;
               img {
                 margin-right: 12px;
-                min-width: 22px;
+                man-width: 22px;
+                @media (max-width: 767px) {
+                  man-width: 10px;
+                }
               }
             }
           }
