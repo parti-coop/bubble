@@ -36,10 +36,26 @@ section#project-step2 {
     text-align: center;
     margin-top: 0;
     padding-top: 50px;
-    margin-bottom: 30px;
+    padding-bottom: 30px;
     @media (max-width: 767px) {
       font-size: $font-size-large;
     }
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 43px;
+    background-size: 206px;
+    @media (max-width: 767px) {
+      background-size: 170px;
+    }
+    &.background-white {
+      background-image :asset_url('step2/title-background-white.png');
+
+    }
+    &.background-mint {
+      background-image :asset_url('step2/title-background-mint.jpg');
+    }
+
+
   }
 
   section#header {
