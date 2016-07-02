@@ -29,8 +29,15 @@
             = simple_format(@post.body)
 
         .comments-panel
-          .comments
-            = render @post.comments.earlier
+          - if @post.comments.empty?
+            %hr
+            %p.text-muted
+              %i.fa.fa-comment-o.fa-flip-horizontal
+              처음으로 댓글을 남겨보세요
+              %i !
+          - else
+            .comments
+              = render @post.comments.earlier
           = render 'comments/new_form', post: @post
         .navigation-button
           - if @post.bill_choice_board?

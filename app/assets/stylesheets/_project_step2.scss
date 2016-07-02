@@ -855,8 +855,7 @@ section#project-step2 {
             padding-top: 20px;
             .comment {
               padding: 13px 5%;
-              border-top: 1px solid #d5d5d5;
-              border-bottom: 1px solid #d5d5d5;
+              border-top: 1px solid #eee;
               .comment-name {
                 font-size: 14px;
                 font-weight: bold;
@@ -870,6 +869,9 @@ section#project-step2 {
               }
               .comment-body {
                 padding-top: 8px;
+              }
+              &:last-child {
+                border-bottom: 1px solid #eee;
               }
             }
           }
