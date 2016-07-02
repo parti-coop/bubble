@@ -857,12 +857,7 @@ section#project-step2 {
     }
   }
 
-  hr {
-    margin-top: 0px;
-    margin-bottom: 16px;
-    border: 0;
-    border-top: 1px solid #fff;
-  }
+
 
   section#share {
     padding-top: 20px;
@@ -877,6 +872,12 @@ section#project-step2 {
       font-weight: 100;
       margin-top: 20px;
       margin-bottom: 15px;
+    }
+    hr {
+      margin-top: 30px;
+      margin-bottom: 2px;
+      border: 0;
+      border-top: 1px solid #fff;
     }
 
 
@@ -914,8 +915,33 @@ section#project-step2 {
         &.share-kakao-story .icon-kas {
           padding-top: 11px;
           width: 10px;
-          margin-bottom: -5px;
+          margin-bottom: -10px;
         }
+      }
+    }
+  }
+}
+
+section.user-card {
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1200px;
+  height: 630px;
+
+  .info {
+    padding-top: 6%;
+    padding-left: 7%;
+
+    p {
+      color: #72c8da;
+      font-size: 78px;
+      font-weight: 100;
+      margin-bottom: -18px;
+      span.important-1 {
+        color: black;
+      }
+      span.important-2 {
+        color: #89c997;
       }
     }
   }

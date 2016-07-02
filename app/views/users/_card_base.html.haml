@@ -8,6 +8,15 @@
   %body(style='padding: 0;')
     %section.user-card{ style: "background-image: url(#{asset_data_base64('user-card-background.png')});" }
       .info
-        #{@user.name}
-      .image
-        = image_tag image_base64(@user.image.file.path)
+        %p
+          나는
+          %span
+            %span.important-1> GMO완전표시제
+            를
+        %p
+          지지하는
+          %spna
+            %span.important-2>10000
+            번째
+        %p
+          당원입니다.
