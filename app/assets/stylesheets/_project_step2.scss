@@ -433,8 +433,12 @@ section#project-step2 {
                 margin-right: 12px;
                 margin-left: 5px;
                 max-width: 20px;
+                margin-bottom: 6px;
                 @media (max-width: 767px) {
-                  man-width: 10px;
+                  max-width: 10px;
+                  margin-left: 2px;
+                  margin-right: 8px;
+                  margin-bottom: 0;
                 }
               }
             }
