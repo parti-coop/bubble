@@ -17,13 +17,15 @@
           .form-group
             = f.email_field :guest_email, class: 'form-control' , placeholder: '이메일(선택사항)'
       .help-block
-        또는
-        %a.login-link(href='#anchor-join') 당원가입
-        하거나,
-        이미 당원이라면
-        %a.login-link(href='#anchor-join') 로그인
-        해봐
-        %i !
+        %span{style: 'white-space: nowrap;'}
+          또는
+          %a.login-link(href='#anchor-join') 당원가입
+          하거나,
+        %span{style: 'white-space: nowrap;'}
+          이미 당원이라면
+          %a.login-link(href='#anchor-join') 로그인
+          해봐
+          %i !
       %hr
     .form-group
       = f.text_field :title, class: 'form-control', placeholder: '제목' , data: {'rule-required': true}
