@@ -639,7 +639,11 @@ section#project-step1 {
       line-height: 30px;
       font-weight: 100;
       margin-top: 20px;
-      margin-bottom: 40px;
+      margin-bottom: 22px;
+      @media (max-width: 767px) {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
     }
 
     .share-box {
@@ -671,6 +675,7 @@ section#project-step1 {
         &.share-kakao-link .icon-katalk {
           width: 20px;
           padding-top: 12px;
+          margin-bottom: -5px;
         }
         &.share-kakao-story .icon-kas {
           padding-top: 11px;
