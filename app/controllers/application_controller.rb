@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
     site_name = "시민 입법 프로젝트"
     title = "시민 입법 프로젝트 '바글시민 와글입법 두 번째 프로젝트'"
     image = options[:image] || view_context.image_url('seo.png')
-    url = 'http://up.parti.xyz'
+    url = root_url
 
     description = "GMO완전표시제 도입을 위한 프로젝트 정당만들기!"
     {
