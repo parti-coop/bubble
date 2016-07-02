@@ -228,6 +228,10 @@ section#project-step2 {
       .description {
         color: #fff;
         text-align: center;
+        font-size: 18px;
+        @media (max-width: 767px) {
+          font-size: 14px;
+        }
       }
       .options {
         text-align: center;
