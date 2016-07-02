@@ -169,10 +169,9 @@ section#project-step2 {
     background-image: asset_url('step2/video-bar.png');
     background-size: initial;
     background-repeat: repeat-x;
-    background-position-y: 30%;
+    background-position-y: 27%;
     @media (max-width: 767px) {
-      background-size: 5%;
-      background-position-y: 20%;
+      background-position-y: 14%;
     }
     .video-thumbnails {
       text-align: center;
@@ -218,11 +217,10 @@ section#project-step2 {
     background-color: $brand-green-color;
     background-image: asset_url('step2/naming-bar.png');
     background-repeat: repeat-x;
-    background-position-y: 90%;
+    background-position-y: 91%;
     background-size: initial;
     @media (max-width: 767px) {
-      background-position-y: 86.5%;
-      background-size: 5%;
+      background-position-y: 89.6%;
     }
     .party-names {
       .description {
