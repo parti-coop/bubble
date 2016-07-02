@@ -403,6 +403,10 @@ section#project-step2 {
             }
             &-naver {
               background-color: $brand-lime-color;
+              img {
+                margin-right: 12px;
+                min-width: 22px;
+              }
             }
           }
           .btn-join:last-child {
@@ -540,49 +544,6 @@ section#project-step2 {
         @media (max-width: 767px) {
           font-size: $font-size-small;
           line-height: $line-height-small;
-        }
-      }
-      .login {
-        padding-right: 5%;
-        padding-left: 5%;
-        padding-top: 25px;
-        .btn-login-wrapper {
-          width: 33.3%;
-          float: left;
-          .btn-login-wrapper:last-child {
-            padding-right: 0;
-          }
-          .btn-login {
-            width: 98%;
-            color: #fff;
-            font-weight: 300;
-            font-size: $font-size-large;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-            i {
-              margin-right: 5px;
-              font-size: $font-size-h3;
-              color: #fff;
-            }
-            &-facebook {
-              background-color: #00479d;
-            }
-            &-twitter {
-              background-color: #00b7ee;
-            }
-            &-naver {
-              background-color: $brand-lime-color;
-            }
-            @media (max-width: 767px) {
-              font-size: $font-size-base;
-              padding-top: 5px;
-              padding-bottom: 5px;
-              i {
-                font-size: $font-size-base;
-              }
-            }
-          }
         }
       }
       .post-form {
