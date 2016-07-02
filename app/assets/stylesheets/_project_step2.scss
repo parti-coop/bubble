@@ -744,8 +744,6 @@ section#project-step2 {
   section#post,
   section#posts {
     .post-form {
-      margin-left: 5%;
-      margin-right: 5%;
       margin-top: 20px;
       background-color: #f8f8f8;
       padding: 15px;
@@ -785,6 +783,12 @@ section#project-step2 {
     }
   }
 
+  section#posts {
+    .post-form {
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  }
   section#post,
   section#comment {
     .comment-form {
@@ -798,10 +802,12 @@ section#project-step2 {
         color: #fff;
         margin-bottom: 20px;
         @media (max-width: 767px) {
-          font-size: $font-size-small;
-          line-height: $line-height-small;
+          font-size: $font-size-base;
+          line-height: $line-height-base;
           padding-top: 5px;
           padding-bottom: 5px;
+          display: block;
+          width: 100%;
         }
         &--update {
           padding-top: 5px;
@@ -895,7 +901,7 @@ section#project-step2 {
                 padding-top: 8px;
               }
               &:last-child {
-                border-bottom: 1px solid #eee;
+                padding-bottom: 0;
               }
               .comment-buttons {
                 float: right;
@@ -906,6 +912,12 @@ section#project-step2 {
                   font-weight: 200;
                 }
               }
+            }
+          }
+          @media (max-width: 767px) {
+            .help-block {
+              color: $text-muted;
+              margin-left: 5%;
             }
           }
         }
@@ -927,6 +939,10 @@ section#project-step2 {
       .comment-panel {
         padding-left: 5%;
         padding-right: 5%;
+        @media (max-width: 767px) {
+          padding-left: 0;
+          padding-right: 0;
+        }
       }
     }
   }

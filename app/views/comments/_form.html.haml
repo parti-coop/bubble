@@ -16,17 +16,8 @@
         .col-xs-6
           .form-group
             = f.email_field :guest_email, class: 'form-control' , placeholder: '이메일(선택사항)'
-      .help-block
-        또는
-        = link_to '당원가입', root_path(anchor: 'anchor-join'), class: 'login-link'
-        하거나,
-        이미 당원이라면
-        = link_to '로그인', root_path(anchor: 'anchor-join'), class: 'login-link'
-        해봐
-        %i !
-      %hr
     .form-group
-      = f.text_area :body, class: 'form-control', placeholder: '내용' , data: {'rule-required': true}, data: { action: 'parti-autoresize'}
+      = f.text_area :body, class: 'form-control', placeholder: '댓글 내용' , data: {'rule-required': true}, data: { action: 'parti-autoresize'}
     .row
       .col-sm-8
         - unless user_signed_in?
@@ -35,7 +26,7 @@
             = recaptcha_tags hl: :ko, size: '100px'
       .col-sm-4.text-right
         - if @comment.new_record?
-          = f.submit '등록', class: 'btn btn-lg btn-comment-submit', data: { disable_with: "게시 중..." }
+          = f.submit '등록', class: 'btn btn-lg btn-block btn-comment-submit', data: { disable_with: "게시 중..." }
         - else
           = link_to '취소', @comment.post, class: 'link-cacel'
           = f.submit '수정', class: 'btn btn-lg btn-comment-submit btn-comment-submit--update', data: { disable_with: "게시 중..." }

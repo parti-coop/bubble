@@ -7,7 +7,7 @@
         - if user_signed_in?
           = link_to '로그아웃', destroy_user_session_path, method: :delete
         - else
-          = link_to '당원가입 / 로그인', '#anchor-join'
+          = link_to '당원가입 / 로그인', root_path(anchor: 'anchor-join')
 %section#steps
   .container
     .project-steps
