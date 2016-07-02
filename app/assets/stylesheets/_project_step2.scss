@@ -405,7 +405,8 @@ section#project-step2 {
               background-color: $brand-lime-color;
               img {
                 margin-right: 12px;
-                man-width: 22px;
+                margin-left: 5px;
+                max-width: 20px;
                 @media (max-width: 767px) {
                   man-width: 10px;
                 }
@@ -475,9 +476,11 @@ section#project-step2 {
               height: 20px;
               @media (max-width: 767px) {
                 height: 12px;
+                margin-bottom: 0;
               }
               position: relative;
               top: 10px;
+              margin-bottom: -4px;
             }
             .fa-twitter {
               color: #2e98c5;
