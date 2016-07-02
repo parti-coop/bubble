@@ -332,7 +332,7 @@ section#project-step2 {
         color: $brand-lime-color;
         word-break: keep-all;
         span.important {
-          color: $brand-cyan-color;
+          color: $brand-red-color;
         }
         @media (max-width: 767px) {
           font-size: $font-size-small;
@@ -615,6 +615,12 @@ section#project-step2 {
             padding-bottom: 5px;
           }
         }
+        .help-block {
+          .login-link {
+            text-decoration: underline;
+            color: $brand-lime-color;
+          }
+        }
       }
       .post-page {
         margin-left: 5%;
@@ -750,7 +756,7 @@ section#project-step2 {
   }
 
   section#article-banners {
-    background-color: #ec6941;
+    background-color: $brand-red-color;
   }
 
   section#parti-banners {
