@@ -228,9 +228,10 @@ section#project-step2 {
       .description {
         color: #fff;
         text-align: center;
-        font-size: 18px;
+        font-size: $font-size-large;
+        font-weight: 200;
         @media (max-width: 767px) {
-          font-size: 14px;
+          font-size: $font-size-base;
         }
       }
       .options {
@@ -364,10 +365,12 @@ section#project-step2 {
         span.important {
           color: $brand-red-color;
         }
+        font-size: $font-size-large;
         @media (max-width: 767px) {
-          font-size: $font-size-small;
-          line-height: $line-height-small;
+          font-size: $font-size-base;
+          line-height: $line-height-base;
         }
+        font-weight: 200;
       }
       p.info {
         text-align: center;
@@ -581,10 +584,12 @@ section#project-step2 {
         span.important {
           color: $brand-cyan-color;
         }
+        font-size: $font-size-large;
         @media (max-width: 767px) {
-          font-size: $font-size-small;
-          line-height: $line-height-small;
+          font-size: $font-size-base;
+          line-height: $line-height-base;
         }
+        font-weight: 200;
       }
       .post-page {
         margin-left: 5%;
