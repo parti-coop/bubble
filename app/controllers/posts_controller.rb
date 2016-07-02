@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   def update
     @post.assign_attributes(post_params)
     if @post.save
-      redirect_to root_path(anchor: 'posts-anchor')
+      redirect_to @post
     else
       render 'edit'
     end

@@ -58,6 +58,16 @@ section#project-step2 {
 
   }
 
+  .user-info {
+    height: 36px;
+    color: gray;
+    margin-left: 10px;
+    @media (max-width: 767px) {
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+    }
+  }
+
   section#header {
     .top-menu {
       margin-top: 20px;
@@ -568,43 +578,6 @@ section#project-step2 {
           line-height: $line-height-small;
         }
       }
-      .post-form {
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-top: 20px;
-        background-color: #f8f8f8;
-        padding: 15px;
-        padding-bottom: 0;
-        border: 1px solid #eeeeee;
-        .user-info {
-          height: 36px;
-          text-align: center;
-          color: gray;
-          @media (max-width: 767px) {
-            font-size: $font-size-small;
-            line-height: $line-height-small;
-          }
-        }
-        .btn-post-submit {
-          background-color: $brand-lime-color;
-          color: #fff;
-          padding-top: 15px;
-          padding-bottom: 15px;
-          margin-bottom: 20px;
-          @media (max-width: 767px) {
-            font-size: $font-size-small;
-            line-height: $line-height-small;
-            padding-top: 5px;
-            padding-bottom: 5px;
-          }
-        }
-        .help-block {
-          .login-link {
-            text-decoration: underline;
-            color: $brand-lime-color;
-          }
-        }
-      }
       .post-page {
         margin-left: 5%;
         margin-right: 5%;
@@ -768,9 +741,96 @@ section#project-step2 {
     }
   }
 
+  section#post,
+  section#posts {
+    .post-form {
+      margin-left: 5%;
+      margin-right: 5%;
+      margin-top: 20px;
+      background-color: #f8f8f8;
+      padding: 15px;
+      padding-bottom: 0;
+      border: 1px solid #eeeeee;
+      .btn-post-submit {
+        background-color: $brand-lime-color;
+        color: #fff;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        @media (max-width: 767px) {
+          font-size: $font-size-small;
+          line-height: $line-height-small;
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+        &--update {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+      }
+      .link-cacel {
+        color: gray;
+        margin-right: 5px;
+        text-decoration: underline;
+        &:hover {
+          color: $brand-green-color;
+        }
+      }
+      .help-block {
+        .login-link {
+          text-decoration: underline;
+          color: $brand-lime-color;
+        }
+      }
+    }
+  }
+
+  section#post,
+  section#comment {
+    .comment-form {
+      margin-top: 20px;
+      background-color: #f8f8f8;
+      padding: 15px;
+      padding-bottom: 0;
+      border: 1px solid #eeeeee;
+      .btn-comment-submit {
+        background-color: $brand-lime-color;
+        color: #fff;
+        margin-bottom: 20px;
+        @media (max-width: 767px) {
+          font-size: $font-size-small;
+          line-height: $line-height-small;
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+        &--update {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+      }
+      .link-cacel {
+        color: gray;
+        margin-right: 5px;
+        text-decoration: underline;
+        &:hover {
+          color: $brand-green-color;
+        }
+      }
+      .help-block {
+        .login-link {
+          text-decoration: underline;
+          color: $brand-lime-color;
+        }
+      }
+    }
+  }
+
   &.project-step2-post {
-    section#posts {
-      .posts-panel {
+    section#post {
+      padding-bottom: 30px;
+      background-color: #fff;
+      .post-panel {
+        margin-top: 20px;
         padding-bottom: 65px;
         padding-left: 5%;
         padding-right: 5%;
@@ -803,43 +863,18 @@ section#project-step2 {
             color: #5d5d5d;
             font-size: $font-size-base;
           }
-        }
-        .comments-panel {
-          .comment-form {
-            margin-top: 20px;
-            background-color: #f8f8f8;
-            padding: 15px;
-            padding-bottom: 0;
-            border: 1px solid #eeeeee;
-            .user-info {
-              height: 36px;
-              text-align: center;
-              color: gray;
-              @media (max-width: 767px) {
-                font-size: $font-size-small;
-                line-height: $line-height-small;
-              }
-            }
-            .btn-comment-submit {
-              background-color: $brand-lime-color;
-              color: #fff;
-              padding-top: 15px;
-              padding-bottom: 15px;
-              margin-bottom: 20px;
-              @media (max-width: 767px) {
-                font-size: $font-size-small;
-                line-height: $line-height-small;
-                padding-top: 5px;
-                padding-bottom: 5px;
-              }
-            }
-            .help-block {
-              .login-link {
-                text-decoration: underline;
-                color: $brand-lime-color;
-              }
+          .post-buttons {
+            color: $brand-green-color;
+            text-align: right;
+            margin-top: 5px;
+            margin-right: 5%;
+            a {
+              color: $brand-green-color;
+              font-weight: 200;
             }
           }
+        }
+        .comments-panel {
           .comments {
             padding-top: 20px;
             .comment {
@@ -862,6 +897,15 @@ section#project-step2 {
               &:last-child {
                 border-bottom: 1px solid #eee;
               }
+              .comment-buttons {
+                float: right;
+                color: $brand-green-color;
+                text-align: right;
+                a {
+                  color: $brand-green-color;
+                  font-weight: 200;
+                }
+              }
             }
           }
         }
@@ -876,7 +920,16 @@ section#project-step2 {
     }
   }
 
-
+  &.project-step2-comment {
+    section#comment {
+      padding-bottom: 30px;
+      background-color: #fff;
+      .comment-panel {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+    }
+  }
 
   section#share {
     padding-top: 20px;

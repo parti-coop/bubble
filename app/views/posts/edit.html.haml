@@ -1,2 +1,10 @@
-.container
-  = render 'form'
+%section#project-step2.project-step2-post
+
+  - if @post.bill_choice_board?
+    = render 'pages/step1_header'
+  - else
+    = render 'pages/step2_header'
+
+  %section#post
+    .container
+      = render 'form'

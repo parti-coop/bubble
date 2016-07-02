@@ -5,10 +5,10 @@
   - else
     = render 'pages/step2_header'
 
-  %section#posts
+  %section#post
     .container
       %a{id: 'post-panel-anchor'}
-      .posts-panel
+      .post-panel
         .post-detail
           .post-meta-wrapper.post-title-wrapper
             .row
@@ -25,6 +25,13 @@
                   = @post.name
                   - if @post.user.present?
                     %span.party-memember-badget 당원
+          - if can? :manage, @post
+            .post-buttons
+              %span
+                = link_to '수정', [:edit, @post]
+              \|
+              %span
+                = link_to '삭제', @post, method: :delete
           .post-body
             = simple_format(@post.body)
 
@@ -38,7 +45,7 @@
           - else
             .comments
               = render @post.comments.earlier
-          = render 'comments/new_form', post: @post
+          = render 'comments/form', post: @post
         .navigation-button
           - if @post.bill_choice_board?
             = link_to step1_path(anchor: 'posts-anchor'), class: 'btn btn-default' do

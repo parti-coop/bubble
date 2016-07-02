@@ -1,2 +1,11 @@
-.container
-  = render 'comments/form', post: @comment.post
+%section#project-step2.project-step2-comment
+
+  - if @comment.post.bill_choice_board?
+    = render 'pages/step1_header'
+  - else
+    = render 'pages/step2_header'
+
+  %section#comment
+    .container
+      .comment-panel
+        = render 'comments/form', post: @comment.post
