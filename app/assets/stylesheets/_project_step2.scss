@@ -500,7 +500,7 @@ section#project-step2 {
       background-color: $brand-cyan-color;
       padding-left: 5%;
       padding-right: 5%;
-      color: #fff;
+      color: #333;
       margin-left: 5%;
       margin-right: 5%;
       .notice-head {
@@ -517,7 +517,7 @@ section#project-step2 {
       .notice-body {
         word-break: keep-all;
         .important {
-          color: #00479d;
+          font-weight: bold;
         }
         @media (max-width: 767px) {
           p {

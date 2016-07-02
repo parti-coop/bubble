@@ -79,7 +79,7 @@ module ApplicationHelper
   end
 
   def video_titles
-    ['국범근 4대 법안 소개', '프로젝트 취지 소개', '온라인 정당 만들기']
+    [raw('4대 법안<br class="hidden-sm">소개'), raw('시민입법<br class="hidden-sm"> 취지 소개'), raw('<span style="white-space: nowrap">프로젝트 정당</span><br class="hidden-sm"> 만들기')]
   end
 
 
