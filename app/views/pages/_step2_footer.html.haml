@@ -14,6 +14,29 @@
           = image_tag 'step2/parti-banner-mobile.png'
         - else
           = image_tag 'step2/parti-banner.png'
+
+%section#share
+  .container
+    %h2
+      시민의 법안, 함께하면
+      %br
+      더 즐거워요!
+    %ul.share-box.list-inline
+      - data = {action: 'bubble-share', 'share-url': root_url, 'share-text': "시민 입법 프로젝트 '바글시민 와글입법' - 2016년, 시민이 올리는 시민의 법안을 만들자!" }
+      - %w(facebook twitter kakao-link kakao-story).each do |provider|
+
+        - data = data.merge('share-provider': provider)
+
+        - if provider == 'kakao-link'
+          - hide_kakao_link = (! browser.device.mobile?) ? ' hide' : ''
+          - data = data.merge('share-image': image_url('seo.png'), 'share-image-width': '1200', 'share-image-height': '630')
+        %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
+          - if provider == 'kakao-story'
+            = image_tag 'icon_kas.png', class: 'icon-kas'
+          - if provider == 'kakao-link'
+            = image_tag 'icon_katalk.png', class: 'icon-katalk'
+    %hr
+
 %section#footer
   .container
     .footer-logos
