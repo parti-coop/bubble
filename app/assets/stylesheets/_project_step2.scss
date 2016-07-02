@@ -345,6 +345,7 @@ section#project-step2 {
             &.disabled {
               background-color: $brand-base-color;
               color: $brand-green-color;
+              opacity: 1;
             }
           }
         }
