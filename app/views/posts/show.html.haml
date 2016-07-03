@@ -22,7 +22,7 @@
                 .post-meta-label 작성자
               .col-sm-10.col-xs-9
                 .post-meta-value
-                  = @post.name
+                  = mask_name @post.name
                   - if @post.user.present?
                     %span.party-memember-badget 당원
           - if can? :manage, @post
