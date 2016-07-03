@@ -35,7 +35,7 @@
       .col-sm-8
         - if !user_signed_in? and @post.new_record?
           .form-group.recaptcha
-            .help-block 스팸 방지를 위해 사람인지 확인합니다. 아래 체크 박스를 클릭해 주세요.
+            .help-block 스팸 방지를 위해 사람인지 확인하는 거야. 아래 체크 박스를 클릭해.
             = recaptcha_tags hl: :ko, size: '100px'
       .col-sm-4.text-right
         - if @post.new_record?

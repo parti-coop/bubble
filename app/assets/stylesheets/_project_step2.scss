@@ -390,7 +390,7 @@ section#project-step2 {
         position: relative;
         .card-intro {
           display: inline-block;
-          color: #6fc6d7;
+          color: #231815;
           font-size: 44px;
           @media (max-width: 767px) {
             font-size: $font-size-h3;
@@ -398,6 +398,9 @@ section#project-step2 {
           }
           line-height: 46px;
           font-weight: 200;
+          span.important {
+            color: #32b16c;
+          }
         }
         .join-buttons {
           float: right;
@@ -1056,19 +1059,16 @@ section.user-card {
   height: 630px;
 
   .info {
-    padding-top: 6%;
+    padding-top: 13%;
     padding-left: 7%;
 
     p {
-      color: #72c8da;
+      color: #231815 ;
       font-size: 78px;
       font-weight: 100;
-      margin-bottom: -18px;
-      span.important-1 {
-        color: black;
-      }
-      span.important-2 {
-        color: #89c997;
+      margin-bottom: -28px;
+      span.important {
+        color: #32b16c;
       }
     }
   }

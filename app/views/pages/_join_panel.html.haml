@@ -21,15 +21,18 @@
     물론 500명, 1000명이면 더 좋겠지
     %i !
   %p.info
-    * 수집된 정보는 7개월 후에 삭제됩니다.
+    * 걱정마. 수집된 정보는 7개월 후에 삭제될거야.
   - unless user_signed_in?
     .card.clearfix
       .card-intro
-        몇번째
+        %span
+          %span.important<>
+            #{User.count}
+          번째
         %br
-        당원인지
+        당원이
         %br
-        궁금해?
+        되어 줘!
       .join-buttons
         = link_to user_omniauth_authorize_path(provider: :facebook), class: 'btn btn-join btn-join-facebook btn-block' do
           %i.fa.fa-facebook.fa-fw
@@ -49,13 +52,12 @@
         %span
           나는
         %span.bill-name> GMO완전표시제
-        를
         %br
-        지지하는
+        도입을 위해 뭉친
+        %br
         %span
           %span.count> #{current_user.sequential_id}
           번째
-        %br
         당원입니다.
       .share-card
         %span.help-text
@@ -74,7 +76,7 @@
             - if provider == 'kakao-story'
               - data = data.merge('share-url': user_card_url(current_user, format: :html))
             - if provider == 'twitter'
-              - data = data.merge('share-text': "''나는 gmo완전표시제를 지지하는 #{@user.sequential_id}번째 당원입니다.'' \n #바글시민와글입법 #한겨레 @han21_editor  #빠띠 @parti_xyz", 'share-url': root_url)
+              - data = data.merge('share-text': "''나는 gmo완전표시제 도입을 위해 뭉친 #{@user.sequential_id}번째 당원입니다.'' \n #바글시민와글입법 #한겨레 @han21_editor  #빠띠 @parti_xyz", 'share-url': root_url)
             %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
               - if provider == 'kakao-story'
                 = image_tag 'icon_kas.png', class: 'icon-kas'
