@@ -133,42 +133,6 @@
         너의 의견을 남겨줘!
       %p.desc
         왜 뽑았는지, 어떤 내용이 법안에 담겼으면 좋겠는지.
-        %br
-        의견과 함께 이메일 주소를 남긴 모든 사람에게는
-        %br
-        <한겨레21>이 진행 상황을 알려주고,
-        %br
-        1개월 구독권을 쏜대.
-      %p.desc
-        이메일 주소는 정기구독권 제공시에만 이용되고,
-        %br
-        프로젝트가 끝나면 모두 폐기되니 걱정마~.
-
-      %hr
-      #comments-form
-        .comment-form
-          = form_for Post.new do |f|
-            = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
-            = f.hidden_field :board_slug, value: Post::BOARD_SLUG_BILL_CHOICE
-            - unless user_signed_in?
-              .row
-                .col-xs-6
-                  .form-group
-                    = f.text_field :guest_name, class: 'form-control', placeholder: '이름' ,data: {'rule-required': true}
-                .col-xs-6
-                  .form-group
-                    = f.email_field :guest_email, class: 'form-control' , placeholder: '이메일(선택사항)'
-            .form-group
-              = f.text_field :title, class: 'form-control', placeholder: '제목' , data: {'rule-required': true}
-            .form-group
-              = f.text_area :body, class: 'form-control', placeholder: '내용' , data: {'rule-required': true}
-            .row
-              .col-sm-8
-                .form-group.recaptcha
-                  .help-block 스팸 방지를 위해 사람인지 확인합니다. 아래 체크 박스를 클릭해 주세요.
-                  = recaptcha_tags hl: :ko, size: '100px'
-              .col-sm-4
-                = f.submit '의견 남기기', class: 'btn btn-primary btn-lg btn-block', data: { disable_with: "게시 중..." }
 
       .comments
         .comments-page

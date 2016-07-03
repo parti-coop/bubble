@@ -82,5 +82,9 @@ module ApplicationHelper
     [raw('4대 법안<br class="hidden-sm">소개'), raw('시민입법<br class="hidden-sm"> 취지 소개'), raw('<span style="white-space: nowrap">프로젝트 정당</span><br class="hidden-sm"> 만들기')]
   end
 
+  def mask_name(name)
+    return name if name.blank? or name.length == 1
+    name.length > 6 ? name[0...-3] + "***" : name[0...-1] + "*"
+  end
 
 end

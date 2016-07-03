@@ -23,6 +23,10 @@ class Post < ActiveRecord::Base
     board_slug == Post::BOARD_SLUG_BILL_CHOICE
   end
 
+  def title
+    bill_choice_board? ? body.try(:truncate, 20) : self[:title]
+  end
+
   private
 
   def should_have_name
