@@ -75,7 +75,7 @@ module ApplicationHelper
   end
 
   def videos_urls
-    %w(https://www.youtube.com/watch?v=zdtN1zYfiG0 https://youtu.be/fh-uDxgawEU https://youtu.be/fh-uDxgawEU)
+    %w(https://www.youtube.com/watch?v=zdtN1zYfiG0 https://youtu.be/fh-uDxgawEU https://www.youtube.com/watch?v=gBFoVRx4Mm8)
   end
 
   def video_titles
