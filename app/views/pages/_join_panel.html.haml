@@ -74,7 +74,7 @@
             - if provider == 'kakao-story'
               - data = data.merge('share-url': user_card_url(current_user, format: :html))
             - if provider == 'twitter'
-              - data = data.merge('share-text': "''나는 gmo완전표시제를 지지하는 당원입니다.'' \n #바글시민와글입법 #한겨레 @han21_editor  #빠띠 @parti_xyz", 'share-url': root_url)
+              - data = data.merge('share-text': "''나는 gmo완전표시제를 지지하는 #{@user.sequential_id}번째 당원입니다.'' \n #바글시민와글입법 #한겨레 @han21_editor  #빠띠 @parti_xyz", 'share-url': root_url)
             %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
               - if provider == 'kakao-story'
                 = image_tag 'icon_kas.png', class: 'icon-kas'
