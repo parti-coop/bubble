@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
     image = options[:image] || view_context.image_url('seo.png')
     url = root_url
 
-    description = "GMO완전표시제 도입을 위한 프로젝트 정당만들기!"
+    description = "GMO 완전표시제 도입을 위한 프로젝트 정당만들기!"
     {
       title:       title,
       reverse:     true,

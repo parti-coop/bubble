@@ -32,7 +32,8 @@
         %br
         당원이
         %br
-        되어 줘!
+        되어줘
+        %i> !
       .join-buttons
         = link_to user_omniauth_authorize_path(provider: :facebook), class: 'btn btn-join btn-join-facebook btn-block' do
           %i.fa.fa-facebook.fa-fw
@@ -51,7 +52,7 @@
       .card-text
         %span
           나는
-        %span.bill-name> GMO완전표시제
+        %span.bill-name> GMO 완전표시제
         %br
         도입을 위해 뭉친
         %br
@@ -76,7 +77,7 @@
             - if provider == 'kakao-story'
               - data = data.merge('share-url': user_card_url(current_user, format: :html))
             - if provider == 'twitter'
-              - data = data.merge('share-text': "''나는 gmo완전표시제 도입을 위해 뭉친 #{@user.sequential_id}번째 당원입니다.'' \n #바글시민와글입법 #한겨레 @han21_editor  #빠띠 @parti_xyz", 'share-url': root_url)
+              - data = data.merge('share-text': "''나는 GMO 완전표시제 도입을 위해 뭉친 #{@user.sequential_id}번째 당원입니다.'' \n #바글시민와글입법 #한겨레 @han21_editor  #빠띠 @parti_xyz", 'share-url': root_url)
             %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
               - if provider == 'kakao-story'
                 = image_tag 'icon_kas.png', class: 'icon-kas'
