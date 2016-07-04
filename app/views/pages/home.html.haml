@@ -74,14 +74,10 @@
   %section#process
     .container
       .process-panel
-        %h3.section-title.background-process 앞으로 이렇게 한당
+        %h3.section-title.background-process 이렇게 진행한다
         - if (browser.device.mobile?)
           = image_tag 'step2/process_mobile.jpg'
         - else
           = image_tag 'step2/process.jpg'
-
-
-
-
 
   = render 'pages/step2_footer'
