@@ -26,5 +26,11 @@
             .party-name-label{id: "option-#{option.slug}"}= option.name
             = radio_button_tag :slug, option.slug, false, data: { action: 'bubble-naming-option', sibling: '.party-names .options .option'}
             %span
+            .option-display
+              .option-stat
+                .option-stat-percentage
+                  = number_to_percentage(option.percentage, precision: 0)
+                .option-stat-count
+                  #{option.upvotes_count}표
         .form-submit
           = submit_tag '투표하기'

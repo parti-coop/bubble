@@ -289,9 +289,9 @@ section#project-step2 {
             transition: 0.5s ease all;
             background: #fff;
             position: absolute;
-            top: 130px;
+            bottom: 26px;
             @media (max-width: 767px) {
-              top: 85px;
+              top: 80px;
             }
             right: 0;
             left: 0;
@@ -317,6 +317,10 @@ section#project-step2 {
             margin-right: auto;
             margin-left: auto;
             color: #fff;
+            @media (max-width: 767px) {
+              top: initial;
+              bottom: 10px;
+            }
             &-percentage {
               font-size: $font-size-h1;
               @media (max-width: 767px) {
