@@ -1,0 +1,85 @@
+.party-join
+  %h3.section-title.background-white 가입한 당
+  %p.description
+    국회의원도
+    %span
+      %span.important> 300
+      명, 우리도 최소
+    %span
+      %span.important<> 300
+      명. 영화 ‘
+      %span.important<> 300
+      ’도 있잖아.
+    %br
+    페르시아 수십만 대군과
+    %br.visible-xs-block
+    싸운 스파르타의 최정예 병사도 300명
+    %i !
+    %br
+    300명은 당원이 되어줬으면 해.
+    %br
+    물론 500명, 1000명이면 더 좋겠지
+    %i !
+  %p.info
+    * 걱정마. 수집된 정보는 7개월 후에 삭제될거야.
+  - unless user_signed_in?
+    .card.clearfix
+      .card-intro
+        %span
+          %span.important<>
+            #{User.count}
+          번째
+        %br
+        당원이
+        %br
+        되어줘
+        %i> !
+      .join-buttons
+        = link_to user_omniauth_authorize_path(provider: :facebook), class: 'btn btn-join btn-join-facebook btn-block' do
+          %i.fa.fa-facebook.fa-fw
+          %span.hidden-xs 페이스북으로
+          당원가입 / 로그인
+        / = link_to user_omniauth_authorize_path(provider: :twitter), class: 'btn btn-join btn-join-twitter btn-block' do
+        /   %i.fa.fa-twitter.fa-fw
+        /   %span.hidden-xs 트위터로
+        /   당원가입 / 로그인
+        = link_to user_omniauth_authorize_path(provider: :naver), class: 'btn btn-join btn-join-naver btn-block' do
+          = image_tag 'naver-logo.png'
+          %span.hidden-xs 네이버로
+          당원가입 / 로그인
+  - else
+    .card
+      .card-text
+        %span
+          나는
+        %span.bill-name> GMO 완전표시제
+        %br
+        도입을 위해 뭉친
+        %br
+        %span
+          %span.count> #{current_user.sequential_id}
+          번째
+        당원입니다.
+      .share-card
+        %span.help-text
+          친구에게 공유해
+          %span(style='white-space: nowrap')
+            보세요
+            %i !
+        - data = {action: 'bubble-share', 'share-url': user_card_url(current_user), 'share-text': "시민 입법 프로젝트 '바글시민 와글입법' - 2016년, 시민이 올리는 시민의 법안을 만들자!" }
+        %ul.list-inline
+          - %w(facebook twitter kakao-link kakao-story).each do |provider|
+            - data = data.merge('share-provider': provider)
+
+            - if provider == 'kakao-link'
+              - hide_kakao_link = (! browser.device.mobile?) ? ' hide' : ''
+              - data = data.merge('share-image': user_card_url(current_user, format: :png), 'share-image-width': '1200', 'share-image-height': '630')
+            - if provider == 'kakao-story'
+              - data = data.merge('share-url': user_card_url(current_user, format: :html))
+            - if provider == 'twitter'
+              - data = data.merge('share-text': "''나는 GMO 완전표시제 도입을 위해 뭉친 #{@user.sequential_id}번째 당원입니다.'' \n #바글시민와글입법 #한겨레 @han21_editor  #빠띠 @parti_xyz", 'share-url': root_url)
+            %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
+              - if provider == 'kakao-story'
+                = image_tag 'icon_kas.png', class: 'icon-kas'
+              - if provider == 'kakao-link'
+                = image_tag 'icon_katalk.png', class: 'icon-katalk'

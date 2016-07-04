@@ -1,0 +1,13 @@
+%tr{data: {action: 'clickable-row', href: post_url(post)}}
+  %td.post-id
+    = post.sequential_id
+  %td.post-title
+    = post.title
+    - if post.comments.any?
+      %span.comment
+        %i.fa.fa-comment-o.fa-flip-horizontal
+        = post.comments.count
+  %td.post-name
+    = mask_name(post.name)
+  %td.post-created-at
+    = date_f post.created_at

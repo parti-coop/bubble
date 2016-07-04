@@ -1,0 +1,52 @@
+%section#article-banners
+  .container
+    .banner-panel.banner-panel-article
+      %a(href="http://h21.hani.co.kr/arti/SERIES/236/" target="_blank")
+        - if browser.device.mobile?
+          = image_tag 'step2/article-banner-mobile.png'
+        - else
+          = image_tag 'step2/article-banner.png'
+%section#parti-banners
+  .container
+    .banner-panel.banner-panel-parti
+      %a(href="http://parti.xyz/p/gmo_mark" target="_blank")
+        - if browser.device.mobile?
+          = image_tag 'step2/parti-banner-mobile.png'
+        - else
+          = image_tag 'step2/parti-banner.png'
+
+%section#share
+  .container
+    %h2
+      시민의 법안,
+      %br
+      혼자 알기 아깝지?
+    %ul.share-box.list-inline
+      - data = {action: 'bubble-share', 'share-url': root_url, 'share-text': "시민 입법 프로젝트 '바글시민 와글입법' - 2016년, 시민이 올리는 시민의 법안을 만들자!" }
+      - %w(facebook twitter kakao-link kakao-story).each do |provider|
+
+        - data = data.merge('share-provider': provider)
+
+        - if provider == 'kakao-link'
+          - hide_kakao_link = (! browser.device.mobile?) ? ' hide' : ''
+          - data = data.merge('share-image': image_url('seo.png'), 'share-image-width': '1200', 'share-image-height': '630')
+        %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
+          - if provider == 'kakao-story'
+            = image_tag 'icon_kas.png', class: 'icon-kas'
+          - if provider == 'kakao-link'
+            = image_tag 'icon_katalk.png', class: 'icon-katalk'
+  .qa-wrapper
+    %a(href='mailto:trans@hani.co.kr')
+      문의하기
+      %span.email trans@hani.co.kr
+  %hr
+%section#footer
+  .container
+    .footer-logos
+      %ul.list-inline.logos
+        %li
+          %a(href='http://h21.hani.co.kr/' target='_blank')
+            = image_tag 'step2/footer-hani-logo.png'
+        %li
+          %a(href='http://parti.xyz/' target='_blank')
+            = image_tag 'step2/footer-parti-logo.png'

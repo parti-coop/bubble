@@ -1,0 +1,30 @@
+.party-names
+  %h3.section-title.background-white 이름 짓는 당
+  %p.description
+    영상 잘 봤어?
+    %br
+    지지하는 당 이름에 투표해줘
+    %i !
+  - if party_name_upvoted?
+    .options.options--upvoted
+      - PartyName.all.each do |option|
+        .option
+          .party-name-label{id: "option-#{option.slug}"}= option.name
+          .option-graph{style: "height: #{number_to_percentage(option.percentage, precision: 0)}"}
+          .option-stat
+            .option-stat-percentage
+              = number_to_percentage(option.percentage, precision: 0)
+            .option-stat-count
+              #{option.upvotes_count}표
+      .form-submit
+        = submit_tag '이미 투표했음', disabled: true, class: 'disabled'
+  - else
+    .options.options--not-yet
+      = form_tag upvote_party_name_path, remote: true do
+        - PartyName.all.each do |option|
+          %label.option
+            .party-name-label{id: "option-#{option.slug}"}= option.name
+            = radio_button_tag :slug, option.slug, false, data: { action: 'bubble-naming-option', sibling: '.party-names .options .option'}
+            %span
+        .form-submit
+          = submit_tag '투표하기'

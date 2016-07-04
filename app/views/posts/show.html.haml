@@ -1,0 +1,58 @@
+%section#project-step2.project-step2-post
+
+  - if @post.bill_choice_board?
+    = render 'pages/step1_header'
+  - else
+    = render 'pages/step2_header'
+
+  %section#post
+    .container
+      %a{id: 'post-panel-anchor'}
+      .post-panel
+        .post-detail
+          .post-meta-wrapper.post-title-wrapper
+            .row
+              .col-sm-2.col-xs-3
+                .post-meta-label 제목
+              .col-sm-10.col-xs-9
+                .post-meta-value= @post.title
+          .post-meta-wrapper.post-user-wrapper
+            .row
+              .col-sm-2.col-xs-3
+                .post-meta-label 작성자
+              .col-sm-10.col-xs-9
+                .post-meta-value
+                  = mask_name @post.name
+                  - if @post.user.present?
+                    %span.party-memember-badget 당원
+          - if can? :manage, @post
+            .post-buttons
+              %span
+                = link_to '수정', [:edit, @post]
+              \|
+              %span
+                = link_to '삭제', @post, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' }
+
+          .post-body
+            = simple_format(@post.body)
+
+        .comments-panel
+          - if @post.comments.empty?
+            %hr
+            %p.help-block
+              %i.fa.fa-comment-o.fa-flip-horizontal
+              처음으로 댓글을 남겨보세요
+              %i !
+          - else
+            .comments
+              = render @post.comments.earlier
+          = render 'comments/form', post: @post
+        .navigation-button
+          - if @post.bill_choice_board?
+            = link_to step1_path(anchor: 'posts-anchor'), class: 'btn btn-default' do
+              목록으로
+          - else
+            = link_to root_path(anchor: 'posts-anchor'), class: 'btn btn-default' do
+              목록으로
+
+  = render 'pages/step2_footer'

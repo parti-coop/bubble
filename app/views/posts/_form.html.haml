@@ -1,0 +1,45 @@
+.post-form
+  - if @post.nil?
+    - @post = Post.new
+  = form_for @post do |f|
+    = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
+    = f.hidden_field :board_slug, value: Post::BOARD_SLUG_PARTY_BUILDING
+    - if user_signed_in?
+      .user-info
+        %strong= current_user.name
+        당원
+    - else
+      .row
+        .col-xs-6
+          .form-group
+            = f.text_field :guest_name, class: 'form-control', placeholder: '이름' ,data: {'rule-required': true}
+        .col-xs-6
+          .form-group
+            = f.email_field :guest_email, class: 'form-control' , placeholder: '이메일(선택사항)'
+      .help-block
+        %span{style: 'white-space: nowrap;'}
+          또는
+          %a.login-link(href='#anchor-join') 당원가입
+          하거나,
+        %span{style: 'white-space: nowrap;'}
+          이미 당원이라면
+          %a.login-link(href='#anchor-join') 로그인
+          해봐
+          %i !
+      %hr
+    .form-group
+      = f.text_field :title, class: 'form-control', placeholder: '제목' , data: {'rule-required': true}
+    .form-group
+      = f.text_area :body, class: 'form-control', placeholder: '내용' , data: {'rule-required': true}, data: { action: 'parti-autoresize'}
+    .row
+      .col-sm-8
+        - if !user_signed_in? and @post.new_record?
+          .form-group.recaptcha
+            .help-block 스팸 방지를 위해 사람인지 확인하는 거야. 아래 체크 박스를 클릭해.
+            = recaptcha_tags hl: :ko, size: '100px'
+      .col-sm-4.text-right
+        - if @post.new_record?
+          = f.submit '등록', class: 'btn btn-lg btn-block btn-post-submit', data: { disable_with: "게시 중..." }
+        - else
+          = link_to '취소', @post, class: 'link-cacel'
+          = f.submit '수정', class: 'btn btn-lg btn-post-submit btn-post-submit--update', data: { disable_with: "게시 중..." }

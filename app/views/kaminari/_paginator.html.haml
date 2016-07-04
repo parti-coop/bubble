@@ -29,6 +29,6 @@
   %nav.pagination-wrapper
     %ul{:class => "pagination #{pagination_class}"}
       = prev_page_tag unless current_page.first?
-      %li #{current_page}/#{num_pages}
+      %li #{current_page} / #{num_pages}
       = next_page_tag unless current_page.last?
 

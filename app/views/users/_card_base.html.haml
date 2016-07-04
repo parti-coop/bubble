@@ -1,0 +1,21 @@
+!!!
+%html{:lang => I18n.locale}
+  %head
+    %meta{:charset => "utf-8"}
+    = display_meta_tags
+    = stylesheet_link_tag asset_data_base64('application.css')
+    %link{href: "http://fonts.googleapis.com/earlyaccess/notosanskr.css", rel: "stylesheet"}
+  %body(style='padding: 0;')
+    %section.user-card{ style: "background-image: url(#{asset_data_base64('user-card-background.png')});" }
+      .info
+        %p
+          나는
+          %span
+            %span.important> GMO 완전표시제
+        %p
+          도입을 위해 뭉친
+
+        %p
+          %span.important> #{@user.sequential_id}
+          번째
+          당원입니다.
