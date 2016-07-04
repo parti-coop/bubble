@@ -60,6 +60,13 @@
           %span.count> #{current_user.sequential_id}
           번째
         당원입니다.
+      - if user_signed_in?
+        .all-party-user
+          %span
+            현재 총
+          %span.count> #{User.count}
+          %span
+            명이 모였습니다.
       .share-card
         %span.help-text
           친구에게 공유해

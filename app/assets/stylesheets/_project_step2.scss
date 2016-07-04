@@ -470,7 +470,7 @@ section#project-step2 {
           line-height: 46px;
           font-weight: 200;
           @media (max-width: 767px) {
-            font-size: $font-size-large;
+            font-size: 24px;
             line-height: $line-height-large;
           }
           .bill-name {
@@ -478,6 +478,16 @@ section#project-step2 {
           }
           .count {
             color: #32b16c;
+          }
+        }
+        .all-party-user {
+          padding-top: 5px;
+          font-size: 18px;
+          @media (max-width: 767px) {
+            font-size: 14px;
+          }
+          .count {
+            color: #ec6941;
           }
         }
         .share-card {
