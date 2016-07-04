@@ -68,7 +68,9 @@ function onYouTubeIframeAPIReady() {
     $video_player = $($elm.data('target'));
 
     $.each(global_video_players, function(id, video) {
-      video.stopVideo();
+      if(typeof video.stopVideo == 'function') {
+        video.stopVideo();
+      }
     });
 
     $video_player_group.hide();
