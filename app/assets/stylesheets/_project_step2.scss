@@ -1009,6 +1009,20 @@ section#project-step2 {
       border-top: 1px solid #fff;
     }
 
+    .qa-wrapper{
+      padding-top: 10px;
+      text-align: center;
+      a,
+      a:hover {
+        color: #b5b5b5;
+        font-size: $font-size-base;
+        text-decoration: none;
+        .email {
+          text-decoration: underline;
+        }
+      }
+    }
+
 
 
     .share-box {
