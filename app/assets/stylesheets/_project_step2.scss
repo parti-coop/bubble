@@ -47,12 +47,31 @@ section#project-step2 {
     @media (max-width: 767px) {
       background-size: 170px;
     }
-    &.background-white {
+    &.background-white,
+    &.background-process {
       background-image :asset_url('step2/title-background-white.png');
-
+      @media (max-width: 767px) {
+        margin-bottom: 0;
+      }
+    }
+    &.background-process {
+      padding-bottom: 6px;
+      margin-bottom: 0;
+    }
+    @media (max-width: 767px) {
+      &.background-white {
+        background: none;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
     }
     &.background-mint {
       background-image :asset_url('step2/title-background-mint.jpg');
+      @media (max-width: 767px) {
+        background: none;
+        padding-bottom: 10px;
+        padding-top: 30px;
+      }
     }
 
 
