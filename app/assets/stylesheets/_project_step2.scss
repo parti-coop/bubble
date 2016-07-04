@@ -1060,13 +1060,13 @@ section#project-step2 {
     .share-box {
       text-align: center;
       .share-item {
+        position: relative;
         border-radius: 50%;
         padding: 1px 10px;
         font-size: 24px;
         line-height: 24px;
         width: 44px;
         height: 43px;
-        text-align: center;
         margin-left: 5px;
         margin-right: 5px;
         background-color: #fff;
@@ -1076,6 +1076,8 @@ section#project-step2 {
         }
         .jssocials-shares {
           margin: 0;
+          top: 3px;
+          position: absolute;
           .jssocials-share-facebook i {
             color: #3a5793;
           }
@@ -1083,15 +1085,20 @@ section#project-step2 {
             color: #55acee;
           }
         }
+        &.share-kakao-link .icon-katalk,
+        &.share-kakao-story .icon-kas {
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: auto;
+          top: 0;
+          bottom: 0;
+        }
         &.share-kakao-link .icon-katalk {
           width: 20px;
-          padding-top: 12px;
-          margin-bottom: -5px;
         }
         &.share-kakao-story .icon-kas {
-          padding-top: 11px;
           width: 10px;
-          margin-bottom: -10px;
         }
       }
     }
