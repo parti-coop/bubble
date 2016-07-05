@@ -17,11 +17,11 @@
           .form-group
             = f.email_field :guest_email, class: 'form-control' , placeholder: '이메일(선택사항)'
     .form-group
-      = f.text_area :body, class: 'form-control', placeholder: '댓글을 입력해주세요.' , data: {'rule-required': true}, data: { action: 'parti-autoresize'}
+      = f.text_area :body, class: 'form-control', placeholder: '댓글을 입력해주세요.' , data: {'rule-required': true, action: 'parti-autoresize'}
     .row
       .col-sm-8
         - if !user_signed_in? and @comment.new_record?
-          .form-group.recaptcha_tags
+          .form-group.recaptcha
             .help-block 스팸 방지를 위해 사람인지 확인하는 거야. 아래 체크 박스를 클릭해.
             = recaptcha_tags hl: :ko, size: '100px'
       .col-sm-4.text-right

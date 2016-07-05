@@ -91,7 +91,11 @@ $(function(){
   $('map').imageMapResize();
 
   $.validator.addMethod("recaptcha", function(value, element) {
-    return grecaptcha.getResponse().length > 0;
+    if(typeof grecaptcha != 'undefined') {
+      return grecaptcha.getResponse().length > 0;
+    }
+
+    return true;
   }, '');
 
   $('form#new_comment, form.edit_comment').validate({
@@ -115,7 +119,7 @@ $(function(){
     }
   });
 
-  $('form#new_post').validate({
+  $('form#new_post, form.edit_post').validate({
     ignore: ".ignore",
     rules: {
       "hiddenRecaptcha": {

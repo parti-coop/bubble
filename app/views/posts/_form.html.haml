@@ -30,7 +30,7 @@
     .form-group
       = f.text_field :title, class: 'form-control', placeholder: '제목' , data: {'rule-required': true}
     .form-group
-      = f.text_area :body, class: 'form-control', placeholder: '내용' , data: {'rule-required': true}, data: { action: 'parti-autoresize'}
+      = f.text_area :body, class: 'form-control', placeholder: '내용' , data: {'rule-required': true, action: 'parti-autoresize'}
     .row
       .col-sm-8
         - if !user_signed_in? and @post.new_record?
