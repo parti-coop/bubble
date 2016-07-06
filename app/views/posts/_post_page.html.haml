@@ -10,6 +10,9 @@
     - if @posts.empty?
       %tr
         %td.empty(colspan=4)
-          첫 번째로 의견을 남겨 보세요
-          %i !
+          - if params[:q].present?
+            '#{params[:q]}' 단어를 포함하는 글은 없어.
+          - else
+            첫 번째로 의견을 남겨줘
+            %i !
 = paginate @posts, params: { board_slug: board_slug, anchor: 'posts-anchor' }

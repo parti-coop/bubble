@@ -261,6 +261,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    scoped_search (3.2.2)
+      activerecord (>= 3.2.0)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -358,6 +360,7 @@ DEPENDENCIES
   recaptcha
   ruby_dig (~> 0.0.2)
   sass-rails (~> 5.0)
+  scoped_search (~> 3.2, >= 3.2.2)
   sdoc (~> 0.4.0)
   seed-fu (~> 2.3, >= 2.3.5)
   sequenced (~> 3.1, >= 3.1.1)

@@ -637,6 +637,52 @@ section#project-step2 {
           font-size: $font-size-small;
           line-height: $line-height-small;
         }
+        .post-search {
+          display: table;
+          width: 100%;
+          margin-bottom: 10px;
+          .post-search-info {
+            display: table-cell;
+            width: 50%;
+            vertical-align: middle;
+            color: #737373;
+            margin-bottom: 10px;
+          }
+          .cancel-search {
+            color: $brand-lime-color;
+            text-decoration: underline;
+          }
+          .post-search-form {
+            display: table-cell;
+            text-align: right;
+            position: relative;
+            #post-search-form {
+              .form-group {
+                margin-bottom: 0;
+              }
+              .search-query {
+                height: 35px;
+                border: 1px solid #d2d2d2;
+                border-radius: 0;
+                padding: 0 10px;
+              }
+              button {
+                border: 0;
+                background: rgba(255,255,255,.9);
+                padding: 2px 5px;
+                position: absolute;
+                right: 0;
+                color: #d2d2d2;
+                height: 31px;
+                margin: 1px;
+                bottom: 0;
+              }
+            }
+            .search-query:focus + button {
+              opacity: 0.1;
+            }
+          }
+        }
         table {
           width: 100%;
           thead tr th {
@@ -726,30 +772,6 @@ section#project-step2 {
               }
             }
           }
-        }
-      }
-      .post-search {
-        padding-top: 30px;
-        padding-bottom: 30px;
-        text-align: center;
-        #post-search-form {
-          .search-query {
-            height: 45px;
-            border: 1px solid #d2d2d2;
-            border-radius: 0;
-            padding: 0 10px;
-          }
-          button {
-            border: 0;
-            background: none;
-            padding: 2px 5px;
-            position: relative;
-            left: -32px;
-            color: #d2d2d2;
-          }
-        }
-        .search-query:focus + button {
-          z-index: 3;
         }
       }
     }

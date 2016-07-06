@@ -45,6 +45,7 @@ gem 'meta-tags', '~> 2.1.0'
 gem 'unobtrusive_flash', '~> 3.1'
 gem 'sequenced', '~> 3.1', '>= 3.1.1'
 gem 'ruby_dig', '~> 0.0.2'
+gem 'scoped_search', '~> 3.2', '>= 3.2.2'
 
 
 # image
