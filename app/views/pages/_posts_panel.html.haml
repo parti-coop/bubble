@@ -27,7 +27,7 @@
       .post-search-form
         = form_tag root_path(anchor: 'posts-anchor'), method: :get, id: 'post-search-form' do
           .form-group
-            = text_field_tag 'q', params[:q], class: 'search-query', maxlength: 20, autocorrect: "off", autocapitalize: "none"
+            = search_field_tag 'q', params[:q], class: 'search-query', maxlength: 20, autocorrect: "off", autocapitalize: "none"
             %button.btn{:type => "submit"}
               %i.fa.fa-search
     = render 'posts/post_page', board_slug: Post::BOARD_SLUG_PARTY_BUILDING
