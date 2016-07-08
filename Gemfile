@@ -54,6 +54,13 @@ group :development, :test do
   gem 'wkhtmltoimage-binary', '~> 0.12.2'
 end
 
+# notification
+gem 'slack-notifier', '~> 1.4'
+gem 'exception_notification', '~> 4.1', '>= 4.1.4'
+gem 'sidekiq', '~> 4.1'
+gem 'redis', '~> 3.2', '>= 3.2.2'
+gem 'redis-namespace', '~> 1.5', '>= 1.5.2'
+
 # monitor
 gem 'newrelic_rpm'
 gem 'ey_config'
