@@ -1,0 +1,6 @@
+-unless params[:step].to_i == 1
+  =link_to '이전 문제', quiz_path(step: params[:step].to_i - 1), remote: true
+-unless params[:step].to_i == 10
+  =link_to '다음 문제', quiz_path(step: params[:step].to_i + 1), remote: true
+-if params[:step].to_i == 10
+  =link_to '결과보기', report_quiz_path(step: params[:step]), remote: true

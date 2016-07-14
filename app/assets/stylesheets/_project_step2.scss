@@ -376,6 +376,36 @@ section#project-step2 {
     }
   }
 
+  section#quiz {
+    .quiz-panel {
+      text-align: center;
+      background-color: #fff;
+      padding: 40px 5% 88px 5%;
+      margin-left: 5%;
+      margin-right: 5%;
+      background-image :asset_url('step2/quiz-start-background.png');
+      background-position-y: -32px;
+      background-size: cover;
+    }
+    .quiz-heading {
+      font-size: 36px;
+      color: #aaaaaa;
+      font-weight: 100;
+    }
+    .quiz-subheading {
+      font-size: 24px;
+      padding-top: 8px;
+      padding-bottom: 36px;
+      font-weight: 100;
+    }
+    .quiz-start-btn {
+      background-color: #ec6941;
+      color: #fff;
+      padding: 26px 94px;
+      font-size: 20px;
+    }
+  }
+
   section#join {
     .party-join {
       margin-left: 5%;
