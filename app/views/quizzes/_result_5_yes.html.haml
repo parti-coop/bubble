@@ -1,6 +1,21 @@
-=render 'result_top'
+=render 'quiz_header'
 
-오답입니다.
+.quiz-header
+  5. ‘GMO가 아닌 농산물’을 ‘GMO가 아닌 농산물’이라 부를(표시)할 수 없다.
+.answer-o
+  = image_tag 'step2/answer-o-correct.png'
+.answer-description
+  놀랐지?  식약처는 ‘GMO-free(무유전자변형식품)’,
+  %br
+  ‘Non-GMO(비유전자변형식품)’ 표시를 한 매장을 단속한 적이 있어.
+  %br
+  콩·옥수수 등 현행법상 GMO 표시 대상이 아닌
+  %br
+  농산물·가공식품에 표시를 했다는 이유야.
+  %br
+  지난 4월21일
+  = link_to '행정예고한 고시에도 이런 조항', 'http://parti.xyz/articles/2048', target: '_blank'
+  을 담았어.
 
 =render 'quiz_navigator'
 

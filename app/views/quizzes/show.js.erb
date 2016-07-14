@@ -1,1 +1,5 @@
 $('.quiz-panel').html('<%= escape_javascript(render "quizzes/question_#{params[:step]}") %>');
+$('.quiz-panel').css('background-image', 'none');
+$('.quiz-panel').css('padding', '20px 0 10px 0');
+$('.quiz-step-round#<%= escape_javascript("#{params[:step]}") %>').css('background-color', '#89c997');
+$('.quiz-step-round#<%= escape_javascript("#{params[:step]}") %>').css('color', '#fff');

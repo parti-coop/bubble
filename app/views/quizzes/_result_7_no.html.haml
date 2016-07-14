@@ -1,6 +1,17 @@
-=render 'result_top'
+=render 'quiz_header'
 
-
-정답이네요!
+.quiz-header
+  7. GM0 안전성을 둘러싼 논쟁이 거세지자, 2015년 러시아·유럽·미국 과학자들이 ‘GMO가 암의 발생, 생식력 저하 등을 유발하는지를 규명하겠다’며 가동시킨 팀의 이름은 ‘팩트체크’다.　
+.answer-x
+  = image_tag 'step2/answer-x-correct.png'
+.answer-description
+  = link_to "'팩터 GMO 프로젝트'", 'http://parti.xyz/articles/2136', target: '_blank'
+  라고,
+  %br
+  비정부기구를 표방한 러시아의 한 단체가 주도했어.
+  %br
+  장기간에 걸쳐 GMO의 안전성을 살피는 것을 목표로 삼고 있지.
+  %br
+  ‘팩트체크’는 JTBC 뉴스의 코너명이야.
 
 =render 'quiz_navigator'

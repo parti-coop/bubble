@@ -1,7 +1,17 @@
-=render 'result_top'
+=render 'quiz_header'
 
-
-오답입니다.
+.quiz-header
+  6. 중국은 ‘GMO 표시계’에선 미국을 이긴다.
+.answer-o
+  = image_tag 'step2/answer-o-correct.png'
+.answer-description
+  중국은 GMO를 원료로 하는 모든 식품에 GMO 표시를 해야해.
+  %br
+  어쩌다가 0.1%의 GMO가 섞여도 표시에 예외란 없어.
+  %br
+  GMO완전표시제를 채택한
+  = link_to '유럽연합(EU)보다도 강한 기준', 'http://parti.xyz/articles/2135', target: '_blank'
+  이야.
 
 =render 'quiz_navigator'
 

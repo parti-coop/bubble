@@ -1,7 +1,19 @@
-=render 'result_top'
+=render 'quiz_header'
 
-
-오답입니다.
+.quiz-header
+  3. 국내산 콩 심은 데 국내산 콩만 난다.
+.answer-o
+  = image_tag 'step2/answer-o-discorrect.png'
+.answer-description
+  국립생태원에 따르면 2009~2014년
+  = link_to ' 국내에서 발견된 자생 GMO가', 'http://parti.xyz/articles/1852', target: '_blank'
+  184건이래.
+  %br
+  수입된 GMO가 국내에서 이동하는 과정에서 옥수수 알갱이나
+  %br
+  면화 씨앗이 흘러나가 저절로 싹을 틔운 게 아닐까 추정하고 있어.
+  %br
+  GM콩 재배를 허용하지 않는 한국의 콩밭에서도 GM콩이 자랄 수 있다는 뜻이야.
 
 =render 'quiz_navigator'
 

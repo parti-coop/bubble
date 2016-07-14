@@ -1,2 +1,25 @@
-결과다!
-10개 중 #{@correct_count}개, 정답!
+.quiz-report
+  %p.quiz-report-heading
+    퀴즈 결과
+  %p.quiz-report-heading-title
+    -if @correct_count == 7
+      대단해! 7문제 모두 다 맞췄어!
+    -else
+      7문제 중 #{@correct_count}개 맞췄어!
+  %p.quiz-report-heading-description
+    친구들에게도 퀴즈를 추천해봐
+  %ul.share-box.list-inline
+    - data = {action: 'bubble-share', 'share-url': root_url, 'share-text': "시민 입법 프로젝트 '바글시민 와글입법' - 2016년, 시민이 올리는 시민의 법안을 만들자!" }
+    - %w(facebook twitter kakao-link kakao-story).each do |provider|
+
+      - data = data.merge('share-provider': provider)
+
+      - if provider == 'kakao-link'
+        - hide_kakao_link = (! browser.device.mobile?) ? ' hide' : ''
+        - data = data.merge('share-image': image_url('seo.png'), 'share-image-width': '1200', 'share-image-height': '630')
+      %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
+        - if provider == 'kakao-story'
+          = image_tag 'icon_kas.png', class: 'icon-kas'
+        - if provider == 'kakao-link'
+          = image_tag 'icon_katalk.png', class: 'icon-katalk'
+  = link_to '다시하기', quiz_path(step: 1), class: 'quiz-restart',remote: true

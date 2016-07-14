@@ -386,20 +386,160 @@ section#project-step2 {
     .quiz-panel {
       text-align: center;
       background-color: #fff;
-      padding: 40px 5% 88px 5%;
+      padding: 40px 0 60px 0;
       margin-left: 5%;
       margin-right: 5%;
       background-image :asset_url('step2/quiz-start-background.png');
-      background-position-y: -32px;
+      background-position-y: -140px;
       background-size: cover;
+
+      .quiz-step-round-wrapper{
+        .quiz-step-round {
+          color: #9cd1a7;
+          display: inline-block;
+          border-radius: 50%;
+          border: 1px solid #eaf4eb;
+          padding: 11px 17px;
+          margin-left: 24px;
+          margin-right: 24px;
+          background-color: #fff;
+        }
+        .quiz-step-hr {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: -60px;
+          z-index: -1;
+        }
+      }
+
+      .quiz-header {
+        padding: 50px 40px 46px;
+        text-align: justify;
+        color: #aaaaaa;
+        font-weight: 100;
+        font-size: 18px;
+      }
+
+      .answer-o {
+        padding-bottom: 40px;
+      }
+
+      .answer-x {
+        padding-bottom: 50px;
+      }
+
+      .answer-description {
+        color: #ec6941;
+        margin-left: 30px;
+        margin-right: 30px;
+        font-size: 18px;
+        font-weight: 100;
+        line-height: 24px;
+        a {
+          color: #ec6941;
+          text-decoration: underline;
+          font-weight: 300;
+        }
+      }
+
+      .quiz-navigator {
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        .quiz-next-btn {
+          background-color: #ec6941;
+          color: #fff;
+          padding: 16px 48px;
+          font-size: 14px;
+          font-weight: 100;
+        }
+      }
+
+      .quiz-report {
+        padding-bottom: 25px;
+
+        .quiz-report-heading {
+          padding-top: 16px;
+          font-size: 18px;
+          color: #aaaaaa;
+          font-weight: 100;
+        }
+
+        .quiz-report-heading-title {
+          color: #ec6941;
+          font-size: 18px;
+          padding-top: 18px;
+          margin-bottom: 0;
+        }
+
+        .quiz-report-heading-description {
+          color: #ec6941;
+          padding-bottom: 18px;
+        }
+
+        .quiz-restart {
+          padding-top: 14px;
+          display: block;
+          color: #89c997;
+          text-decoration: underline;
+        }
+      }
+
+
+      .share-box {
+        text-align: center;
+        .share-item {
+          position: relative;
+          border-radius: 50%;
+          padding: 1px 10px;
+          font-size: 24px;
+          line-height: 24px;
+          width: 44px;
+          height: 43px;
+          margin-left: 5px;
+          margin-right: 5px;
+          background-color: #fff;
+          box-shadow: 1px 2px 5px 1px rgba(4, 0, 0, 0.2);
+          .jssocials-share-count {
+            display: none;
+          }
+          .jssocials-shares {
+            margin: 0;
+            top: 3px;
+            position: absolute;
+            .jssocials-share-facebook i {
+              color: #3a5793;
+            }
+            .jssocials-share-twitter i {
+              color: #55acee;
+            }
+          }
+          &.share-kakao-link .icon-katalk,
+          &.share-kakao-story .icon-kas {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+          }
+          &.share-kakao-link .icon-katalk {
+            width: 20px;
+          }
+          &.share-kakao-story .icon-kas {
+            width: 10px;
+          }
+        }
+      }
     }
+
     .quiz-heading {
-      font-size: 36px;
+      font-size: 18px;
       color: #aaaaaa;
       font-weight: 100;
     }
     .quiz-subheading {
-      font-size: 24px;
+      font-size: 14px;
       padding-top: 8px;
       padding-bottom: 36px;
       font-weight: 100;
@@ -407,9 +547,45 @@ section#project-step2 {
     .quiz-start-btn {
       background-color: #ec6941;
       color: #fff;
-      padding: 26px 94px;
-      font-size: 20px;
+      padding: 16px 36px;
+      font-size: 18px;
+      font-weight: 100;
     }
+
+
+    .choices {
+      &__yes {
+        display: inline;
+        padding: 10px 100px 0;
+        background-color: #eeeeee;
+        margin-right: 10px;
+        margin-left: 5px;
+        color: #89c997;
+        font-size: 130px;
+        font-weight: 900;
+        &:hover {
+          background-color: #89c997;
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+      &__no {
+        display: inline;
+        padding: 10px 100px 0;
+        background-color: #eeeeee;
+        margin-right: 5px;
+        margin-left: 10px;
+        color: #89c997;
+        font-size: 130px;
+        font-weight: 900;
+        &:hover {
+          background-color: #89c997;
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+
   }
 
   section#join {

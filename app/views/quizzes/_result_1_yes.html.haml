@@ -1,6 +1,15 @@
-=render 'result_top'
+=render 'quiz_header'
 
-오답입니다.
+.quiz-header
+  1. GMO는 ‘General Motors Operation’의 줄임말이다.
+.answer-o
+  = image_tag 'step2/answer-o-discorrect.png'
+.answer-description
+  안 웃겼으면 미안! 1번부터 어려우면 머리 아프잖아.
+  %br
+  GMO는 ‘Genetically Modified Organism’의 줄임으로,
+  %br
+  유전자변형식품이란 뜻이야.　
 
 =render 'quiz_navigator'
 

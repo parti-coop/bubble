@@ -10,7 +10,7 @@ class QuizzesController < ApplicationController
   def report
     previous_answer_paper_json = cookies.signed[:muni_muni]
     answer_paper = JSON.parse(previous_answer_paper_json || '{}')
-    yes_setps = %w(1 3 5 7 9)
+    yes_setps = %w(5 6)
     @correct_count = answer_paper.select { |step, answer| yes_setps.include?(step) ? answer == 'yes' : answer == 'no' }.count
   end
 end

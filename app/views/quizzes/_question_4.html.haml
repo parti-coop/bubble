@@ -1,7 +1,6 @@
-#{params[:step]}번 질문
+=render 'quiz_header'
 
-.choices
-  .choices__yes
-    = link_to 'O', result_quiz_path(step: params[:step], answer: :yes), remote: true
-  .choices__no
-    = link_to 'X', result_quiz_path(step: params[:step], answer: :no), remote: true
+.quiz-header
+  4. 통일벼, 씨없는 수박은 한국형 GMO다.
+
+=render 'choice'

@@ -1,7 +1,6 @@
-#{params[:step]}번 질문
+=render 'quiz_header'
 
-.choices
-  .choices__yes
-    = link_to 'O', result_quiz_path(step: params[:step], answer: :yes), remote: true
-  .choices__no
-    = link_to 'X', result_quiz_path(step: params[:step], answer: :no), remote: true
+.quiz-header
+  7. GM0 안전성을 둘러싼 논쟁이 거세지자, 2015년 러시아·유럽·미국 과학자들이 ‘GMO가 암의 발생, 생식력 저하 등을 유발하는지를 규명하겠다’며 가동시킨 팀의 이름은 ‘팩트체크’다.　
+
+=render 'choice'
