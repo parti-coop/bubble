@@ -47,6 +47,10 @@ class Post < ActiveRecord::Base
     upvotes.exists?(user: user)
   end
 
+  def self.best(board_slug, limit)
+    where(board_slug: board_slug).where('upvotes_count > 3').order(upvotes_count: :desc).limit(limit)
+  end
+
   private
 
   def should_have_name

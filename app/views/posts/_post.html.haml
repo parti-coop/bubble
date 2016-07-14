@@ -1,6 +1,10 @@
 %tr{data: {action: 'clickable-row', href: post_url(post)}}
   %td.post-id
-    = post.sequential_id
+    - if local_assigns[:as_best]
+      %span.best-label
+        베스트
+    - else
+      = post.sequential_id
   %td.post-title
     = post.title
     - if post.comments.any?
