@@ -4,6 +4,11 @@ $brand-lime-color: #32b16c;
 $brand-base-color: #eaf4eb;
 $brand-cyan-color: #84ccc9;
 
+body.app-pages-home,
+body.app-devise-registrations-new {
+  background-color: $brand-base-color;
+}
+
 section#project-step2 {
   $menu-text-color: #0068b7;
   $video-text-color: #eb8c6b;
@@ -598,6 +603,16 @@ section#project-step2 {
         }
       }
     }
+    &.join-only {
+      margin-bottom: 100px;
+      .card .card-intro {
+        font-size: $font-size-h2;
+        line-height: initial;
+        @media (max-width: 767px) {
+          font-size: $font-size-large;
+        }
+      }
+    }
   }
 
   section#notice {
@@ -682,6 +697,11 @@ section#project-step2 {
             padding-top: 15px;
             padding-bottom: 15px;
             color: #5d5d5d;
+            @media (max-width: 767px) {
+              padding-top: 8px;
+              padding-bottom: 8px;
+              font-size: $font-size-small;
+            }
           }
           .board-tab.active {
               background-color: #fff;
@@ -700,7 +720,8 @@ section#project-step2 {
             text-align: center;
             background-color: $brand-lime-color;
             color: #fff;
-            &.post-created-at {
+            &.post-created-at,
+            &.post-upvote {
               @media (max-width: 767px) {
                 display: none;
               }

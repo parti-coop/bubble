@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
 
   BOARD_NAME_BILL_CHOICE = '법안 정하기'
   BOARD_NAME_PARTY_BUILDING = '정당 만들기'
-  BOARD_NAME_PARTY_SUGGEST = '정당활동 제안하기'
+  BOARD_NAME_PARTY_SUGGEST = '정당활동 제안'
 
   BOARDS = {
     Post::BOARD_SLUG_BILL_CHOICE => Post::BOARD_NAME_BILL_CHOICE,

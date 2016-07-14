@@ -17,7 +17,7 @@
 
     = csrf_meta_tags
 
-  %body{class: "app-#{params[:controller]} app-#{params[:controller]}-#{params[:action]}"}
+  %body{class: "app-#{params[:controller].parameterize} app-#{params[:controller].parameterize}-#{params[:action].parameterize}"}
     = yield
     = javascript_include_tag 'application'
     = yield :script if content_for?(:script)
