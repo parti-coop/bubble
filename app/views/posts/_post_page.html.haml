@@ -1,6 +1,9 @@
 .board-tabs
   - Post::BOARDS.each do |tab_slug, tab_name|
-    =link_to tab_name, root_path(board_slug: tab_slug, anchor: 'posts-anchor'), class: "board-tab #{'active' if tab_slug == board_slug}"
+    - if tab_slug == Post::BOARD_SLUG_BILL_CHOICE
+      =link_to tab_name, step1_path(anchor: 'posts-anchor'), class: "board-tab"
+    - else
+      =link_to tab_name, root_path(board_slug: tab_slug, anchor: 'posts-anchor'), class: "board-tab #{'active' if tab_slug == board_slug}"
 %table
   %thead
     %tr

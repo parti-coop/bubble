@@ -41,12 +41,12 @@
               = link_to unvote_post_path(@post), class: "btn btn-default btn-upvoted", method: :post do
                 %i.fa.fa-thumbs-o-up
                 %i.fa.fa-ban
-                = @post.upvotes.count
+                = @post.upvotes_count
             - else
               = link_to upvote_post_path(@post), class: "btn btn-default", method: :post do
                 %i.fa.fa-thumbs-o-up
                 - if @post.upvotes.any?
-                  = @post.upvotes.count
+                  = @post.upvotes_count
                 - else
                   추천
         .comments-panel
@@ -65,7 +65,7 @@
             = link_to step1_path(anchor: 'posts-anchor'), class: 'btn btn-default' do
               목록으로
           - else
-            = link_to root_path(anchor: 'posts-anchor'), class: 'btn btn-default' do
+            = link_to root_path(board_slug: @post.board_slug, anchor: 'posts-anchor'), class: 'btn btn-default' do
               목록으로
 
   = render 'pages/step2_footer'

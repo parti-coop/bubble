@@ -500,6 +500,9 @@ section#project-step1 {
           font-size: $font-size-small;
           line-height: $line-height-small;
         }
+        .board-tabs {
+          display: none;
+        }
         table {
           width: 100%;
           thead tr th {
@@ -526,11 +529,18 @@ section#project-step1 {
             }
             .post-id,
             .post-name,
-            .post-created-at {
+            .post-created-at,
+            .post-upvote {
               text-align: center;
             }
             .post-id {
               width: 10%
+            }
+            .post-upvote {
+              width: 15%;
+              @media (max-width: 767px) {
+                display: none;
+              }
             }
             .post-created-at {
               width: 15%;
@@ -546,7 +556,7 @@ section#project-step1 {
             }
             .post-title {
               padding: 0 10px;
-              width: 55%;
+              width: 40%;
             }
             & > tr > td {
               border: 1px solid #eee;
