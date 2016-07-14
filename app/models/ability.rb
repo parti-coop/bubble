@@ -9,6 +9,9 @@ class Ability
       can :manage, [Post, Comment] do |model|
         model.user == user
       end
+      if user.admin?
+        can [:stick, :unstick], Post
+      end
     end
   end
 end

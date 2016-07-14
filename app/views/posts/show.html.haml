@@ -25,13 +25,23 @@
                   = mask_name @post.name
                   - if @post.user.present?
                     %span.party-memember-badget 당원
-          - if can? :manage, @post
+          - if can?(:manage, @post) or can?(:stick, @post)
             .post-buttons
-              %span
-                = link_to '수정', [:edit, @post]
-              \|
-              %span
-                = link_to '삭제', @post, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' }
+              - if can?(:manage, @post)
+                %span
+                  = link_to '수정', [:edit, @post]
+                \|
+                %span
+                  = link_to '삭제', @post, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' }
+              - if can?(:manage, @post) and can?(:stick, @post)
+                \|
+              - if can?(:stick, @post)
+                - if @post.sticky?
+                  %span
+                    = link_to '고정취소', [:unstick, @post], method: :post
+                - else
+                  %span
+                    = link_to '상단고정', [:stick, @post], method: :post
 
           .post-body
             = simple_format(@post.body)

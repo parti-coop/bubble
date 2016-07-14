@@ -51,6 +51,10 @@ class Post < ActiveRecord::Base
     where(board_slug: board_slug).where('upvotes_count > 3').order(upvotes_count: :desc).limit(limit)
   end
 
+  def self.stickies(board_slug)
+    where(board_slug: board_slug).where(sticky: true).recent
+  end
+
   private
 
   def should_have_name

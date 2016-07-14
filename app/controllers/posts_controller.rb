@@ -49,6 +49,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def stick
+    @post.sticky = true
+    @post.save
+    redirect_to @post
+  end
+
+  def unstick
+    @post.sticky = false
+    @post.save
+    redirect_to @post
+  end
+
   private
 
   def post_params

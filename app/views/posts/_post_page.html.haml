@@ -13,6 +13,7 @@
       %th 추천
       %th.post-created-at 일시
   %tbody
+    = render Post.stickies(board_slug), as_sticky: true
     = render Post.best(board_slug, 3), as_best: true
     = render @posts
     - if @posts.empty?

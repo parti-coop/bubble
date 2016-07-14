@@ -1,6 +1,9 @@
 %tr{data: {action: 'clickable-row', href: post_url(post)}}
   %td.post-id
-    - if local_assigns[:as_best]
+    - if local_assigns[:as_sticky]
+      %span.sticky-label
+        공지
+    - elsif local_assigns[:as_best]
       %span.best-label
         베스트
     - else

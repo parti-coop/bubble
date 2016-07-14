@@ -1,10 +1,11 @@
+$brand-red-color: #ec6941;
+$brand-green-color: #89c997;
+$brand-lime-color: #32b16c;
+$brand-base-color: #eaf4eb;
+$brand-cyan-color: #84ccc9;
+
 section#project-step2 {
   $menu-text-color: #0068b7;
-  $brand-red-color: #ec6941;
-  $brand-green-color: #89c997;
-  $brand-lime-color: #32b16c;
-  $brand-base-color: #eaf4eb;
-  $brand-cyan-color: #84ccc9;
   $video-text-color: #eb8c6b;
 
   @media (max-width: 768px) {
@@ -452,7 +453,7 @@ section#project-step2 {
           line-height: 48px;
           font-weight: 200;
           span.important {
-            color: #32b16c;
+            color: $brand-lime-color;
           }
         }
         .join-buttons {
@@ -522,10 +523,10 @@ section#project-step2 {
             line-height: $line-height-large;
           }
           .bill-name {
-            color: #32b16c;
+            color: $brand-lime-color;
           }
           .count {
-            color: #32b16c;
+            color: $brand-lime-color;
           }
         }
         .all-party-user {
@@ -713,8 +714,11 @@ section#project-step2 {
                 height: 23px;
               }
             }
+            .sticky-label {
+              color: $brand-lime-color;
+            }
             .best-label {
-              color: $brand-red-color
+              color: $brand-red-color;
             }
             .post-id,
             .post-name,
@@ -1208,7 +1212,7 @@ section.user-card {
       font-weight: 100;
       margin-bottom: -28px;
       span.important {
-        color: #32b16c;
+        color: $brand-lime-color;
       }
     }
   }
