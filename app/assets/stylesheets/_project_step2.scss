@@ -239,145 +239,14 @@ section#project-step2 {
   }
 
   section#naming {
-    background-color: $brand-green-color;
-    background-image: asset_url('step2/naming-bar.png');
-    background-repeat: repeat-x;
-    background-position-y: 91%;
-    background-size: initial;
-    @media (max-width: 767px) {
-      background-position-y: 89.6%;
-    }
     .party-names {
-      .description {
-        color: #fff;
-        text-align: center;
-        font-size: $font-size-large;
-        font-weight: 200;
-        @media (max-width: 767px) {
-          font-size: $font-size-base;
-        }
+      padding: 0 5%;
+      @media (max-width: 767px) {
+        padding: 0;
       }
-      .options {
-        text-align: center;
-        padding-top: 15px;
-        .option {
-          background-image: asset_url('step2/option-background.png');
-          &.selected {
-            background-image: asset_url('step2/option-selected-background.png');
-          }
-          display: inline-block;
-          position: relative;
-          cursor: pointer;
-          width: 21%;
-          margin-right: 4px;
-          margin-left: 4px;
-          height: 230px;
-          @media (max-width: 767px) {
-            height: 180px;
-            width: 22%;
-            margin-right: 1px;
-            margin-left: 1px;
-          }
-          border: 3px solid #fff;
-          text-align: center;
-
-          &:hover,
-          &--upvoted {
-            border-color: $brand-red-color;
-          }
-          .party-name-label {
-            font-size: $font-size-h3;
-            color: #fff;
-            top: 15px;
-            font-weight: 200;
-            position: absolute;
-            right: 0;
-            left: 0;
-            z-index: 1;
-            word-break: keep-all;
-            @media (max-width: 767px) {
-              font-size: $font-size-base;
-            }
-          }
-          [type="radio"] {
-            display: none;
-          }
-          [type="radio"] + span:before {
-            content: '';
-            display: inline-block;
-            width: 1em;
-            height: 1em;
-            vertical-align: -0.25em;
-            border-radius: 1em;
-            border: 0.2em solid #fff;
-            box-shadow: 0 0 0 0.2em $brand-red-color;
-            transition: 0.5s ease all;
-            background: #fff;
-            position: absolute;
-            bottom: 26px;
-            @media (max-width: 767px) {
-              top: 80px;
-            }
-            right: 0;
-            left: 0;
-            margin-right: auto;
-            margin-left: auto;
-          }
-          [type="radio"]:checked + span:before {
-            background: $brand-red-color;
-            box-shadow: 0 0 0 0.2em $brand-red-color;
-          }
-          .option-graph {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 50%;
-            background-color: #d97b52;
-          }
-          .option-stat {
-            position: absolute;
-            top: 90px;
-            right: 0;
-            left: 0;
-            margin-right: auto;
-            margin-left: auto;
-            color: #fff;
-            @media (max-width: 767px) {
-              top: initial;
-              bottom: 10px;
-            }
-            &-percentage {
-              font-size: $font-size-h1;
-              @media (max-width: 767px) {
-                font-size: $font-size-large;
-              }
-            }
-          }
-        }
-        .form-submit {
-          padding-top: 40px;
-          padding-bottom: 40px;
-          [type="submit"] {
-            -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.1);
-            -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.1);
-            box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.1);
-            height: 50px;
-            width: 160px;
-            background: $brand-red-color;
-            color: #fff;
-            font-size: $font-size-large;
-            @media (max-width: 767px) {
-              font-size: $font-size-small;
-            }
-            border: none;
-
-            &.disabled {
-              background-color: $brand-base-color;
-              color: $brand-green-color;
-              opacity: 1;
-            }
-          }
-        }
+      margin-bottom: 40px;
+      img {
+        width: 100%;
       }
     }
   }
@@ -389,7 +258,7 @@ section#project-step2 {
       padding: 40px 0 60px 0;
       margin-left: 5%;
       margin-right: 5%;
-      background-image :asset_url('step2/quiz-start-background.png');
+      background-image: asset_url('step2/quiz-start-background.png');
       background-position-y: -140px;
       background-size: cover;
       @media (max-width: 767px) {
