@@ -13,5 +13,10 @@ Rails.application.routes.draw do
   post 'party_names/upvote', to: 'party_names#upvote', as: :upvote_party_name
   get 'users/:id/card', to: 'users#card', as: :user_card
   resources :comments
-  resources :posts
+  resources :posts do
+    member do
+      post :upvote
+      post :unvote
+    end
+  end
 end

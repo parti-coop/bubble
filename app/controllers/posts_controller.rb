@@ -30,6 +30,25 @@ class PostsController < ApplicationController
     redirect_to root_path(anchor: 'posts-anchor')
   end
 
+  def upvote
+    if user_signed_in?
+      @post.upvote(current_user)
+      @post.save
+      redirect_to @post
+    else
+      redirect_to new_user_registration_path(redirect_to: post_path(@post))
+    end
+  end
+
+  def unvote
+    if user_signed_in?
+      @post.upvotes.find_by(user: current_user).destroy
+      redirect_to @post
+    else
+      redirect_to new_user_registration_path(redirect_to: post_path(@post))
+    end
+  end
+
   private
 
   def post_params

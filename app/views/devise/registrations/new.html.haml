@@ -1,0 +1,35 @@
+%section#project-step2.project-step2-home
+  = render 'pages/step2_header'
+  %section#join
+    .container
+      .party-join
+        %h3.section-title.background-white 당원 가입/로그인
+        .card.clearfix
+          .card-intro
+            계속하려면
+            %br
+            당원에
+            %br
+            %span
+              %span.important<>가입
+              하거나
+            %br
+            %span
+              %span.important<>
+                로그인
+              해야 해
+            %i> !
+          .join-buttons
+            = link_to user_omniauth_authorize_path(provider: :facebook, redirect_to: params[:redirect_to]), class: 'btn btn-join btn-join-facebook btn-block' do
+              %i.fa.fa-facebook.fa-fw
+              %span.hidden-xs 페이스북으로
+              당원가입 / 로그인
+            = link_to user_omniauth_authorize_path(provider: :twitter, redirect_to: params[:redirect_to]), class: 'btn btn-join btn-join-twitter btn-block' do
+              %i.fa.fa-twitter.fa-fw
+              %span.hidden-xs 트위터로
+              당원가입 / 로그인
+            = link_to user_omniauth_authorize_path(provider: :naver, redirect_to: params[:redirect_to]), class: 'btn btn-join btn-join-naver btn-block' do
+              = image_tag 'naver-logo.png'
+              %span.hidden-xs 네이버로
+              당원가입 / 로그인
+

@@ -17,6 +17,7 @@ class Post < ActiveRecord::Base
   }
   belongs_to :user
   has_many :comments
+  has_many :upvotes
 
   scope :recent, -> { order(created_at: :desc) }
   scope :in_party_building_board, -> { where(board_slug: Post::BOARD_SLUG_PARTY_BUILDING) }
@@ -36,6 +37,14 @@ class Post < ActiveRecord::Base
 
   def title
     bill_choice_board? ? body.try(:truncate, 20) : self[:title]
+  end
+
+  def upvote(user)
+    upvotes.build(user: user) unless upvotes.exists?(user: user)
+  end
+
+  def upvoted_by?(user)
+    upvotes.exists?(user: user)
   end
 
   private

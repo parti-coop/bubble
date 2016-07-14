@@ -36,6 +36,19 @@
           .post-body
             = simple_format(@post.body)
 
+          .post-upvote
+            - if @post.upvoted_by?(current_user)
+              = link_to unvote_post_path(@post), class: "btn btn-default btn-upvoted", method: :post do
+                %i.fa.fa-thumbs-o-up
+                %i.fa.fa-ban
+                = @post.upvotes.count
+            - else
+              = link_to upvote_post_path(@post), class: "btn btn-default", method: :post do
+                %i.fa.fa-thumbs-o-up
+                - if @post.upvotes.any?
+                  = @post.upvotes.count
+                - else
+                  추천
         .comments-panel
           - if @post.comments.empty?
             %hr

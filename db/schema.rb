@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160701061216) do
+ActiveRecord::Schema.define(version: 20160714115330) do
 
   create_table "bills", force: :cascade do |t|
     t.string   "slug",          limit: 255,             null: false
@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 20160701061216) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "upvotes", force: :cascade do |t|
+    t.integer  "post_id",    limit: 4
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "upvotes", ["post_id", "user_id"], name: "index_upvotes_on_post_id_and_user_id", unique: true, using: :btree
+  add_index "upvotes", ["post_id"], name: "index_upvotes_on_post_id", using: :btree
+  add_index "upvotes", ["user_id"], name: "index_upvotes_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

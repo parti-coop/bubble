@@ -449,7 +449,7 @@ section#project-step2 {
             font-size: $font-size-h3;
             line-height: $line-height-large;
           }
-          line-height: 46px;
+          line-height: 48px;
           font-weight: 200;
           span.important {
             color: #32b16c;
@@ -715,11 +715,18 @@ section#project-step2 {
             }
             .post-id,
             .post-name,
-            .post-created-at {
+            .post-created-at,
+            .post-upvote {
               text-align: center;
             }
             .post-id {
               width: 10%
+            }
+            .post-upvote {
+              width: 15%;
+              @media (max-width: 767px) {
+                display: none;
+              }
             }
             .post-created-at {
               width: 15%;
@@ -735,7 +742,7 @@ section#project-step2 {
             }
             .post-title {
               padding: 0 10px;
-              width: 55%;
+              width: 40%;
               @media (max-width: 767px) {
                 width: 60%;
               }
@@ -985,6 +992,33 @@ section#project-step2 {
           .post-meta-wrapper:first-child {
             border-bottom: none;
           }
+          .post-upvote {
+            text-align: center;
+            .btn {
+              background-color: #fff;
+              &:hover,
+              &-upvoted {
+                background-color: #eaf4eb;
+              }
+              &-upvoted {
+                .fa-thumbs-o-up {
+                  display: inline;
+                }
+                .fa-ban {
+                  display: none;
+                }
+                &:hover {
+                  background-color: #fff;
+                  .fa-thumbs-o-up {
+                    display: none;
+                  }
+                  .fa-ban {
+                    display: inline;
+                  }
+                }
+              }
+            }
+          }
           .post-body {
             padding: 35px 5%;
             color: #5d5d5d;
@@ -1106,8 +1140,6 @@ section#project-step2 {
         }
       }
     }
-
-
 
     .share-box {
       text-align: center;
