@@ -1,9 +1,8 @@
 .post-form
   - if @post.nil?
-    - @post = Post.new
+    - @post = Post.new(board_slug: board_slug)
   = form_for @post do |f|
     = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
-    = f.hidden_field :board_slug, value: Post::BOARD_SLUG_PARTY_BUILDING
     - if user_signed_in?
       .user-info
         %strong= current_user.name
@@ -27,6 +26,8 @@
           해봐
           %i !
       %hr
+    .form-group
+      = f.select :board_slug, Post::BOARDS.map { |current_slug, current__name| [current__name, current_slug] }, {}, {class: 'form-control'}
     .form-group
       = f.text_field :title, class: 'form-control', placeholder: '제목' , data: {'rule-required': true}
     .form-group

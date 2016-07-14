@@ -11,10 +11,10 @@
     %br
     우리 당이 어떻게 활동했으면 좋겠는지 모두 다 괜찮아
     %i !
-  = render 'posts/form'
+  = render 'posts/form', board_slug: @board_slug
 
   %a{id: 'posts-anchor'}
   .post-page
-    = render 'posts/post_page', board_slug: Post::BOARD_SLUG_PARTY_BUILDING
+    = render 'posts/post_page', board_slug: @board_slug
 
 

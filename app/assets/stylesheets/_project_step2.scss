@@ -637,6 +637,28 @@ section#project-step2 {
           font-size: $font-size-small;
           line-height: $line-height-small;
         }
+        .board-tabs {
+          display: table;
+          width: 100%;
+          text-align: center;
+          border: 1px solid #e5e5e5;
+          border-bottom: none;
+          a.board-tab {
+            display: table-cell;
+            width: 33.3%;
+            font-size: 14px;
+            background-color: #eee;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            color: #5d5d5d;
+          }
+          .board-tab.active {
+              background-color: #fff;
+          }
+          .board-tab + .board-tab {
+              border-left: 1px solid #e5e5e5;
+          }
+        }
         table {
           width: 100%;
           thead tr th {
