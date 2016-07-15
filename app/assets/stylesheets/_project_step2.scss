@@ -245,13 +245,23 @@ section#project-step2 {
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
+      text-align: center;
       width: 742px;
-      height: 352px;
+      height: 400px;
       @media (max-width: 767px) {
         padding: 0;
       }
       img {
         width: 100%;
+      }
+      .parti-names-title {
+        font-size: $font-size-large;
+        padding-top: 26px;
+      }
+      .parti-names-description {
+        padding-top: 266px;
+        font-weight: 100;
+        font-size: $font-size-base;
       }
     }
   }
@@ -266,7 +276,7 @@ section#project-step2 {
       margin-right: 5%;
 
       .quiz-title {
-        width: 300px;
+        width: 310px;
         padding-bottom: 24px;
       }
 
