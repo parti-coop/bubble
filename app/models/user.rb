@@ -27,6 +27,6 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    %w(account@parti.xyz rest515@parti.xyz berry@parti.xyz dalikim@parti.xyz lulu@parti.xyz qus@parti.xyz muni@parti.xyz foroso@gmail.com).include? email
+    %w(account@parti.xyz rest515@parti.xyz berry@parti.xyz dalikim@parti.xyz lulu@parti.xyz qus@parti.xyz muni@parti.xyz foroso@gmail.com notforsale0@gmail.com).include? email
   end
 end
