@@ -241,6 +241,12 @@ section#project-step2 {
   section#naming {
     .party-names {
       padding: 0 5%;
+      background-image: asset_url('step2/naming-result.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 742px;
+      height: 352px;
       @media (max-width: 767px) {
         padding: 0;
       }
@@ -258,6 +264,11 @@ section#project-step2 {
       padding: 40px 0 50px 0;
       margin-left: 5%;
       margin-right: 5%;
+
+      .quiz-title {
+        width: 300px;
+        padding-bottom: 24px;
+      }
 
       .quiz-before-start {
         background-image: asset_url('step2/quiz-start-background.png');
