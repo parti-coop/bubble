@@ -1,3 +1,4 @@
 $('.quiz-panel').html('<%= escape_javascript(render "quizzes/report") %>');
 var quiz_top = $('.quiz-panel').position().top;
 window.scrollTo(0, quiz_top);
+prepare_social_share($('.quiz-panel'));
