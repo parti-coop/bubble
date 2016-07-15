@@ -21,13 +21,14 @@
   %section#quiz
     .container
       .quiz-panel
-        %p.quiz-heading
-          얼마나 알고 있을까?
-        %p.quiz-subheading
-          GMO완전표시제법을 도입하려면,
-          %br
-          우선 무엇인지 알아야겠지?
-        = link_to '퀴즈 시작하기', quiz_path(step: 1), class: 'quiz-start-btn',remote: true
+        .quiz-before-start
+          %p.quiz-heading
+            얼마나 알고 있을까?
+          %p.quiz-subheading
+            GMO완전표시제법을 도입하려면,
+            %br
+            우선 무엇인지 알아야겠지?
+          = link_to '퀴즈 시작하기', quiz_path(step: 1), class: 'quiz-start-btn',remote: true
 
   %section#join
     .container

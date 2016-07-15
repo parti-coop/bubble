@@ -255,16 +255,25 @@ section#project-step2 {
     .quiz-panel {
       text-align: center;
       background-color: #fff;
-      padding: 40px 0 60px 0;
+      padding: 40px 0 50px 0;
       margin-left: 5%;
       margin-right: 5%;
-      background-image: asset_url('step2/quiz-start-background.png');
-      background-position-y: -140px;
-      background-size: cover;
-      @media (max-width: 767px) {
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position-y: 34px;
+
+      .quiz-before-start {
+        background-image: asset_url('step2/quiz-start-background.png');
+        background-position-y: -168px;
+        background-size: cover;
+        padding-bottom: 20px;
+        padding-top: 10px;
+        @media (max-width: 767px) {
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position-y: 34px;
+        }
+      }
+
+      .quiz-after-start {
+
       }
 
       .quiz-heading {
@@ -301,11 +310,16 @@ section#project-step2 {
           margin-left: 24px;
           margin-right: 24px;
           background-color: #fff;
+          &.active-quiz {
+            background-color: #89c997;
+            color: #fff;
+          }
           @media (max-width: 767px) {
             padding: 4px 11px;
             margin-left: 3px;
             margin-right: 3px;
           }
+
         }
         .quiz-step-hr {
           display: inline-block;
@@ -370,7 +384,7 @@ section#project-step2 {
 
       .quiz-navigator {
         padding-top: 50px;
-        padding-bottom: 50px;
+        padding-bottom: 22px;
 
         .quiz-next-btn {
           background-color: #ec6941;
@@ -382,10 +396,16 @@ section#project-step2 {
       }
 
       .quiz-report {
-        padding-bottom: 25px;
+        background-image :asset_url('step2/quiz-start-background.png');
+        background-position-y: -140px;
+        @media (max-width: 767px) {
+          background-position-y: 0;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
 
         .quiz-report-heading {
-          padding-top: 16px;
+          padding-top: 4px;
           font-size: 18px;
           color: #aaaaaa;
           font-weight: 100;
