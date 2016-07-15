@@ -294,9 +294,7 @@ section#project-step2 {
         padding-bottom: 20px;
         padding-top: 10px;
         @media (max-width: 767px) {
-          background-repeat: no-repeat;
-          background-size: contain;
-          background-position-y: 34px;
+          background: none;
         }
       }
 
@@ -328,37 +326,39 @@ section#project-step2 {
         font-weight: 100;
       }
 
-      .quiz-step-round-wrapper{
-        .quiz-step-round {
-          color: #9cd1a7;
-          display: inline-block;
-          border-radius: 50%;
-          border: 1px solid #eaf4eb;
-          padding: 11px 17px;
-          margin-left: 24px;
-          margin-right: 24px;
-          background-color: #fff;
-          &.active-quiz {
-            background-color: #89c997;
-            color: #fff;
-          }
-          @media (max-width: 767px) {
-            padding: 4px 11px;
-            margin-left: 3px;
-            margin-right: 3px;
-          }
-
+      .quiz-step-wrapper {
+        hr {
+          border-top: 1px solid #eaf4eb;
         }
-        .quiz-step-hr {
-          display: inline-block;
-          width: 100%;
-          margin-bottom: -60px;
-          z-index: -1;
+        .quiz-step-round-wrapper {
+          margin-top: -42px;
+          position: relative;
           @media (max-width: 767px) {
-            margin-bottom: -50px;
+            margin-top: -35px;
+          }
+          .quiz-step-round {
+            color: #9cd1a7;
+            display: inline-block;
+            border-radius: 50%;
+            border: 1px solid #eaf4eb;
+            padding: 11px 17px;
+            margin-left: 24px;
+            margin-right: 24px;
+            background-color: #fff;
+            &.active-quiz {
+              background-color: #89c997;
+              color: #fff;
+            }
+            @media (max-width: 767px) {
+              padding: 4px 11px;
+              margin-left: 3px;
+              margin-right: 3px;
+            }
           }
         }
       }
+
+
 
       .quiz-header {
         padding: 50px 40px 46px;
@@ -425,11 +425,11 @@ section#project-step2 {
 
       .quiz-report {
         background-image :asset_url('step2/quiz-start-background.png');
-        background-position-y: -140px;
+        background-position-y: -50px;
+        background-repeat: no-repeat;
+
         @media (max-width: 767px) {
-          background-position-y: 0;
-          background-size: contain;
-          background-repeat: no-repeat;
+          background: none;
         }
 
         .quiz-report-heading {
