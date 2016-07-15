@@ -244,7 +244,6 @@ section#project-step2 {
       @media (max-width: 767px) {
         padding: 0;
       }
-      margin-bottom: 40px;
       img {
         width: 100%;
       }
@@ -252,6 +251,7 @@ section#project-step2 {
   }
 
   section#quiz {
+    background-color: #fff;
     .quiz-panel {
       text-align: center;
       background-color: #fff;
@@ -261,7 +261,7 @@ section#project-step2 {
 
       .quiz-before-start {
         background-image: asset_url('step2/quiz-start-background.png');
-        background-position-y: -168px;
+        background-position-y: -60px;
         background-size: cover;
         padding-bottom: 20px;
         padding-top: 10px;
