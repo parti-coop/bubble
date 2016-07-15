@@ -282,6 +282,9 @@ section#project-step2 {
       .quiz-title {
         width: 310px;
         padding-bottom: 24px;
+        @media (max-width: 767px) {
+          width: 100%;
+        }
       }
 
       .quiz-before-start {
