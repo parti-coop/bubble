@@ -1,10 +1,8 @@
 .party-names
-  %p.parti-names-title
-    프로젝트
-    %br
-    정당 이름 투표 결과
-    %i!
-
+  - if browser.device.mobile?
+    = image_tag "step2/naming-result-mobile.png"
+  - else
+    = image_tag "step2/naming-result.png"
   %p.parti-names-description
     정당 이름이 정해졌어
     %br
