@@ -16,7 +16,7 @@
 
       - if provider == 'kakao-link'
         - hide_kakao_link = (! browser.device.mobile?) ? ' hide' : ''
-        - data = data.merge('share-image': image_url('seo.png'), 'share-image-width': '1200', 'share-image-height': '630')
+        - data = data.merge('share-image': image_url('/step2/step2_seo.png'), 'share-image-width': '1200', 'share-image-height': '630')
       %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
         - if provider == 'kakao-story'
           = image_tag 'icon_kas.png', class: 'icon-kas'
