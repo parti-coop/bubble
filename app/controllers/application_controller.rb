@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
     image = options[:image] || view_context.image_url('step2/seo-quiz.png')
     url = root_url
 
-    description = "GMO 완전표시제 도입을 위한 프로젝트 정당만들기!"
+    description = "'바글시민 와글입법' 시민입법프로젝트 정당 만들기. GMO완전표시제 입법을 위한 ‘나는 알아야겠당' 당원가입하고 OX퀴즈 풀자!"
     {
       title:       title,
       reverse:     true,

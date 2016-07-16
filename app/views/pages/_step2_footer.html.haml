@@ -22,7 +22,7 @@
       %br
       혼자 알기 아깝지?
     %ul.share-box.list-inline
-      - data = {action: 'bubble-share', 'share-url': root_url, 'share-text': "시민 입법 프로젝트 '바글시민 와글입법' - 2016년, 시민이 올리는 시민의 법안을 만들자!" }
+      - data = {action: 'bubble-share', 'share-url': root_url, 'share-text': "'바글시민 와글입법' 시민입법프로젝트 정당 만들기. GMO완전표시제 입법을 위한 ‘나는 알아야겠당' 당원가입하고 OX퀴즈 풀자!" }
       - %w(facebook twitter kakao-link kakao-story).each do |provider|
 
         - data = data.merge('share-provider': provider)
@@ -30,6 +30,8 @@
         - if provider == 'kakao-link'
           - hide_kakao_link = (! browser.device.mobile?) ? ' hide' : ''
           - data = data.merge('share-image': image_url('step2/seo-quiz.png'), 'share-image-width': '1200', 'share-image-height': '630')
+        - if provider == 'twitter'
+          - data = data.merge('share-text': "#GMO완전표시제 입법을 위한 프로젝트 정당, #나는알아야겠당 당원가입하고 OX퀴즈 풀자! - #바글시민와글입법 - 한겨레21x빠띠 @han21_editor @parti_xyz")
         %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
           - if provider == 'kakao-story'
             = image_tag 'icon_kas.png', class: 'icon-kas'
