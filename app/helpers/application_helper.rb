@@ -75,11 +75,16 @@ module ApplicationHelper
   end
 
   def videos_urls
-    %w(https://www.youtube.com/watch?v=zdtN1zYfiG0 https://youtu.be/fh-uDxgawEU https://www.youtube.com/watch?v=gBFoVRx4Mm8)
+    %w(https://www.youtube.com/watch?v=zdtN1zYfiG0 https://youtu.be/fh-uDxgawEU https://www.youtube.com/watch?v=gBFoVRx4Mm8 https://youtu.be/toB5m2t-8Jk)
   end
 
   def video_titles
-    [raw('4대 법안<br class="hidden-sm">소개'), raw('시민입법<br class="hidden-sm"> 취지 소개'), raw('<span style="white-space: nowrap">프로젝트 정당</span><br class="hidden-sm"> 만들기')]
+    [
+      raw('4대 법안<br class="hidden-sm">소개'),
+      raw('시민입법<br class="hidden-sm"> 취지 소개'),
+      raw('<span style="white-space: nowrap">프로젝트</span><br class="hidden-sm">정당 만들기'),
+      raw('<span style="white-space: nowrap">우리가 뽑은</span><br class="hidden-sm"> 정당이름')
+    ]
   end
 
   def mask_name(name)

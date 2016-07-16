@@ -365,6 +365,7 @@ section#project-step2 {
         color: #aaaaaa;
         font-weight: 200;
         font-size: 18px;
+        word-break: keep-all;
         @media (max-width: 767px) {
           padding: 28px 40px 36px;
         }
@@ -399,6 +400,7 @@ section#project-step2 {
         font-size: 18px;
         font-weight: 100;
         line-height: 24px;
+        word-break: keep-all;
         a {
           color: #ec6941;
           text-decoration: underline;
@@ -407,6 +409,8 @@ section#project-step2 {
         @media (max-width: 767px) {
           font-size: 14px;
           line-height: 18px;
+          margin-left: 15px;
+          margin-right: 15px;
         }
       }
 
