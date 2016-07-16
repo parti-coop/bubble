@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'quiz', to: 'quizzes#show'
   get 'result_quiz', to: 'quizzes#result'
   get 'report_quiz', to: 'quizzes#report'
+  get 'seo_report_quiz', to: 'quizzes#seo_report'
 
   post 'bills/:slug/upvote', to: 'bills#upvote', as: :upvote_bill
   post 'party_names/upvote', to: 'party_names#upvote', as: :upvote_party_name

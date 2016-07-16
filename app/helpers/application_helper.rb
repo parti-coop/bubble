@@ -91,5 +91,4 @@ module ApplicationHelper
     return name if name.blank? or name.length == 1
     name.length > 6 ? name[0...-3] + "***" : name[0...-1] + "*"
   end
-
 end
