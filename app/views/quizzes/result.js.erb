@@ -1,2 +1,1 @@
 $('.quiz-panel').html('<%= escape_javascript(render "quizzes/result_#{params[:step]}_#{params[:answer]}") %>');
-$('.quiz-step-round#<%= escape_javascript("#{params[:step]}") %>').addClass("active-quiz")

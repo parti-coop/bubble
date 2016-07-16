@@ -354,6 +354,13 @@ section#project-step2 {
               margin-left: 3px;
               margin-right: 3px;
             }
+            &.correct {
+              background-color: $brand-red-color;
+              color: #fff;
+            }
+            &.incorrect {
+              background-color: #f8f8f8;
+            }
           }
         }
       }

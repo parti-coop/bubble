@@ -2,17 +2,15 @@
 .quiz-step-wrapper
   %hr
   .quiz-step-round-wrapper
-    .quiz-step-round#1
-      1
-    .quiz-step-round#2
-      2
-    .quiz-step-round#3
-      3
-    .quiz-step-round#4
-      4
-    .quiz-step-round#5
-      5
-    .quiz-step-round#6
-      6
-    .quiz-step-round#7
-      7
+    - (1..7).each do |step|
+      - correrct_or_incorrect = (is_correct?(step.to_s) ? "correct" : "incorrect")
+      - step_class = nil
+      - if step == params[:step].to_i
+        - if local_assigns[:on_question]
+          - step_class = 'active-quiz'
+        - else
+          - step_class = correrct_or_incorrect
+      - elsif params[:step].to_i > step
+        - step_class = correrct_or_incorrect
+      .quiz-step-round{id: step, class: step_class}
+        = step
