@@ -1,15 +1,13 @@
 %a{id: 'post-panel-anchor'}
 .posts-panel
 
-  %h3.section-title.background-mint 의견 적기
+  %h3.section-title.background-mint 활동 제안하기
 
   %a{id: 'post-form-anchor'}
   %p.description
-    너의 의견을 남겨줘.
+    ‘나는 알아야겠당’ 당원으로 하고 싶거나,
     %br
-    법안에 어떤 내용이 담겼으면 하는지,
-    %br
-    우리 당이 어떻게 활동했으면 좋겠는지 모두 다 괜찮아
+    당원에게 이런 활동을 해줬으면 좋겠다고 제안해줘
     %i !
   = render 'posts/form', board_slug: @board_slug
 
