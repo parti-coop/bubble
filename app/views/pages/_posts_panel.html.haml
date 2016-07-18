@@ -13,6 +13,21 @@
 
   %a{id: 'posts-anchor'}
   .post-page
+    .post-search
+      .post-search-info
+        - if params[:q].present?
+          %i.fa.fa-search
+          검색된 글 #{@posts.total_count}개
+          = link_to root_path(anchor: 'posts-anchor'), class: 'cancel-search' do
+            검색 취소
+        - else
+          총 #{@posts.total_count}개
+      .post-search-form
+        = form_tag root_path(anchor: 'posts-anchor'), method: :get, id: 'post-search-form' do
+          .form-group
+            = search_field_tag 'q', params[:q], class: 'search-query', maxlength: 20, autocorrect: "off", autocapitalize: "none"
+            %button.btn{:type => "submit"}
+              %i.fa.fa-search
     = render 'posts/post_page', board_slug: @board_slug
 
 

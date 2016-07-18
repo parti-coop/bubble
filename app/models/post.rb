@@ -23,6 +23,7 @@ class Post < ActiveRecord::Base
   scope :in_party_building_board, -> { where(board_slug: Post::BOARD_SLUG_PARTY_BUILDING) }
   scope :in_bill_choice_board, -> { where(board_slug: Post::BOARD_SLUG_BILL_CHOICE) }
   scope :in_board, ->(board_slug) { where(board_slug: board_slug) }
+  scoped_search on: [:title, :body]
 
   validate :should_have_name
   validates :body, presence: true

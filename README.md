@@ -22,6 +22,7 @@ production:
   TWITTER_APP_SECRET: xx
   NAVER_KEY: xx
   NAVER_SECRET: xx
+  SLACK_WEBHOOK_URL: xx
 ```
 
 ## 로컬 개발 환경 구축 방법

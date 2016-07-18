@@ -45,6 +45,7 @@ gem 'meta-tags', '~> 2.1.0'
 gem 'unobtrusive_flash', '~> 3.1'
 gem 'sequenced', '~> 3.1', '>= 3.1.1'
 gem 'ruby_dig', '~> 0.0.2'
+gem 'scoped_search', '~> 3.2', '>= 3.2.2'
 
 
 # image
@@ -52,6 +53,13 @@ gem 'imgkit', '~> 1.6', '>= 1.6.1'
 group :development, :test do
   gem 'wkhtmltoimage-binary', '~> 0.12.2'
 end
+
+# notification
+gem 'slack-notifier', '~> 1.4'
+gem 'exception_notification', '~> 4.1', '>= 4.1.4'
+gem 'sidekiq', '~> 4.1'
+gem 'redis', '~> 3.2', '>= 3.2.2'
+gem 'redis-namespace', '~> 1.5', '>= 1.5.2'
 
 # monitor
 gem 'newrelic_rpm'
