@@ -2,6 +2,13 @@ class QuizzesController < ApplicationController
 
   YES_STEPS = %w(5 6)
 
+  def show
+    respond_to do |format|
+      format.js
+      format.any { redirect_to root_path }
+    end
+  end
+
   def result
     answer_paper = fetch_answer_paper
     answer_paper[params[:step]] = params[:answer]
