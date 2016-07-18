@@ -19,7 +19,7 @@ class QuizzesController < ApplicationController
   def seo_report
     redirect_to(root_path) if params[:lulu].blank?
     redirect_to(root_path) and return unless browser.bot?
-    prepare_meta_tags url: root_url, image: view_context.image_url("step2/quiz-correct-count-#{params[:lulu][QuizzesController::CORRECT_COUNT_INDEX]}.png")
+    prepare_meta_tags url: seo_report_quiz_url(lulu: params[:lulu]), image: view_context.image_url("step2/quiz-correct-count-#{params[:lulu][QuizzesController::CORRECT_COUNT_INDEX]}.png")
   end
 
   helper_method :seo_report_quiz_url_with_correct_count, :is_correct?
