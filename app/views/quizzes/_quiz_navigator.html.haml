@@ -1,5 +1,7 @@
 .quiz-navigator
   -unless params[:step].to_i == 7
-    =link_to '다음으로', quiz_path(step: params[:step].to_i + 1), class: 'quiz-next-btn', remote: true
+    =link_to quiz_path(step: params[:step].to_i + 1), class: 'quiz-next-btn', remote: true do
+      다음으로
+      %i.fa.fa-arrow-right
   -if params[:step].to_i == 7
     =link_to '결과보기', report_quiz_path(step: params[:step]), class: 'quiz-next-btn', remote: true
