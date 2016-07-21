@@ -1,15 +1,16 @@
-= form_for Opinion.new(debate_slug: debate_slug) do |f|
-  = f.hidden_field :debate_slug
-  .form-group
-    = f.label :name
-    = f.text_field :name
-  .form-group
-    = f.label :body
-    = f.text_area :body
-  = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
-  .form-group.recaptcha
-    .help-block 스팸 방지를 위해 사람인지 확인하는 거야. 아래 체크 박스를 클릭해.
-    = recaptcha_tags hl: :ko, size: '100px'
-  = f.submit
+- if chosen?(debate_slug)
+  = form_for Opinion.new(debate_slug: debate_slug) do |f|
+    = f.hidden_field :debate_slug
+    .form-group
+      = f.label :name
+      = f.text_field :name
+    .form-group
+      = f.label :body
+      = f.text_area :body
+    = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
+    .form-group.recaptcha
+      .help-block 스팸 방지를 위해 사람인지 확인하는 거야. 아래 체크 박스를 클릭해.
+      = recaptcha_tags hl: :ko, size: '100px'
+    = f.submit
 
 = render Opinion.in_debate(debate_slug)

@@ -66,7 +66,7 @@ class ApplicationController < ActionController::Base
     redirect_to || stored_location_for(resource) || root_path
   end
 
-  helper_method :alpha_chosen?, :beta_chosen?
+  helper_method :alpha_chosen?, :beta_chosen?, :hold_chosen?, :chosen?
 
   private
 
@@ -77,19 +77,23 @@ class ApplicationController < ActionController::Base
   # choice
 
   def alpha_chosen?(slug)
-    fetch_debate_choices[slug] == 'alpha'
+    chosen?(slug, 'alpha')
   end
 
   def beta_chosen?(slug)
-    fetch_debate_choices[slug] == 'beta'
+    chosen?(slug, 'beta')
   end
 
   def hold_chosen?(slug)
-    fetch_debate_choices[slug] == 'hold'
+    chosen?(slug, 'hold')
   end
 
-  def chosen?(slug, choice)
-    fetch_debate_choices[slug] == choice
+  def chosen?(slug, choice = nil)
+    if choice == nil
+      fetch_debate_choices[slug].present?
+    else
+      fetch_debate_choices[slug] == choice
+    end
   end
 
   def fetch_debate_choices
