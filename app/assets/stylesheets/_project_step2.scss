@@ -110,9 +110,34 @@ section#project-step2 {
     background-color: #eeeeee;
     padding-top: 20px;
     padding-bottom: 20px;
+    @media (max-width: 768px) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .container {
+      padding-right: 50px;
+      padding-left: 50px;
+      @media (max-width: 768px) {
+        padding-right: 14px;
+        padding-left: 14px;
+      }
+    }
+
+    .col-xs-3 {
+      @media (max-width: 768px) {
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+    }
 
     .project-steps {
       color: #bfbfbf;
+      font-size: 12px;
+      @media (max-width: 768px) {
+        font-size: 10px;
+        text-align: center;
+      }
       .active {
         color: #89c997;
       }
