@@ -5,15 +5,6 @@
     .container
       = render 'intro'
 
-  %section#video-navigation
-    .container
-      .video-thumbnails.clearfix
-        - videos_urls.each_with_index do |video_url, index|
-          - video = VideoInfo.new(video_url)
-          .video-thumbnail{class: ("active" if index == (videos_urls.size - 1)), data: {action: 'video-show', target: "#up-video-#{index}", 'video-group': 'ul.player-wrapper li', 'navigator-group': '.video-thumbnails .video-thumbnail'}}
-            %img.img-thumbnail{src: video.thumbnail_small}
-            .video-title= video_titles[index]
-
   %section#debate
     .container
       = render 'debate_panel'
