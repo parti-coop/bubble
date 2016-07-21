@@ -5,15 +5,19 @@ class Post < ActiveRecord::Base
   BOARD_SLUG_BILL_CHOICE = 'bill-choice'
   BOARD_SLUG_PARTY_BUILDING = 'party-building'
   BOARD_SLUG_PARTY_SUGGEST = 'party-suggest'
+  BOARD_SLUG_ISSUE_DEBATE = 'issue-debate'
 
   BOARD_NAME_BILL_CHOICE = '법안 정하기'
   BOARD_NAME_PARTY_BUILDING = '정당 만들기'
   BOARD_NAME_PARTY_SUGGEST = '정당활동 제안'
+  BOARD_NAME_ISSUE_DEBATE = '쟁점 토론'
+
 
   BOARDS = {
     Post::BOARD_SLUG_BILL_CHOICE => Post::BOARD_NAME_BILL_CHOICE,
     Post::BOARD_SLUG_PARTY_BUILDING => Post::BOARD_NAME_PARTY_BUILDING,
-    Post::BOARD_SLUG_PARTY_SUGGEST => Post::BOARD_NAME_PARTY_SUGGEST
+    Post::BOARD_SLUG_PARTY_SUGGEST => Post::BOARD_NAME_PARTY_SUGGEST,
+    Post::BOARD_SLUG_ISSUE_DEBATE => Post::BOARD_NAME_ISSUE_DEBATE
   }
   belongs_to :user
   has_many :comments
@@ -22,6 +26,7 @@ class Post < ActiveRecord::Base
   scope :recent, -> { order(created_at: :desc) }
   scope :in_party_building_board, -> { where(board_slug: Post::BOARD_SLUG_PARTY_BUILDING) }
   scope :in_bill_choice_board, -> { where(board_slug: Post::BOARD_SLUG_BILL_CHOICE) }
+  scope :in_issue_debate_board, -> { where(board_slug: Post::BOARD_SLUG_ISSUE_DEBATE) }
   scope :in_board, ->(board_slug) { where(board_slug: board_slug) }
   scoped_search on: [:title, :body]
 

@@ -1,10 +1,9 @@
-%section#project-step3.project-step3-home
-  = render 'pages/step3_header'
+%section#project-step2.project-step2-home
+  = render 'pages/step2_header'
 
   %section#intro
     .container
       = render 'intro'
-
   %section#video-navigation
     .container
       .video-thumbnails.clearfix
@@ -14,9 +13,23 @@
             %img.img-thumbnail{src: video.thumbnail_small}
             .video-title= video_titles[index]
 
-  %section#debate
+  %section#naming
     .container
-      = render 'debate_panel'
+      = render 'party_names_panel'
+
+
+  %section#quiz
+    .container
+      .quiz-panel
+        =image_tag 'step2/quiz-title.png', class: 'quiz-title'
+        .quiz-before-start
+          %p.quiz-heading
+            얼마나 알고 있을까?
+          %p.quiz-subheading
+            GMO완전표시제법을 도입하려면,
+            %br
+            우선 무엇인지 알아야겠지?
+          = link_to '퀴즈 시작하기', quiz_path(step: 1), class: 'quiz-start-btn',remote: true
 
   %section#join
     .container
@@ -77,4 +90,4 @@
         - else
           = image_tag 'step2/process.jpg'
 
-  = render 'pages/step3_footer'
+  = render 'pages/step2_footer'
