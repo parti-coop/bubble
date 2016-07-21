@@ -107,14 +107,21 @@ section#project-step3 {
   }
 
   section#steps {
-    background-image :asset_url('step2/top-background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: #eeeeee;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
     .project-steps {
-      img {
-        width: 100%;
-        height: auto;
+      color: #bfbfbf;
+      .active {
+        color: #89c997;
+      }
+      a {
+        color: #bfbfbf;
+        &:hover {
+          color: #89c997;
+          text-decoration: none;
+        }
       }
     }
   }

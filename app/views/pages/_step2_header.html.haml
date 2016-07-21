@@ -10,8 +10,29 @@
           = link_to '당원가입 / 로그인', root_path(anchor: 'anchor-join')
 %section#steps
   .container
-    .project-steps
-      = image_tag 'step2/header-menu.png', usemap: "#menu-map"
-    %map#menu-map(name="menu-map")
-      %area(alt="법안 정하기" title="법안 정하기" href="#{step1_path}" shape="rect" coords="34,50,129,173")
-      %area(alt="정당 만들기" title="정당 만들기" href="#{root_path}"shape="rect" coords="186,30,565,178")
+    .row
+      .project-steps
+        .col-md-3
+          .project-step1
+            =link_to step1_path do
+              발의할 법안 정하기
+              %br
+              6/7 ~ 6/26
+        .col-md-3
+          .project-step2
+            =link_to step2_path, class:'active' do
+              프로젝트 정당 만들기
+              %br
+              7/4 ~ 7/25
+        .col-md-4
+          .project-step3
+            =link_to root_path do
+              'GMO 완전표시제법' 발의안 쟁점토론
+              %br
+              7/25 ~
+        .col-md-2
+          .project-step-after
+            =link_to root_path do
+              발의, 당원활동
+              %br
+              (준비중)
