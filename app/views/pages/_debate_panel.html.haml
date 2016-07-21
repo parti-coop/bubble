@@ -14,6 +14,10 @@
 
 %hr
 
+= render 'opinions_panel', debate_slug: 'overall_adoption'
+
+%hr
+
 쟁점2: nonGMO표시
 %br
 찬성 #{@non_gmo_debate.alpha_count}표 vs 반대 #{@non_gmo_debate.beta_count}표
@@ -27,3 +31,5 @@
   단적 도입 선택
 %br
 = link_to '모르겠다', choose_hold_debates_path(slug: :non_gmo), method: :post
+
+= render 'opinions_panel', debate_slug: 'non_gmo'

@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
     can [:read, :card,], :all
-    can :create, [Post, Comment]
+    can :create, [Post, Comment, Opinion]
     can [:upvote, :unvote], Post
     if user
       can :manage, [Post, Comment] do |model|
