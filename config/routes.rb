@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   get 'report_quiz', to: 'quizzes#report'
   get 'seo_report_quiz', to: 'quizzes#seo_report'
 
+  post 'debates/:slug/choose_alpha', to: 'debates#choose_alpha', as: :choose_alpha_debates
+  post 'debates/:slug/choose_beta', to: 'debates#choose_beta', as: :choose_beta_debates
+  post 'debates/:slug/choose_hold', to: 'debates#choose_hold', as: :choose_hold_debates
+
   post 'bills/:slug/upvote', to: 'bills#upvote', as: :upvote_bill
   post 'party_names/upvote', to: 'party_names#upvote', as: :upvote_party_name
   get 'users/:id/card', to: 'users#card', as: :user_card

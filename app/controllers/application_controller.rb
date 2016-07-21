@@ -65,4 +65,36 @@ class ApplicationController < ActionController::Base
     redirect_to = request.env["omniauth.params"].try(:fetch, "redirect_to", nil)
     redirect_to || stored_location_for(resource) || root_path
   end
+
+  helper_method :alpha_chosen?, :beta_chosen?
+
+  private
+
+  # choice
+
+  def alpha_chosen?(slug)
+    fetch_debate_choices[slug] == 'alpha'
+  end
+
+  def beta_chosen?(slug)
+    fetch_debate_choices[slug] == 'beta'
+  end
+
+  def hold_chosen?(slug)
+    fetch_debate_choices[slug] == 'hold'
+  end
+
+  def chosen?(slug, choice)
+    fetch_debate_choices[slug] == choice
+  end
+
+  def fetch_debate_choices
+    JSON.parse(cookies.permanent.signed[:kong_kong] || '{}')
+  end
+
+  def save_choice(slug, choice)
+    debate_choices = fetch_debate_choices
+    debate_choices[slug] = choice
+    cookies.permanent.signed[:kong_kong] = JSON.generate(debate_choices)
+  end
 end
