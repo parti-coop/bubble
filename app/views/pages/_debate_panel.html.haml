@@ -1,35 +1,61 @@
-쟁점1: 단계적 도입이 아닌, 전면적 도입이 필요하다.
-%br
-찬성 #{@overall_adoption_debate.alpha_count}표 vs 반대 #{@overall_adoption_debate.beta_count}표
-%br
-= link_to '전면적 도입', choose_alpha_debates_path(slug: :overall_adoption), method: :post
--if alpha_chosen?('overall_adoption')
-  전면적 도입 선택
-%br
-= link_to '단계적 도입', choose_beta_debates_path(slug: :overall_adoption), method: :post
--if beta_chosen?('overall_adoption')
-  단적 도입 선택
-%br
-= link_to '모르겠다', choose_hold_debates_path(slug: :overall_adoption), method: :post
+%h3.debate-title
+  쟁점 토론
+%p.debate-subtitle
+  이 외에도 많은 쟁점이 있고
+  %br
+  앞으로도 꾸준히 더 나은 방법을 찾아야겠지.
+  %br
+  이 쟁점에 대한 너의 생각은 어때?
 
-%hr
 
-= render 'opinions_panel', debate_slug: 'overall_adoption'
 
-%hr
 
-쟁점2: nonGMO표시
-%br
-찬성 #{@non_gmo_debate.alpha_count}표 vs 반대 #{@non_gmo_debate.beta_count}표
-%br
-= link_to '찬성', choose_alpha_debates_path(slug: :non_gmo), method: :post
--if alpha_chosen?('non_gmo')
-  전면적 도입 선택
-%br
-= link_to '반대', choose_beta_debates_path(slug: :non_gmo), method: :post
--if beta_chosen?('non_gmo')
-  단적 도입 선택
-%br
-= link_to '모르겠다', choose_hold_debates_path(slug: :non_gmo), method: :post
+.debate-topic
+  %p.debate-topic-title
+    GMO완전표시제법 쟁점-1
+  %p.debate-topic-subtitle
+    GMO 완전표시제 시행 시기는요?
+  %p.debate-topic-options
+    단계적 시행 vs 전면적 시행
+  %p.debate-topic-description
+    (첫번째꺼아님) 현재 Non-GMO 표시에 대해선 별도 규정이 없음. 식품의약품안전처는 국내 식용으로 유통되는 콩(대두)·옥수수·사탕무·카놀라(유채)·면화·알파파 등 6개 농산물에 대해서만 Non-GMO 표시를 허용하는 고시를 추진 중.
+  .debate-panel
+    = render 'debates/debate_bar'
 
-= render 'opinions_panel', debate_slug: 'non_gmo'
+
+
+  %br
+  = link_to '모르겠다', choose_hold_debates_path(slug: :overall_adoption), method: :post
+
+  = render 'opinions_panel', debate_slug: 'overall_adoption'
+
+.debate-topic
+  쟁점2: nonGMO표시
+  %br
+  찬성 #{@non_gmo_debate.alpha_count}표 vs 반대 #{@non_gmo_debate.beta_count}표
+  %br
+  = link_to '찬성', choose_alpha_debates_path(slug: :non_gmo), method: :post
+  -if alpha_chosen?('non_gmo')
+    전면적 도입 선택
+  %br
+  = link_to '반대', choose_beta_debates_path(slug: :non_gmo), method: :post
+  -if beta_chosen?('non_gmo')
+    단적 도입 선택
+  %br
+  = link_to '모르겠다', choose_hold_debates_path(slug: :non_gmo), method: :post
+
+  = render 'opinions_panel', debate_slug: 'non_gmo'
+
+1. GMO 완전표시제 시행 시기는요?
+단계적 시행 vs 전면적 시행
+　
+2. GMO 표시 대상이 아닌 국내산 농산물에 Non-GMO(비GMO)라 표시해야 할까요?
+표시 안 해도 된다 vs 표시해야 한다
+　
+*현재 Non-GMO 표시에 대해선 별도 규정이 없음. 식품의약품안전처는 국내 식용으로 유통되는 콩(대두)·옥수수·사탕무·카놀라(유채)·면화·알파파 등 6개 농산물에 대해서만 Non-GMO 표시를 허용하는 고시를 추진 중.
+　
+3. GMO 표시 면제 범위는요?
+0% vs 0.9%까지
+　
+*현재 ‘비의도적 혼입치’는 3%. 유통 과정에서 의도치 않게 GMO가 섞였다고 보고 입혼 비율 3%까지는 표시를 면제해주는 제도.
+

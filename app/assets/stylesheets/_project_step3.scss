@@ -475,6 +475,121 @@ section#project-step3 {
     }
   }
 
+
+  section#debate {
+    background-color: #eeeeee;
+
+    .debate-title {
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    .debate-subtitle {
+      text-align: center;
+      padding-top: 18px;
+      color: #bfbfbf;
+      padding-bottom: 30px;
+    }
+
+    .debate-topic {
+      background-color: #fff;
+
+      .debate-topic-title {
+        text-align: center;
+        color: #bfbfbf;
+        padding-top: 30px;
+      }
+
+      .debate-topic-subtitle {
+        text-align: center;
+        padding-top: 10px;
+        font-size: 28px;
+      }
+
+      .debate-topic-options {
+        text-align: center;
+        font-size: 18px;
+        color: #bfbfbf;
+        padding-top: 10px;
+        margin-bottom: -16px;
+      }
+
+      .debate-topic-description {
+        background-color: #eeeeee;
+        padding: 10px 20px;
+        margin: 32px 50px 20px 50px;
+      }
+
+      .debate-bar {
+        height: 10px;
+        left: 0;
+        margin: 24px 50px 50px 50px;
+        background-color: #e5004f;
+
+        .debate-voted {
+          height: 100%;
+          background-color: #00a0e9;
+        }
+        .selected-group {
+          padding-top: 4px;
+          .selected-alpha-percentage {
+            color: #00a0e9;
+          }
+
+          .selected-beta-percentage {
+            color: #e5004f;
+          }
+        }
+      }
+
+      .debate-options {
+        text-align: center;
+
+        .option-alpha-button{
+          display: inline-block;
+          padding: 20px 60px;
+          border: 1px solid #00a0e9;
+
+          &.active {
+            background-color: #00a0e9;
+            a {
+              color: #fff;
+            }
+          }
+
+          a {
+            color: #00a0e9;
+          }
+        }
+        .option-beta-button{
+          display: inline-block;
+          padding: 20px 60px;
+          border: 1px solid #e5004f;
+          margin-left: 10px;
+
+          &.active {
+            background-color: #e5004f;
+            a {
+              color: #fff;
+            }
+          }
+
+          a {
+            color: #e5004f;
+          }
+        }
+
+        .option-hold-button{
+          padding-top: 12px;
+
+          a {
+            color: #bfbfbf;
+          }
+        }
+      }
+    }
+  }
+
   section#notice {
     margin-top: 10px;
     margin-bottom: 80px;

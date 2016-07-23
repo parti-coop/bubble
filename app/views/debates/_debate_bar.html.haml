@@ -1,0 +1,22 @@
+.debate-bar
+  - total_count = @overall_adoption_debate.alpha_count + @overall_adoption_debate.beta_count
+  - debate_selected_alpha_percentage = (@overall_adoption_debate.alpha_count / Float(total_count)) * 100
+  - debate_selected_beta_percentage = (@overall_adoption_debate.beta_count / Float(total_count)) * 100
+  .debate-voted{style: "width: #{debate_selected_alpha_percentage}%"}
+  .selected-group
+    %span.selected-alpha
+      #{@overall_adoption_debate.alpha_count}표
+      %span.selected-alpha-percentage
+        #{debate_selected_alpha_percentage.round(2)}%
+
+    %span.selected-beta.pull-right
+      #{@overall_adoption_debate.beta_count}표
+      %span.selected-beta-percentage
+        #{debate_selected_beta_percentage.round(2)}%
+.debate-options
+  .option-alpha-button{class: "#{'active' if alpha_chosen?('overall_adoption')}", data: {action: ''}}
+    = link_to '단계적 시행', choose_alpha_debates_path(slug: :overall_adoption), method: :post, remote: true
+  .option-beta-button{class: "#{'active' if beta_chosen?('overall_adoption')}"}
+    = link_to '전면적 시행', choose_beta_debates_path(slug: :overall_adoption), method: :post ,remote: true
+  .option-hold-button
+    = link_to '모르겠다', choose_hold_debates_path(slug: :overall_adoption), method: :post ,remote: true

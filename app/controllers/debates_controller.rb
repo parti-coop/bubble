@@ -9,21 +9,22 @@ class DebatesController < ApplicationController
   end
 
   def choose_hold
-    redirect_to root_path and return if hold_chosen? params[:slug]
+    return if hold_chosen? params[:slug]
 
     @debate = Debate.find_by slug: params[:slug]
     @debate.alpha_count -= 1 if alpha_chosen? params[:slug]
     @debate.beta_count -= 1 if beta_chosen? params[:slug]
 
     save_choice(params[:slug], 'hold') if @debate.save
-    redirect_to root_path
+    @overall_adoption_debate = Debate.find_by slug: params[:slug]
   end
 
   private
 
   def choose_something(choice)
     anti_choice = (choice == 'alpha' ? 'beta' : 'alpha')
-    redirect_to root_path and return if chosen? params[:slug], choice
+
+    return if chosen? params[:slug], choice
 
     @debate = Debate.find_by slug: params[:slug]
     #@debate.alpha_count -= 1 if alpha_chosen? params[:slug]
@@ -31,6 +32,6 @@ class DebatesController < ApplicationController
     @debate.increment("#{choice}_count")
 
     save_choice(params[:slug], choice) if @debate.save
-    redirect_to root_path
+    @overall_adoption_debate = Debate.find_by slug: params[:slug]
   end
 end
