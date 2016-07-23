@@ -132,7 +132,7 @@ section#project-step3 {
   }
 
   section#steps {
-    background-color: #eeeeee;
+    background-color: $input-border;
     padding-top: 20px;
     padding-bottom: 20px;
     @media (max-width: 768px) {
@@ -253,18 +253,32 @@ section#project-step3 {
   }
 
   section#video-summary {
-    background-color: $brand-green-color;
+    background-color: $brand-red-color;
     padding-top: 20px;
     padding-bottom: 20px;
 
+
     .collapsed {
       text-align: center;
+      background-image :asset_url('step3/video-summary.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 126px;
+      background-position-y: 8px;
+      margin-bottom: -23px;
       .button-show {
-        text-decoration: underline;
+        margin-top: 78px;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
       }
     }
     .uncollapsed {
       display: none;
+      padding-top: 14px;
+      .summary-text {
+        color: #fff;
+      }
     }
   }
 
@@ -401,7 +415,7 @@ section#project-step3 {
             font-size: 14px;
           }
           .count {
-            color: #ec6941;
+            color: $brand-red-color;
           }
         }
         .share-card {
@@ -477,7 +491,7 @@ section#project-step3 {
 
 
   section#debate {
-    background-color: #eeeeee;
+    background-color: $input-border;
 
     .debate-title {
       text-align: center;
@@ -516,7 +530,7 @@ section#project-step3 {
       }
 
       .debate-topic-description {
-        background-color: #eeeeee;
+        background-color: $input-border;
         padding: 10px 20px;
         margin: 32px 50px 20px 50px;
       }
@@ -524,7 +538,7 @@ section#project-step3 {
       .debate-panel {
         .new_opinion {
           margin: 10px 50px;
-          background-color: #eeeeee;
+          background-color: $input-border;
           padding: 16px;
 
           .opinion-name {
@@ -540,7 +554,7 @@ section#project-step3 {
             border: none;
           }
           .opinion-submit {
-            background: #32b16c;
+            background: $brand-lime-color;
             color: #fff;
             font-weight: 100;
             font-size: 12px;
@@ -648,7 +662,7 @@ section#project-step3 {
 
       .before-option-select {
         text-align: center;
-        background-color: #eeeeee;
+        background-color: $input-border;
         padding: 14px 20px;
         margin: 14px 50px 20px 50px;
         font-size: 12px;
@@ -672,7 +686,7 @@ section#project-step3 {
       margin-left: 5%;
       margin-right: 5%;
       .notice-head {
-        color: #eaf4eb;
+        color: $brand-base-color;
         padding-bottom: 20px;
         font-size: 44px;
         @media (max-width: 767px) {
@@ -967,7 +981,7 @@ section#project-step3 {
       background-color: #f8f8f8;
       padding: 15px;
       padding-bottom: 0;
-      border: 1px solid #eeeeee;
+      border: 1px solid $input-border;
       .btn-post-submit {
         background-color: $brand-lime-color;
         color: #fff;
@@ -1015,7 +1029,7 @@ section#project-step3 {
       background-color: #f8f8f8;
       padding: 15px;
       padding-bottom: 0;
-      border: 1px solid #eeeeee;
+      border: 1px solid $input-border;
       .btn-comment-submit {
         background-color: $brand-lime-color;
         color: #fff;
@@ -1089,7 +1103,7 @@ section#project-step3 {
               background-color: #fff;
               &:hover,
               &-upvoted {
-                background-color: #eaf4eb;
+                background-color: $brand-base-color;
               }
               &-upvoted {
                 .fa-thumbs-o-up {
@@ -1171,7 +1185,7 @@ section#project-step3 {
           text-align: center;
           margin-top: 25px;
           .btn {
-            background-color: #eaf4eb;
+            background-color: $brand-base-color;
           }
         }
       }

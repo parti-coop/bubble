@@ -201,8 +201,9 @@ $(function(){
   $('[data-action="bubble-show"]').click(function() {
     $($(this).data('target')).show("slow");
     if($(this).data('self-hide')) {
-      $(this).hide();
+      $(this).parent().hide();
     }
+    $(this).parents('#video-summary').css({'background-color': '#f29a76'});
   });
 });
 
