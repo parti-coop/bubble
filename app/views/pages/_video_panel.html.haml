@@ -1,0 +1,17 @@
+%h3 발의안 쟁점 토론 영상
+
+.subtitle
+  단계적도입? 전면도입? Non-GMO 표시제?
+  %br
+  어떤 내용이고 왜 쟁점인지 영상으로 알아봐!
+
+.player-wrapper
+  - video = VideoInfo.new('https://www.youtube.com/watch?v=zdtN1zYfiG0')
+  .player
+    %iframe(src="#{video.embed_url}?enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen")
+
+.video_description
+  토론자 : 이재욱 (한국농어촌사회연구소장)
+  %br
+  이은정 (iCOOP GMO완전표시제를 위한특별위원회 위원장)
+

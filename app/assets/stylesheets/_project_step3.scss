@@ -1,17 +1,9 @@
-$brand-red-color: #ec6941;
-$brand-green-color: #89c997;
-$brand-lime-color: #32b16c;
-$brand-base-color: #eaf4eb;
-$brand-cyan-color: #84ccc9;
-
 body.app-pages-home,
 body.app-devise-registrations-new {
   background-color: $brand-base-color;
 }
 
 section#project-step3 {
-  $menu-text-color: #0068b7;
-  $video-text-color: #eb8c6b;
 
   @media (max-width: 768px) {
     .container {
@@ -122,10 +114,10 @@ section#project-step3 {
         }
       }
       .join {
-        border: 1px solid #32b16c;
+        border: 1px solid $brand-lime-color;
         border-radius: 4px;
         padding: 10px 14px;
-        background-color: #32b16c;
+        background-color: $brand-lime-color;
         margin-top: -10px;
         @media (max-width: 767px) {
           padding: 5px 14px;
@@ -171,21 +163,20 @@ section#project-step3 {
         text-align: center;
       }
       .active {
-        color: #89c997;
+        color: $brand-green-color;
       }
       a {
         color: #bfbfbf;
         &:hover {
-          color: #89c997;
+          color: $brand-green-color;
           text-decoration: none;
         }
       }
     }
   }
 
-  $video-border: 3px solid $brand-red-color;
   section#intro {
-    background-color: #89c997;
+    background-color: $brand-green-color;
     padding-top: 40px;
     padding-bottom: 40px;
     @media (max-width: 767px) {
@@ -224,51 +215,56 @@ section#project-step3 {
       }
     }
   }
-  section#video-navigation {
-    background-image: asset_url('step2/video-bar.png');
-    background-size: initial;
-    background-repeat: repeat-x;
-    background-position-y: 27%;
-    @media (max-width: 767px) {
-      background-position-y: 14%;
+  section#video {
+    background-color: $brand-lime-color;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    .subtitle {
+      margin-top: 30px;
+      font-size: 18px;
+      font-weight: 200;
     }
-    .video-thumbnails {
-      text-align: center;
-      margin-left: 0;
-      margin-top: 10px;
+    .player-wrapper {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 25px;
       margin-bottom: 25px;
-      padding-left: 5%;
-      padding-right: 5%;
-      .video-thumbnail {
-        cursor: pointer;
-        display: inline-block;
-        width: 23%;
-        .img-thumbnail {
-          border: 3px solid #fff;
-          padding: 0;
-          border-radius: 0;
-          @media (max-width: 767px) {
-            max-width: 60px;
-          }
-        }
-        .video-title {
-          margin-top: 20px;
-          color: $brand-green-color;
-          word-break: keep-all;
-          @media (max-width: 767px) {
-            font-size: $font-size-base;
-          }
-        }
-        &.active,
-        &:hover {
-          .img-thumbnail {
-            border: $video-border;
-          }
-          .video-title {
-            color: $video-text-color;
-          }
+      .player {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
         }
       }
+    }
+    .video_description {
+      font-size: $font-size-base;
+      font-weight: 200;
+    }
+  }
+
+  section#video-summary {
+    background-color: $brand-green-color;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    .collapsed {
+      text-align: center;
+      .button-show {
+        text-decoration: underline;
+      }
+    }
+    .uncollapsed {
+      display: none;
     }
   }
 
