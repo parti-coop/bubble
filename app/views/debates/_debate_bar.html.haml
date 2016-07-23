@@ -20,8 +20,8 @@
     = link_to '전면적 시행', choose_beta_debates_path(slug: :overall_adoption), method: :post ,remote: true
   .option-hold-button
     = link_to '모르겠다', choose_hold_debates_path(slug: :overall_adoption), method: :post ,remote: true
--if no_choice?('overall_adoption')
+-unless chosen?('overall_adoption')
   .before-option-select
     투표 후에 의견을 남길 수 있습니다.
-- unless no_choice?('overall_adoption')
+-if chosen?('overall_adoption')
   = render 'pages/opinions_panel', debate_slug: 'overall_adoption'
