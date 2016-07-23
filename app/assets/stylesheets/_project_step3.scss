@@ -220,9 +220,13 @@ section#project-step3 {
     text-align: center;
     padding-top: 50px;
     padding-bottom: 25px;
+    .container {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
     .subtitle {
       margin-top: 30px;
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 200;
     }
     .player-wrapper {
@@ -247,7 +251,7 @@ section#project-step3 {
       }
     }
     .video_description {
-      font-size: $font-size-base;
+      font-size: 12px;
       font-weight: 200;
     }
   }
@@ -276,13 +280,17 @@ section#project-step3 {
     .uncollapsed {
       display: none;
       padding-top: 14px;
+      @media (max-width: 767px) {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
       .summary-text {
         color: #fff;
       }
     }
   }
 
-  section#debate {
+  section#debate-title {
 
   }
 
@@ -519,6 +527,9 @@ section#project-step3 {
         text-align: center;
         padding-top: 10px;
         font-size: 28px;
+        @media (max-width: 767px) {
+          font-size: 24px;
+        }
       }
 
       .debate-topic-options {
@@ -533,6 +544,9 @@ section#project-step3 {
         background-color: $input-border;
         padding: 10px 20px;
         margin: 32px 50px 20px 50px;
+        @media (max-width: 767px) {
+          margin: 30px 14px 20px;
+        }
       }
 
       .debate-panel {
@@ -540,12 +554,18 @@ section#project-step3 {
           margin: 10px 50px;
           background-color: $input-border;
           padding: 16px;
+          @media (max-width: 767px) {
+            margin: 20px 14px 20px;
+          }
 
           .opinion-name {
             padding: 8px 12px;
             border: none;
             display: inline-block;
             padding-bottom: 6px;
+            @media (max-width: 767px) {
+              width: 100px;
+            }
           }
           .opinion-body {
             width: 100%;
@@ -568,6 +588,9 @@ section#project-step3 {
         .opinion {
           margin: 6px 50px 4px;
           padding: 12px 18px;
+          @media (max-width: 767px) {
+            margin: 10px 14px 10px;
+          }
 
           &__choice {
             &.select_alpha {
@@ -597,6 +620,9 @@ section#project-step3 {
         left: 0;
         margin: 24px 50px 50px 50px;
         background-color: #e5004f;
+        @media (max-width: 767px) {
+          margin: 30px 14px 20px;
+        }
 
         .debate-voted {
           height: 100%;
@@ -616,11 +642,17 @@ section#project-step3 {
 
       .debate-options {
         text-align: center;
+        @media (max-width: 767px) {
+          margin: 30px 14px 20px;
+        }
 
         .option-alpha-button{
           display: inline-block;
           padding: 20px 60px;
           border: 1px solid #00a0e9;
+          @media (max-width: 767px) {
+            padding: 10px 20px;
+          }
 
           &.active {
             background-color: #00a0e9;
@@ -638,6 +670,9 @@ section#project-step3 {
           padding: 20px 60px;
           border: 1px solid #e5004f;
           margin-left: 10px;
+          @media (max-width: 767px) {
+            padding: 10px 20px;
+          }
 
           &.active {
             background-color: #e5004f;
