@@ -1,5 +1,13 @@
-.opinion
-  .opinion__choice= opinion.choice
-  .opinion__name= opinion.name
-  .opinion__body= opinion.body
-%hr
+.opinion{class: "select_#{opinion.choice}" }
+  %span.opinion__name
+    = opinion.name
+  %span.opinoin__date.pull-right
+    = date_f opinion.created_at
+  %br
+  %span.opinion__choice{class: "select_#{opinion.choice}" }
+    - choice = '단계적 도입' if opinion.choice == 'alpha'
+    - choice = '전면적 도입' if opinion.choice == 'beta'
+    - choice = '모르겠습니다' if opinion.choice == 'hold'
+    = choice
+  %span.opinion__body
+    = opinion.body

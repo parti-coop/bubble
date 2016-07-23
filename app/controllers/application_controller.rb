@@ -66,7 +66,7 @@ class ApplicationController < ActionController::Base
     redirect_to || stored_location_for(resource) || root_path
   end
 
-  helper_method :alpha_chosen?, :beta_chosen?, :hold_chosen?, :chosen?
+  helper_method :alpha_chosen?, :beta_chosen?, :hold_chosen?, :chosen?, :no_choice?
 
   private
 
@@ -104,5 +104,14 @@ class ApplicationController < ActionController::Base
     debate_choices = fetch_debate_choices
     debate_choices[slug] = choice
     cookies.permanent.signed[:kong_kong] = JSON.generate(debate_choices)
+  end
+
+  def no_choice?(slug)
+    debate_choices = fetch_debate_choices
+    if debate_choices[slug] == 'hold'
+      return true
+    else
+      return false
+    end
   end
 end

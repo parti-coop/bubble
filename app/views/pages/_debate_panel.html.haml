@@ -20,31 +20,9 @@
   %p.debate-topic-description
     (첫번째꺼아님) 현재 Non-GMO 표시에 대해선 별도 규정이 없음. 식품의약품안전처는 국내 식용으로 유통되는 콩(대두)·옥수수·사탕무·카놀라(유채)·면화·알파파 등 6개 농산물에 대해서만 Non-GMO 표시를 허용하는 고시를 추진 중.
   .debate-panel
-    = render 'debates/debate_bar'
+    = render 'debates/debate_bar', debate_slug: 'overall_adoption'
 
 
-
-  %br
-  = link_to '모르겠다', choose_hold_debates_path(slug: :overall_adoption), method: :post
-
-  = render 'opinions_panel', debate_slug: 'overall_adoption'
-
-.debate-topic
-  쟁점2: nonGMO표시
-  %br
-  찬성 #{@non_gmo_debate.alpha_count}표 vs 반대 #{@non_gmo_debate.beta_count}표
-  %br
-  = link_to '찬성', choose_alpha_debates_path(slug: :non_gmo), method: :post
-  -if alpha_chosen?('non_gmo')
-    전면적 도입 선택
-  %br
-  = link_to '반대', choose_beta_debates_path(slug: :non_gmo), method: :post
-  -if beta_chosen?('non_gmo')
-    단적 도입 선택
-  %br
-  = link_to '모르겠다', choose_hold_debates_path(slug: :non_gmo), method: :post
-
-  = render 'opinions_panel', debate_slug: 'non_gmo'
 
 1. GMO 완전표시제 시행 시기는요?
 단계적 시행 vs 전면적 시행
