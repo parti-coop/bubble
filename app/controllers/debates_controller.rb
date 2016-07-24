@@ -16,7 +16,10 @@ class DebatesController < ApplicationController
     @debate.beta_count -= 1 if beta_chosen? params[:slug]
 
     save_choice(params[:slug], 'hold') if @debate.save
-    @overall_adoption_debate = Debate.find_by slug: params[:slug]
+    @overall_adoption_debate = Debate.find_by slug: 'overall_adoption'
+    @non_gmo_debate = Debate.find_by slug: 'non_gmo'
+    @exemption_range_debate = Debate.find_by slug: 'exemption_range'
+    @debate_name = params[:slug]
   end
 
   private
@@ -32,6 +35,9 @@ class DebatesController < ApplicationController
     @debate.increment("#{choice}_count")
 
     save_choice(params[:slug], choice) if @debate.save
-    @overall_adoption_debate = Debate.find_by slug: params[:slug]
+    @overall_adoption_debate = Debate.find_by slug: 'overall_adoption'
+    @non_gmo_debate = Debate.find_by slug: 'non_gmo'
+    @exemption_range_debate = Debate.find_by slug: 'exemption_range'
+    @debate_name = params[:slug]
   end
 end

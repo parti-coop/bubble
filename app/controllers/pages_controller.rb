@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     @user = current_user
     @overall_adoption_debate = Debate.find_by slug: 'overall_adoption'
     @non_gmo_debate = Debate.find_by slug: 'non_gmo'
+    @exemption_range_debate = Debate.find_by slug: 'exemption_range'
   end
 
   def step1

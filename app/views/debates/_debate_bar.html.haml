@@ -1,27 +1,113 @@
-.debate-bar
-  - total_count = @overall_adoption_debate.alpha_count + @overall_adoption_debate.beta_count
-  - debate_selected_alpha_percentage = (@overall_adoption_debate.alpha_count / Float(total_count)) * 100
-  - debate_selected_beta_percentage = (@overall_adoption_debate.beta_count / Float(total_count)) * 100
-  .debate-voted{style: "width: #{debate_selected_alpha_percentage}%"}
-  .selected-group
-    %span.selected-alpha
-      #{@overall_adoption_debate.alpha_count}표
-      %span.selected-alpha-percentage
-        #{debate_selected_alpha_percentage.round(2)}%
+.debate-topic
+  %p.debate-topic-title
+    GMO완전표시제법 쟁점-1
+  %p.debate-topic-subtitle
+    GMO 완전표시제 시행 시기는요?
+  %p.debate-topic-options
+    단계적 시행 vs 전면적 시행
+  .debate-panel.debate-name-overall_adoption
+    .debate-bar
+      - total_count = @overall_adoption_debate.alpha_count + @overall_adoption_debate.beta_count
+      - debate_selected_alpha_percentage = (@overall_adoption_debate.alpha_count / Float(total_count)) * 100
+      - debate_selected_beta_percentage = (@overall_adoption_debate.beta_count / Float(total_count)) * 100
+      .debate-voted{style: "width: #{debate_selected_alpha_percentage}%"}
+      .selected-group
+        %span.selected-alpha
+          #{@overall_adoption_debate.alpha_count}표
+          %span.selected-alpha-percentage
+            #{debate_selected_alpha_percentage.round(2)}%
 
-    %span.selected-beta.pull-right
-      #{@overall_adoption_debate.beta_count}표
-      %span.selected-beta-percentage
-        #{debate_selected_beta_percentage.round(2)}%
-.debate-options
-  .option-alpha-button{class: "#{'active' if alpha_chosen?('overall_adoption')}", data: {action: ''}}
-    = link_to '단계적 시행', choose_alpha_debates_path(slug: :overall_adoption), method: :post, remote: true
-  .option-beta-button{class: "#{'active' if beta_chosen?('overall_adoption')}"}
-    = link_to '전면적 시행', choose_beta_debates_path(slug: :overall_adoption), method: :post ,remote: true
-  .option-hold-button
-    = link_to '모르겠다', choose_hold_debates_path(slug: :overall_adoption), method: :post ,remote: true
--unless chosen?('overall_adoption')
-  .before-option-select
-    투표 후에 의견을 남길 수 있습니다.
--if chosen?('overall_adoption')
-  = render 'pages/opinions_panel', debate_slug: 'overall_adoption'
+        %span.selected-beta.pull-right
+          #{@overall_adoption_debate.beta_count}표
+          %span.selected-beta-percentage
+            #{debate_selected_beta_percentage.round(2)}%
+    .debate-options
+      .option-alpha-button{class: "#{'active' if alpha_chosen?('overall_adoption')}", data: {action: ''}}
+        = link_to '단계적 시행', choose_alpha_debates_path(slug: :overall_adoption), method: :post, remote: true
+      .option-beta-button{class: "#{'active' if beta_chosen?('overall_adoption')}"}
+        = link_to '전면적 시행', choose_beta_debates_path(slug: :overall_adoption), method: :post ,remote: true
+      .option-hold-button
+        = link_to '모르겠다', choose_hold_debates_path(slug: :overall_adoption), method: :post ,remote: true
+    -unless chosen?('overall_adoption')
+      .before-option-select
+        투표 후에 의견을 남길 수 있습니다.
+    -if chosen?('overall_adoption')
+      = render 'pages/opinions_panel', debate_slug: 'overall_adoption'
+
+
+.debate-topic
+  %p.debate-topic-title
+    GMO완전표시제법 쟁점-2
+  %p.debate-topic-subtitle
+    GMO 표시 대상이 아닌 국내산 농산물에 Non-GMO(비GMO)라 표시해야 할까요?
+  %p.debate-topic-options
+    표시 안 해도 된다 vs 표시해야 한다
+  %p.debate-topic-description
+    현재 Non-GMO 표시에 대해선 별도 규정이 없음. 식품의약품안전처는 국내 식용으로 유통되는 콩(대두)·옥수수·사탕무·카놀라(유채)·면화·알파파 등 6개 농산물에 대해서만 Non-GMO 표시를 허용하는 고시를 추진 중.
+  .debate-panel.debate-name-non_gmo
+    .debate-bar
+      - total_count = @non_gmo_debate.alpha_count + @non_gmo_debate.beta_count
+      - debate_selected_alpha_percentage = (@non_gmo_debate.alpha_count / Float(total_count)) * 100
+      - debate_selected_beta_percentage = (@non_gmo_debate.beta_count / Float(total_count)) * 100
+      .debate-voted{style: "width: #{debate_selected_alpha_percentage}%"}
+      .selected-group
+        %span.selected-alpha
+          #{@non_gmo_debate.alpha_count}표
+          %span.selected-alpha-percentage
+            #{debate_selected_alpha_percentage.round(2)}%
+
+        %span.selected-beta.pull-right
+          #{@non_gmo_debate.beta_count}표
+          %span.selected-beta-percentage
+            #{debate_selected_beta_percentage.round(2)}%
+    .debate-options
+      .option-alpha-button{class: "#{'active' if alpha_chosen?('non_gmo')}", data: {action: ''}}
+        = link_to '표시 안 해도 된다.', choose_alpha_debates_path(slug: :non_gmo), method: :post, remote: true
+      .option-beta-button{class: "#{'active' if beta_chosen?('non_gmo')}"}
+        = link_to '표시해야 한다.', choose_beta_debates_path(slug: :non_gmo), method: :post ,remote: true
+      .option-hold-button
+        = link_to '모르겠다', choose_hold_debates_path(slug: :non_gmo), method: :post ,remote: true
+    -unless chosen?('non_gmo')
+      .before-option-select
+        투표 후에 의견을 남길 수 있습니다.
+    -if chosen?('non_gmo')
+      = render 'pages/opinions_panel', debate_slug: 'non_gmo'
+
+
+.debate-topic
+  %p.debate-topic-title
+    GMO완전표시제법 쟁점-3
+  %p.debate-topic-subtitle
+    GMO 표시 면제 범위는요?
+  %p.debate-topic-options
+    0% vs 0.9%까지
+  %p.debate-topic-description
+    현재 ‘비의도적 혼입치’는 3%. 유통 과정에서 의도치 않게 GMO가 섞였다고 보고 입혼 비율 3%까지는 표시를 면제해주는 제도.
+  .debate-panel.debate-name-exemption_range
+    .debate-bar
+      - total_count = @exemption_range_debate.alpha_count + @exemption_range_debate.beta_count
+      - debate_selected_alpha_percentage = (@exemption_range_debate.alpha_count / Float(total_count)) * 100
+      - debate_selected_beta_percentage = (@exemption_range_debate.beta_count / Float(total_count)) * 100
+      .debate-voted{style: "width: #{debate_selected_alpha_percentage}%"}
+      .selected-group
+        %span.selected-alpha
+          #{@exemption_range_debate.alpha_count}표
+          %span.selected-alpha-percentage
+            #{debate_selected_alpha_percentage.round(2)}%
+
+        %span.selected-beta.pull-right
+          #{@exemption_range_debate.beta_count}표
+          %span.selected-beta-percentage
+            #{debate_selected_beta_percentage.round(2)}%
+    .debate-options
+      .option-alpha-button{class: "#{'active' if alpha_chosen?('exemption_range')}", data: {action: ''}}
+        = link_to '0%', choose_alpha_debates_path(slug: :exemption_range), method: :post, remote: true
+      .option-beta-button{class: "#{'active' if beta_chosen?('exemption_range')}"}
+        = link_to '0.9%', choose_beta_debates_path(slug: :exemption_range), method: :post ,remote: true
+      .option-hold-button
+        = link_to '모르겠다', choose_hold_debates_path(slug: :exemption_range), method: :post ,remote: true
+    -unless chosen?('exemption_range')
+      .before-option-select
+        투표 후에 의견을 남길 수 있습니다.
+    -if chosen?('exemption_range')
+      = render 'pages/opinions_panel', debate_slug: 'exemption_range'
