@@ -159,7 +159,7 @@ section#project-step3 {
     .project-steps {
       color: #bfbfbf;
       @media (max-width: 768px) {
-        font-size: 10px;
+        font-size: 12px;
         text-align: center;
       }
       .active {
@@ -535,6 +535,8 @@ section#project-step3 {
         font-size: 28px;
         @media (max-width: 767px) {
           font-size: 24px;
+          padding-left: 12px;
+          padding-right: 12px;
         }
       }
 
@@ -582,10 +584,10 @@ section#project-step3 {
             background: $brand-lime-color;
             color: #fff;
             font-weight: 100;
-            font-size: 12px;
+            font-size: 14px;
             width: 100%;
-            padding-top: 12px;
-            padding-bottom: 12px;
+            padding-top: 10px;
+            padding-bottom: 10px;
             margin-top: -10px;
           }
         }
@@ -624,13 +626,13 @@ section#project-step3 {
           }
 
           &.select_alpha {
-            border: 2px solid #00a0e9;
+            border: 1px solid #00a0e9;
           }
           &.select_beta {
-            border: 2px solid #e5004f;
+            border: 1px solid #e5004f;
           }
           &.select_hold {
-            border: 2px solid #bfbfbf;
+            border: 1px solid #bfbfbf;
           }
         }
       }

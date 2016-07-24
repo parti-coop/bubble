@@ -19,32 +19,52 @@
         .col-md-3.col-xs-3
           .project-step1
             =link_to step1_path do
-              발의할 법안
-              %br.visible-xs
-              정하기
-              %br
-              6/7 ~ 6/26
+              - if browser.device.mobile?
+                법안 정하기
+                %br
+                6/7 ~ 6/26
+              - else
+                발의할 법안
+                %br.visible-xs
+                정하기
+                %br
+                6/7 ~ 6/26
         .col-md-3.col-xs-3
           .project-step2
             =link_to step2_path do
-              프로젝트 정당
-              %br.visible-xs
-              만들기
-              %br
-              7/4 ~ 7/25
+              - if browser.device.mobile?
+                정당 만들기
+                %br
+                7/4 ~ 7/25
+              - else
+                프로젝트 정당
+                %br.visible-xs
+                만들기
+                %br
+                7/4 ~ 7/25
         .col-md-4.col-xs-3
           .project-step3
             =link_to root_path, class:'active' do
-              GMO완전표시제법
-              %br.visible-xs
-              발의안 쟁점토론
-              %br
-              7/25 ~
+              - if browser.device.mobile?
+                쟁점토론
+                %br
+                7/25 ~
+              - else
+                GMO완전표시제법
+                %br.visible-xs
+                발의안 쟁점토론
+                %br
+                7/25 ~
         .col-md-2.col-xs-3
           .project-step-after
             =link_to root_path do
-              발의,
-              %br.visible-xs
-              당원활동
-              %br
-              (준비중)
+              - if browser.device.mobile?
+                당원활동
+                %br
+                (준비중)
+              - else
+                발의,
+                %br.visible-xs
+                당원활동
+                %br
+                (준비중)
