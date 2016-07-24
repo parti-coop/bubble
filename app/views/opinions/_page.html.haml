@@ -1,5 +1,5 @@
 - opinions ||= Opinion.in_debate(debate).recent.page(1)
-%a{id: "opinion-anchor"}
+%a{id: "opinion-anchor-#{debate.slug}"}
 = render opinions
 
 .opinions-pagination

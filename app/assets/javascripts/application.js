@@ -190,25 +190,27 @@ $(function(){
   });
 
   // 쟁점토론 유효성검사
-  $('form.new_opinion').validate({
-    ignore: ".ignore",
-    rules: {
-      "hiddenRecaptcha": {
-        recaptcha: true
+  $('form.new_opinion').each(function() {
+    $(this).validate({
+      ignore: ".ignore",
+      rules: {
+        "hiddenRecaptcha": {
+          recaptcha: true
+        }
+      },
+      messages: {
+        "hiddenRecaptcha": {
+          recaptcha: "로봇이 아닌지 확인해 주세요."
+        }
+      },
+      errorPlacement: function(error, element) {
+        if($(element).attr('name') == 'hiddenRecaptcha') {
+          error.prependTo(element.closest('form').find('.recaptcha'));
+        } else {
+          return true;
+        }
       }
-    },
-    messages: {
-      "hiddenRecaptcha": {
-        recaptcha: "로봇이 아닌지 확인해 주세요."
-      }
-    },
-    errorPlacement: function(error, element) {
-      if($(element).attr('name') == 'hiddenRecaptcha') {
-        error.prependTo(element.closest('form').find('.recaptcha'));
-      } else {
-        return true;
-      }
-    }
+    });
   });
 
   $('[data-action="bubble-naming-option"]').change(function() {
