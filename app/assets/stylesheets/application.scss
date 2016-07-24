@@ -26,9 +26,10 @@ $line-height-smaller: 18px;
   font-weight: bold;
 }
 
-.g-recaptcha {
-  transform: scale(0.88);
-  -webkit-transform: scale(0.88);
+.g-recaptcha,
+.bubble-recaptcha {
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
   transform-origin: 0 0;
   -webkit-transform-origin: 0 0;
 }
