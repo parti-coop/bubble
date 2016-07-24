@@ -40,8 +40,7 @@
       -unless chosen?('overall_adoption')
         .before-option-select
           투표 후에 의견을 남길 수 있습니다.
-      -if chosen?('overall_adoption')
-        = render 'pages/opinions_panel', debate_slug: 'overall_adoption'
+      = render 'pages/opinions_panel', debate_slug: 'overall_adoption'
 
 
   .debate-topic
@@ -79,8 +78,7 @@
       -unless chosen?('non_gmo')
         .before-option-select
           투표 후에 의견을 남길 수 있습니다.
-      -if chosen?('non_gmo')
-        = render 'pages/opinions_panel', debate_slug: 'non_gmo'
+      = render 'pages/opinions_panel', debate_slug: 'non_gmo'
 
 
   .debate-topic
@@ -118,6 +116,5 @@
       -unless chosen?('exemption_range')
         .before-option-select
           투표 후에 의견을 남길 수 있습니다.
-      -if chosen?('exemption_range')
-        = render 'pages/opinions_panel', debate_slug: 'exemption_range'
+      = render 'pages/opinions_panel', debate_slug: 'exemption_range'
 

@@ -19,7 +19,6 @@ class DebatesController < ApplicationController
     @overall_adoption_debate = Debate.find_by slug: 'overall_adoption'
     @non_gmo_debate = Debate.find_by slug: 'non_gmo'
     @exemption_range_debate = Debate.find_by slug: 'exemption_range'
-    @debate_name = params[:slug]
   end
 
   private
@@ -38,6 +37,5 @@ class DebatesController < ApplicationController
     @overall_adoption_debate = Debate.find_by slug: 'overall_adoption'
     @non_gmo_debate = Debate.find_by slug: 'non_gmo'
     @exemption_range_debate = Debate.find_by slug: 'exemption_range'
-    @debate_name = params[:slug]
   end
 end
