@@ -1,1 +1,2 @@
-$(".debate-topic-group").html('<%= escape_javascript(render "debates/debate_bar") %>');
+$('#debate-topic-<%= @debate.slug %> .debate-panel--header').html('<%= escape_javascript render("opinions/header", debate: @debate) %>');
+$('#debate-topic-<%= @debate.slug %> .debate-panel--opinion-form').show();

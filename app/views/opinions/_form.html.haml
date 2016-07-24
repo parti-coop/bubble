@@ -1,0 +1,12 @@
+.debate-panel--opinion-form{style: ('display: none' unless chosen?(debate.slug))}
+  = form_for Opinion.new(debate_slug: debate.slug) do |f|
+    = f.hidden_field :debate_slug
+    .form-group
+      = f.text_field :name, class: 'opinion-name form-control', placeholder: '이름', data: {'rule-required': true}
+    .form-group
+      = f.text_area :body, class: 'opinion-body form-control', placeholder: "왜 그렇게 생각하는지 의견을 남겨 주세요.", data: {'rule-required': true}
+    .form-group.recaptcha
+      .help-block 스팸 방지를 위해 사람인지 확인하는 거야. 아래 체크 박스를 클릭해.
+      = hidden_field_tag :hiddenRecaptcha, nil
+      .bubble-recaptcha
+    = f.submit class: 'opinion-submit btn', value: '등록'

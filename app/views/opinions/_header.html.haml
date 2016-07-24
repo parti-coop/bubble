@@ -1,0 +1,23 @@
+.debate-bar
+  - total_count = debate.total_count
+  .debate-voted{style: "width: #{debate.alpha_percentage}%"}
+  .selected-group
+    %span.selected-alpha
+      #{debate.alpha_count}표
+      %span.selected-alpha-percentage
+        #{debate.alpha_percentage}%
+
+    %span.selected-beta.pull-right
+      #{debate.beta_count}표
+      %span.selected-beta-percentage
+        #{debate.beta_percentage}%
+.debate-options
+  .option-alpha-button{class: "#{'active' if alpha_chosen?(debate.slug)}"}
+    = link_to debate.alpha_label, choose_alpha_debates_path(slug: debate.slug), method: :post, remote: true
+  .option-beta-button{class: "#{'active' if beta_chosen?(debate.slug)}"}
+    = link_to debate.beta_label, choose_beta_debates_path(slug: debate.slug), method: :post ,remote: true
+  .option-hold-button
+    = link_to '모르겠다', choose_hold_debates_path(slug: debate.slug), method: :post ,remote: true
+- unless chosen?(debate.slug)
+  .before-option-select
+    투표 후에 의견을 남길 수 있습니다.

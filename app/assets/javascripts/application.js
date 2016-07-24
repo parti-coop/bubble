@@ -161,7 +161,7 @@ $(function(){
     },
     errorPlacement: function(error, element) {
       if($(element).attr('name') == 'hiddenRecaptcha') {
-        error.prependTo($('.recaptcha'));
+        error.prependTo(element.closest('form').find('.recaptcha'));
       } else {
         return true;
       }
@@ -182,7 +182,7 @@ $(function(){
     },
     errorPlacement: function(error, element) {
       if($(element).attr('name') == 'hiddenRecaptcha') {
-        error.prependTo($('.recaptcha'));
+        error.prependTo(element.closest('form').find('.recaptcha'));
       } else {
         return true;
       }
@@ -190,7 +190,7 @@ $(function(){
   });
 
   // 쟁점토론 유효성검사
-  $('form#new_opinion').validate({
+  $('form.new_opinion').validate({
     ignore: ".ignore",
     rules: {
       "hiddenRecaptcha": {
@@ -204,7 +204,7 @@ $(function(){
     },
     errorPlacement: function(error, element) {
       if($(element).attr('name') == 'hiddenRecaptcha') {
-        error.prependTo($('.recaptcha'));
+        error.prependTo(element.closest('form').find('.recaptcha'));
       } else {
         return true;
       }
