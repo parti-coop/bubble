@@ -7,11 +7,11 @@
         = link_to '게시판', root_path(anchor: 'post-panel-anchor')
       %span.padding-left
         = link_to '입법진행과정', root_path(anchor: 'anchor-process')
-      %span.pull-right.join
+      %span
         - if user_signed_in?
-          = link_to '로그아웃', destroy_user_session_path, method: :delete
+          = link_to '로그아웃', destroy_user_session_path, class: 'pull-right join', method: :delete
         - else
-          = link_to '당원가입 / 로그인', root_path(anchor: 'anchor-join')
+          = link_to '당원가입 / 로그인', root_path(anchor: 'anchor-join'), class: 'pull-right join'
 %section#steps
   .container
     .row

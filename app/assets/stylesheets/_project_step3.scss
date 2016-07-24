@@ -119,9 +119,14 @@ section#project-step3 {
         padding: 10px 14px;
         background-color: $brand-lime-color;
         margin-top: -10px;
+        color: #fff;
         @media (max-width: 767px) {
           padding: 5px 14px;
           margin-top: -6px;
+        }
+
+        &:hover {
+          text-decoration: none;
         }
 
         a {
@@ -669,41 +674,42 @@ section#project-step3 {
 
         .option-alpha-button{
           display: inline-block;
+          border-radius: 0;
           padding: 20px 60px;
           border: 1px solid #00a0e9;
+          color: #00a0e9;
+          text-decoration: none;
           @media (max-width: 767px) {
             padding: 10px 20px;
           }
-
           &.active {
             background-color: #00a0e9;
-            a {
-              color: #fff;
-            }
+            color: #fff;
           }
-
-          a {
-            color: #00a0e9;
+          &:hover {
+            background-color: rgba(0, 160, 239, 0.5);
+            color: #fff;
           }
         }
         .option-beta-button{
           display: inline-block;
+          border-radius: 0;
           padding: 20px 60px;
           border: 1px solid #e5004f;
           margin-left: 10px;
+          color: #e5004f;
+          text-decoration: none;
           @media (max-width: 767px) {
             padding: 10px 20px;
           }
 
           &.active {
             background-color: #e5004f;
-            a {
-              color: #fff;
-            }
+            color: #fff;
           }
-
-          a {
-            color: #e5004f;
+          &:hover {
+            background-color: rgba(229,0,79,0.5);
+            color: #fff;
           }
         }
 
