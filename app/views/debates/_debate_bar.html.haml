@@ -9,7 +9,8 @@
     .debate-panel--header
       = render 'opinions/header', debate: @overall_adoption_debate
     = render 'opinions/form', debate: @overall_adoption_debate
-    = render 'pages/opinions_panel', debate_slug: @overall_adoption_debate.slug
+    .debate-panel--opinions
+      = render 'opinions/page', debate: @overall_adoption_debate
 
 #debate-topic-non_gmo.debate-topic
   %p.debate-topic-title
@@ -24,7 +25,8 @@
     .debate-panel--header
       = render 'opinions/header', debate: @non_gmo_debate
     = render 'opinions/form', debate: @non_gmo_debate
-    = render 'pages/opinions_panel', debate_slug: @non_gmo_debate.slug
+    .debate-panel--opinions
+      = render 'opinions/page', debate: @non_gmo_debate
 
 
 #debate-topic-exemption_range.debate-topic
@@ -40,4 +42,5 @@
     .debate-panel--header
       = render 'opinions/header', debate: @exemption_range_debate
     = render 'opinions/form', debate: @non_gmo_debate
-    = render 'pages/opinions_panel', debate_slug: @exemption_range_debate.slug
+    .debate-panel--opinions
+      = render 'opinions/page', debate: @exemption_range_debate

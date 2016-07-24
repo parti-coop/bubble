@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post 'debates/:slug/choose_alpha', to: 'debates#choose_alpha', as: :choose_alpha_debates
   post 'debates/:slug/choose_beta', to: 'debates#choose_beta', as: :choose_beta_debates
   post 'debates/:slug/choose_hold', to: 'debates#choose_hold', as: :choose_hold_debates
-  resources 'opinions', only: :create
+  resources 'opinions', only: [:create, :index]
 
   post 'bills/:slug/upvote', to: 'bills#upvote', as: :upvote_bill
   post 'party_names/upvote', to: 'party_names#upvote', as: :upvote_party_name

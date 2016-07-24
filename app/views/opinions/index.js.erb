@@ -1,0 +1,1 @@
+$('#debate-topic-<%= @debate.slug %> .debate-panel--opinions').html('<%= escape_javascript render("opinions/page", opinions: @opinions, debate: @debate) %>');

@@ -590,6 +590,20 @@ section#project-step3 {
           }
         }
 
+        .opinions-pagination {
+          text-align: center;
+          color: #5d5d5d;
+          text-align: center;
+          font-size: 12px;
+          a, a:hover, a:visited, a:active, a:focus {
+            color: #5d5d5d;
+            font-weight: bold;
+          }
+          li.next a, li.prev a {
+            float: initial;
+          }
+        }
+
         .opinion {
           margin: 6px 50px 4px;
           padding: 12px 18px;
