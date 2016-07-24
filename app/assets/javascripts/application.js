@@ -224,7 +224,7 @@ $(function(){
   autosize($('[data-action="parti-autoresize"]'));
 
   $('[data-action="bubble-show"]').click(function() {
-    $($(this).data('target')).show("slow");
+    $($(this).data('target')).fadeIn("slow");
     if($(this).data('self-hide')) {
       $(this).parent().hide();
     }

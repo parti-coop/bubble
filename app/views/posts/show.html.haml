@@ -1,9 +1,6 @@
-%section#project-step2.project-step2-post
+%section#project-step3.project-step3-post
 
-  - if @post.bill_choice_board?
-    = render 'pages/step1_header'
-  - else
-    = render 'pages/step2_header'
+  = render 'pages/step_header'
 
   %section#post
     .container
@@ -71,11 +68,7 @@
               = render @post.comments.earlier
           = render 'comments/form', post: @post
         .navigation-button
-          - if @post.bill_choice_board?
-            = link_to step1_path(anchor: 'posts-anchor'), class: 'btn btn-default' do
-              목록으로
-          - else
-            = link_to root_path(board_slug: @post.board_slug, anchor: 'posts-anchor'), class: 'btn btn-default' do
+          = link_to root_path(board_slug: @post.board_slug, anchor: 'posts-anchor'), class: 'btn btn-default' do
               목록으로
 
-  = render 'pages/step2_footer'
+  = render 'pages/step3_footer'
