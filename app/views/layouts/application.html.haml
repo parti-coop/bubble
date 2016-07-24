@@ -40,7 +40,6 @@
             'sitekey' : "#{Recaptcha.configuration.public_key}",
             'size' : '100px'
           });
-          console.log(widget_id);
           $(elm).closest('form').find('input[name="hiddenRecaptcha"]').data('recaptcha-id', widget_id);
         });
       };
