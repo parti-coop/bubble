@@ -2,7 +2,6 @@
   - if @post.nil?
     - @post = Post.new(board_slug: board_slug)
   = form_for @post do |f|
-    = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
     - if user_signed_in?
       .user-info
         %strong= current_user.name
@@ -37,7 +36,8 @@
         - if !user_signed_in? and @post.new_record?
           .form-group.recaptcha
             .help-block 스팸 방지를 위해 사람인지 확인하는 거야. 아래 체크 박스를 클릭해.
-            = recaptcha_tags hl: :ko, size: '100px'
+            = hidden_field_tag :hiddenRecaptcha, nil
+            .bubble-recaptcha
       .col-sm-4.text-right
         - if @post.new_record?
           = f.submit '등록', class: 'btn btn-lg btn-block btn-post-submit', data: { disable_with: "게시 중..." }

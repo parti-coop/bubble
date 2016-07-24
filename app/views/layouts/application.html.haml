@@ -32,3 +32,17 @@
         ga('create', 'UA-78784478-1', 'auto');
         ga('send', 'pageview');
 
+    :javascript
+      //recaptcha
+      var onloadCallback = function() {
+        $('.bubble-recaptcha').each(function(index, elm){
+          var widget_id = grecaptcha.render(elm, {
+            'sitekey' : "#{Recaptcha.configuration.public_key}",
+            'size' : '100px'
+          });
+          console.log(widget_id);
+          $(elm).closest('form').find('input[name="hiddenRecaptcha"]').data('recaptcha-id', widget_id);
+        });
+      };
+    %script(src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=ko" async defer)
+

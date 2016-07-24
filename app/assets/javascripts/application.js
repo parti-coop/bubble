@@ -140,7 +140,8 @@ $(function(){
 
   $.validator.addMethod("recaptcha", function(value, element) {
     if(typeof grecaptcha != 'undefined') {
-      return grecaptcha.getResponse().length > 0;
+      var recaptcha_id = $(element).data('recaptcha-id');
+      return grecaptcha.getResponse(recaptcha_id).length > 0;
     }
 
     return true;
@@ -159,7 +160,7 @@ $(function(){
       }
     },
     errorPlacement: function(error, element) {
-      if($(element).attr('id') == 'hiddenRecaptcha') {
+      if($(element).attr('name') == 'hiddenRecaptcha') {
         error.prependTo($('.recaptcha'));
       } else {
         return true;
@@ -180,7 +181,7 @@ $(function(){
       }
     },
     errorPlacement: function(error, element) {
-      if($(element).attr('id') == 'hiddenRecaptcha') {
+      if($(element).attr('name') == 'hiddenRecaptcha') {
         error.prependTo($('.recaptcha'));
       } else {
         return true;
@@ -206,5 +207,4 @@ $(function(){
     $(this).parents('#video-summary').css({'background-color': '#f29a76'});
   });
 });
-
 

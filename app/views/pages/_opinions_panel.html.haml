@@ -5,10 +5,10 @@
       = f.text_field :name, class: 'opinion-name', placeholder: '이름'
     .form-group
       = f.text_area :body, class: 'opinion-body', placeholder: "왜 그렇게 생각하는지 의견을 남겨 주세요."
-    = hidden_field_tag :hiddenRecaptcha, nil, id: 'hiddenRecaptcha'
     .form-group.recaptcha
       .help-block 스팸 방지를 위해 사람인지 확인하는 거야. 아래 체크 박스를 클릭해.
-      = recaptcha_tags hl: :ko, size: '100px'
+      = hidden_field_tag :hiddenRecaptcha, nil
+      .bubble-recaptcha
     = f.submit class: 'opinion-submit btn', value: '등록'
-%a{id: 'opinion-anchor'}
+%a{id: "opinion-anchor"}
 = render Opinion.in_debate(debate_slug)

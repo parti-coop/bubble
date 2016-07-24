@@ -5,7 +5,7 @@
     GMO 완전표시제 시행 시기는요?
   %p.debate-topic-options
     단계적 시행 vs 전면적 시행
-  .debate-panel.debate-name-overall_adoption
+  .debate-panel
     .debate-bar
       - total_count = @overall_adoption_debate.alpha_count + @overall_adoption_debate.beta_count
       - debate_selected_alpha_percentage = (@overall_adoption_debate.alpha_count / Float(total_count)) * 100
@@ -44,7 +44,7 @@
     표시 안 해도 된다 vs 표시해야 한다
   %p.debate-topic-description
     현재 Non-GMO 표시에 대해선 별도 규정이 없음. 식품의약품안전처는 국내 식용으로 유통되는 콩(대두)·옥수수·사탕무·카놀라(유채)·면화·알파파 등 6개 농산물에 대해서만 Non-GMO 표시를 허용하는 고시를 추진 중.
-  .debate-panel.debate-name-non_gmo
+  .debate-panel
     .debate-bar
       - total_count = @non_gmo_debate.alpha_count + @non_gmo_debate.beta_count
       - debate_selected_alpha_percentage = (@non_gmo_debate.alpha_count / Float(total_count)) * 100
@@ -83,7 +83,7 @@
     0% vs 0.9%까지
   %p.debate-topic-description
     현재 ‘비의도적 혼입치’는 3%. 유통 과정에서 의도치 않게 GMO가 섞였다고 보고 입혼 비율 3%까지는 표시를 면제해주는 제도.
-  .debate-panel.debate-name-exemption_range
+  .debate-panel
     .debate-bar
       - total_count = @exemption_range_debate.alpha_count + @exemption_range_debate.beta_count
       - debate_selected_alpha_percentage = (@exemption_range_debate.alpha_count / Float(total_count)) * 100
