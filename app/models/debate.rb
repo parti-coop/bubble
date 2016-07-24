@@ -24,7 +24,7 @@ class Debate < ActiveRecord::Base
   end
 
   def beta_percentage
-    return 0 if alpha_count == 0
+    return 0 if beta_count == 0
     (beta_count / Float(total_count) * 100).round(2)
   end
 
