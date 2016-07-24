@@ -15,6 +15,7 @@ class PagesController < ApplicationController
 
   def step2
     @user = current_user
+    @board_slug = params[:board_slug] || Post::BOARD_SLUG_PARTY_BUILDING
     @posts = Post.recent.in_party_building_board.search_for(params[:q]).page(params[:page])
   end
 end
