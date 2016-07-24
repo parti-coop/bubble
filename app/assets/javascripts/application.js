@@ -189,6 +189,28 @@ $(function(){
     }
   });
 
+  // 쟁점토론 유효성검사
+  $('form#new_opinion').validate({
+    ignore: ".ignore",
+    rules: {
+      "hiddenRecaptcha": {
+        recaptcha: true
+      }
+    },
+    messages: {
+      "hiddenRecaptcha": {
+        recaptcha: "로봇이 아닌지 확인해 주세요."
+      }
+    },
+    errorPlacement: function(error, element) {
+      if($(element).attr('name') == 'hiddenRecaptcha') {
+        error.prependTo($('.recaptcha'));
+      } else {
+        return true;
+      }
+    }
+  });
+
   $('[data-action="bubble-naming-option"]').change(function() {
     $($(this).data('sibling')).removeClass("selected")
     $(this).closest("label").toggleClass("selected", this.checked);
