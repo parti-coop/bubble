@@ -128,7 +128,7 @@ section#project-step2 {
     .project-steps {
       color: #bfbfbf;
       @media (max-width: 768px) {
-        font-size: 10px;
+        font-size: $font-size-small;
         text-align: center;
       }
       .active {
@@ -1281,7 +1281,7 @@ section#project-step2 {
               .comment-created-at {
                 display: inline-block;
                 color: #777;
-                font-size: 12px;
+                font-size: $font-size-small;
                 margin-left: 5px;
               }
               .comment-body {

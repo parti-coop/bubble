@@ -41,7 +41,7 @@ section#project-step1 {
     .project-steps {
       color: #bfbfbf;
       @media (max-width: 768px) {
-        font-size: 10px;
+        font-size: $font-size-small;
         text-align: center;
       }
       .active {
@@ -465,7 +465,7 @@ section#project-step1 {
   section#comments-list {
     padding-top: 20px;
     padding-bottom: 30px;
-    font-size: 12px;
+    font-size: $font-size-small;
 
     .container {
       h2 {
@@ -510,7 +510,7 @@ section#project-step1 {
         text-align: center;
         color: #5d5d5d;
         text-align: center;
-        font-size: 12px;
+        font-size: $font-size-small;
         a, a:hover, a:visited, a:active, a:focus {
           color: #5d5d5d;
           font-weight: bold;

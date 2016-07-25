@@ -103,7 +103,7 @@ section#project-step3 {
         font-size: $font-size-base;
         color: $brand-green-color;
         @media (max-width: 767px) {
-          font-size: 12px;
+          font-size: $font-size-small;
           font-weight: 200;
         }
       }
@@ -164,7 +164,7 @@ section#project-step3 {
     .project-steps {
       color: #bfbfbf;
       @media (max-width: 768px) {
-        font-size: 12px;
+        font-size: $font-size-small;
         text-align: center;
       }
       .active {
@@ -261,7 +261,7 @@ section#project-step3 {
       font-size: 14px;
       font-weight: 200;
       @media (max-width: 767px) {
-        font-size: 12px;
+        font-size: $font-size-small;
       }
     }
   }
@@ -600,7 +600,7 @@ section#project-step3 {
           text-align: center;
           color: #5d5d5d;
           text-align: center;
-          font-size: 12px;
+          font-size: $font-size-small;
           a, a:hover, a:visited, a:active, a:focus {
             color: #5d5d5d;
             font-weight: bold;
@@ -1218,7 +1218,7 @@ section#project-step3 {
               .comment-created-at {
                 display: inline-block;
                 color: #777;
-                font-size: 12px;
+                font-size: $font-size-small;
                 margin-left: 5px;
               }
               .comment-body {
