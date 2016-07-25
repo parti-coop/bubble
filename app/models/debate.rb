@@ -9,8 +9,8 @@ class Debate < ActiveRecord::Base
       beta: '표시해야 한다'
     },
     'exemption_range' => {
-      alpha: '0%',
-      beta: '0.9%'
+      alpha: '면제하지 말자(0%)',
+      beta: '0.9%까지 면제'
     }
   }
 
