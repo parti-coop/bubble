@@ -519,7 +519,6 @@ section#project-step3 {
     .debate-subtitle {
       text-align: center;
       padding-top: 18px;
-      color: #bfbfbf;
       padding-bottom: 30px;
     }
 
@@ -728,6 +727,9 @@ section#project-step3 {
         padding: 14px 20px;
         margin: 14px 50px 20px 50px;
         font-size: 14px;
+        @media (max-width: 767px) {
+          margin: 14px 14px 20px;
+        }
       }
     }
   }
