@@ -19,6 +19,12 @@ Rails.application.routes.draw do
   post 'bills/:slug/upvote', to: 'bills#upvote', as: :upvote_bill
   post 'party_names/upvote', to: 'party_names#upvote', as: :upvote_party_name
   get 'users/:id/card', to: 'users#card', as: :user_card
+
+  namespace :admin do
+    root to: 'base#index'
+    get 'download_emails', to: 'base#download_emails'
+  end
+
   resources :comments
   resources :posts do
     member do

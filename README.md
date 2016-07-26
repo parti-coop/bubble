@@ -1,5 +1,9 @@
 # Bubble project
 
+## 운영
+
+/admin 페이지로 접속합니다. 먼저 로그인 한 뒤에 접속해야 합니다. 운영자가 아니거나 로그인 하지 않으면 첫 페이지로 이동합니다.
+
 ## 실환경 구축 방법
 
 [reCAPTCHA API key](https://www.google.com/recaptcha)를 얻어서 /data/bubble/shared/config/env.yml에 등록합니다.

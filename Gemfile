@@ -20,6 +20,8 @@ gem 'haml-rails', '~> 0.9.0'
 gem 'carrierwave', '~> 0.10.0'
 gem "mini_magick"
 gem 'file_validators', '~> 2.0', '>= 2.0.2'
+gem 'axlsx', '~> 2.0', '>= 2.0.1'
+gem 'axlsx_rails', '~> 0.4.0'
 
 # auth
 gem 'cancancan', '~> 1.10'
