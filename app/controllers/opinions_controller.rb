@@ -4,6 +4,11 @@ class OpinionsController < ApplicationController
   def index
     @debate = Debate.find_by slug: params[:debate_slug]
     @opinions = Opinion.in_debate(@debate).recent.page(params[:page])
+
+    respond_to do |format|
+      format.js
+      format.any { redirect_to root_path }
+    end
   end
 
   def create
