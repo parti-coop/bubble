@@ -2,11 +2,6 @@ class OpinionsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    respond_to do |format|
-      format.js
-      format.any { redirect_to root_path }
-    end
-
     @debate = Debate.find_by slug: params[:debate_slug]
     @opinions = Opinion.in_debate(@debate).recent.page(params[:page])
   end
