@@ -5,8 +5,8 @@ class Debate < ActiveRecord::Base
       beta: '전면적 시행'
     },
     'non_gmo' => {
-      alpha: '표시 안 해도 좋다',
-      beta: '표시해야 한다'
+      alpha: '표시 할 필요 없다 ',
+      beta: '표시를 허용해야 한다'
     },
     'exemption_range' => {
       alpha: '면제하지 말자(0%)',

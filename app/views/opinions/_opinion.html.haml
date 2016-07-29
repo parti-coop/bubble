@@ -12,8 +12,8 @@
       = choice
   -if opinion.debate_slug == 'non_gmo'
     %span.opinion__choice{class: "select_#{opinion.choice}" }
-      - choice = '표시 안 해도 된다.' if opinion.choice == 'alpha'
-      - choice = '표시해야 한다' if opinion.choice == 'beta'
+      - choice = '표시 할 필요 없다.' if opinion.choice == 'alpha'
+      - choice = '표시를 허용해야 한다' if opinion.choice == 'beta'
       - choice = '모르겠습니다' if opinion.choice == 'hold'
       = choice
   -if opinion.debate_slug == 'exemption_range'
