@@ -195,6 +195,7 @@ section#project-step3 {
         color: #fff;
         font-size: 24px;
         padding-bottom: 20px;
+
         @media (max-width: 767px) {
           font-size: 18px;
           font-weight: 100;
@@ -203,19 +204,37 @@ section#project-step3 {
       }
 
       .intro-key-visual {
-        width: 60%;
+        z-index: 1;
+        width: 92%;
+        position: relative;
         @media (max-width: 767px) {
           width: 84%;
         }
       }
 
       .intro-description {
+        position: relative;
+        z-index: 2;
         padding-top: 10px;
         text-align: center;
+        margin-top: -320px;
         @media (max-width: 767px) {
           font-size: 14px;
           font-weight: 100;
           padding-top: 14px;
+        }
+        .description-title {
+          font-size: 18px;
+          color: #89c997;
+        }
+        .description-content {
+          &__box {
+            border: 1px solid #89c997;
+            margin-left: 160px;
+            margin-right: 160px;
+            padding-top: 18px;
+            padding-bottom: 18px;
+          }
         }
       }
     }
