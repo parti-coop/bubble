@@ -1,17 +1,19 @@
 .intro-panel-wrapper
   .intro-panel
     - if browser.device.mobile?
-      = image_tag "step3/key-visual-mobile.png", class:"intro-key-visual--mobile"
+      = image_tag "step3/key-visual-mobile2.png", class:"intro-key-visual--mobile"
     - else
       = image_tag "step3/key-visual.png", class:"intro-key-visual"
+    %p.description-title-mobile.visible-xs
+      TO. 당원 여러분
     .intro-description
-
-      %p.description-title
+      %p.description-title.hidden-xs
         TO. 당원 여러분
       %p.description-content
         오로지 GMO 완전표시제 도입을 목표로 한,
         %br
         국내 최초 온라인 프로젝트 정당
+        %br.visible-xs
         %span
           %span.important<>
             ‘나는알아야겠당’ 창당파티
@@ -20,15 +22,20 @@
         %span
           %span.important<>
             %b<> 9월 5일(월), 서울
-            (달력 표시 필수!)
+            %span.hidden-xs<>
+              (달력 표시 필수!)
           에서 열 계획입니다!
       %p.description-content
-        온오프라인 종횡무진 넘나들며 진행될 창당 파티에
-        %br
+        온오프라인 종횡무진 넘나들며 진행될
+        %br.visible-xs
+        창당 파티에
+        %br.hidden-xs
         꼭 함께 해주셔요!
+      %hr.visible-xs.description-content-hr
       .description-content__box
         %p.description-content__box--title
           어머, 이건 꼭 참여해야해 !
+        %br.visible-xs
         %p.description-content__box--number1
           1
         %p.description-content__box--body

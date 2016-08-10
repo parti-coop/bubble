@@ -190,6 +190,10 @@ section#project-step3 {
     }
     .intro-panel {
       text-align: center;
+      @media (max-width: 767px) {
+        padding-left: 6px;
+        padding-right: 6px;
+      }
 
       .intro-title {
         color: #fff;
@@ -214,6 +218,21 @@ section#project-step3 {
           position: relative;
         }
       }
+      .description-title-mobile {
+        color: #89c997;
+        position: relative;
+        font-size: 18px;
+        z-index: 5;
+        margin-left: auto;
+        margin-right: auto;
+        right: auto;
+        margin-top: -46px;
+        text-align: center;
+        left: auto;
+        background-color: transparent;
+        padding-top: 21px;
+        margin-bottom: 0;
+      }
 
       .intro-description {
         position: relative;
@@ -221,19 +240,33 @@ section#project-step3 {
         padding-top: 10px;
         text-align: center;
         margin-top: -408px;
+
         @media (max-width: 767px) {
           font-size: 14px;
           font-weight: 100;
-          padding-top: 0;
-          margin-top: -385px;
+          padding-top: 6px;
+          margin-top: 0;
+          background-color: #fff;
+          margin-left: 4.4%;
+          margin-right: 4.2%;
         }
+
+        .description-content-hr {
+          border-top: 1px solid #89c997;
+          z-index: 5;
+          position: absolute;
+          width: 100%;
+          margin-top: 27px;
+        }
+
         .description-title {
           font-size: 18px;
           color: #89c997;
           font-weight: 600;
 
           @media (max-width: 767px) {
-            font-size: 14px;
+            font-size: 18px;
+            padding-top: 4px;
           }
         }
         .description-content {
@@ -257,8 +290,9 @@ section#project-step3 {
             @media (max-width: 767px) {
               border: none;
               margin: 0;
-              padding-left: 33px;
               font-weight: 300;
+              padding-left: 0;
+              text-align: center;
             }
 
             &--number1  {
@@ -270,6 +304,10 @@ section#project-step3 {
               border-radius: 50%;
               background-color: #89c997;
               color: #fff;
+
+              @media (max-width: 767px) {
+                margin-left: 0px;
+              }
             }
             &--number2  {
               display: inline-block;
@@ -280,17 +318,36 @@ section#project-step3 {
               border-radius: 50%;
               background-color: #89c997;
               color: #fff;
+
+              @media (max-width: 767px) {
+                margin-left: 0px;
+              }
             }
             &--title {
               color: #89c997;
               text-align: center;
               margin-bottom: 14px;
+
+              @media (max-width: 767px) {
+                z-index: 11;
+                background-color: #fff;
+                display: inline-block;
+                position: relative;
+                text-align: center;
+                padding-left: 12px;
+                padding-right: 12px;
+              }
             }
 
             &--body {
               display: inline-block;
               padding-left: 10px;
               margin-bottom: 16px;
+
+              @media (max-width: 767px) {
+                text-align: left;
+                width: 70%;
+              }
             }
 
             .important {
