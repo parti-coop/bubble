@@ -1,7 +1,7 @@
 .intro-panel-wrapper
   .intro-panel
     - if browser.device.mobile?
-      = image_tag "step3/key-visual-mobile2.png", class:"intro-key-visual--mobile"
+      = image_tag "step3/key-visual-mobile.png", class:"intro-key-visual--mobile"
     - else
       = image_tag "step3/key-visual.png", class:"intro-key-visual"
     %p.description-title-mobile.visible-xs
@@ -47,15 +47,21 @@
           로 연락주세요.
 
         %br
+
         %p.description-content__box--number2
           2
         %p.description-content__box--body
-          당원 연락망 텔레그램과 카카오톡에 열었습니다.
+          ‘하루에 한 가지씩 알자’ 캠페인을 진행할 당원연락망이
+          %span
+            %span<>
+              = link_to '텔레그램', 'https://telegram.me/gmolabeling', target: '_blank', class: 'important'
+            (권장)과
+          %span
+            %span<>
+              = link_to '카카오톡', 'https://open.kakao.com/o/gMwxmtm', target: '_blank', class: 'important'
+            에 열었습니다.
           %br.hidden-xs
-          프로젝트 진행 상황 더 빠르고 가까이에서 전해드릴게요.
-          %br.hidden-xs
-          아래
+          프로젝트 진행 상황과 '1) GMO와 GMO완전표시제', '2) 국회 입법과정', '3) 디지털 민주주의에 대한 정보(또는 소식)'을 더 빠르고 가까이에서 전해드릴게요. 자세한 내용은
           %span
             = link_to '게시판 공지', 'http://up.parti.xyz/posts/774', target: '_blank', class: 'important'
           참조해주세요.
-
