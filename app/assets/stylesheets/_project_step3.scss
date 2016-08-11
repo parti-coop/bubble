@@ -313,6 +313,7 @@ section#project-step3 {
 
               @media (max-width: 767px) {
                 margin-left: 0px;
+                padding: 2px 10px;
               }
             }
             &--number2  {
@@ -327,12 +328,14 @@ section#project-step3 {
 
               @media (max-width: 767px) {
                 margin-left: 0px;
+                padding: 2px 10px;
               }
             }
             &--title {
               color: #89c997;
               text-align: center;
               margin-bottom: 14px;
+              font-weight: 700;
 
               @media (max-width: 767px) {
                 z-index: 11;
@@ -360,6 +363,7 @@ section#project-step3 {
             .important {
               color: #89c997;
               text-decoration: underline;
+              font-weight: 700;
             }
           }
         }
