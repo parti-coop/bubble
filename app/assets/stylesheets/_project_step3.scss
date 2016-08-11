@@ -183,10 +183,10 @@ section#project-step3 {
   section#intro {
     background-color: $brand-green-color;
     padding-top: 40px;
-    padding-bottom: 28px;
+    padding-bottom: 13px;
     @media (max-width: 767px) {
       padding-top: 20px;
-      padding-bottom: 20px;
+      padding-bottom: 0;
     }
     .intro-panel {
       text-align: center;
@@ -239,7 +239,7 @@ section#project-step3 {
         z-index: 2;
         padding-top: 10px;
         text-align: center;
-        margin-top: -495px;
+        margin-top: -520px;
 
         @media (max-width: 767px) {
           font-size: 14px;
@@ -267,6 +267,12 @@ section#project-step3 {
           @media (max-width: 767px) {
             font-size: 18px;
             padding-top: 4px;
+          }
+        }
+        .description-content, .last {
+          @media (max-width: 767px) {
+            margin-bottom: 0;
+            padding-bottom: 12px;
           }
         }
         .description-content {
