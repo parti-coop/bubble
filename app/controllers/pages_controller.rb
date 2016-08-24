@@ -30,7 +30,4 @@ class PagesController < ApplicationController
 
     render layout: 'retired'
   end
-
-  def propositions
-  end
 end

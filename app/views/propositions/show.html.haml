@@ -1,0 +1,25 @@
+%section
+  .container
+    %ul.list-inline
+      - Proposition.order_by_importance.each do |proposition|
+        %li
+          = link_to proposition.title, proposition_path(slug: proposition.slug)
+
+%section
+  .container
+    .title
+
+      제목
+      = @proposition.title
+    .proponent
+      발의자
+      = @proposition.proponent
+    .body
+      내용
+      = @proposition.body
+    .comments
+      = render 'comments/form', commentable: @proposition
+      - @proposition.comments.recent.each do |comment|
+        = render comment
+
+

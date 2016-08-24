@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   def create
     @comment.user = current_user if user_signed_in?
     @comment.save if verify_recaptcha(model: @comment) or user_signed_in?
-    redirect_to @comment.commentable
+    redirect_to (request.referer || @comment.commentable)
   end
 
   def update
@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.try(:destroy)
-    redirect_to @comment.commentable
+    redirect_to (request.referer || @comment.commentable)
   end
 
   private
