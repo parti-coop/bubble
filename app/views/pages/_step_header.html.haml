@@ -8,7 +8,7 @@
         %span.padding-left
           = link_to '게시판', root_path(anchor: 'post-panel-anchor')
         %span.padding-left
-          = link_to '입법진행과정', root_path(anchor: 'anchor-process')
+          = link_to '입법진행과정', step3_path(anchor: 'anchor-process')
       %span
         - if user_signed_in?
           = link_to '로그아웃', destroy_user_session_path, class: 'pull-right join', method: :delete
@@ -46,7 +46,7 @@
                 7/4 ~ 7/25
         .col-md-4.col-xs-3
           .project-step3
-            =link_to root_path, class: ('active' if step == 3) do
+            =link_to step3_path, class: ('active' if step == 3) do
               - if browser.device.mobile?
                 쟁점토론
                 %br

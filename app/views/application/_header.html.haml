@@ -1,0 +1,32 @@
+%section
+  .container
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-expanded": "false", "data-target": "#bubble-navbar-collapse", "data-toggle": "collapse", type: "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href: "#"} Brand
+        / Collect the nav links, forms, and other content for toggling
+        #bubble-navbar-collapse.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              = link_to '발의안', propositions_path
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded": "false", "aria-haspopup": "true", "data-toggle": "dropdown", href: "#", role: "button"}
+                Dropdown
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{href: "#"} Action
+                %li
+                  %a{href: "#"} Another action
+                %li
+                  %a{href: "#"} Something else here
+                %li.divider{role: "separator"}
+                %li
+                  %a{href: "#"} Separated link
+        / /.navbar-collapse
+      / /.container-fluid

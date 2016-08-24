@@ -1,0 +1,17 @@
+%section
+  .container
+    proposition 1
+    .comments
+      .comment-form
+        = form_for Comment.new(proposition_slug: 'yoonsoha') do |f|
+          .form-control
+            = f.label :name
+            = f.text_field :name
+          .form-control
+            = f.label :body
+            = f.text_area :body
+          .form-control
+            = f.submit '저장'
+%section
+  .container
+    proposition 2
