@@ -19,7 +19,8 @@
       = @proposition.body
     .comments
       = render 'comments/form', commentable: @proposition
-      - @proposition.comments.recent.each do |comment|
+      - @proposition_comments.each do |comment|
         = render comment
+      = paginate @proposition_comments
 
 
