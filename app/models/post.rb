@@ -16,7 +16,7 @@ class Post < ActiveRecord::Base
     Post::BOARD_SLUG_PARTY_SUGGEST => Post::BOARD_NAME_PARTY_SUGGEST,
   }
   belongs_to :user
-  has_many :comments
+  has_many :comments, as: :commentable
   has_many :upvotes
 
   scope :recent, -> { order(created_at: :desc) }

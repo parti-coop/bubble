@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
   paginates_per 10
-  belongs_to :post
+  belongs_to :commentable, polymorphic: true
   belongs_to :user
   scope :recent, -> { order(created_at: :desc) }
   scope :earlier, -> { order(created_at: :asc) }

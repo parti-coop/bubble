@@ -1,8 +1,9 @@
 - if @comment.nil?
-  - @comment = Comment.new
+  - @comment = Comment.new(commentable: commentable)
 .comment-form
   = form_for @comment do |f|
-    = f.hidden_field :post_id, value: post.id
+    = f.hidden_field :commentable_id
+    = f.hidden_field :commentable_type
     - if user_signed_in?
       .user-info
         %strong= current_user.name
@@ -28,5 +29,5 @@
         - if @comment.new_record?
           = f.submit '등록', class: 'btn btn-lg btn-block btn-comment-submit', data: { disable_with: "게시 중..." }
         - else
-          = link_to '취소', @comment.post, class: 'link-cacel'
+          = link_to '취소', @comment.commentable, class: 'link-cacel'
           = f.submit '수정', class: 'btn btn-lg btn-comment-submit btn-comment-submit--update', data: { disable_with: "게시 중..." }
