@@ -1,5 +1,11 @@
 class DebatesController < ApplicationController
 
+  def show
+    @overall_adoption_debate = Debate.find_by slug: 'overall_adoption'
+    @non_gmo_debate = Debate.find_by slug: 'non_gmo'
+    @exemption_range_debate = Debate.find_by slug: 'exemption_range'
+  end
+
   def choose_alpha
     render status: 200, json: nil and return if alpha_chosen? params[:slug]
     choose_something('alpha')

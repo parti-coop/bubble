@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'step3', to: 'pages#step3'
   get 'propositions', to: 'propositions#show'
   get 'proposition/:slug', to: 'propositions#show', as: 'proposition'
+  get 'debates', to: 'debates#show'
 
   get 'quiz', to: 'quizzes#show'
   get 'result_quiz', to: 'quizzes#result'
