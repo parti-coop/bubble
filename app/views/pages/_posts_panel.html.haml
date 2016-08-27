@@ -1,34 +1,16 @@
 %a{id: 'post-panel-anchor'}
 .posts-panel
 
-  %h3.section-title.background-mint 활동 제안하기
-
   %a{id: 'post-form-anchor'}
   %p.description
-    ‘나는 알아야겠당’ 당원으로 하고 싶거나,
-    %br
-    당원에게 이런 활동을 해줬으면 좋겠다고 제안해줘
-    %i !
-  = render 'posts/form', board_slug: @board_slug
+    자유롭게 의견, 온라인 당원 활동을 할 수 있는 공간입니다. 오프라인에서 만나신 후기나 활동을 공유해주셔도 되고, 온라인에서 한 활동을 공유해주셔도 좋습니다. 한겨레21이나 빠흐띠, 당원에게 제안도 가능합니다.
 
   %a{id: 'posts-anchor'}
   .post-page
-    .post-search
-      .post-search-info
-        - if params[:q].present?
-          %i.fa.fa-search
-          검색된 글 #{@posts.total_count}개
-          = link_to root_path(anchor: 'posts-anchor'), class: 'cancel-search' do
-            검색 취소
-        - else
-          총 #{@posts.total_count}개
-      .post-search-form
-        = form_tag root_path(anchor: 'posts-anchor'), method: :get, id: 'post-search-form' do
-          .form-group
-            = hidden_field_tag 'board_slug', @board_slug
-            = search_field_tag 'q', params[:q], class: 'search-query', maxlength: 20, autocorrect: "off", autocapitalize: "none"
-            %button.btn{:type => "submit"}
-              %i.fa.fa-search
-    = render 'posts/post_page', board_slug: @board_slug
-
-
+    #post-list
+      = render 'posts/post_page', board_slug: @board_slug
+    .post-writing-wrapper
+      .post-writing.btn
+        글 쓰기
+      #post-writing-form
+        = render 'posts/form', board_slug: @board_slug

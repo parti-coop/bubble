@@ -2,7 +2,22 @@ class PostsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @posts = Post.recent.page(params[:page])
+    @board_slug = params[:board_slug] || 'all'
+    @order = params[:order] || 'recent'
+    case @order
+    when "hottest"
+      if @board_slug == 'all'
+        @posts = Post.search_for(params[:q]).page(params[:page]).hottest
+      else
+        @posts = Post.in_board(@board_slug).search_for(params[:q]).page(params[:page]).hottest
+      end
+    when "recent"
+      if @board_slug == 'all'
+        @posts = Post.search_for(params[:q]).page(params[:page]).recent
+      else
+        @posts = Post.in_board(@board_slug).search_for(params[:q]).page(params[:page]).recent
+      end
+    end
   end
 
   def create

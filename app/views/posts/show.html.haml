@@ -68,7 +68,7 @@
               = render @post.comments.earlier
           = render 'comments/form', commentable: @post
         .navigation-button
-          = link_to root_path(board_slug: @post.board_slug, anchor: 'posts-anchor'), class: 'btn btn-default' do
+          = link_to posts_path(board_slug: @post.board_slug, anchor: 'posts-anchor'), class: 'btn btn-default' do
             목록으로
 
   = render 'pages/step3_footer'

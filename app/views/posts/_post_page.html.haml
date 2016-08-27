@@ -1,10 +1,38 @@
 .board-tabs
+  = link_to '전체', posts_path(board_slug: 'all', anchor: 'posts-anchor'), class: "board-tab #{'active' if @board_slug == 'all'}"
   - Post::BOARDS.each do |tab_slug, tab_name|
-    =link_to tab_name, root_path(board_slug: tab_slug, anchor: 'posts-anchor'), class: "board-tab #{'active' if tab_slug == board_slug}"
+    %span.divider
+      |
+    = link_to tab_name, posts_path(board_slug: tab_slug, anchor: 'posts-anchor'), class: "board-tab #{'active' if tab_slug == board_slug}"
+
+.post-search
+  .post-search-form
+    = form_tag posts_path(anchor: 'posts-anchor'), method: :get, id: 'post-search-form' do
+      .form-group
+        = hidden_field_tag 'board_slug', @board_slug
+        = search_field_tag 'q', params[:q], class: 'search-query', maxlength: 20, autocorrect: "off", autocapitalize: "none", placeholder: '검색어를 입력하세요'
+        %button.btn{:type => "submit"}
+          %i.fa.fa-search
+  .post-search-info
+    - if params[:q].present?
+      %i.fa.fa-search
+      검색된 글 #{@posts.total_count}개
+      = link_to posts_path(board_slug: @board_slug, anchor: 'posts-anchor'), class: 'cancel-search' do
+        검색 취소
+    / - else
+    /   총 #{@posts.total_count}개
+.post-sort.pull-right
+  = link_to '추천순', posts_path(board_slug: @board_slug, order: 'hottest', anchor: 'posts-anchor'), class: "post-sort #{'active' if @order == 'hottest'}"
+  %span.divider
+    |
+  = link_to '최신순', posts_path(board_slug: @board_slug, order: 'recent', anchor: 'posts-anchor'), class: "post-sort #{'active' if @order == ('recent' || nil)}"
 %table
   %thead
     %tr
-      %th 순서
+      - if board_slug == 'all'
+        %th 분류
+      - unless board_slug == 'all'
+        %th 순서
       %th 제목
       %th 이름
       %th.post-upvote 추천
@@ -17,7 +45,7 @@
       %tr
         %td.empty(colspan=5)
           - if params[:q].present?
-            '#{params[:q]}' 단어를 포함하는 글은 없어.
+            '#{params[:q]}' 단어를 포함하는 글은 없습니다.
           - else
             첫 번째로 의견을 남겨줘
             %i !

@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  paginates_per 20
+  paginates_per 10
   acts_as_sequenced scope: :board_slug
 
   BOARD_SLUG_BILL_CHOICE = 'bill-choice'
@@ -13,13 +13,14 @@ class Post < ActiveRecord::Base
   BOARDS = {
     Post::BOARD_SLUG_BILL_CHOICE => Post::BOARD_NAME_BILL_CHOICE,
     Post::BOARD_SLUG_PARTY_BUILDING => Post::BOARD_NAME_PARTY_BUILDING,
-    Post::BOARD_SLUG_PARTY_SUGGEST => Post::BOARD_NAME_PARTY_SUGGEST,
+    Post::BOARD_SLUG_PARTY_SUGGEST => Post::BOARD_NAME_PARTY_SUGGEST
   }
   belongs_to :user
   has_many :comments, as: :commentable
   has_many :upvotes
 
   scope :recent, -> { order(created_at: :desc) }
+  scope :hottest, -> { order(upvotes_count: :desc) }
   scope :in_party_building_board, -> { where(board_slug: Post::BOARD_SLUG_PARTY_BUILDING) }
   scope :in_bill_choice_board, -> { where(board_slug: Post::BOARD_SLUG_BILL_CHOICE) }
   scope :in_board, ->(board_slug) { where(board_slug: board_slug) }
@@ -49,11 +50,19 @@ class Post < ActiveRecord::Base
   end
 
   def self.best(board_slug, limit)
-    where(board_slug: board_slug).where('upvotes_count > 3').order(upvotes_count: :desc).limit(limit)
+    if board_slug == 'all'
+      where('upvotes_count > 3').order(upvotes_count: :desc).limit(limit)
+    else
+      where(board_slug: board_slug).where('upvotes_count > 3').order(upvotes_count: :desc).limit(limit)
+    end
   end
 
   def self.stickies(board_slug)
-    where(board_slug: board_slug).where(sticky: true).recent
+    if board_slug == 'all'
+      where(sticky: true).recent
+    else
+      where(board_slug: board_slug).where(sticky: true).recent
+    end
   end
 
   private

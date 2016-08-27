@@ -1,5 +1,5 @@
 %tr{data: {action: 'clickable-row', href: post_url(post)}}
-  %td.post-id
+  %td{class: "#{@board_slug == 'all' ? 'post-type' : 'post-id'}"}
     - if local_assigns[:as_sticky]
       %span.sticky-label
         공지
@@ -7,7 +7,8 @@
       %span.best-label
         베스트
     - else
-      = post.sequential_id
+      = @board_slug == 'all' ? Post::BOARDS[post.board_slug] : post.sequential_id
+
   %td.post-title
     = post.title
     - if post.comments.any?
