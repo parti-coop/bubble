@@ -1,0 +1,72 @@
+section#header {
+  .navbar > .container {
+    position: relative;
+  }
+  .navbar {
+    background-color: #ec1179;
+    padding-top: 16px;
+    padding-bottom: 6px;
+    border-bottom: 3px solid black;
+
+    .navbar-header {
+      .navbar-brand {
+        margin-top: -26px;
+        margin-left: -56px;
+        img {
+          width: 108px;
+        }
+      }
+    }
+
+
+
+    .navbar-nav {
+      font-size: $font-size-medium;
+
+      a {
+        color: black;
+      }
+
+      .normal {
+        padding-right: 22px;
+      }
+
+      .parti {
+        padding-right: 64px;
+        a {
+          color: $brand-yellow-color;
+        }
+      }
+
+      .login {
+        margin-top: 8px;
+        margin-right: -100px;
+
+        a {
+          font-size: $font-size-base;
+          background-color: #fff;
+          border: 1px solid black;
+          border-radius: 2px;
+          padding: 4px 22px;
+
+          &:hover {
+            background-color: black;
+            color: yellow;
+          }
+        }
+
+      }
+    }
+
+    .receive-news {
+      position: absolute;
+      right: -240px;
+      bottom: -32px;
+      padding: 3px 6px;
+      background-color: black;
+      color: #fff;
+      font-weight: 100;
+    }
+
+  }
+}

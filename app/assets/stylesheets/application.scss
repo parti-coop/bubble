@@ -9,15 +9,27 @@ $line-height-smaller: 18px;
 @import "jssocials";
 @import "lightslider";
 @import "bbs";
+@import "debate";
+@import "navbar";
 
 body.retired {
   @import "project_step1";
   @import "project_step2";
   @import "project_step3";
+  @media (min-width: 1200px) {
+    .container {
+      width: 768px;
+    }
+  }
 }
 
 * , body {
   font-family: 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Noto Sans KR', 'Helvetica Neue', Helvetica, '맑은 고딕', 'Malgun Gothic', '돋움', dotum, Arial, sans-serif;
+  @media (min-width: 1200px) {
+    .container {
+      width: 900px;
+    }
+  }
 }
 
 .form-control.error {
