@@ -8,11 +8,13 @@ $line-height-smaller: 18px;
 
 @import "jssocials";
 @import "lightslider";
-@import "project_step1";
-@import "project_step2";
-@import "project_step3";
-@import "project_step4";
+@import "bbs";
 
+body.retired {
+  @import "project_step1";
+  @import "project_step2";
+  @import "project_step3";
+}
 
 * , body {
   font-family: 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Noto Sans KR', 'Helvetica Neue', Helvetica, '맑은 고딕', 'Malgun Gothic', '돋움', dotum, Arial, sans-serif;
