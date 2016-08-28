@@ -3,15 +3,6 @@ section#join {
   background-color: #fafafa;
   .join-panel {
     margin-top: 20px;
-    p.description {
-      color: $brand-primary;
-      font-size: $font-size-h3;
-      @media (max-width: 767px) {
-        font-size: $font-size-base;
-        line-height: $line-height-base;
-      }
-      font-weight: 200;
-    }
 
     .join-after {
       margin-top: 48px;

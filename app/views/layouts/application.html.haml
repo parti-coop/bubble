@@ -18,6 +18,9 @@
     = csrf_meta_tags
 
   %body.working{class: "app-#{params[:controller].parameterize} app-#{params[:controller].parameterize}-#{params[:action].parameterize}"}
+    %section(style='position: fixed; z-index: 2000; top: 85px; width: 100%')
+      .container
+        .unobtrusive-flash-container
     = render 'header'
     = yield
     = render 'footer'

@@ -11,22 +11,31 @@
 
       .collapse.navbar-collapse#collapsable
         %ul.nav.navbar-nav.navbar-right
-          %li{class: ('active' if current_page?(controller: '/pages', action: :about))}
+          %li.menu{class: ('active' if current_page?(controller: '/pages', action: :about))}
             = link_to '당소개'
-          %li{class: ('active' if current_page?(controller: '/pages', action: :timeline))}
+          %li.menu{class: ('active' if current_page?(controller: '/pages', action: :timeline))}
             = link_to '타임라인'
-          %li{class: ('active' if controller_name == 'propositions')}
+          %li.menu{class: ('active' if controller_name == 'propositions')}
             = link_to '발의안', propositions_path
-          %li{class: ('active' if controller_name == 'debates')}
+          %li.menu{class: ('active' if controller_name == 'debates')}
             = link_to '쟁점토론', debates_path
-          %li{class: ('active' if controller_name == 'posts')}
+          %li.menu{class: ('active' if controller_name == 'posts')}
             = link_to '게시판', posts_path
           %li.parti
             = link_to 'http://do.parti.xyz', target: '_blank' do
               빠띠
               %i.fa.fa-external-link
-          %li.login
-            = link_to '당원가입 / 로그인', join_path
+          - if user_signed_in?
+            %li.dropdown.login
+              %a.dropdown-toggle{"data-toggle": "dropdown", href: "#"}
+                = truncate current_user.name, length: 12
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  = link_to '로그아웃', destroy_user_session_path, method: :delete
+          - else
+            %li.login
+              = link_to '당원가입 / 로그인', join_path
 
       .receive-news{data: {'action': 'bubble-channel'}}
         .receive-news__off

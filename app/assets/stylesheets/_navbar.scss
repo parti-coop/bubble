@@ -29,38 +29,39 @@ section#header {
 
     .navbar-nav {
       font-size: $font-size-medium;
-      li,
-      li.active,
-      li.focus {
-        & > a {
-          color: black;
-          background-color: transparent;
-        }
-      }
 
-      li > a:hover,
-      li.active > a,
-      li.focus > a {
-        color: #fff;
-        &:after {
-          content: ' ';
-          color: transparent;
-          width: 100%;
-          position: absolute;
-          left: 0;
-          bottom: 11px;
-          border-width: 0 0 2px;
-          border-style: solid;
-          border-color: #fff;
-        }
-      }
-
-      li.parti {
-        a {
-          color: $brand-yellow-color;
-          i {
-            font-size: $font-size-small;
+      li.menu {
+        &,
+        &.active,
+        &.focus {
+          & > a {
+            color: black;
+            background-color: transparent;
           }
+        }
+
+        & > a:hover,
+        &.active > a,
+        &.focus > a {
+          color: #fff;
+          &:after {
+            content: ' ';
+            color: transparent;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 11px;
+            border-width: 0 0 2px;
+            border-style: solid;
+            border-color: #fff;
+          }
+        }
+      }
+
+      li.parti > a {
+        color: $brand-yellow-color;
+        i {
+          font-size: $font-size-small;
         }
       }
 
@@ -69,7 +70,7 @@ section#header {
         margin-top: 8px;
         margin-right: -100px;
 
-        a {
+        & > a {
           font-size: $font-size-base;
           background-color: #fff;
           border: 1px solid black;
