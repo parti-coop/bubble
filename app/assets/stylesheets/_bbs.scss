@@ -1,9 +1,10 @@
 section#posts {
   padding-bottom: 30px;
+  background-color: #fafafa;
   .posts-panel {
     margin-top: 20px;
     p.description {
-      color: $brand-pink-color;
+      color: $brand-primary;
       font-size: $font-size-h3;
       @media (max-width: 767px) {
         font-size: $font-size-base;
@@ -40,7 +41,7 @@ section#posts {
           }
         }
         .board-tab.active {
-          color: $brand-pink-color;
+          color: $brand-primary;
         }
       }
       .post-search {
@@ -99,7 +100,7 @@ section#posts {
           color: $brand-gray-color;
         }
         .post-sort.active {
-          color: $brand-pink-color;
+          color: $brand-primary;
         }
       }
       table {
@@ -134,7 +135,7 @@ section#posts {
             }
           }
           .post-type {
-            color: $brand-pink-color;
+            color: $brand-primary;
           }
           .post-type,
           .post-id,
@@ -156,10 +157,10 @@ section#posts {
           .post-type {
             width: 15%;
             .sticky-label {
-              border: 1px solid $brand-pink-color;
+              border: 1px solid $brand-primary;
               padding: 2px 6px;
               border-radius: 2px;
-              color: $brand-pink-color;
+              color: $brand-primary;
             }
           }
           .post-title {
@@ -198,7 +199,7 @@ section#posts {
           & > tr:hover {
             background-color: #ffbcdc;
             a {
-              color: $brand-pink-color;
+              color: $brand-primary;
             }
           }
         }
@@ -232,11 +233,11 @@ section#posts {
       text-align: center;
 
       a {
-        color: $brand-pink-color;
+        color: $brand-primary;
       }
 
       #post-writing-btn {
-        background-color: $brand-primary;
+        background-color: #ec1179;
         margin-top: 20px;
         color: #fff;
         border-radius: 2px;
@@ -251,7 +252,7 @@ section#posts {
       .btn-post {
         border-radius: 2px;
         &--submit {
-          background-color: $brand-pink-color;
+          background-color: $brand-primary;
           color: #fff;
         }
         &--cancel {
