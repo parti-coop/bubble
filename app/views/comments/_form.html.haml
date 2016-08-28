@@ -1,9 +1,10 @@
 - if @comment.nil?
   - @comment = Comment.new(commentable: commentable)
 .comment-form
-  .form-group
-    - form_dom_id = SecureRandom.hex(3)
-    %input.form-control{type: 'text', placeholder: '의견을 남겨 주세요', data: { action: 'bubble-show-form', 'target-form': '.comment-form form', focus: ".comment-form form #{ user_signed_in? ? '#comment_body' : '#comment_guest_name'}"}}
+  - if @comment.new_record?
+    .form-group
+      - form_dom_id = SecureRandom.hex(3)
+      %input.form-control{type: 'text', placeholder: '의견을 남겨 주세요', data: { action: 'bubble-show-form', 'target-form': '.comment-form form', focus: ".comment-form form #{ user_signed_in? ? '#comment_body' : '#comment_guest_name'}"}}
 
   = form_for @comment do |f|
     = f.hidden_field :commentable_id
