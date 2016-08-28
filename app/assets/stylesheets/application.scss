@@ -21,6 +21,9 @@ body.retired {
       width: 768px;
     }
   }
+
+  padding-top: 0;
+  background-color: white;
 }
 
 * , body {
@@ -30,6 +33,11 @@ body.retired {
       width: 900px;
     }
   }
+}
+
+body {
+  padding-top: 150px;
+  background-color: #fafafa;
 }
 
 .form-control.error {
