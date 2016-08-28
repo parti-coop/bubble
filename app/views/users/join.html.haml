@@ -1,0 +1,26 @@
+%section#join
+  .container
+    .join-panel
+      %p.description
+        지금도 늦지 않았습니다. 시민 입법 프로젝트, GMO완전표시제법 추진에 공감하신다면 ‘나는 알아야겠당' 당원이 되어 보세요.
+      .join-sign-up-before
+        %p.join-sign-up-before__title
+          #{User.count + 1}번째 당원이 되어주세요!
+        = link_to user_omniauth_authorize_path(provider: :facebook), class: 'join-sign-up-before__button join-sign-up-before__button--facebook' do
+          .icon-image.icon-image__facebook
+          페이스북으로 가입하기 / 로그인
+        = link_to user_omniauth_authorize_path(provider: :twitter), class: 'join-sign-up-before__button join-sign-up-before__button--twitter' do
+          .icon-image.icon-image__twitter
+          트위터로 가입하기 / 로그인
+        = link_to user_omniauth_authorize_path(provider: :naver), class: 'join-sign-up-before__button join-sign-up-before__button--naver' do
+          .icon-image.icon-image__naver
+          네이버로 가입하기 / 로그인
+        %p.join-sign-up-before__closing
+          올해 연말, 프로젝트가 끝나는 시점에 모든 정보는 삭제됩니다.
+      .join-benefit
+        %p.join-benefit__title
+          당원혜택
+        %p.join-benefit__content
+          소식지로 프로젝트 진행 상황을 파악할 수 있고, 기자와 함께 국회 상임위원회 회의나 공청회 등 취재, 지면을 통해 직접 목소리 내기, <한겨레21> 1개원 무료 구독권까지 드려요.
+          %br
+          무엇보다, 법안을 할 수 있는 데까지 밀어붙이기 위해 얼마든지 당원 활동을 제안하거나 온라인 정당 프로젝트 기술 기여도 열려 있습니다. 시민, 언론, 온라인 민주주의를 꿈꾸는 IT 개발자에게도 첫 시도인 이 도전에 함께해 주세요.

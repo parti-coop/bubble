@@ -11,6 +11,7 @@ $line-height-smaller: 18px;
 @import "bbs";
 @import "debate";
 @import "navbar";
+@import "join";
 
 body.retired {
   @import "project_step1";
