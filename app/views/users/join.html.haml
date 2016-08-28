@@ -3,20 +3,47 @@
     .join-panel
       %p.description
         지금도 늦지 않았습니다. 시민 입법 프로젝트, GMO완전표시제법 추진에 공감하신다면 ‘나는 알아야겠당' 당원이 되어 보세요.
-      .join-before
-        %p.join-before__title
-          #{User.count + 1}번째 당원이 되어주세요!
-        = link_to user_omniauth_authorize_path(provider: :facebook), class: 'join-before__button join-before__button--facebook' do
-          .icon-image.icon-image__facebook
-          페이스북으로 가입하기 / 로그인
-        = link_to user_omniauth_authorize_path(provider: :twitter), class: 'join-before__button join-before__button--twitter' do
-          .icon-image.icon-image__twitter
-          트위터로 가입하기 / 로그인
-        = link_to user_omniauth_authorize_path(provider: :naver), class: 'join-before__button join-before__button--naver' do
-          .icon-image.icon-image__naver
-          네이버로 가입하기 / 로그인
-        %p.join-before__closing
-          올해 연말, 프로젝트가 끝나는 시점에 모든 정보는 삭제됩니다.
+      - if user_signed_in?
+        .join-after
+          %p.join-after-description
+            나는
+            %span.important
+              GMO완전표시제
+            도입을 위해 뭉친
+            %span
+              %span.important<>
+                #{number_with_delimiter(current_user.sequential_id)}번째 당원
+              입니다.
+          %p.join-after-description
+            현재
+            %span
+              %span.important<>
+                총 #{number_with_delimiter(User.count)}명
+              이 모였습니다.
+          %p.join-after-description
+            친구에게 공유해 보세요!
+          .join-share-wrapper
+            .join-share.join-share__facebook
+            .join-share.join-share__twitter
+            .join-share.join-share__kakao
+            .join-share.join-share__kas
+
+      - else
+        .join-before
+          %p.join-before__title
+            #{number_with_delimiter(User.count + 1)}번째 당원이 되어주세요!
+          = link_to user_omniauth_authorize_path(provider: :facebook), class: 'join-before__button join-before__button--facebook' do
+            .icon-image.icon-image__facebook
+            페이스북으로 가입하기 / 로그인
+          = link_to user_omniauth_authorize_path(provider: :twitter), class: 'join-before__button join-before__button--twitter' do
+            .icon-image.icon-image__twitter
+            트위터로 가입하기 / 로그인
+          = link_to user_omniauth_authorize_path(provider: :naver), class: 'join-before__button join-before__button--naver' do
+            .icon-image.icon-image__naver
+            네이버로 가입하기 / 로그인
+          %p.join-before__closing
+            올해 연말, 프로젝트가 끝나는 시점에 모든 정보는 삭제됩니다.
+
       .join-benefit
         %p.join-benefit__title
           당원혜택

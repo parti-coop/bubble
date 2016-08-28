@@ -13,6 +13,67 @@ section#join {
       font-weight: 200;
     }
 
+    .join-after {
+      margin-top: 48px;
+      padding: 52px 50px 48px;
+      border: 1px solid #ffbcdc;
+      background-color: #ffffff;
+      text-align: center;
+      font-size: $font-size-h3;
+      @media (max-width: 767px) {
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+      }
+
+      .join-after-description {
+        margin-bottom: 20px;
+        .important {
+          color: $brand-primary;
+        }
+      }
+
+      .join-share-wrapper {
+
+      }
+
+      .join-share {
+        width: 60px;
+        height: 60px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: inline-block;
+        margin-left: 2px;
+        margin-right: 2px;
+
+        &__facebook {
+          background-image: asset_url('share-facebook-white.png');
+          &:hover {
+            background-image: asset_url('share-facebook.png');
+          }
+        }
+        &__twitter {
+          background-image: asset_url('share-twitter-white.png');
+          &:hover {
+            background-image: asset_url('share-twitter.png');
+          }
+        }
+        &__kakao {
+          background-image: asset_url('share-kakao-white.png');
+          &:hover {
+            background-image: asset_url('share-kakao.png');
+          }
+        }
+        &__kas {
+          background-image: asset_url('share-kas-white.png');
+          &:hover {
+            background-image: asset_url('share-kas.png');
+          }
+        }
+      }
+
+
+    }
+
     .join-before {
       margin-top: 48px;
       padding: 52px 50px 48px;
