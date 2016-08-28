@@ -86,9 +86,4 @@ module ApplicationHelper
       raw('<span style="white-space: nowrap">우리가 뽑은</span><br class="hidden-sm"> 정당이름')
     ]
   end
-
-  def mask_name(name)
-    return name if name.blank? or name.length == 1
-    name.length > 6 ? name[0...-3] + "***" : name[0...-1] + "*"
-  end
 end

@@ -2,16 +2,6 @@ section#posts {
   padding-bottom: 30px;
   background-color: #fafafa;
   .posts-panel {
-    margin-top: 20px;
-    p.description {
-      color: $brand-primary;
-      font-size: $font-size-h3;
-      @media (max-width: 767px) {
-        font-size: $font-size-base;
-        line-height: $line-height-base;
-      }
-      font-weight: 200;
-    }
     .post-page {
       margin-top: 48px;
       padding: 52px 50px 48px;
@@ -107,8 +97,8 @@ section#posts {
         width: 100%;
         thead {
           tr {
-            border-top: 2px solid #dedede;
-            border-bottom: 1px solid #dedede;
+            border-top: 2px solid $border-gray-color;
+            border-bottom: 1px solid $border-gray-color;
             th {
               color: $brand-gray-color;
               font-weight: 400;
@@ -189,7 +179,7 @@ section#posts {
             }
           }
           & > tr > td {
-            border-bottom: 1px solid #dedede;
+            border-bottom: 1px solid $border-gray-color;
             &.empty {
               text-align: center;
               height: 30px;
@@ -205,26 +195,6 @@ section#posts {
         }
         a {
           color: #000;
-        }
-      }
-
-      .pagination-wrapper {
-        text-align: center;
-        .pagination  {
-          li > a {
-            border-radius: 4px;
-            color: #000;
-          }
-          li {
-            padding-right: 5px;
-            padding-left: 5px;
-            &.next,
-            &.prev {
-              a {
-                float: initial;
-              }
-            }
-          }
         }
       }
     }

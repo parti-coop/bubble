@@ -245,5 +245,18 @@ $(function(){
     $('.receive-news__off').show();
     $('.receive-news__on').hide();
   });
+
+
+  $('[data-action="bubble-show-form"]').on('focus', function(e){
+    $(e.target).hide();
+    $form = $($(e.target).data('target-form'));
+    $form.show();
+
+    $focus = $($(e.target).data('focus'));
+    if($focus) {
+      $focus.focus();
+    }
+  });
+
 });
 

@@ -8,8 +8,12 @@ $line-height-smaller: 18px;
 
 @import "jssocials";
 @import "lightslider";
+
+@import "base";
 @import "bbs";
-@import "debate";
+@import "debates";
+@import "propositions";
+@import "comments";
 @import "navbar";
 @import "join";
 
@@ -29,16 +33,17 @@ body.retired {
 
 * , body {
   font-family: 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Noto Sans KR', 'Helvetica Neue', Helvetica, '맑은 고딕', 'Malgun Gothic', '돋움', dotum, Arial, sans-serif;
+}
+
+body.working {
+  padding-top: 150px;
+  background-color: #fafafa;
+  color: $gray-darker;
   @media (min-width: 1200px) {
     .container {
       width: 900px;
     }
   }
-}
-
-body {
-  padding-top: 150px;
-  background-color: #fafafa;
 }
 
 .form-control.error {

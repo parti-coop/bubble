@@ -1,0 +1,77 @@
+section#propositions {
+  .panel-title {
+    color: $brand-primary;
+    font-size: $font-size-medium;
+  }
+
+  $propositions-border-color: $brand-primary-lighter;
+  .propositions-tabs {
+    border-bottom-color: $propositions-border-color;
+    margin-top: 90px;
+    & > li {
+      width: 50%;
+      a {
+        border-radius: 0;
+        margin-right: 0;
+        color: $brand-gray-color;
+        padding-top: 33px;
+        padding-bottom: 12px;
+        text-align: center;
+        img {
+          width: 80px;
+          position: absolute;
+          top: -55px;
+        }
+        .proponent {
+          font-size: $font-size-h3;
+        }
+      }
+      &.active {
+        a,
+        a:hover,
+        a:focus {
+          color: $gray-darker;
+          border-color: $propositions-border-color;
+          border-bottom-color: transparent;
+        }
+      }
+    }
+  }
+  .proposition {
+    border: 1px solid $propositions-border-color;
+    border-top: transparent;
+    background-color: #fff;
+
+    .body-panel,
+    .comments-panel,
+    .steps-panel {
+      padding: 70px 50px;
+    }
+    .body-panel,
+    .comments-panel {
+      border-bottom: 1px solid $propositions-border-color;
+    }
+    .body-panel {
+      .body {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        font-size: $font-size-medium;
+      }
+      .show-more {
+        text-align: center;
+        padding-top: 50px;
+      }
+    }
+
+    .comments-panel {
+      .comments {
+        .comment:first-child {
+          border-top: 2px solid $border-gray-color;
+        }
+        .comment {
+          border-bottom: 1px solid $border-gray-color;
+        }
+      }
+    }
+  }
+}

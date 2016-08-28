@@ -4,11 +4,6 @@
     .top-menu
       %span
         = link_to '홈', root_path
-      - if step == 3
-        %span.padding-left
-          = link_to '게시판', root_path(anchor: 'post-panel-anchor')
-        %span.padding-left
-          = link_to '입법진행과정', step3_path(anchor: 'anchor-process')
       %span
         - if user_signed_in?
           = link_to '로그아웃', destroy_user_session_path, class: 'pull-right join', method: :delete

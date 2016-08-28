@@ -1,3 +1,16 @@
 %section#posts
   .container
-    = render 'pages/posts_panel'
+    .posts-panel
+
+      %p.page-description
+        자유롭게 의견, 온라인 당원 활동을 할 수 있는 공간입니다. 오프라인에서 만나신 후기나 활동을 공유해주셔도 되고, 온라인에서 한 활동을 공유해주셔도 좋습니다. 한겨레21이나 빠흐띠, 당원에게 제안도 가능합니다.
+
+      %a{id: 'posts-anchor'}
+      .post-page
+        #post-list
+          = render 'posts/post_page', board_slug: @board_slug
+        .post-writing-wrapper
+          #post-writing-btn.btn{data: {action: 'call-post-writing-form' }}
+            글 쓰기
+          #post-writing-form
+            = render 'posts/form', board_slug: @board_slug

@@ -1,5 +1,7 @@
 .comment
-  .comment-header.clearfix
+  .comment-body= comment.body
+
+  .comment-footer.clearfix
     - if can? :manage, comment
       .comment-buttons
         %span
@@ -8,7 +10,6 @@
         %span
           = link_to '삭제', comment, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' }
     .comment-meta
-      .comment-name= mask_name(comment.name)
-      .comment-created-at= date_f comment.created_at
+      %span.comment-name= comment.name
+      %span.comment-created-at= date_f comment.created_at
 
-  .comment-body= comment.body

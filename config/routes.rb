@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'step2', to: 'pages#step2'
   get 'step3', to: 'pages#step3'
   get 'propositions', to: 'propositions#show'
-  get 'proposition/:slug', to: 'propositions#show', as: 'proposition'
+  get 'propositions/:slug', to: 'propositions#show', as: 'proposition'
   get 'debates', to: 'debates#show'
 
   get 'quiz', to: 'quizzes#show'

@@ -4,7 +4,6 @@
 
   %section#post
     .container
-      %a{id: 'post-panel-anchor'}
       .post-panel
         .post-detail
           .post-meta-wrapper.post-title-wrapper
@@ -19,7 +18,7 @@
                 .post-meta-label 작성자
               .col-sm-10.col-xs-9
                 .post-meta-value
-                  = mask_name @post.name
+                  = @post.name
                   - if @post.user.present?
                     %span.party-memember-badget 당원
           - if can?(:manage, @post) or can?(:stick, @post)
