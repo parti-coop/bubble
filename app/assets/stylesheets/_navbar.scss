@@ -1,9 +1,6 @@
 section#header {
-  .navbar > .container {
-    position: relative;
-  }
   .navbar {
-    background-color: #ec1179;
+    background-color: $brand-primary;
     padding-top: 16px;
     padding-bottom: 6px;
     border-bottom: 3px solid black;
@@ -14,31 +11,38 @@ section#header {
         margin-left: -56px;
         img {
           width: 108px;
+          @media (max-width: $screen-xs-max) {
+            margin-left: 50px;
+          }
+        }
+      }
+      .navbar-toggle {
+        &:hover,
+        &:focus {
+          background-color: $brand-primary-dark;
+        }
+        .icon-bar {
+          background-color: white;
         }
       }
     }
 
-
-
     .navbar-nav {
       font-size: $font-size-medium;
-
       a {
         color: black;
       }
-
-      .normal {
-        padding-right: 22px;
-      }
-
       .parti {
-        padding-right: 64px;
         a {
           color: $brand-yellow-color;
+          i {
+            font-size: $font-size-small;
+          }
         }
       }
 
       .login {
+        padding-left: 64px;
         margin-top: 8px;
         margin-right: -100px;
 
@@ -58,14 +62,50 @@ section#header {
       }
     }
 
+    .navbar-collapse.collapse.in,
+    .navbar-collapse.collapsing {
+      padding-top: 40px;
+      border: none;
+      box-shadow: none;
+
+      .login {
+        padding-left: 0;
+        margin: 2px 15px;
+        display: inline-block;
+      }
+    }
+
     .receive-news {
-      position: absolute;
-      right: -240px;
-      bottom: -32px;
-      padding: 3px 6px;
-      background-color: black;
+      position: fixed;
+      right: 0;
+      top: 75px;
       color: #fff;
       font-weight: 100;
+      &__button,
+      &__channels {
+        display: inline-block;
+        padding: 3px 6px;
+        background-color: black;
+      }
+      &__button {
+        vertical-align: top;
+        position: relative;
+        left: 4px;
+      }
+      &__channels {
+        width: 62px;
+        border-left: 1px solid $gray-light;
+      }
+      &__channel {
+        text-align: center;
+        img {
+          width: 34px;
+          margin-bottom: 8px;
+        }
+      }
+      .receive-news__on {
+        display: none;
+      }
     }
 
   }

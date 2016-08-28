@@ -2,27 +2,48 @@
   %nav.navbar.navbar-default.navbar-fixed-top
     .container
       .navbar-header
+        %button.navbar-toggle.collapsed{"data-target": "#collapsable", "data-toggle": "collapse", type: "button"}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
         %a.navbar-brand{href: root_path}
           = image_tag 'logo.png'
 
-      %ul.nav.navbar-nav.navbar-right
-        %li.normal
-          = link_to '당소개'
-        %li.normal
-          = link_to '타임라인'
-        %li.normal
-          = link_to '발의안', propositions_path
-        %li.normal
-          = link_to '쟁점토론', debates_path
-        %li.normal
-          = link_to '게시판', posts_path
-        %li.parti
-          = link_to 'Parti', 'http://do.parti.xyz', target: '_blank'
-        %li.login
-          = link_to '당원가입 / 로그인'
+      .collapse.navbar-collapse#collapsable
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to '당소개'
+          %li
+            = link_to '타임라인'
+          %li
+            = link_to '발의안', propositions_path
+          %li
+            = link_to '쟁점토론', debates_path
+          %li
+            = link_to '게시판', posts_path
+          %li.parti
+            = link_to 'http://do.parti.xyz', target: '_blank' do
+              빠띠
+              %i.fa.fa-external-link
+          %li.login
+            = link_to '당원가입 / 로그인'
 
-      .receive-news
-        %span.plus +
-        %span 소식받기
+      .receive-news{data: {'action': 'bubble-channel'}}
+        .receive-news__off
+          .receive-news__button
+            +
+          .receive-news__channels
+            소식받기
+        .receive-news__on
+          .receive-news__button
+            X
+          .receive-news__channels
+            .receive-news__channel
+              %a(href='https://telegram.me/gmolabeling' target='_blank')
+                = image_tag('telegram_news.png')
+            .receive-news__channel
+              %a(href='https://open.kakao.com/o/gMwxmtm' target='_blank')
+                = image_tag('kakaotalk_news.png')
+
 
 

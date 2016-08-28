@@ -8,7 +8,7 @@ section#project-step1 {
       padding-right: 5%;
       a {
         font-size: $font-size-base;
-        color: $brand-primary;
+        color: $brand-step1-primary;
       }
     }
   }
@@ -195,10 +195,10 @@ section#project-step1 {
               }
               &.active img,
               &.active:hover img {
-                border: 4px solid $brand-primary-dark;
+                border: 4px solid $brand-step1-primary-dark;
               }
               &:hover img {
-                border: 4px solid $brand-primary-light;
+                border: 4px solid $brand-step1-primary-light;
               }
             }
           }
@@ -298,10 +298,10 @@ section#project-step1 {
         height: 10px;
         left: 0;
         margin-bottom: 2px;
-        background-color: $brand-primary-lighter;
+        background-color: $brand-step1-primary-lighter;
         .bill-voted {
           height: 100%;
-          background-color: $brand-primary;
+          background-color: $brand-step1-primary;
         }
       }
     }
@@ -339,7 +339,7 @@ section#project-step1 {
 
         .percentage,
         .count {
-          color: $brand-primary-dark;
+          color: $brand-step1-primary-dark;
           font-size: 2.1em;
           font-weight: bold;
         }
@@ -469,7 +469,7 @@ section#project-step1 {
 
     .container {
       h2 {
-        color: $brand-primary;
+        color: $brand-step1-primary;
         text-align: center;
         font-size: 26px;
         font-weight: 100;
@@ -495,7 +495,7 @@ section#project-step1 {
         box-shadow: 3px 4px 5px 0px rgba(4, 0, 0, 0.2);
         color: #966dfe;
         font-weight: 100;
-        background-color: $brand-primary;
+        background-color: $brand-step1-primary;
         color: #fff;
       }
     }
@@ -542,7 +542,7 @@ section#project-step1 {
               height: 23px;
             }
             text-align: center;
-            background-color: $brand-primary;
+            background-color: $brand-step1-primary;
             color: #fff;
             &.post-created-at {
               @media (max-width: 767px) {
@@ -598,9 +598,9 @@ section#project-step1 {
               }
             }
             & > tr:hover {
-              background-color: $brand-primary-light;
+              background-color: $brand-step1-primary-light;
               a {
-                color: $brand-primary;
+                color: $brand-step1-primary;
               }
             }
           }
@@ -683,7 +683,7 @@ section#project-step1 {
     background-color: #eff1f6;
 
     h2 {
-      color: $brand-primary;
+      color: $brand-step1-primary;
       text-align: center;
       font-size: 26px;
       line-height: 30px;

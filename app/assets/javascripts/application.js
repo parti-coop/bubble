@@ -237,5 +237,13 @@ $(function(){
     $(this).hide();
     $('#post-writing-form').show();
   });
+
+  $('[data-action="bubble-channel"]').hover(function(e){
+    $('.receive-news__off').hide();
+    $('.receive-news__on').show();
+  }, function() {
+    $('.receive-news__off').show();
+    $('.receive-news__on').hide();
+  });
 });
 
