@@ -10,7 +10,7 @@
     #post-list
       = render 'posts/post_page', board_slug: @board_slug
     .post-writing-wrapper
-      .post-writing.btn
+      #post-writing-btn.btn{data: {action: 'call-post-writing-form' }}
         글 쓰기
       #post-writing-form
         = render 'posts/form', board_slug: @board_slug

@@ -24,11 +24,7 @@ class PostsController < ApplicationController
     @post.user = current_user if user_signed_in?
     @post.save if verify_recaptcha(model: @post) or user_signed_in?
 
-    if @post.board_slug == Post::BOARD_SLUG_BILL_CHOICE
-      redirect_to step1_path(anchor: 'posts-anchor')
-    else
-      redirect_to root_path(anchor: 'posts-anchor')
-    end
+    redirect_to posts_path(anchor: 'posts-anchor')
   end
 
   def update

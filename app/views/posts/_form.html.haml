@@ -10,8 +10,11 @@
       .row
         .col-xs-6
           .form-group
+            = f.select :board_slug, options_for_select(Post::BOARDS.map { |current_slug, current__name| [current__name, current_slug]}, selected: ['party-suggest', '정당활동 제안'] ), {}, {class: 'form-control'}
+        .col-xs-2
+          .form-group
             = f.text_field :guest_name, class: 'form-control', placeholder: '이름' ,data: {'rule-required': true}
-        .col-xs-6
+        .col-xs-4
           .form-group
             = f.email_field :guest_email, class: 'form-control' , placeholder: '이메일(선택사항)'
       .help-block
@@ -24,13 +27,11 @@
           %a.login-link(href='#anchor-join') 로그인
           해봐
           %i !
-      %hr
-    .form-group
-      = f.select :board_slug, Post::BOARDS.map { |current_slug, current__name| [current__name, current_slug] }, {}, {class: 'form-control'}
+
     .form-group
       = f.text_field :title, class: 'form-control', placeholder: '제목' , data: {'rule-required': true}
     .form-group
-      = f.text_area :body, class: 'form-control', placeholder: '내용' , data: {'rule-required': true, action: 'parti-autoresize'}
+      = f.text_area :body, class: 'form-control', placeholder: '내용', rows: 12, data: {'rule-required': true, action: 'parti-autoresize'}
     .row
       .col-sm-8
         - if !user_signed_in? and @post.new_record?
@@ -40,7 +41,8 @@
             .bubble-recaptcha
       .col-sm-4.text-right
         - if @post.new_record?
-          = f.submit '등록', class: 'btn btn-lg btn-block btn-post-submit', data: { disable_with: "게시 중..." }
+          = f.submit '등록', class: 'btn btn-lg btn-block btn-post btn-post--submit', data: { disable_with: "게시 중..." }
+          = link_to '취소', @post, class: 'btn-post btn-post--cancel btn btn-lg btn-block'
         - else
-          = link_to '취소', @post, class: 'link-cacel'
-          = f.submit '수정', class: 'btn btn-lg btn-post-submit btn-post-submit--update', data: { disable_with: "게시 중..." }
+          = f.submit '수정', class: 'btn btn-lg btn-post-submit btn-post--submit', data: { disable_with: "게시 중..." }
+          = link_to '취소', @post, class: 'btn-post btn-post--cancel'

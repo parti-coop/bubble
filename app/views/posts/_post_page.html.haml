@@ -1,9 +1,9 @@
 .board-tabs
-  = link_to '전체', posts_path(board_slug: 'all', anchor: 'posts-anchor'), class: "board-tab #{'active' if @board_slug == 'all'}"
+  = link_to '전체', posts_path(board_slug: 'all'), class: "board-tab #{'active' if @board_slug == 'all'}"
   - Post::BOARDS.each do |tab_slug, tab_name|
     %span.divider
       |
-    = link_to tab_name, posts_path(board_slug: tab_slug, anchor: 'posts-anchor'), class: "board-tab #{'active' if tab_slug == board_slug}"
+    = link_to tab_name, posts_path(board_slug: tab_slug), class: "board-tab #{'active' if tab_slug == board_slug}"
 
 .post-search
   .post-search-form

@@ -15,7 +15,7 @@ section#posts {
     }
     .post-page {
       margin-top: 48px;
-      padding: 52px 50px;
+      padding: 52px 50px 48px;
       border: 1px solid #ffbcdc;
       background-color: #ffffff;
       @media (max-width: 767px) {
@@ -98,7 +98,7 @@ section#posts {
           vertical-align: middle;
         }
         a {
-          color: #9b9b9b;
+          color: $brand-gray-color;
         }
         .post-sort.active {
           color: $brand-pink-color;
@@ -111,7 +111,7 @@ section#posts {
             border-top: 2px solid #dedede;
             border-bottom: 1px solid #dedede;
             th {
-              color: #9b9b9b;
+              color: $brand-gray-color;
               font-weight: 400;
               text-align: center;
               padding-top: 5px;
@@ -151,7 +151,7 @@ section#posts {
           .post-created-at,
           .post-upvote {
             text-align: center;
-            color: #9b9b9b;
+            color: $brand-gray-color;
           }
 
           .post-id,
@@ -233,12 +233,34 @@ section#posts {
     .post-writing-wrapper {
       text-align: center;
 
-      .post-writing {
+      a {
+        color: $brand-pink-color;
+      }
+
+      #post-writing-btn {
         background-color: #ec1179;
         margin-top: 20px;
         color: #fff;
         border-radius: 2px;
         padding: 8px 22px;
+      }
+
+      .form-group.recaptcha {
+        text-align: left;
+        margin-bottom: 0;
+      }
+
+      .btn-post {
+        border-radius: 2px;
+        &--submit {
+          background-color: $brand-pink-color;
+          color: #fff;
+        }
+        &--cancel {
+          background-color: #fff;
+          color: $brand-gray-color;
+          border: 1px solid $brand-gray-color;
+        }
       }
     }
   }
