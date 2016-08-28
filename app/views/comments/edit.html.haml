@@ -1,8 +1,4 @@
-%section#project-step3.project-step3-comment
-
-  = render 'pages/step_header'
-
-  %section#comment
-    .container
-      .comment-panel
-        = render 'comments/form', commentable: @comment.commentable
+%section#comment
+  .container
+    .comment-panel
+      = render 'comments/form', commentable: @comment.commentable

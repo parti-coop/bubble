@@ -29,10 +29,33 @@ section#header {
 
     .navbar-nav {
       font-size: $font-size-medium;
-      a {
-        color: black;
+      li,
+      li.active,
+      li.focus {
+        & > a {
+          color: black;
+          background-color: transparent;
+        }
       }
-      .parti {
+
+      li > a:hover,
+      li.active > a,
+      li.focus > a {
+        color: #fff;
+        &:after {
+          content: ' ';
+          color: transparent;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          bottom: 11px;
+          border-width: 0 0 2px;
+          border-style: solid;
+          border-color: #fff;
+        }
+      }
+
+      li.parti {
         a {
           color: $brand-yellow-color;
           i {
@@ -41,7 +64,7 @@ section#header {
         }
       }
 
-      .login {
+      li.login {
         padding-left: 64px;
         margin-top: 8px;
         margin-right: -100px;

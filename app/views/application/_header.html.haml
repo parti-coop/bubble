@@ -11,15 +11,15 @@
 
       .collapse.navbar-collapse#collapsable
         %ul.nav.navbar-nav.navbar-right
-          %li
+          %li{class: ('active' if current_page?(controller: '/pages', action: :about))}
             = link_to '당소개'
-          %li
+          %li{class: ('active' if current_page?(controller: '/pages', action: :timeline))}
             = link_to '타임라인'
-          %li
+          %li{class: ('active' if controller_name == 'propositions')}
             = link_to '발의안', propositions_path
-          %li
+          %li{class: ('active' if controller_name == 'debates')}
             = link_to '쟁점토론', debates_path
-          %li
+          %li{class: ('active' if controller_name == 'posts')}
             = link_to '게시판', posts_path
           %li.parti
             = link_to 'http://do.parti.xyz', target: '_blank' do
