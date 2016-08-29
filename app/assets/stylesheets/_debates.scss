@@ -1,7 +1,11 @@
 section#debate {
+  .debate-panel > .page-description {
+    margin-bottom: 20px;
+  }
   .debates-index {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 60px;
+    margin-bottom: 18px;
     .row {
       display: flex;
       align-items: center;
@@ -42,42 +46,46 @@ section#debate {
   }
 
   .debate-topic {
-    background-color: #fff;
-    padding-bottom: 14px;
-    margin-top: 20px;
 
-    .debate-topic-title {
-      text-align: center;
-      color: black;
-      padding-top: 30px;
-      font-size: 36px;
-    }
+    .debate-topic-content-wrapper {
+      background-color: #fff;
+      border: 1px solid $brand-primary-lighter;
 
-    .debate-topic-subtitle {
-      text-align: center;
-      padding-top: 10px;
-      font-size: 28px;
-      @media (max-width: 767px) {
-        font-size: 24px;
-        padding-left: 12px;
-        padding-right: 12px;
+      .debate-topic-title {
+        text-align: center;
+        color: black;
+        padding-top: 86px;
+        font-size: 36px;
       }
-    }
 
-    .debate-topic-options {
-      text-align: center;
-      font-size: 18px;
-      color: #bfbfbf;
-      padding-top: 10px;
-      margin-bottom: -16px;
-    }
+      .debate-topic-subtitle {
+        text-align: center;
+        padding-top: 10px;
+        font-size: 28px;
+        @media (max-width: 767px) {
+          font-size: 24px;
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+      }
 
-    .debate-topic-description {
-      background-color: $input-border;
-      padding: 10px 20px;
-      margin: 32px 50px 20px 50px;
-      @media (max-width: 767px) {
-        margin: 30px 14px 20px;
+      .debate-topic-options {
+        text-align: center;
+        font-size: $font-size-h3;
+        color: $gray-darker;
+        margin-top: 41px;
+        .vs {
+          color: $brand-gray-color;
+        }
+      }
+
+      .debate-topic-description {
+        margin-top: 24px;
+        margin-left: 142px;
+        margin-right: 142px;
+        @media (max-width: 767px) {
+          margin: 30px 14px 20px;
+        }
       }
     }
 
@@ -161,28 +169,49 @@ section#debate {
       }
     }
     .debate-bar {
-      height: 14px;
+      height: 20px;
+      width: 600px;
+      margin-left: 150px;
+      margin-right: 150px;
+      margin-top: 36px;
+      margin-bottom: 73px;
       left: 0;
-      margin: 24px 50px 50px 50px;
-      background-color: #e5004f;
+      background-color: $brand-lime-green-color;
+      position: relative;
+      border: 1px solid $gray-darker;
       @media (max-width: 767px) {
         margin: 30px 14px 20px;
       }
 
       .debate-voted {
         height: 100%;
-        background-color: #00a0e9;
+        background-color: $brand-yellow-color;
       }
       .selected-group {
-        padding-top: 4px;
+
+        .selected-alpha{
+          font-size: $font-size-medium;
+          position: absolute;
+          top: -17px;
+        }
+
+        .selected-beta{
+          font-size: $font-size-medium;
+          position: absolute;
+          top: -17px;
+          right: 0px;
+        }
+
         .selected-alpha-percentage {
-          color: #00a0e9;
+          font-size: $font-size-h3;
         }
 
         .selected-beta-percentage {
-          color: #e5004f;
+          font-size: $font-size-h3;
+          right: 0px;
         }
       }
+
     }
 
     .debate-options {
@@ -194,49 +223,73 @@ section#debate {
       .option-alpha-button{
         display: inline-block;
         border-radius: 0;
-        padding: 20px 60px;
-        border: 1px solid #00a0e9;
-        color: #00a0e9;
+        width: 262px;
+        margin-right: 10px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+        color: #111111;
+        background-color: $brand-gray-color;
         text-decoration: none;
+        font-size: $font-size-h3;
         @media (max-width: 767px) {
           padding: 10px 20px;
         }
         &.active {
-          background-color: #00a0e9;
-          color: #fff;
+          color: #111111;
+          background-color: $brand-yellow-color;
+          border: 2px solid #111111;
+          border-radius: 2px;
         }
         &:hover {
-          background-color: rgba(0, 160, 239, 0.5);
-          color: #fff;
+          color: #111111;
+          background-color: $brand-yellow-color;
+          border: 2px solid #111111;
+          border-radius: 2px;
         }
       }
       .option-beta-button{
         display: inline-block;
         border-radius: 0;
-        padding: 20px 60px;
-        border: 1px solid #e5004f;
+        width: 262px;
         margin-left: 10px;
-        color: #e5004f;
+        padding-top: 17px;
+        padding-bottom: 17px;
+        color: #111111;
+        background-color: $brand-gray-color;
         text-decoration: none;
+        font-size: $font-size-h3;
         @media (max-width: 767px) {
           padding: 10px 20px;
         }
 
         &.active {
-          background-color: #e5004f;
-          color: #fff;
+          color: #111111;
+          background-color: $brand-lime-green-color;
+          border: 2px solid #111111;
+          border-radius: 2px;
         }
         &:hover {
-          background-color: rgba(229,0,79,0.5);
-          color: #fff;
+          color: #111111;
+          background-color: $brand-lime-green-color;
+          border: 2px solid #111111;
+          border-radius: 2px;
         }
       }
 
       .option-hold-button{
-        padding-top: 12px;
+        padding-top: 18px;
+        font-size: $font-size-medium;
 
         a {
-          color: #bfbfbf;
+          color: $brand-gray-color;
+          &.active {
+            color: #111111;
+            text-decoration: none;
+          }
+          &:hover {
+            color: #111111;
+            text-decoration: none;
+          }
         }
       }
     }

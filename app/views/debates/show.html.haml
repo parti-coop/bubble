@@ -3,63 +3,19 @@
     .debate-panel
       %p.page-description
         ‘나는 알아야겠당’은 GMO완전표시제법이 통과될 때까지 쟁점 발굴과 토론을 통해 숙의과정을 경험합니다. 아래 쟁점에 대한 의견과 함께 또 다른 쟁점이 있다면 제안해 주세요.
-      .debates-index
-        .row
-          .col-md-4
-            .title.active
-              = image_tag 'point_icon.png'
-              1. GMO 완전표시제 시행 시기는?
-          .col-md-4
-            .title
-              = image_tag 'point_icon.png'
-              2. GMO 표시 대상이 아닌 국내산 농산물에 Non-GMO(비GMO)라 표시해도 될까?
-          .col-md-4
-            .title
-              = image_tag 'point_icon.png'
-              3. GMO 표시 면제 범위는?
-    #debate-topic-overall_adoption.debate-topic
-      %p.debate-topic-title
-        1. GMO 완전표시제 시행 시기는?
-      %p.debate-topic-options
-        단계적 시행 vs 전면적 시행
-      .debate-panel.debate-name-overall_adoption
-        .debate-panel--header
-          = render 'opinions/header', debate: @overall_adoption_debate
-        = render 'opinions/form', debate: @overall_adoption_debate
-        .debate-panel--opinions
-          = render 'opinions/page', debate: @overall_adoption_debate
 
-    #debate-topic-non_gmo.debate-topic
-      %p.debate-topic-title
-        GMO완전표시제법 쟁점-2
-      %p.debate-topic-subtitle
-        GMO 표시 대상이 아닌 국내산 농산물에
-        %br.hidden-xs
-        Non-GMO(비GMO)라 표시해도 될까?
-      %p.debate-topic-options
-        표시 할 필요 없다 VS 표시를 허용해야 한다.
-      %p.debate-topic-description
-        세계적으로 상용화한 식용 GMO는 총 18개(지난해 말 기준). 이 중 국내로 들어오고 있는 GMO는 콩(대두)·옥수수·사탕무·카놀라(유채)·면화·알파파 등 6개 품목임. 이들 6개 품목은 의무적으로 GMO라고 표시해야 함. 그러나 국내산 콩, 국내산 옥수수처럼 ‘GMO로 수입되는 6개 품목에 포함되지만 GMO가 아닌 국내산 농산물’에‘Non-GMO’, ‘GMO-Free’을 표시하는 기준은 현행법에 없음. 이에 식품의약품안전처는 국내산 콩, 국내산 옥수수 등 6개 품목에 대해서만 제한적으로‘Non-GMO’를 허용하는 고시를 추진중. 그러나 생활협동조합이나 소비자단체 등에선 국내로 수입이 허용되는 6개 품목 뿐 아니라 전세계적으로 식용으로 쓰는 18개 GMO 품목 전부에 대해서 이에 해당하는 국내산 농산물에 민간이 자율적으로‘Non-GMO’, ‘GMO-Free’표시를 할 수 있도록 해야한다고 주장. 즉 GM가지와 구별되도록 국내산 가지에 ‘Non-GMO’표시를 허용하자는 것. GM가지는 국내로는 수입되지 않지만 전세계적으로는 상용화 돼 있고, 혹시나 국내로 수입되는 가공식품에 섞여 들어올 수도 있으니 ‘Non-GMO 가지’표시로 소비자의 불안을 없애줘야 한다는 취지.
-      .debate-panel.debate-name-non_gmo
-        .debate-panel--header
-          = render 'opinions/header', debate: @non_gmo_debate
-        = render 'opinions/form', debate: @non_gmo_debate
-        .debate-panel--opinions
-          = render 'opinions/page', debate: @non_gmo_debate
-
-
-    #debate-topic-exemption_range.debate-topic
-      %p.debate-topic-title
-        GMO완전표시제법 쟁점-3
-      %p.debate-topic-subtitle
-        GMO 표시 면제 범위는?
-      %p.debate-topic-options
-        면제하지 말자(0%) vs 0.9%까지 면제
-      %p.debate-topic-description
-        현재 ‘비의도적 혼입치’는 3%. 유통 과정에서 의도치 않게 GMO가 섞였다고 보고 입혼 비율 3%까지는 표시를 면제해주는 제도.
-      .debate-panel.debate-name-exemption_range
-        .debate-panel--header
-          = render 'opinions/header', debate: @exemption_range_debate
-        = render 'opinions/form', debate: @exemption_range_debate
-        .debate-panel--opinions
-          = render 'opinions/page', debate: @exemption_range_debate
+    - [@overall_adoption_debate, @non_gmo_debate, @exemption_range_debate].each do |debate|
+      .debate-topic(id="debate-topic-#{debate.slug}")
+        = render 'debates/debates_index', debate: debate
+        .debate-topic-content-wrapper
+          .debate-topic-title
+            = raw debate.title
+          .debate-topic-options
+            %span= debate.alpha_label
+            %span.vs VS
+            %span= debate.beta_label
+          %p.debate-topic-description= debate.body
+          .debate-panel
+            = render 'opinions/header', debate: debate
+            = render 'opinions/form', debate: debate
+            = render 'opinions/page', debate: debate
