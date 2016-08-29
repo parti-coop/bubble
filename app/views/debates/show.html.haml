@@ -17,5 +17,6 @@
           %p.debate-topic-description= debate.body
           .debate-panel
             = render 'opinions/header', debate: debate
-            = render 'opinions/form', debate: debate
-            = render 'opinions/page', debate: debate
+            .debate-opinions-wrapper
+              = render 'opinions/form', debate: debate
+              = render 'opinions/page', debate: debate

@@ -90,6 +90,10 @@ section#debate {
     }
 
     .debate-panel {
+      .debate-opinions-wrapper{
+        // background-color: #fff;
+        border-top: 1px solid $brand-primary-lighter;
+      }
       .new_opinion {
         margin: 10px 50px;
         background-color: $input-border;
@@ -139,24 +143,117 @@ section#debate {
       }
 
       .opinion {
-        margin: 6px 50px 4px;
-        padding: 12px 18px;
+        margin-left: 75px;
+        margin-right: 75px;
         @media (max-width: 767px) {
           margin: 10px 14px 10px;
         }
-
-        &__choice {
-          &.select_alpha {
-            color: #00a0e9;
-          }
-          &.select_beta {
-            color: #e5004f;
-          }
-          &.select_hold {
-            color: #bfbfbf;
-          }
+        .row{
+          display: flex;
+          align-items: center;
+          border-bottom: 1px solid $border-gray-color;
         }
 
+          .opinion__choice {
+            &.select_alpha {
+              .col-md-1{
+                vertical-align: middle;
+                text-align: right;
+                .square {
+                  width: 24px;
+                  height: 24px;
+                  background: $brand-yellow-color;
+                  margin-right: 5px;
+                }
+              }
+            }
+            &.select_beta {
+              .col-md-1{
+                vertical-align: middle;
+                text-align: right;
+                .square {
+                  width: 24px;
+                  height: 24px;
+                  background: $brand-lime-green-color;
+                  margin-right: 5px;
+                }
+              }
+            }
+            &.select_hold {
+              .col-md-1{
+                vertical-align: middle;
+                text-align: right;
+                .square {
+                  width: 24px;
+                  height: 24px;
+                  background: $brand-gray-color;
+                  margin-right: 5px;
+                }
+              }
+            }
+          }
+
+          .col-md-2{
+            border-bottom: none;
+            vertical-align: middle;
+            text-align: center;
+            padding-left: 0px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+
+
+          }
+          .col-md-9{
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-left: 1px solid $border-gray-color;
+            .opinion__body{
+
+            }
+            .opinion__name{
+              color: $brand-gray-color;
+            }
+            .opinion__date{
+              color: $brand-gray-color;
+            }
+          }
+
+        // &__choice {
+
+        //   &.select_alpha {
+        //     .square {
+        //       width: 24px;
+        //       height: 24px;
+        //       background: $brand-yellow-color;
+        //       float: left;
+        //       margin-right: 5px;
+        //     }
+        //   }
+        //   &.select_beta {
+        //     .square {
+        //       width: 24px;
+        //       height: 24px;
+        //       background: $brand-lime-green-color;
+        //       float: left;
+        //       margin-right: 5px;
+        //     }
+        //   }
+        //   &.select_hold {
+        //     .square {
+        //       width: 24px;
+        //       height: 24px;
+        //       background: $brand-gray-color;
+        //       float: left;
+        //       margin-right: 5px;
+        //     }
+        //   }
+        // }
+        .division{
+          border-right: 1px solid $brand-gray-color;
+          border-bottom: none;
+          vertical-align: middle;
+          text-align: center;
+        }
         &.select_alpha {
           border: 1px solid #00a0e9;
         }
@@ -227,23 +324,23 @@ section#debate {
         margin-right: 10px;
         padding-top: 17px;
         padding-bottom: 17px;
-        color: #111111;
-        background-color: $brand-gray-color;
+        color: $gray-darker;
+        background-color: $gray-lighter;
         text-decoration: none;
         font-size: $font-size-h3;
         @media (max-width: 767px) {
           padding: 10px 20px;
         }
         &.active {
-          color: #111111;
+          color: $gray-darker;
           background-color: $brand-yellow-color;
-          border: 2px solid #111111;
+          border: 2px solid $gray-darker;
           border-radius: 2px;
         }
         &:hover {
-          color: #111111;
+          color: $gray-darker;
           background-color: $brand-yellow-color;
-          border: 2px solid #111111;
+          border: 2px solid $gray-darker;
           border-radius: 2px;
         }
       }
@@ -254,8 +351,8 @@ section#debate {
         margin-left: 10px;
         padding-top: 17px;
         padding-bottom: 17px;
-        color: #111111;
-        background-color: $brand-gray-color;
+        color: $gray-darker;
+        background-color: $gray-lighter;
         text-decoration: none;
         font-size: $font-size-h3;
         @media (max-width: 767px) {
@@ -263,31 +360,32 @@ section#debate {
         }
 
         &.active {
-          color: #111111;
+          color: $gray-darker;
           background-color: $brand-lime-green-color;
-          border: 2px solid #111111;
+          border: 2px solid $gray-darker;
           border-radius: 2px;
         }
         &:hover {
-          color: #111111;
+          color: $gray-darker;
           background-color: $brand-lime-green-color;
-          border: 2px solid #111111;
+          border: 2px solid $gray-darker;
           border-radius: 2px;
         }
       }
 
       .option-hold-button{
         padding-top: 18px;
+        margin-bottom: 20px;
         font-size: $font-size-medium;
 
         a {
           color: $brand-gray-color;
           &.active {
-            color: #111111;
+            color: $gray-darker;
             text-decoration: none;
           }
           &:hover {
-            color: #111111;
+            color: $gray-darker;
             text-decoration: none;
           }
         }
