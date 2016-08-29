@@ -24,44 +24,47 @@ section#join {
       }
 
       .join-share-wrapper {
+        .join-share {
+          margin-left: 2px;
+          margin-right: 2px;
+
+          .jssocials-share-logo {
+            width: auto;
+            height: 2em;
+            cursor: pointer;
+          }
+
+          &__facebook {
+            background-size: contain;
+            background-image: asset_url('share-facebook-white.png');
+            &:hover {
+              background-image: asset_url('share-facebook.png');
+            }
+          }
+          &__twitter {
+            background-size: contain;
+            background-image: asset_url('share-twitter-white.png');
+            &:hover {
+              background-image: asset_url('share-twitter.png');
+            }
+          }
+          &__kakao {
+            background-size: contain;
+            background-image: asset_url('share-kakao-white.png');
+            &:hover {
+              background-image: asset_url('share-kakao.png');
+            }
+          }
+          &__kas {
+            background-size: contain;
+            background-image: asset_url('share-kas-white.png');
+            &:hover {
+              background-image: asset_url('share-kas.png');
+            }
+          }
+        }
 
       }
-
-      .join-share {
-        width: 60px;
-        height: 60px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        display: inline-block;
-        margin-left: 2px;
-        margin-right: 2px;
-
-        &__facebook {
-          background-image: asset_url('share-facebook-white.png');
-          &:hover {
-            background-image: asset_url('share-facebook.png');
-          }
-        }
-        &__twitter {
-          background-image: asset_url('share-twitter-white.png');
-          &:hover {
-            background-image: asset_url('share-twitter.png');
-          }
-        }
-        &__kakao {
-          background-image: asset_url('share-kakao-white.png');
-          &:hover {
-            background-image: asset_url('share-kakao.png');
-          }
-        }
-        &__kas {
-          background-image: asset_url('share-kas-white.png');
-          &:hover {
-            background-image: asset_url('share-kas.png');
-          }
-        }
-      }
-
 
     }
 

@@ -93,6 +93,8 @@ var prepare_social_share = function($base) {
     var url = $elm.data('share-url');
     var text = $elm.data('share-text');
     var share = $elm.data('share-provider');
+    var css = $elm.data('share-css');
+    var logo = $elm.data('share-logo');
     if ($.is_blank(share)) return;
     var image_url = $elm.data('share-image');
     var image_width = $elm.data('share-image-width');
@@ -126,7 +128,7 @@ var prepare_social_share = function($base) {
       $elm.jsSocials({
         showCount: false,
         showLabel: false,
-        shares: [share],
+        shares: [{share: share, logo: logo, css: css}],
         text: text,
         url: url
       });

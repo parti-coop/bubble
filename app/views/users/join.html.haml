@@ -26,11 +26,28 @@
           %p.join-after-description
             친구에게 공유해 보세요!
           .join-share-wrapper
-            .join-share.join-share__facebook
-            .join-share.join-share__twitter
-            .join-share.join-share__kakao
-            .join-share.join-share__kas
+            .list-inline.join-share
+              - base_data = {action: 'bubble-share', 'share-url': root_url, 'share-text': meta_tags['description'] }
+              - %w(facebook twitter kakao-link kakao-story).each do |provider|
 
+                - data = base_data.merge('share-provider': provider)
+
+                - if provider == 'facebook'
+                  - data = data.merge('share-logo': asset_url('share-fake.png'), 'share-css': 'join-share__facebook')
+                - if provider == 'twitter'
+                  - data = data.merge('share-text': "유쾌하고 진지한 정치실험! #GMO완전표시제 입법을 위한 프로젝트정당, #나는알아야겠당 창당파티 한겨레21x빠띠 @han21_editor @parti_xyz", 'share-logo': asset_url('share-fake.png'), 'share-css': 'join-share__twitter')
+                - if provider == 'kakao-link'
+                  - hide_kakao_link = (! browser.device.mobile?) ? ' hide' : ''
+                  - data = data.merge('share-image': meta_tags['image'], 'share-image-width': '1200', 'share-image-height': '630', 'share-logo': asset_url('share-fake.png'), 'share-css': 'join-share__kakao')
+                %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
+                  - if provider == 'kakao-story'
+                    .jssocials-shares
+                      .join-share__kas.jssocials-share
+                        = image_tag 'share-fake.png', class: 'jssocials-share-logo'
+                  - if provider == 'kakao-link'
+                    .jssocials-shares
+                      .join-share__kakao.jssocials-share
+                        = image_tag 'share-fake.png', class: 'jssocials-share-logo'
       - else
         .join-before
           %p.join-before__title
