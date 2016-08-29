@@ -91,8 +91,84 @@ section#debate {
 
     .debate-panel {
       .debate-opinions-wrapper{
-        // background-color: #fff;
         border-top: 1px solid $brand-primary-lighter;
+        .opinions{
+          .opinion:first-of-type {
+            border-top: 2px solid $border-gray-color;
+          }
+          .opinion {
+            margin-left: 75px;
+            margin-right: 75px;
+            border-bottom: 1px solid $border-gray-color;
+            @media (max-width: 767px) {
+              margin: 10px 14px 10px;
+            }
+            .row{
+              display: flex;
+              align-items: center;
+            }
+              .opinion__choice {
+                &.select_alpha {
+                  .col-md-1{
+                    vertical-align: middle;
+                    text-align: right;
+                    .square {
+                      width: 24px;
+                      height: 24px;
+                      background: $brand-yellow-color;
+                    }
+                  }
+                }
+                &.select_beta {
+                  .col-md-1{
+                    vertical-align: middle;
+                    text-align: right;
+                    .square {
+                      width: 24px;
+                      height: 24px;
+                      background: $brand-lime-green-color;
+                    }
+                  }
+                }
+                &.select_hold {
+                  .col-md-1{
+                    vertical-align: middle;
+                    text-align: right;
+                    .square {
+                      width: 24px;
+                      height: 24px;
+                      background: $brand-gray-color;
+                    }
+                  }
+                }
+              }
+
+              .col-md-2{
+                border-bottom: none;
+                vertical-align: middle;
+                text-align: center;
+                padding-left: 0px;
+                padding-top: 7px;
+                padding-bottom: 7px;
+
+
+              }
+              .col-md-9{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-left: 1px solid $border-gray-color;
+                .opinion__body{
+
+                }
+                .opinion__name{
+                  color: $brand-gray-color;
+                }
+                .opinion__date{
+                  color: $brand-gray-color;
+                }
+              }
+          }
+        }
       }
       .new_opinion {
         margin: 10px 50px;
@@ -142,128 +218,6 @@ section#debate {
         }
       }
 
-      .opinion {
-        margin-left: 75px;
-        margin-right: 75px;
-        @media (max-width: 767px) {
-          margin: 10px 14px 10px;
-        }
-        .row{
-          display: flex;
-          align-items: center;
-          border-bottom: 1px solid $border-gray-color;
-        }
-
-          .opinion__choice {
-            &.select_alpha {
-              .col-md-1{
-                vertical-align: middle;
-                text-align: right;
-                .square {
-                  width: 24px;
-                  height: 24px;
-                  background: $brand-yellow-color;
-                  margin-right: 5px;
-                }
-              }
-            }
-            &.select_beta {
-              .col-md-1{
-                vertical-align: middle;
-                text-align: right;
-                .square {
-                  width: 24px;
-                  height: 24px;
-                  background: $brand-lime-green-color;
-                  margin-right: 5px;
-                }
-              }
-            }
-            &.select_hold {
-              .col-md-1{
-                vertical-align: middle;
-                text-align: right;
-                .square {
-                  width: 24px;
-                  height: 24px;
-                  background: $brand-gray-color;
-                  margin-right: 5px;
-                }
-              }
-            }
-          }
-
-          .col-md-2{
-            border-bottom: none;
-            vertical-align: middle;
-            text-align: center;
-            padding-left: 0px;
-            padding-top: 7px;
-            padding-bottom: 7px;
-
-
-          }
-          .col-md-9{
-            padding-top: 10px;
-            padding-bottom: 10px;
-            border-left: 1px solid $border-gray-color;
-            .opinion__body{
-
-            }
-            .opinion__name{
-              color: $brand-gray-color;
-            }
-            .opinion__date{
-              color: $brand-gray-color;
-            }
-          }
-
-        // &__choice {
-
-        //   &.select_alpha {
-        //     .square {
-        //       width: 24px;
-        //       height: 24px;
-        //       background: $brand-yellow-color;
-        //       float: left;
-        //       margin-right: 5px;
-        //     }
-        //   }
-        //   &.select_beta {
-        //     .square {
-        //       width: 24px;
-        //       height: 24px;
-        //       background: $brand-lime-green-color;
-        //       float: left;
-        //       margin-right: 5px;
-        //     }
-        //   }
-        //   &.select_hold {
-        //     .square {
-        //       width: 24px;
-        //       height: 24px;
-        //       background: $brand-gray-color;
-        //       float: left;
-        //       margin-right: 5px;
-        //     }
-        //   }
-        // }
-        .division{
-          border-right: 1px solid $brand-gray-color;
-          border-bottom: none;
-          vertical-align: middle;
-          text-align: center;
-        }
-        &.select_alpha {
-          border: 1px solid #00a0e9;
-        }
-        &.select_beta {
-          border: 1px solid #e5004f;
-        }
-        &.select_hold {
-          border: 1px solid #bfbfbf;
-        }
-      }
     }
     .debate-bar {
       height: 20px;

@@ -35,30 +35,3 @@
         = opinion.name
       %span.opinion__date
         = date_f opinion.created_at
-
-/ .opinion{class: "select_#{opinion.choice}" }
-/   %span.opinion__name
-/     = opinion.name
-/   %span.opinoin__date.pull-right
-/     = date_f opinion.created_at
-/   %br
-/   -if opinion.debate_slug == 'overall_adoption'
-/     %span.opinion__choice{class: "select_#{opinion.choice}" }
-/       - choice = '단계적 시행' if opinion.choice == 'alpha'
-/       - choice = '전면적 시행' if opinion.choice == 'beta'
-/       - choice = '모르겠습니다' if opinion.choice == 'hold'
-/       = choice
-/   -if opinion.debate_slug == 'non_gmo'
-/     %span.opinion__choice{class: "select_#{opinion.choice}" }
-/       - choice = '표시 할 필요 없다.' if opinion.choice == 'alpha'
-/       - choice = '표시를 허용해야 한다' if opinion.choice == 'beta'
-/       - choice = '모르겠습니다' if opinion.choice == 'hold'
-/       = choice
-/   -if opinion.debate_slug == 'exemption_range'
-/     %span.opinion__choice{class: "select_#{opinion.choice}" }
-/       - choice = '0%' if opinion.choice == 'alpha'
-/       - choice = '0.9%' if opinion.choice == 'beta'
-/       - choice = '모르겠습니다' if opinion.choice == 'hold'
-/       = choice
-/   %span.opinion__body
-/     = opinion.body
