@@ -24,13 +24,15 @@ section#join {
       }
 
       .join-share-wrapper {
-        .join-share {
-          margin-left: 2px;
-          margin-right: 2px;
+        .list-inline > li {
+          padding-left: 2px;
+          padding-right: 2px;
+        }
 
+        .join-share {
           .jssocials-share-logo {
             width: auto;
-            height: 2em;
+            height: 60px;
             cursor: pointer;
           }
 
