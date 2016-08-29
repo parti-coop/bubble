@@ -115,12 +115,17 @@ section#header {
         vertical-align: top;
         position: relative;
         left: 4px;
+        img {
+          width: 16px;
+          height: 16px;
+        }
       }
       &__channels {
-        width: 62px;
+        width: 90px;
         border-left: 1px solid $gray-light;
       }
       &__channel {
+        display: inline-block;
         text-align: center;
         img {
           width: 34px;

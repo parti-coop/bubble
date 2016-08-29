@@ -86,4 +86,8 @@ module ApplicationHelper
       raw('<span style="white-space: nowrap">우리가 뽑은</span><br class="hidden-sm"> 정당이름')
     ]
   end
+
+  def is_hoverable?
+    !browser.device.mobile? and !browser.device.tablet?
+  end
 end

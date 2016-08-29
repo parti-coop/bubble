@@ -238,12 +238,23 @@ $(function(){
     $('#post-writing-form').show();
   });
 
-  $('[data-action="bubble-channel"]').hover(function(e){
-    $('.receive-news__off').hide();
-    $('.receive-news__on').show();
-  }, function() {
-    $('.receive-news__off').show();
-    $('.receive-news__on').hide();
+  $('[data-action="bubble-channel"]').each(function(index, elm) {
+    var $elm = $(elm);
+    var func_show = function(e){
+      $elm.find('.receive-news__off').hide();
+      $elm.find('.receive-news__on').show();
+    }
+    var func_hide = function(e){
+      $elm.find('.receive-news__off').show();
+      $elm.find('.receive-news__on').hide();
+    }
+
+    if($elm.data('trigger') == 'hover') {
+      $elm.hover(func_show, func_hide);
+    } else {
+      $elm.find('.receive-news__off').click(func_show);
+      $elm.find('.receive-news__on .receive-news__button').click(func_hide);
+    }
   });
 
 
