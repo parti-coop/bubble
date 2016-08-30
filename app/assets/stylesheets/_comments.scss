@@ -1,14 +1,35 @@
+.first-comment.help-block {
+  margin-bottom: -14px;
+  margin-top: 20px;
+}
+
 .comment-form {
-  padding-top: 4px;
+  padding-top: 20px;
   padding-bottom: 16px;
   form.new_comment {
     display: none;
   }
 }
 
-.comment {
-  padding: 12px 30px;
-  .comment-footer {
-    color: $brand-gray-color;
+.comment-content {
+  .comment-meta-wrapper {
+    padding: 10px 8px;
+    border-bottom: 1px solid $border-gray-color;
+
+    .comment-meta {
+      display: inline-block;
+    }
+
+    .comment-meta__label {
+      color: $brand-gray-color;
+      width: 12%;
+      vertical-align: top;
+
+    }
+
+    .comment-meta__value {
+      width: 87%;
+    }
+
   }
 }

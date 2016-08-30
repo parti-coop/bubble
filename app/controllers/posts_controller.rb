@@ -47,7 +47,7 @@ class PostsController < ApplicationController
       @post.save
       redirect_to @post
     else
-      redirect_to new_user_registration_path(redirect_to: post_path(@post))
+      redirect_to join_path(redirect_to: post_path(@post))
     end
   end
 
@@ -56,7 +56,7 @@ class PostsController < ApplicationController
       @post.upvotes.find_by(user: current_user).destroy
       redirect_to @post
     else
-      redirect_to new_user_registration_path(redirect_to: post_path(@post))
+      redirect_to join_path(redirect_to: post_path(@post))
     end
   end
 

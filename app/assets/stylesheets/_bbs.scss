@@ -1,7 +1,71 @@
 section#posts {
-  padding-bottom: 30px;
+  padding-bottom: 65px;
   background-color: #fafafa;
   .posts-panel {
+    .post-content {
+      margin-top: 48px;
+      padding: 80px 50px 140px;
+      border: 1px solid #ffbcdc;
+      background-color: #ffffff;
+
+      .post-meta-wrapper {
+        padding: 10px 20px;
+        border-bottom: 1px solid $border-gray-color;
+
+        .post-meta {
+          display: inline-block;
+
+          &__label {
+            color: $brand-gray-color;
+            width: 5%;
+            vertical-align: top;
+          }
+
+          &__value {
+            width: 94%;
+
+            &--multi {
+              width: 44%;
+            }
+          }
+        }
+
+        .post-upvote {
+          text-align: center;
+          margin-top: 30px;
+          .btn-default {
+            color: $brand-primary;
+            border-color: $brand-primary;
+          }
+          .btn-upvoted {
+            background-color: $brand-primary;
+            color: #fff;
+          }
+        }
+      }
+
+      .post-title-wrapper {
+        border-top: 2px solid $border-gray-color;
+      }
+
+      .post-body-wrapper {
+        padding: 60px 80px;
+        border-bottom: none;
+      }
+
+      .comments-panel {
+        border-top: 1px solid $border-gray-color;
+
+        .comments {
+
+        }
+      }
+
+      .navigation-button {
+        text-align: center;
+      }
+    }
+
     .post-page {
       margin-top: 48px;
       padding: 52px 50px 48px;
@@ -149,7 +213,6 @@ section#posts {
             .sticky-label {
               border: 1px solid $brand-primary;
               padding: 2px 6px;
-              border-radius: 2px;
               color: $brand-primary;
             }
           }
@@ -210,7 +273,6 @@ section#posts {
         background-color: #ec1179;
         margin-top: 20px;
         color: #fff;
-        border-radius: 2px;
         padding: 8px 22px;
       }
 
@@ -220,7 +282,6 @@ section#posts {
       }
 
       .btn-post {
-        border-radius: 2px;
         &--submit {
           background-color: $brand-primary;
           color: #fff;

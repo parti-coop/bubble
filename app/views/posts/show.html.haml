@@ -1,27 +1,24 @@
-%section#project-step3.project-step3-post
+%section#posts
+  .container
+    .posts-panel
 
-  = render 'pages/step_header'
+      %p.page-description
+        자유롭게 의견, 온라인 당원 활동을 할 수 있는 공간입니다. 오프라인에서 만나신 후기나 활동을 공유해주셔도 되고, 온라인에서 한 활동을 공유해주셔도 좋습니다. 한겨레21이나 빠흐띠, 당원에게 제안도 가능합니다.
 
-  %section#post
-    .container
-      .post-panel
-        .post-detail
-          .post-meta-wrapper.post-title-wrapper
-            .row
-              .col-sm-2.col-xs-3
-                .post-meta-label 제목
-              .col-sm-10.col-xs-9
-                .post-meta-value= @post.title
-          .post-meta-wrapper.post-user-wrapper
-            .row
-              .col-sm-2.col-xs-3
-                .post-meta-label 작성자
-              .col-sm-10.col-xs-9
-                .post-meta-value
-                  = @post.name
-                  - if @post.user.present?
-                    %span.party-memember-badget 당원
-          - if can?(:manage, @post) or can?(:stick, @post)
+      .post-content
+        .post-meta-wrapper.post-title-wrapper
+          .post-meta.post-meta__label 제목
+          .post-meta.post-meta__value= @post.title
+        .post-meta-wrapper.post-user-wrapper
+          .post-meta.post-meta__label 이름
+          .post-meta.post-meta__value--multi
+            = @post.name
+            - if @post.user.present?
+              %span.party-memember-badget 당원
+          .post-meta.post-meta__label 일시
+          .post-meta.post-meta__value--multi= date_f @post.created_at
+        - if can?(:manage, @post) or can?(:stick, @post)
+          .post-meta-wrapper
             .post-buttons
               - if can?(:manage, @post)
                 %span
@@ -39,6 +36,7 @@
                   %span
                     = link_to '상단고정', [:stick, @post], method: :post
 
+        .post-meta-wrapper.post-body-wrapper
           .post-body
             = simple_format(@post.body)
 
@@ -46,19 +44,18 @@
             - if @post.upvoted_by?(current_user)
               = link_to unvote_post_path(@post), class: "btn btn-default btn-upvoted", method: :post do
                 %i.fa.fa-thumbs-o-up
-                %i.fa.fa-ban
                 = @post.upvotes_count
             - else
               = link_to upvote_post_path(@post), class: "btn btn-default", method: :post do
-                %i.fa.fa-thumbs-o-up
                 - if @post.upvotes.any?
+                  %i.fa.fa-thumbs-o-up
                   = @post.upvotes_count
                 - else
                   추천
+
         .comments-panel
           - if @post.comments.empty?
-            %hr
-            %p.help-block
+            %p.help-block.first-comment
               %i.fa.fa-comment-o.fa-flip-horizontal
               처음으로 댓글을 남겨보세요
               %i !
@@ -70,4 +67,3 @@
           = link_to posts_path(board_slug: @post.board_slug, anchor: 'posts-anchor'), class: 'btn btn-default' do
             목록으로
 
-  = render 'pages/step3_footer'

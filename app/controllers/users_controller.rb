@@ -21,7 +21,7 @@ class UsersController < ApplicationController
         end
       end
       format.html {
-        redirect_to(root_path) and return unless browser.bot?
+        redirect_to(params[:redirect_to] || root_path) and return unless browser.bot?
         render(layout: nil)
       }
     end

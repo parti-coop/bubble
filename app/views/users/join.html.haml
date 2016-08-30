@@ -1,5 +1,6 @@
 %section#join
   .container
+    = params[:redirect_to].inspect
     .join-panel
       %p.page-description
         - if user_signed_in?
@@ -52,7 +53,7 @@
         .join-before
           %p.join-before__title
             #{number_with_delimiter(User.count + 1)}번째 당원이 되어주세요!
-          = link_to user_omniauth_authorize_path(provider: :facebook), class: 'join-before__button join-before__button--facebook' do
+          = link_to user_omniauth_authorize_path(provider: :facebook, redirect_to: params[:redirect_to]), class: 'join-before__button join-before__button--facebook' do
             .icon-image.icon-image__facebook
             페이스북으로 가입하기 / 로그인
           = link_to user_omniauth_authorize_path(provider: :twitter), class: 'join-before__button join-before__button--twitter' do
