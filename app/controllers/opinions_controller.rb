@@ -16,7 +16,7 @@ class OpinionsController < ApplicationController
     if verify_recaptcha(model: @opinion)
       errors_to_flash(@opinion) unless @opinion.save
     end
-    redirect_to root_path(anchor: "opinion-anchor-#{@opinion.debate_slug}")
+    redirect_to debates_path
   end
 
   private

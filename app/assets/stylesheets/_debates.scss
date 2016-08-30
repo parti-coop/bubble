@@ -1,5 +1,5 @@
 section#debate {
-  .debate-panel > .page-description {
+  .page-description {
     margin-bottom: 20px;
   }
   .debates-index {
@@ -32,17 +32,6 @@ section#debate {
         }
       }
     }
-  }
-
-  .debate-title {
-    text-align: center;
-    padding-top: 30px;
-  }
-
-  .debate-subtitle {
-    text-align: center;
-    padding-top: 18px;
-    padding-bottom: 30px;
   }
 
   .debate-topic {
@@ -90,96 +79,102 @@ section#debate {
     }
 
     .debate-panel {
-      .debate-opinions-panel{
-        border-top: 1px solid $brand-primary-lighter;
-        padding: 50px;
-        .panel-title{
-          color: $brand-primary;
-          font-size: $font-size-medium;
+      .debate-panel--header{
+        border-bottom: 1px solid $brand-primary-lighter;
+        margin-bottom: 50px;
+      }
+      .panel-title{
+        margin-top: 50px;
+        margin-left: 50px;
+        color: $brand-primary;
+        font-size: $font-size-medium;
+      }
+      .panel-description{
+        color: $gray-darker;
+        padding-left: 10px;
+      }
+      .debate-panel--opinions{
+        margin: 10px 50px;
+        .opinion:first-of-type {
+          border-top: 2px solid $border-gray-color;
         }
-        .panel-description{
-          color: $gray-darker;
-          padding-left: 10px;
-        }
-        .opinions{
-          .opinion:first-of-type {
-            border-top: 2px solid $border-gray-color;
+        .opinion {
+          border-bottom: 1px solid $border-gray-color;
+          @media (max-width: 767px) {
+            margin: 10px 14px 10px;
           }
-          .opinion {
-            border-bottom: 1px solid $border-gray-color;
-            @media (max-width: 767px) {
-              margin: 10px 14px 10px;
+          .row{
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+
+            .opinion__choice {
+              &.select_alpha {
+                margin-right: -20px;
+                .col-md-1{
+                  vertical-align: middle;
+                  text-align: right;
+                  .square {
+                    width: 24px;
+                    height: 24px;
+                    background: $brand-yellow-color;
+                  }
+                }
+              }
+              &.select_beta {
+                margin-right: -20px;
+                .col-md-1{
+                  vertical-align: middle;
+                  text-align: right;
+                  .square {
+                    width: 24px;
+                    height: 24px;
+                    background: $brand-lime-green-color;
+                  }
+                }
+              }
+              &.select_hold {
+                margin-right: -20px;
+                .col-md-1{
+                  vertical-align: middle;
+                  text-align: right;
+                  .square {
+                    width: 24px;
+                    height: 24px;
+                    background: $brand-gray-color;
+                  }
+                }
+              }
             }
-            .row{
-              display: flex;
-              align-items: center;
+
+            .col-md-2{
+              border-bottom: none;
+              vertical-align: middle;
+              text-align: center;
+              padding-left: 0px;
+              padding-top: 7px;
+              padding-bottom: 7px;
             }
-              .opinion__choice {
-                &.select_alpha {
-                  .col-md-1{
-                    vertical-align: middle;
-                    text-align: right;
-                    .square {
-                      width: 24px;
-                      height: 24px;
-                      background: $brand-yellow-color;
-                    }
-                  }
-                }
-                &.select_beta {
-                  .col-md-1{
-                    vertical-align: middle;
-                    text-align: right;
-                    .square {
-                      width: 24px;
-                      height: 24px;
-                      background: $brand-lime-green-color;
-                    }
-                  }
-                }
-                &.select_hold {
-                  .col-md-1{
-                    vertical-align: middle;
-                    text-align: right;
-                    .square {
-                      width: 24px;
-                      height: 24px;
-                      background: $brand-gray-color;
-                    }
-                  }
-                }
-              }
-
-              .col-md-2{
-                border-bottom: none;
-                vertical-align: middle;
-                text-align: center;
-                padding-left: 0px;
-                padding-top: 7px;
-                padding-bottom: 7px;
-
+            .col-md-9{
+              padding-top: 10px;
+              padding-bottom: 10px;
+              border-left: 1px solid $border-gray-color;
+              .opinion__body{
 
               }
-              .col-md-9{
-                padding-top: 10px;
-                padding-bottom: 10px;
-                border-left: 1px solid $border-gray-color;
-                .opinion__body{
-
-                }
-                .opinion__name{
-                  color: $brand-gray-color;
-                }
-                .opinion__date{
-                  color: $brand-gray-color;
-                }
+              .opinion__name{
+                color: $brand-gray-color;
               }
+              .opinion__date{
+                color: $brand-gray-color;
+              }
+            }
           }
         }
       }
+
       .new_opinion {
-          margin-top: 10px;
-          margin-bottom: 10px;
+          margin: 10px 50px;
         @media (max-width: 767px) {
           margin: 20px 14px 20px;
         }
@@ -201,7 +196,6 @@ section#debate {
         .opinion-submit {
           background: $brand-primary;
           color: #fff;
-          font-weight: 100;
           width: 60px;
         }
       }
@@ -219,143 +213,140 @@ section#debate {
           float: initial;
         }
       }
-
-    }
-    .debate-bar {
-      height: 20px;
-      width: 600px;
-      margin-left: 150px;
-      margin-right: 150px;
-      margin-top: 36px;
-      margin-bottom: 73px;
-      left: 0;
-      background-color: $brand-lime-green-color;
-      position: relative;
-      border: 1px solid $gray-darker;
-      @media (max-width: 767px) {
-        margin: 30px 14px 20px;
-      }
-
-      .debate-voted {
-        height: 100%;
-        background-color: $brand-yellow-color;
-      }
-      .selected-group {
-
-        .selected-alpha{
-          font-size: $font-size-medium;
-          position: absolute;
-          top: -17px;
-        }
-
-        .selected-beta{
-          font-size: $font-size-medium;
-          position: absolute;
-          top: -17px;
-          right: 0px;
-        }
-
-        .selected-alpha-percentage {
-          font-size: $font-size-h3;
-        }
-
-        .selected-beta-percentage {
-          font-size: $font-size-h3;
-          right: 0px;
-        }
-      }
-
-    }
-
-    .debate-options {
-      text-align: center;
-      @media (max-width: 767px) {
-        margin: 30px 14px 20px;
-      }
-
-      .option-alpha-button{
-        display: inline-block;
-        border-radius: 0;
-        width: 262px;
-        margin-right: 10px;
-        padding-top: 17px;
-        padding-bottom: 17px;
-        color: $gray-darker;
-        background-color: $gray-lighter;
-        text-decoration: none;
-        font-size: $font-size-h3;
+      .debate-bar {
+        height: 20px;
+        width: 600px;
+        margin-left: 150px;
+        margin-right: 150px;
+        margin-top: 36px;
+        margin-bottom: 73px;
+        left: 0;
+        background-color: $brand-lime-green-color;
+        position: relative;
+        border: 1px solid $gray-darker;
         @media (max-width: 767px) {
-          padding: 10px 20px;
+          margin: 30px 14px 20px;
         }
-        &.active {
-          color: $gray-darker;
+
+        .debate-voted {
+          height: 100%;
           background-color: $brand-yellow-color;
-          border: 2px solid $gray-darker;
-          border-radius: 2px;
         }
-        &:hover {
-          color: $gray-darker;
-          background-color: $brand-yellow-color;
-          border: 2px solid $gray-darker;
-          border-radius: 2px;
+        .selected-group {
+
+          .selected-alpha{
+            font-size: $font-size-medium;
+            position: absolute;
+            top: -17px;
+          }
+
+          .selected-beta{
+            font-size: $font-size-medium;
+            position: absolute;
+            top: -17px;
+            right: 0px;
+          }
+
+          .selected-alpha-percentage {
+            font-size: $font-size-h3;
+          }
+
+          .selected-beta-percentage {
+            font-size: $font-size-h3;
+            right: 0px;
+          }
         }
+
       }
-      .option-beta-button{
-        display: inline-block;
-        border-radius: 0;
-        width: 262px;
-        margin-left: 10px;
-        padding-top: 17px;
-        padding-bottom: 17px;
-        color: $gray-darker;
-        background-color: $gray-lighter;
-        text-decoration: none;
-        font-size: $font-size-h3;
+      .debate-options {
+        text-align: center;
         @media (max-width: 767px) {
-          padding: 10px 20px;
+          margin: 30px 14px 20px;
         }
 
-        &.active {
+        .option-alpha-button{
+          display: inline-block;
+          border-radius: 0;
+          width: 262px;
+          margin-right: 10px;
+          padding-top: 17px;
+          padding-bottom: 17px;
           color: $gray-darker;
-          background-color: $brand-lime-green-color;
-          border: 2px solid $gray-darker;
-          border-radius: 2px;
-        }
-        &:hover {
-          color: $gray-darker;
-          background-color: $brand-lime-green-color;
-          border: 2px solid $gray-darker;
-          border-radius: 2px;
-        }
-      }
-
-      .option-hold-button{
-        padding-top: 18px;
-        margin-bottom: 20px;
-        font-size: $font-size-medium;
-
-        a {
-          color: $brand-gray-color;
+          background-color: $gray-lighter;
+          text-decoration: none;
+          font-size: $font-size-h3;
+          @media (max-width: 767px) {
+            padding: 10px 20px;
+          }
           &.active {
             color: $gray-darker;
-            text-decoration: none;
+            background-color: $brand-yellow-color;
+            border: 2px solid $gray-darker;
+            border-radius: 2px;
           }
           &:hover {
             color: $gray-darker;
-            text-decoration: none;
+            background-color: $brand-yellow-color;
+            border: 2px solid $gray-darker;
+            border-radius: 2px;
           }
         }
-      }
-    }
+        .option-beta-button{
+          display: inline-block;
+          border-radius: 0;
+          width: 262px;
+          margin-left: 10px;
+          padding-top: 17px;
+          padding-bottom: 17px;
+          color: $gray-darker;
+          background-color: $gray-lighter;
+          text-decoration: none;
+          font-size: $font-size-h3;
+          @media (max-width: 767px) {
+            padding: 10px 20px;
+          }
 
-    .before-option-select {
-      text-align: center;
-      background-color: $input-border;
-      padding: 14px 20px;
-      margin: 14px 50px 20px 50px;
-      font-size: 14px;
-      @media (max-width: 767px) {
-        margin: 14px 14px 20px;
+          &.active {
+            color: $gray-darker;
+            background-color: $brand-lime-green-color;
+            border: 2px solid $gray-darker;
+            border-radius: 2px;
+          }
+          &:hover {
+            color: $gray-darker;
+            background-color: $brand-lime-green-color;
+            border: 2px solid $gray-darker;
+            border-radius: 2px;
+          }
+        }
+
+        .option-hold-button{
+          padding-top: 18px;
+          margin-bottom: 20px;
+          font-size: $font-size-medium;
+
+          a {
+            color: $brand-gray-color;
+            &.active {
+              color: $gray-darker;
+              text-decoration: none;
+            }
+            &:hover {
+              color: $gray-darker;
+              text-decoration: none;
+            }
+          }
+        }
+        .before-option-select {
+          text-align: center;
+          background-color: $input-border;
+          padding: 14px 20px;
+          margin: 14px 50px 20px 50px;
+          font-size: 14px;
+          @media (max-width: 767px) {
+            margin: 14px 14px 20px;
+          }
+        }
       }
     }
   }
