@@ -7,7 +7,6 @@
       %a{id: 'posts-anchor'}
       .post-page
         #post-list
-          = render 'posts/post_page', board_slug: @board_slug
-        .post-writing-wrapper
-          = link_to new_post_path, id: 'post-writing-btn' ,class: 'btn' do
-            글 쓰기
+          .post-writing-wrapper
+            #post-writing-form
+              = render 'posts/form', board_slug: @board_slug

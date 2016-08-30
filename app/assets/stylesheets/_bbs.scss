@@ -265,10 +265,6 @@ section#posts {
     .post-writing-wrapper {
       text-align: center;
 
-      a {
-        color: $brand-primary;
-      }
-
       #post-writing-btn {
         background-color: #ec1179;
         margin-top: 20px;
@@ -276,21 +272,47 @@ section#posts {
         padding: 8px 22px;
       }
 
+      a {
+        color: $brand-primary;
+      }
+
+      .post-button {
+        margin-top: 20px;
+
+        .btn-post {
+          padding: 4px 16px;
+          margin-left: 4px;
+          margin-right: 4px;
+
+          &--submit {
+            background-color: $brand-primary;
+            color: #fff;
+          }
+          &--cancel {
+            background-color: #fff;
+            color: $brand-gray-color;
+            border: 1px solid $brand-gray-color;
+          }
+        }
+
+        &__member {
+
+        }
+
+        &__guest {
+
+        }
+      }
+
       .form-group.recaptcha {
         text-align: left;
         margin-bottom: 0;
       }
 
-      .btn-post {
-        &--submit {
-          background-color: $brand-primary;
-          color: #fff;
-        }
-        &--cancel {
-          background-color: #fff;
-          color: $brand-gray-color;
-          border: 1px solid $brand-gray-color;
-        }
+
+
+      .user-info {
+        margin-bottom: 14px;
       }
     }
   }

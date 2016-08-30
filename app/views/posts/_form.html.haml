@@ -20,11 +20,13 @@
       .help-block
         %span{style: 'white-space: nowrap;'}
           또는
-          %a.login-link(href='#anchor-join') 당원가입
+          = link_to join_path(redirect_to: new_post_path), class: 'login-link' do
+            당원가입
           하거나,
         %span{style: 'white-space: nowrap;'}
           이미 당원이라면
-          %a.login-link(href='#anchor-join') 로그인
+          = link_to join_path(redirect_to: new_post_path), class: 'login-link' do
+            로그인
           해봐
           %i !
 
@@ -33,16 +35,16 @@
     .form-group
       = f.text_area :body, class: 'form-control', placeholder: '내용', rows: 12, data: {'rule-required': true, action: 'parti-autoresize'}
     .row
-      .col-sm-8
-        - if !user_signed_in? and @post.new_record?
+      - if !user_signed_in? and @post.new_record?
+        .col-sm-8
           .form-group.recaptcha
-            .help-block 스팸 방지를 위해 사람인지 확인하는 거야. 아래 체크 박스를 클릭해.
+            .help-block 스팸 방지를 위해 사람인지 확인합니다. 아래 체크 박스를 클릭해 주세요.
             = hidden_field_tag :hiddenRecaptcha, nil
             .bubble-recaptcha
-      .col-sm-4.text-right
+      .post-button{class: "#{user_signed_in? ? 'post-button__member' : 'post-button__guest text-right col-sm-4 '}"}
         - if @post.new_record?
-          = f.submit '등록', class: 'btn btn-lg btn-block btn-post btn-post--submit', data: { disable_with: "게시 중..." }
-          = link_to '취소', @post, class: 'btn-post btn-post--cancel btn btn-lg btn-block'
+          = f.submit '등록', class: 'btn btn-post btn-post--submit', data: { disable_with: "게시 중..." }
+          = link_to '취소', @post, class: 'btn-post btn-post--cancel btn'
         - else
-          = f.submit '수정', class: 'btn btn-lg btn-post-submit btn-post--submit', data: { disable_with: "게시 중..." }
+          = f.submit '수정', class: 'btn btn-post-submit btn-post--submit', data: { disable_with: "게시 중..." }
           = link_to '취소', @post, class: 'btn-post btn-post--cancel'

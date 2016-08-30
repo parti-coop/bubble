@@ -233,13 +233,6 @@ $(function(){
     $(this).parents('#video-summary').css({'background-color': '#f29a76'});
   });
 
-  $('#post-writing-form').hide();
-  $('[data-action="call-post-writing-form"]').click(function() {
-    $('#post-list').hide();
-    $(this).hide();
-    $('#post-writing-form').show();
-  });
-
   $('[data-action="bubble-channel"]').each(function(index, elm) {
     var $elm = $(elm);
     var func_show = function(e){
