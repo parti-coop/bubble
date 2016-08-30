@@ -18,6 +18,8 @@ $line-height-smaller: 18px;
 @import "footer";
 @import "join";
 @import "home";
+@import "about";
+@import "timeline";
 
 body.retired {
   @import "project_step1";

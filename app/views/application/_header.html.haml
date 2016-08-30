@@ -12,9 +12,9 @@
       .collapse.navbar-collapse#collapsable
         %ul.nav.navbar-nav.navbar-right
           %li.menu{class: ('active' if current_page?(controller: '/pages', action: :about))}
-            = link_to '당소개'
+            = link_to '당소개', about_path
           %li.menu{class: ('active' if current_page?(controller: '/pages', action: :timeline))}
-            = link_to '타임라인'
+            = link_to '타임라인', timeline_path
           %li.menu{class: ('active' if controller_name == 'propositions')}
             = link_to '발의안', propositions_path
           %li.menu{class: ('active' if controller_name == 'debates')}

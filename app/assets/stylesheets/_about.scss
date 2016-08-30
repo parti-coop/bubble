@@ -1,0 +1,46 @@
+section#about {
+  margin-bottom: 80px;
+
+  .about-container{
+    width: 794px;
+  }
+  .about-image-wrapper {
+    text-align: center;
+
+    .about-image {
+      width: 624px;
+    }
+
+
+  }
+
+  .about-title {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 34px;
+  }
+
+  .about-sub-title {
+    color: $brand-primary;
+    margin-top: 100px;
+    margin-bottom: 40px;
+  }
+
+  .about-description {
+    line-height: 26px;
+    font-size: $font-size-medium;
+
+    &__important {
+      color: $brand-primary;
+    }
+
+    &__underline {
+      text-decoration: underline;
+    }
+
+    .about-circled-number {
+      font-size: $font-size-h3;
+      vertical-align: middle;
+    }
+  }
+}
