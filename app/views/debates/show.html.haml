@@ -17,7 +17,9 @@
           %p.debate-topic-description= debate.body
           .debate-panel
             = render 'opinions/header', debate: debate
-            .debate-opinions-wrapper
+            .debate-opinions-panel
+              %span.panel-title 의견
+              %span.panel-description 투표 후에 의견을 남길 수 있습니다.
               = render 'opinions/form', debate: debate
               .opinions
                 = render 'opinions/page', debate: debate

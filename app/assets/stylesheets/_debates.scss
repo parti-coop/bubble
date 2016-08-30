@@ -90,15 +90,22 @@ section#debate {
     }
 
     .debate-panel {
-      .debate-opinions-wrapper{
+      .debate-opinions-panel{
         border-top: 1px solid $brand-primary-lighter;
+        padding: 50px;
+        .panel-title{
+          color: $brand-primary;
+          font-size: $font-size-medium;
+        }
+        .panel-description{
+          color: $gray-darker;
+          padding-left: 10px;
+        }
         .opinions{
           .opinion:first-of-type {
             border-top: 2px solid $border-gray-color;
           }
           .opinion {
-            margin-left: 75px;
-            margin-right: 75px;
             border-bottom: 1px solid $border-gray-color;
             @media (max-width: 767px) {
               margin: 10px 14px 10px;
@@ -171,9 +178,8 @@ section#debate {
         }
       }
       .new_opinion {
-        margin: 10px 50px;
-        background-color: $input-border;
-        padding: 16px;
+          margin-top: 10px;
+          margin-bottom: 10px;
         @media (max-width: 767px) {
           margin: 20px 14px 20px;
         }
@@ -182,7 +188,7 @@ section#debate {
           padding: 8px 12px;
           display: inline-block;
           padding-bottom: 6px;
-          width: 200px;
+          width: 120px;
           @media (max-width: 767px) {
             width: 100px;
           }
@@ -193,14 +199,10 @@ section#debate {
           padding: 8px 12px;
         }
         .opinion-submit {
-          background: $brand-lime-color;
+          background: $brand-primary;
           color: #fff;
           font-weight: 100;
-          font-size: 14px;
-          width: 100%;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          margin-top: -10px;
+          width: 60px;
         }
       }
 
