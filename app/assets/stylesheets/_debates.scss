@@ -325,16 +325,17 @@ section#debate {
           padding-top: 18px;
           margin-bottom: 20px;
           font-size: $font-size-medium;
-
           a {
             color: $brand-gray-color;
             &.active {
               color: $gray-darker;
               text-decoration: none;
+              box-shadow: none;
             }
             &:hover {
               color: $gray-darker;
               text-decoration: none;
+              box-shadow: none;
             }
           }
         }

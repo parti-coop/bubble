@@ -15,6 +15,6 @@
   = link_to debate.alpha_label, choose_alpha_debates_path(slug: debate.slug), class:"option-alpha-button btn #{'active' if alpha_chosen?(debate.slug)}", method: :post, remote: true
   = link_to debate.beta_label, choose_beta_debates_path(slug: debate.slug), class:"option-beta-button btn #{'active' if beta_chosen?(debate.slug)}", method: :post, remote: true
   .option-hold-button
-    = link_to '모르겠다', choose_hold_debates_path(slug: debate.slug), method: :post ,remote: true
+    = link_to '모르겠다', choose_hold_debates_path(slug: debate.slug), class:"option-hold-button btn #{'active' if hold_chosen?(debate.slug)}", method: :post, remote: true
 - unless chosen?(debate.slug)
   .before-option-select
