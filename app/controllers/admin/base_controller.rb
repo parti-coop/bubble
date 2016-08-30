@@ -2,7 +2,7 @@ class Admin::BaseController < ApplicationController
   before_action :admin_only
 
   def download_emails
-    @emails = User.all.select { |u| u.email.present? }.map { |u| {email: u.email, name: u.name} }.uniq { |u| u[:email] }
+    @emails = User.all.select { |u| u.email.present? }.map { |u| {email: u.email, name: u.name, provider: u.provider} }.uniq { |u| u[:email] }
     respond_to do |format|
       format.xlsx
     end
