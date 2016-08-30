@@ -252,7 +252,7 @@ $(function(){
     }
   });
 
-
+  $('.debate-panel--opinion-form form').hide();
   $('[data-action="bubble-show-form"]').on('focus', function(e){
     $(e.target).hide();
     $form = $($(e.target).data('target-form'));

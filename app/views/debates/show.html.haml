@@ -4,6 +4,7 @@
       ‘나는 알아야겠당’은 GMO완전표시제법이 통과될 때까지 쟁점 발굴과 토론을 통해 숙의과정을 경험합니다. 아래 쟁점에 대한 의견과 함께 또 다른 쟁점이 있다면 제안해 주세요.
 
     - [@overall_adoption_debate, @non_gmo_debate, @exemption_range_debate].each do |debate|
+      %a{id: "opinion-anchor-#{debate.slug}"}
       .debate-topic(id="debate-topic-#{debate.slug}")
         = render 'debates/debates_index', debate: debate
         .debate-topic-content-wrapper
@@ -17,16 +18,9 @@
           .debate-panel
             .debate-panel--header
               = render 'opinions/header', debate: debate
-            %span.panel-title 의견
-            %span.panel-description 투표 후에 의견을 남길 수 있습니다.
-            = render 'opinions/form', debate: debate
-            .debate-panel--opinions
-              = render 'opinions/page', debate: debate
-          / .debate-panel
-          /   = render 'opinions/header', debate: debate
-          /   .debate-opinions-panel
-          /     %span.panel-title 의견
-          /     %span.panel-description 투표 후에 의견을 남길 수 있습니다.
-          /     = render 'opinions/form', debate: debate
-          /     .opinions
-          /       = render 'opinions/page', debate: debate
+            .debate-opinions-panel
+              %span.panel-title 의견
+              %span.panel-description 투표 후에 의견을 남길 수 있습니다.
+              = render 'opinions/form', debate: debate
+              .debate-panel--opinions
+                = render 'opinions/page', debate: debate

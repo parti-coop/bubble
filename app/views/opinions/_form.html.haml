@@ -1,4 +1,7 @@
 .debate-panel--opinion-form{style: ('display: none' unless chosen?(debate.slug))}
+  .form-group
+    %input.form-control{type: 'text', placeholder: '의견을 남겨 주세요', data: { action: 'bubble-show-form', 'target-form': '.debate-panel--opinion-form form', focus: ".opinion-name-form-control"}}
+
   = form_for Opinion.new(debate_slug: debate.slug) do |f|
     = f.hidden_field :debate_slug
     .form-group
