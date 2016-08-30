@@ -1,0 +1,56 @@
+footer.footer {
+  background-color: $brand-gray-color;
+  padding-bottom: 25px;
+  padding-top: 80px;
+
+  .logos {
+    float: left;
+    .logo {
+      display: inline-block;
+      margin-right: 50px;
+      &.logo-han21 img {
+        width: 78px;
+      }
+
+      &.logo-parti img {
+        width: 101px;
+      }
+    }
+  }
+
+  .info {
+    float: right;
+
+    .contact,
+    .shares {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
+    .contact a {
+      font-size: $font-size-medium;
+      color: $border-gray-color;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+      .url {
+        text-decoration: underline;
+      }
+    }
+
+    .shares {
+      .share-box {
+        margin: 0;
+        margin-left: 30px;
+      }
+      .share-item {
+        padding: 0;
+      }
+      .jssocials-share-logo {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

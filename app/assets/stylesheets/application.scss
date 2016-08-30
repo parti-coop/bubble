@@ -10,58 +10,17 @@ $line-height-smaller: 18px;
 @import "lightslider";
 
 @import "base";
-@import "bbs";
+@import "posts";
 @import "debates";
 @import "propositions";
 @import "comments";
-@import "navbar";
+@import "header";
+@import "footer";
 @import "join";
+@import "home";
 
 body.retired {
   @import "project_step1";
   @import "project_step2";
   @import "project_step3";
-  @media (min-width: 1200px) {
-    .container {
-      width: 768px;
-    }
-  }
-
-  padding-top: 0;
-  background-color: white;
 }
-
-* , body {
-  font-family: 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Noto Sans KR', 'Helvetica Neue', Helvetica, '맑은 고딕', 'Malgun Gothic', '돋움', dotum, Arial, sans-serif;
-}
-
-body.working {
-  padding-top: 150px;
-  background-color: #fafafa;
-  color: $gray-darker;
-  @media (min-width: 1200px) {
-    .container {
-      width: 900px;
-    }
-  }
-}
-
-.form-control.error {
-  border-color: $brand-danger;
-}
-
-#hiddenRecaptcha-error {
-  color: $brand-danger;
-  font-weight: bold;
-}
-
-.g-recaptcha,
-.bubble-recaptcha {
-  transform: scale(0.8);
-  -webkit-transform: scale(0.8);
-  transform-origin: 0 0;
-  -webkit-transform-origin: 0 0;
-}
-
-
-

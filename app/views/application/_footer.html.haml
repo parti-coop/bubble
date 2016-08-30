@@ -1,0 +1,37 @@
+%footer.footer
+  .container
+    .logos
+      .logo.logo-han21
+        %a(href="")
+          = image_tag 'logo_han21.png'
+      .logo.logo-parti
+        %a(href="")
+          = image_tag 'logo_parti.png'
+    .info
+      .contact
+        = link_to 'mailto:trans@hani.co.kr' do
+          문의하기
+          %span.url trans@hani.co.kr
+      .shares
+        %ul.share-box.list-inline
+          - base_data = {action: 'bubble-share', 'share-url': root_url, 'share-text': meta_tags['description'] }
+          - %w(facebook twitter kakao-story).each do |provider|
+
+            - data = base_data.merge('share-provider': provider)
+
+            - if provider == 'kakao-link'
+              - hide_kakao_link = (! browser.device.mobile?) ? ' hide' : ''
+              - data = data.merge('share-image': meta_tags['image'], 'share-image-width': '1200', 'share-image-height': '630')
+            - if provider == 'twitter'
+              - data = data.merge('share-text': "유쾌하고 진지한 정치실험! #GMO완전표시제 입법을 위한 프로젝트정당, #나는알아야겠당 창당파티 한겨레21x빠띠 @han21_editor @parti_xyz", 'share-logo': image_url('footer_share_twitter.png'))
+            - if provider == 'facebook'
+              - data = data.merge('share-logo': image_url('footer_share_facebook.png'))
+            %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
+              - if provider == 'kakao-story'
+                .jssocials-shares
+                  .jssocials-share
+                    = image_tag 'footer_share_kakaostory.png', class: 'jssocials-share-logo'
+              - if provider == 'kakao-link'
+                .jssocials-shares
+                  .jssocials-share
+                    = image_tag 'footer_share_kakaotalk.png', class: 'jssocials-share-logo'

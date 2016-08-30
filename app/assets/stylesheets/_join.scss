@@ -7,7 +7,7 @@ section#join {
     .join-after {
       margin-top: 48px;
       padding: 52px 50px 48px;
-      border: 1px solid #ffbcdc;
+      border: 1px solid $brand-primary-lighter;
       background-color: #ffffff;
       text-align: center;
       font-size: $font-size-h3;
@@ -73,7 +73,7 @@ section#join {
     .join-before {
       margin-top: 48px;
       padding: 52px 50px 48px;
-      border: 1px solid #ffbcdc;
+      border: 1px solid $brand-primary-lighter;
       background-color: #ffffff;
       text-align: center;
       @media (max-width: 767px) {
@@ -179,7 +179,7 @@ section#join {
       font-size: $font-size-medium;
       margin-top: -1px;
       padding: 52px 50px 48px;
-      border: 1px solid #ffbcdc;
+      border: 1px solid $brand-primary-lighter;
       background-color: #ffffff;
       @media (max-width: 767px) {
         font-size: $font-size-small;

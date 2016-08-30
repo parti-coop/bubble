@@ -99,7 +99,8 @@ var prepare_social_share = function($base) {
     var image_url = $elm.data('share-image');
     var image_width = $elm.data('share-image-width');
     var image_height = $elm.data('share-image-height');
-
+    var logo = $elm.data('share-logo');
+    console.log(logo);
     switch(share) {
     case 'kakao-link':
       Kakao.Link.createTalkLinkButton({

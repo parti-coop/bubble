@@ -87,6 +87,15 @@ module ApplicationHelper
     ]
   end
 
+  def video_long_titles
+    [
+      raw('4대 법안 소개'),
+      raw('시민입법 취지 소개'),
+      raw('프로젝트 정당 만들기'),
+      raw('우리가 뽑은 정당이름')
+    ]
+  end
+
   def is_hoverable?
     !browser.device.mobile? and !browser.device.tablet?
   end

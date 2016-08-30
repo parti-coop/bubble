@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   def home
     @user = current_user
+    @posts = (Post.hottest.recent.limit(5) + Post.stickies('all')).uniq.sort_by &:created_at
+
   end
 
   def step1

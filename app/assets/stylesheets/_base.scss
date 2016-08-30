@@ -1,3 +1,52 @@
+body.retired {
+  @media (min-width: 1200px) {
+    .container {
+      width: 768px;
+    }
+  }
+
+  padding-top: 0;
+  background-color: white;
+}
+
+* , body {
+  font-family: 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Noto Sans KR', 'Helvetica Neue', Helvetica, '맑은 고딕', 'Malgun Gothic', '돋움', dotum, Arial, sans-serif;
+}
+
+body.working {
+  padding-top: 150px;
+  background-color: #fafafa;
+
+  &.app-pages-home {
+    padding-top: 0;
+  }
+
+  color: $gray-darker;
+  @media (min-width: 1200px) {
+    .container {
+      width: 900px;
+    }
+  }
+}
+
+.form-control.error {
+  border-color: $brand-danger;
+}
+
+#hiddenRecaptcha-error {
+  color: $brand-danger;
+  font-weight: bold;
+}
+
+.g-recaptcha,
+.bubble-recaptcha {
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+}
+
+
 p.page-description {
   color: $brand-primary;
   font-size: $font-size-h3;
