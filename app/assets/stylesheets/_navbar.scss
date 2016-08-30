@@ -44,17 +44,7 @@ section#header {
         &.active > a,
         &.focus > a {
           color: #fff;
-          &:after {
-            content: ' ';
-            color: transparent;
-            width: 100%;
-            position: absolute;
-            left: 0;
-            bottom: 11px;
-            border-width: 0 0 2px;
-            border-style: solid;
-            border-color: #fff;
-          }
+
         }
       }
 
