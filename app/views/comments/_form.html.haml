@@ -21,6 +21,18 @@
         .col-xs-6
           .form-group
             = f.email_field :guest_email, class: 'form-control' , placeholder: '이메일(선택사항)'
+      .help-block
+        %span{style: 'white-space: nowrap;'}
+          또는
+          = link_to join_path(redirect_to: post_path(@post)), class: 'login-link' do
+            당원가입
+          하거나,
+        %span{style: 'white-space: nowrap;'}
+          이미 당원이라면
+          = link_to join_path(redirect_to: post_path(@post)), class: 'login-link' do
+            로그인
+          해봐
+          %i !
     .form-group
       = f.text_area :body, class: 'form-control', placeholder: '댓글을 입력해주세요.' , data: {'rule-required': true, action: 'parti-autoresize'}
     .row
