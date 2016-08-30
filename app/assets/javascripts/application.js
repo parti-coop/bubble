@@ -258,7 +258,6 @@ $(function(){
     $(e.target).hide();
     $form = $($(e.target).data('target-form'));
     $form.show();
-
     $focus = $($(e.target).data('focus'));
     if($focus) {
       $focus.focus();
