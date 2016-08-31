@@ -108,6 +108,10 @@ section#header {
         padding-left: 64px;
         margin-top: 8px;
 
+        @media (max-width: $grid-float-breakpoint) {
+          width: 100%;
+        }
+
         & > a {
           font-size: $font-size-base;
           background-color: #fff;
@@ -117,6 +121,12 @@ section#header {
           &:hover {
             background-color: black;
             color: yellow;
+          }
+
+          @media (max-width: $grid-float-breakpoint) {
+            width: 150px;
+            margin-left: auto;
+            margin-right: auto;
           }
         }
 
@@ -131,7 +141,6 @@ section#header {
 
       .login {
         padding-left: 0;
-        margin: 2px 15px;
         display: inline-block;
       }
     }
