@@ -101,6 +101,17 @@ section#debate {
         @media (max-width: $screen-sm-max) {
           padding: 22px 0px;
         }
+        .debate-panel--opinion-form{
+          .form-group{
+            .initial{
+              width: 97%;
+              margin-left: 10px;
+              @media (max-width: $screen-sm-max) {
+                width: 94%;
+              }
+            }
+          }
+        }
         .panel-title{
           margin-top: 50px;
           margin-left: 10px;
@@ -274,11 +285,11 @@ section#debate {
           background-color: $brand-yellow-color;
         }
         .selected-group {
-
+            padding-top: 4px;
           .selected-alpha{
             font-size: $font-size-medium;
             position: absolute;
-            top: -17px;
+            top: -22px;
             @media (max-width: $screen-sm-max) {
               font-size: $font-size-h5;
             }
@@ -287,7 +298,7 @@ section#debate {
           .selected-beta{
             font-size: $font-size-medium;
             position: absolute;
-            top: -17px;
+            top: -22px;
             right: 0px;
             @media (max-width: $screen-sm-max) {
               font-size: $font-size-h5;
@@ -331,7 +342,7 @@ section#debate {
           @media (max-width: $screen-sm-max) {
             width: 48%;
             padding: 7px 0px;
-            margin-right: 0px;
+            margin-right: 4px;
             font-size: $font-size-h4;
           }
           &.active {
@@ -361,7 +372,7 @@ section#debate {
           @media (max-width: $screen-sm-max) {
             width: 48%;
             padding: 7px 0px;
-            margin-left: 0px;
+            margin-left: 4px;
             font-size: $font-size-h4;
           }
 
