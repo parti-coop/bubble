@@ -1,5 +1,10 @@
 body.app-pages-home {
   background-color: #fff;
+  @media (min-width: 1040px) {
+    & > section > .container {
+      width: 1038px;
+    }
+  }
   section#key-visual {
     background-color: $brand-primary;
     text-align: center;
@@ -141,6 +146,9 @@ body.app-pages-home {
         text-align: left;
 
         .item {
+          @media (max-width: $screen-xs-max) {
+            margin-top: 10px;
+          }
           .video-thumbnail img {
             height: 87px;
             border: 2px solid transparent;
@@ -149,6 +157,9 @@ body.app-pages-home {
             .video-thumbnail img {
               border: 2px solid $brand-primary;
             }
+          }
+          .video-title {
+            word-break: keep-all;
           }
         }
 
@@ -193,6 +204,14 @@ body.app-pages-home {
           }
         }
       }
+    }
+  }
+
+  section#banner {
+    margin-top: 34px;
+    text-align: center;
+    .banner img {
+      width: 100%;
     }
   }
 }

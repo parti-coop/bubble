@@ -72,3 +72,11 @@
                     .media-body
                       .video-title= video_long_titles[index]
 
+%section#banner
+  .container
+    %a(href="http://h21.hani.co.kr/arti/SERIES/236/" target="_blank")
+      .banner
+        - if browser.device.mobile?
+          = image_tag('han21_article_banner_xs.jpg')
+        - else
+          = image_tag('han21_article_banner.jpg')
