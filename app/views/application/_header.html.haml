@@ -1,15 +1,17 @@
+- parties = {'dig': '발굴하장', 'living': '살림하장', 'tell': '알리장', 'see': '외국보장', 'go': '찾아가장'}
 %section#header
   %nav.navbar.navbar-default.navbar-fixed-top
     .container
       .navbar-header
-        %button.navbar-toggle.collapsed{"data-target": "#collapsable", "data-toggle": "collapse", type: "button"}
+        %a.navbar-brand{href: root_path}= image_tag 'logo.png'
+        %button.navbar-toggle.collapsed{"data-target": "#main-menu", "data-toggle": "collapse", type: "button"}
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand{href: root_path}
-          = image_tag 'logo.png'
-
-      .collapse.navbar-collapse#collapsable
+        %button.navbar-toggle.collapsed.parties-collapse{"data-target": "#parties-menu", "data-toggle": "collapse", type: "button"}
+          빠띠
+          %b.caret
+      #main-menu.collapse.navbar-collapse
         %ul.nav.navbar-nav.navbar-right
           %li.menu{class: ('active' if current_page?(controller: '/pages', action: :about))}
             = link_to '당소개', about_path
@@ -19,14 +21,18 @@
             = link_to '발의안', propositions_path
           %li.menu{class: ('active' if controller_name == 'debates')}
             = link_to '쟁점토론', debates_path
-          %li.menu{class: ('active' if controller_name == 'posts')}
-            = link_to '게시판', posts_path
-          %li.parti
-            = link_to 'http://do.parti.xyz', target: '_blank' do
-              빠띠
-              %i.fa.fa-external-link
+          %li.menu.collapse-hidden
+            %ul.nav.navbar-nav.collapse-hidden
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle": "dropdown", href: "#"}
+                  빠띠
+                  %span.caret
+                %ul.dropdown-menu
+                  - parties.each do |slug, title|
+                    %li
+                      %a(href="http://do.parti.xyz/p/#{slug}" target='_blank') #{title}
           - if user_signed_in?
-            %li.dropdown.login
+            %li.dropdown.login.collapse-hidden
               %a.dropdown-toggle{"data-toggle": "dropdown", href: "#"}
                 = truncate current_user.name, length: 12
                 %span.caret
@@ -35,26 +41,15 @@
                   = link_to '내 당원증', join_path
                 %li
                   = link_to '로그아웃', destroy_user_session_path, method: :delete
+            %li.divider.uncollapse-hidden
+            %li.menu.uncollapse-hidden= link_to "#{truncate current_user.name, length: 12} 당원증", join_path
+            %li.menu.uncollapse-hidden= link_to '로그아웃', destroy_user_session_path, method: :delete
           - else
             %li.login
               = link_to '당원가입 / 로그인', join_path
-
-  .receive-news{data: {'action': 'bubble-channel', 'trigger': (is_hoverable? ? 'hover' : 'click')}}
-    .receive-news__off
-      .receive-news__button
-        = image_tag 'news_plus.png'
-      .receive-news__channels
-        대화방 입장
-    .receive-news__on
-      .receive-news__button
-        = image_tag 'news_close.png'
-      .receive-news__channels
-        .receive-news__channel
-          %a(href='https://telegram.me/gmolabeling' target='_blank')
-            = image_tag('telegram_news.png')
-        .receive-news__channel
-          %a(href='https://open.kakao.com/o/gMwxmtm' target='_blank')
-            = image_tag('kakaotalk_news.png')
-
-
+      #parties-menu.navbar-collapse.uncollapse-hidden.collapse
+        %ul.nav.navbar-nav
+          - parties.each do |slug, title|
+            %li.menu
+              %a(href="http://do.parti.xyz/p/#{slug}" target='_blank') #{title}
 

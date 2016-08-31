@@ -2,15 +2,42 @@ section#header {
   .navbar {
     background-color: $brand-primary;
     padding-top: 16px;
-    padding-bottom: 6px;
     border-bottom: 3px solid black;
 
     .container {
-      @media (min-width: $screen-md-min) {
-        width: 970px;
+      @media (max-width: $grid-float-breakpoint-max) {
+        width: 100%;
+      }
+    }
+    li.divider {
+      border-bottom: 1px solid $gray-lighter;
+    }
+    .navbar-collapse {
+      padding-bottom: 6px;
+      &.collapse.in,
+      &.collapsing {
+        background-color: $gray-lightest;
+      }
+      @media (max-width: $grid-float-breakpoint) {
+        &.collapsing {
+          position: static;
+        }
+        .collapse-hidden{
+          display: none !important;
+        }
+        &.in {
+          overflow-y: hidden;
+        }
+      }
+      @media (min-width: $grid-float-breakpoint-max){
+        &.collapse.uncollapse-hidden,
+        .uncollapse-hidden {
+            display: none !important;
+        }
       }
     }
     .navbar-header {
+      padding-bottom: 6px;
       .navbar-brand {
         margin-top: -26px;
         @media (max-width: $screen-xs-max) {
@@ -31,6 +58,9 @@ section#header {
         .icon-bar {
           background-color: white;
         }
+        &.parties-collapse {
+          padding: 6px;
+        }
       }
     }
 
@@ -41,9 +71,24 @@ section#header {
         &,
         &.active,
         &.focus {
-          & > a {
-            color: black;
-            background-color: transparent;
+          &,
+          .dropdown {
+            & > a  {
+              &:hover {
+                color: #fff;
+              }
+              text-align: center;
+              color: black;
+              background-color: transparent;
+            }
+            &.open {
+              & > a,
+              & > a:hover,
+              & > a:focus {
+                background-color: transparent;
+                color: #fff;
+              }
+            }
           }
         }
 
@@ -51,14 +96,9 @@ section#header {
         &.active > a,
         &.focus > a {
           color: #fff;
-
-        }
-      }
-
-      li.parti > a {
-        color: $brand-yellow-color;
-        i {
-          font-size: $font-size-small;
+          @media (max-width: $grid-float-breakpoint) {
+            color: $brand-primary;
+          }
         }
       }
 
@@ -83,7 +123,7 @@ section#header {
 
     .navbar-collapse.collapse.in,
     .navbar-collapse.collapsing {
-      padding-top: 40px;
+      padding-top: 20px;
       border: none;
       box-shadow: none;
 

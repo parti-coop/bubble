@@ -139,6 +139,10 @@ var prepare_social_share = function($base) {
 
 $(function(){
 
+  $('section#header .navbar-collapse').on('show.bs.collapse', function(e) {
+    $('section#header .navbar-collapse').not(this).collapse('hide');
+  });
+
   $('map').imageMapResize();
 
   $.validator.addMethod("recaptcha", function(value, element) {
