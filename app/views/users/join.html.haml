@@ -1,7 +1,7 @@
 %section#join
   .container
     .join-panel
-      %p.page-description
+      %p.page-description.hidden-xs
         - if user_signed_in?
           #{current_user.name} 당원님, 어서오세요!
         - else
