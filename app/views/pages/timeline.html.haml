@@ -1,7 +1,7 @@
 %section#timeline
   .container
-    %p.page-description
-      타임라인‘나는 알아야겠당’은 어떤 과정을 거쳐 왔을까요? 한겨레21의 저널리즘 실험과 온라인 기술 부분을 맡은 빠흐띠의 정치 실험, 그리고 시민들의 참여를 모아 봤습니다. 연말까지 지속적으로 업데이트 됩니다.
+    %p.page-description.hidden-xs
+      ‘나는 알아야겠당’은 어떤 과정을 거쳐 왔을까요? 한겨레21의 저널리즘 실험과 온라인 기술 부분을 맡은 빠흐띠의 정치 실험, 그리고 시민들의 참여를 모아 봤습니다. 연말까지 지속적으로 업데이트 됩니다.
     .timeline-panel
       .panel-meta
         .panel-date
@@ -10,7 +10,7 @@
           09.05
           %span.timline-circle
             2
-        .panel-content
+        .panel-content.panel-content__first
           ‘나는 알아야겠당’ 오프라인 창당파티
 
       .panel-meta
@@ -43,12 +43,14 @@
             2
         .panel-content
           3차 GMO완전표시제법 쟁점토론
+          = link_to 'http://up.parti.xyz/step3', target: 'blank', class: 'timeline-url' do
+            %i.fa.fa-external-link
           .panel-content-wrapper
             %p.panel-content__description
               %span.timeline-middot
                 ●
               발의할 법안에 대한 세부 쟁점을 전문가 의견과 함께 시민과 당원이 투표와 토론을 시작했다. 온라인 투표를 통해 결정된 내용은 윤소하 의원실(정의당)에 전달되었다. 윤소하 의원실은 알아야겠당의 의견을 포함해 다양한 목소리를 담은 GMO 완전표시제법(식품위생법 개정안)을 8월 n일 발의했다.
-              = link_to 'http://up.parti.xyz/step3', 'http://up.parti.xyz/step3', target: 'blank', class: 'timeline-url'
+
               %br
               %span.timeline-middot
                 ●
@@ -73,13 +75,14 @@
             2
         .panel-content
           2차 프로젝트 정당 만들기
+          = link_to 'http://up.parti.xyz/step2', target: 'blank', class: 'timeline-url' do
+            %i.fa.fa-external-link
           .panel-content-wrapper
             %p.panel-content__article
             %p.panel-content__description
               %span.timeline-middot
                 ●
               시민에 의해 정해진 법안 통과를 위해 ‘온라인 프로젝트 정당’을 만들어보는 실험. 시민 입법 프로젝트에 공감하는 사람들과 당의 이름을 정하고 누구나 당원으로 가입해 온라인 공간에서 의견을 얘기하고 정보를 나누기 시작했다.
-              = link_to 'http://up.parti.xyz/step2', 'http://up.parti.xyz/step2', target: 'blank', class: 'timeline-url'
               %br
               %span.timeline-middot
                 ●
@@ -114,13 +117,14 @@
             2
         .panel-content
           발의할 법안 정하기
+          = link_to 'http://up.parti.xyz/step1', target: 'blank', class: 'timeline-url' do
+            %i.fa.fa-external-link
           .panel-content-wrapper
             %p.panel-content__article
             %p.panel-content__description
               %span.timeline-middot
                 ●
               시민이 원하는 법안을 뽑는 투표를 진행했다. 1만여 명이 참가한 투표에서 ‘유전자변형식품(GMO) 완전표시제법’이 가장 많은 표를 얻었다. 이제 이 문제에 관심 있는 국회의원을 통해 법안을 발의하고, 시민과 함께 통과 여부를 지켜보는 프로젝트를 본격적으로 시작했다.
-              = link_to 'http://up.parti.xyz/step1', 'http://up.parti.xyz/step1', target: 'blank', class: 'timeline-url'
               %br
               %span.timeline-middot
                 ●
@@ -140,7 +144,7 @@
 
       .panel-meta
         .panel-date
-          5월 10일
+          05.10
           %span.timline-circle
             2
         .panel-content.panel-content__last
