@@ -26,10 +26,18 @@ section#join {
       background-color: #ffffff;
       text-align: center;
       font-size: $font-size-h3;
+      @media (max-width: $screen-xs-max) {
+        border: none;
+        padding: 80px 30px 100px;
+      }
 
 
       .join-after-description {
         margin-bottom: 20px;
+        @media (max-width: $screen-xs-max) {
+          font-size: $font-size-h3-small;
+        }
+
         .important {
           color: $brand-primary;
         }
@@ -51,6 +59,10 @@ section#join {
           &__facebook {
             background-size: contain;
             background-image: asset_url('share-facebook-white.png');
+            @media (max-width: $screen-xs-max) {
+              background-image: asset_url('share-facebook.png');
+            }
+
             &:hover {
               background-image: asset_url('share-facebook.png');
             }
@@ -58,6 +70,10 @@ section#join {
           &__twitter {
             background-size: contain;
             background-image: asset_url('share-twitter-white.png');
+            @media (max-width: $screen-xs-max) {
+              background-image: asset_url('share-twitter.png');
+            }
+
             &:hover {
               background-image: asset_url('share-twitter.png');
             }
@@ -65,6 +81,10 @@ section#join {
           &__kakao {
             background-size: contain;
             background-image: asset_url('share-kakao-white.png');
+            @media (max-width: $screen-xs-max) {
+              background-image: asset_url('share-kakao.png');
+            }
+
             &:hover {
               background-image: asset_url('share-kakao.png');
             }
@@ -72,6 +92,10 @@ section#join {
           &__kas {
             background-size: contain;
             background-image: asset_url('share-kas-white.png');
+            @media (max-width: $screen-xs-max) {
+              background-image: asset_url('share-kas.png');
+            }
+
             &:hover {
               background-image: asset_url('share-kas.png');
             }
@@ -238,7 +262,7 @@ section#join {
       line-height: $line-height-small;
       @media (max-width: $screen-xs-max) {
         border: none;
-        border-top: 1px solid #f89ec9;
+        border-top: 1px solid $brand-primary;
         padding: 30px 10px 40px;
       }
 
