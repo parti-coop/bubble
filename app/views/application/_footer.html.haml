@@ -1,12 +1,15 @@
 %footer.footer
   .container
-    .logos
-      .logo.logo-han21
-        %a(href="")
-          = image_tag 'logo_han21.png'
-      .logo.logo-parti
-        %a(href="")
-          = image_tag 'logo_parti.png'
+    - logos_block = capture do
+      .logos
+        .logo.logo-han21
+          %a(href="")
+            = image_tag 'logo_han21.png'
+        .logo.logo-parti
+          %a(href="")
+            = image_tag 'logo_parti.png'
+    .hidden-xs
+      = logos_block
     .info
       .contact
         = link_to 'mailto:trans@hani.co.kr' do
@@ -15,7 +18,7 @@
       .shares
         %ul.share-box.list-inline
           - base_data = {action: 'bubble-share', 'share-url': root_url, 'share-text': meta_tags['description'] }
-          - %w(facebook twitter kakao-story).each do |provider|
+          - %w(facebook twitter kakao-link kakao-story).each do |provider|
 
             - data = base_data.merge('share-provider': provider)
 
@@ -35,3 +38,5 @@
                 .jssocials-shares
                   .jssocials-share
                     = image_tag 'footer_share_kakaotalk.png', class: 'jssocials-share-logo'
+    .visible-xs-block
+      = logos_block

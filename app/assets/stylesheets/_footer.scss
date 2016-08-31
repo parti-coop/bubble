@@ -4,6 +4,13 @@ footer.footer {
   padding-bottom: 25px;
   padding-top: 80px;
 
+  @media (max-width: $screen-xs-max) {
+    .container {
+      text-align: center;
+    }
+    padding-top: 22px;
+  }
+
   .logos {
     float: left;
     .logo {
@@ -16,20 +23,45 @@ footer.footer {
       &.logo-parti img {
         width: 101px;
       }
+
+    }
+    @media (max-width: $screen-xs-max) {
+      float: none;
+      margin-top: 22px;
+      .logo {
+        margin-right: 12px;
+        margin-left: 12px;
+        &.logo-han21 img {
+          width: 40px;
+        }
+
+        &.logo-parti img {
+          width: 50px;
+        }
+      }
     }
   }
 
   .info {
     float: right;
+    @media (max-width: $screen-xs-max) {
+      float: none;
+    }
 
     .contact,
     .shares {
       display: inline-block;
+      @media (max-width: $screen-xs-max) {
+        display: block;
+      }
       vertical-align: bottom;
     }
 
     .contact a {
       font-size: $font-size-medium;
+      @media (max-width: $screen-xs-max) {
+        font-size: $font-size-base;
+      }
       color: $border-gray-color;
       text-decoration: none;
       &:hover {
@@ -41,9 +73,15 @@ footer.footer {
     }
 
     .shares {
+      @media (max-width: $screen-xs-max) {
+        margin-top: 14px;
+      }
       .share-box {
         margin: 0;
         margin-left: 30px;
+        @media (max-width: $screen-xs-max) {
+          margin-left: 0;
+        }
       }
       .share-item {
         padding: 0;
