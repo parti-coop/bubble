@@ -1,5 +1,8 @@
 section#timeline {
   margin-bottom: 100px;
+  @media (max-width: $screen-xs-max) {
+    margin-bottom: 20px;
+  }
 
   .timeline-panel {
     margin-top: 90px;
@@ -22,7 +25,8 @@ section#timeline {
 
         @media (max-width: $screen-xs-max) {
           font-size: $font-size-h3-small;
-          width: 33%;
+          width: 42%;
+          margin-left: -5%
         }
 
         &__year {
@@ -33,6 +37,7 @@ section#timeline {
 
           @media (max-width: $screen-xs-max) {
             font-size: $font-size-medium;
+            top: -24px;
           }
         }
 
@@ -65,7 +70,9 @@ section#timeline {
 
         @media (max-width: $screen-xs-max) {
           font-size: $font-size-h3-small;
-          width: 66%;
+          width: 65%;
+          padding-left: 24px;
+          padding-bottom: 60px;
         }
 
 
@@ -82,6 +89,8 @@ section#timeline {
 
           @media (max-width: $screen-xs-max) {
             font-size: $font-size-base;
+            line-height: 20px;
+            margin-left: 2px;
           }
 
           .timeline-middot {
@@ -106,6 +115,11 @@ section#timeline {
         &__first {
           padding-top: 50px;
           margin-top: -50px;
+
+          @media (max-width: $screen-xs-max) {
+            padding-top: 34px;
+            margin-top: -34px;
+          }
         }
 
         &__last {
