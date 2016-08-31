@@ -96,10 +96,11 @@ section#debate {
         border-top: 1px solid $brand-primary-lighter;
         padding: 50px 50px;
         @media (max-width: $screen-sm-max) {
-          padding: 22px 12px;
+          padding: 22px 0px;
         }
         .panel-title{
           margin-top: 50px;
+          margin-left: 10px;
           color: $brand-primary;
           font-size: $font-size-medium;
         }
@@ -120,6 +121,9 @@ section#debate {
               display: flex;
               align-items: center;
               margin-left: 10px;
+              @media (max-width: $screen-sm-max) {
+                // margin: 0px;
+              }
 
               .opinion__choice {
                 &.select_alpha {
@@ -127,6 +131,10 @@ section#debate {
                   .col-md-1{
                     vertical-align: middle;
                     text-align: right;
+                    @media (max-width: $screen-sm-max) {
+                      padding-right: 5px;
+                      padding-left: 0px;
+                    }
                     .square {
                       width: 24px;
                       height: 24px;
@@ -139,6 +147,10 @@ section#debate {
                   .col-md-1{
                     vertical-align: middle;
                     text-align: right;
+                    @media (max-width: $screen-sm-max) {
+                      padding-right: 5px;
+                      padding-left: 0px;
+                    }
                     .square {
                       width: 24px;
                       height: 24px;
@@ -151,6 +163,10 @@ section#debate {
                   .col-md-1{
                     vertical-align: middle;
                     text-align: right;
+                    @media (max-width: $screen-sm-max) {
+                      padding-right: 5px;
+                      padding-left: 0px;
+                    }
                     .square {
                       width: 24px;
                       height: 24px;
@@ -167,11 +183,19 @@ section#debate {
                 padding-left: 0px;
                 padding-top: 7px;
                 padding-bottom: 7px;
+                @media (max-width: $screen-sm-max) {
+                  padding-top: 10px;
+                  margin-left: 20px;
+                }
               }
               .col-md-9{
                 padding-top: 10px;
                 padding-bottom: 10px;
                 border-left: 1px solid $border-gray-color;
+                @media (max-width: $screen-sm-max) {
+                  border: none;
+                  padding: 0px;
+                }
                 .opinion__body{
 
                 }
