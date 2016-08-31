@@ -1,7 +1,8 @@
-Proposition.seed_once(:slug) do |s|
+Proposition.seed(:slug) do |s|
   s.title = '식품위생법 일부개정법률안(윤소하의원 등 17인)'
   s.slug = '2001603'
   s.proponent = '윤소하'
+  s.url = 'http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_O1B6K0X8W1L6U1E4C3X9K3V1G7C5P1'
   s.body = '■ 제안이유
 
 현행 법령에서는 유전자변형기술을 활용하여 재배·육성된 농수축산물 등(이하 유전자변형생물체)을 주요 원재료로 하여 제조·가공된 식품 또는 식품첨가물은 유전자변형식품(GMO, Genetically Modified Organism)임을 표시하도록 하고 있음.
@@ -19,10 +20,11 @@ Proposition.seed_once(:slug) do |s|
 end
 
 
-Proposition.seed_once(:slug) do |s|
+Proposition.seed(:slug) do |s|
   s.title = '식품위생법 일부개정법률안(김현권의원 등 30인)'
   s.slug = '2000364'
   s.proponent = '김현권'
+  s.url = 'http://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_K1B6T0J6J2H0K1Y8Z1Z2R0U9T0D4F1'
   s.body = '현행 법령에서는 유전자변형기술을 활용하여 재배·육성된 농수축산물 등(이하 유전자변형생물체)을 주요 원재료로 하여 제조·가공된 식품 또는 식품첨가물은 유전자변형식품(GMO, Genetically Modified Organism)임을 표시하도록 하고 있음.
 그러나 현행 유전자변형식품등의 표시기준에 따른 표시대상은 식용으로 수입 또는 생산이 승인된 품목을 주요 원재료로 사용하여 제조·가공한 식품 또는 식품첨가물과 이를 다시 주요 원재료로 사용하여 제조·가공 후 유전자변형 DNA 또는 외래단백질의 성분이 남아 있는 식품만을 표시대상으로 한정하고 있음에 따라, 유전자변형생물체 등을 주요 원재료로 하여 제조·가공된 식품 또는 식품첨가물임에도 불구하고 예외적으로 표시가 되지 않고 유통되는 식품 등이 있어 소비자의 합리적 선택권을 제약하는 측면이 있음.
 이에 유전자변형생물체를 원재료로 사용하여 제조·가공한 유전자변형식품등과 이를 원재료로 다시 사용하여 제조·가공한 식품등에 대해서는 원재료 유전자변형 단백질과 DNA 등 성분의 잔류 여부를 고려하지 아니하고 모두 유전자변형식품임을 표시하도록 하고, 또한 유전자변형생물체를 원재료로 사용하지 않고 제조·가공한 식품등에 대해서는 비유전자변형식품과 무유전자변형식품임을 표시하도록 함으로써 소비자들의 알 권리를 강화하고 국민건강을 보호하려는 것임(안 제12조의2).'

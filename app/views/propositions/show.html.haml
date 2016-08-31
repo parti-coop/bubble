@@ -1,7 +1,7 @@
 %section#propositions
   .container
     .propositions-panel
-      %p.page-description
+      %p.page-description.hidden-xs
         GMO완전표시제법 발의안입니다. 시민이 올린 법안이 어떻게 진행되고 있는지 확인하고 각 발의안에 의견을 내고 참여해 보세요.
       %ul.nav.nav-tabs.propositions-tabs
         - Proposition.order_by_importance.each do |proposition|
@@ -16,7 +16,7 @@
           .body
             = render "propositions/body_#{@proposition.slug}"
           .show-more
-            %a.btn.btn-primary(href="http://watch.peoplepower21.org/?mid=LawInfo&bill_no=#{@proposition.slug}" target="_blank")
+            %a.btn.btn-primary(href="#{@proposition.url}" target="_blank")
               발의안 상세보기
         %a.anchor#comments
         .comments-panel
@@ -28,4 +28,7 @@
         .steps-panel
           .panel-title 입법진행과정
           .steps
-            %p 이미지로 대체합니다.
+            - if browser.device.mobile?
+              = image_tag "proposition_step_#{@proposition.slug}_xs.png"
+            - else
+              = image_tag "proposition_step_#{@proposition.slug}.png"

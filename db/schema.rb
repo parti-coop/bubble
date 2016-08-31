@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824053655) do
+ActiveRecord::Schema.define(version: 20160831101349) do
 
   create_table "bills", force: :cascade do |t|
     t.string   "slug",          limit: 255,             null: false
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(version: 20160824053655) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.integer  "importance", limit: 4
+    t.string   "url",        limit: 255
   end
 
   add_index "propositions", ["slug"], name: "index_propositions_on_slug", using: :btree

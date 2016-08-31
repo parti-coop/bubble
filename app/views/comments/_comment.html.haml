@@ -1,6 +1,6 @@
 .comment-content
   .comment-meta-wrapper
-    .comment-meta.comment-meta__label
+    .comment-meta.comment-meta__label.hidden-xs
       = comment.name
       %br
       = date_f comment.created_at
@@ -13,5 +13,7 @@
           \|
           %span
             = link_to '삭제', comment, method: :delete, data: { confirm: '정말 삭제하시겠습니까?' }
-
-
+    .comment-meta.comment-meta__label.visible-xs-block
+      = comment.name
+      %span.date
+        = date_f comment.created_at

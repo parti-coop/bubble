@@ -3,7 +3,11 @@
   %nav.navbar.navbar-default.navbar-fixed-top
     .container
       .navbar-header
-        %a.navbar-brand{href: root_path}= image_tag 'logo.png'
+        %a.navbar-brand{href: root_path}
+          - if browser.device.mobile?
+            = image_tag 'logo_xs.png'
+          - else
+            = image_tag 'logo.png'
         %button.navbar-toggle.collapsed{"data-target": "#main-menu", "data-toggle": "collapse", type: "button"}
           %span.icon-bar
           %span.icon-bar

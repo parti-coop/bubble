@@ -16,9 +16,14 @@
 }
 
 .comment-content {
+  border-bottom: 1px solid $border-gray-color;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
   .comment-meta-wrapper {
     padding: 10px 8px;
-    border-bottom: 1px solid $border-gray-color;
 
     .comment-meta {
       display: inline-block;
@@ -26,14 +31,26 @@
 
     .comment-meta__label {
       color: $brand-gray-color;
-      width: 12%;
+      @media (min-width: $screen-sm-min) {
+        width: 12%;
+      }
       vertical-align: top;
-
+      @media (max-width: $screen-xs-max) {
+        span.date {
+          margin-left: 14px;
+        }
+      }
     }
 
     .comment-meta__value {
       width: 87%;
     }
 
+  }
+}
+
+.comments-panel {
+  .pagination-wrapper {
+    border-top: 1px solid $border-gray-color;
   }
 }

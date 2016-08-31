@@ -1,4 +1,9 @@
 section#propositions {
+  & > .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .panel-title {
     color: $brand-primary;
     font-size: $font-size-medium;
@@ -8,6 +13,9 @@ section#propositions {
   .propositions-tabs {
     border-bottom-color: $propositions-border-color;
     margin-top: 90px;
+    @media (max-width: $screen-xs-max) {
+      margin-top: -15px;
+    }
     & > li {
       width: 50%;
       a {
@@ -21,9 +29,21 @@ section#propositions {
           width: 80px;
           position: absolute;
           top: -55px;
+          @media (max-width: $screen-xs-max) {
+            width: 50px;
+            display: block;
+            position: relative;
+            top: 0;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 4px;
+          }
         }
         .proponent {
           font-size: $font-size-h3;
+          @media (max-width: $screen-xs-max) {
+            font-size: $font-size-large;
+          }
         }
       }
       &.active {
@@ -35,6 +55,29 @@ section#propositions {
           border-bottom-color: transparent;
         }
       }
+
+      @media (max-width: $screen-xs-max) {
+        a,
+        &.active a {
+          border-top: none;
+        }
+        &.active {
+          &:first-child {
+            a,
+            a:hover,
+            a:focus {
+              border-left-color: transparent;
+            }
+          }
+          &:last-child {
+            a,
+            a:hover,
+            a:focus {
+              border-right-color: transparent;
+            }
+          }
+        }
+      }
     }
   }
   .proposition {
@@ -42,10 +85,22 @@ section#propositions {
     border-top: transparent;
     background-color: #fff;
 
+    @media (max-width: $screen-xs-max) {
+      border: none;
+    }
+
     .body-panel,
     .comments-panel,
     .steps-panel {
       padding: 70px 50px;
+      @media (max-width: $screen-xs-max) {
+        padding: 20px 13px;
+      }
+    }
+    @media (max-width: $screen-xs-max) {
+      .steps-panel {
+        padding-bottom: 10px;
+      }
     }
     .body-panel,
     .comments-panel {
@@ -56,6 +111,9 @@ section#propositions {
         padding-top: 24px;
         padding-bottom: 24px;
         font-size: $font-size-medium;
+        @media (max-width: $screen-xs-max) {
+          padding-top: 14px;
+        }
       }
       .show-more {
         text-align: center;
@@ -70,6 +128,15 @@ section#propositions {
         }
         .comment {
           border-bottom: 1px solid $border-gray-color;
+        }
+      }
+    }
+
+    .steps-panel {
+      .steps {
+        padding-top: 20px;
+        img {
+          width: 100%
         }
       }
     }

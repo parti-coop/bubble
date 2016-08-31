@@ -15,7 +15,10 @@ body.retired {
 
 body.working {
   padding-top: 150px;
-  background-color: #fafafa;
+  @media (max-width: $screen-xs-max) {
+    padding-top: 90px;
+  }
+  background-color: #fff;
 
   &.app-pages-home {
     padding-top: 0;
