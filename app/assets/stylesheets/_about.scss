@@ -3,12 +3,18 @@ section#about {
 
   .about-container{
     width: 794px;
+    @media (max-width: $screen-xs-max) {
+      width: 100%;
+    }
   }
   .about-image-wrapper {
     text-align: center;
 
     .about-image {
       width: 624px;
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+      }
     }
 
 
@@ -18,20 +24,40 @@ section#about {
     text-align: center;
     margin-top: 30px;
     margin-bottom: 34px;
+    @media (max-width: $screen-xs-max) {
+      font-size: $font-size-h3;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
   }
 
   .about-sub-title {
     color: $brand-primary;
     margin-top: 100px;
     margin-bottom: 40px;
+    @media (max-width: $screen-xs-max) {
+      font-size: $font-size-medium;
+      margin-top: 64px;
+      margin-bottom: 16px;
+    }
   }
 
   .about-description {
     line-height: 26px;
     font-size: $font-size-medium;
 
+    @media (max-width: $screen-xs-max) {
+      font-size: $font-size-base;
+    }
+
     &__important {
       color: $brand-primary;
+    }
+
+    &__normal {
+      @media (max-width: $screen-xs-max) {
+        display: table-cell;
+      }
     }
 
     &__underline {
@@ -41,6 +67,12 @@ section#about {
     .about-circled-number {
       font-size: $font-size-h3;
       vertical-align: middle;
+      @media (max-width: $screen-xs-max) {
+        font-size: $font-size-medium;
+        display: table-cell;
+        vertical-align: top;
+        padding-right: 6px;
+      }
     }
   }
 }
