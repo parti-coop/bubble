@@ -61,6 +61,14 @@ section#timeline {
           font-weight: normal;
           margin-left: 8px;
 
+          .timeline-url {
+            color: black;
+            &:hover {
+              text-decoration: none;
+              color: $brand-primary;
+            }
+          }
+
           .timeline-middot {
             vertical-align: middle;
             margin-left: -17px;
