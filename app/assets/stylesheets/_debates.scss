@@ -105,18 +105,21 @@ section#debate {
           .form-group{
             .initial{
               width: 97%;
-              margin-left: 10px;
+              margin-top: 10px;
               @media (max-width: $screen-sm-max) {
                 width: 94%;
+                margin-left: 16px;
               }
             }
           }
         }
         .panel-title{
           margin-top: 50px;
-          margin-left: 10px;
           color: $brand-primary;
           font-size: $font-size-medium;
+          @media (max-width: $screen-sm-max) {
+            margin-left: 16px;
+          }
         }
         .panel-description{
           color: $gray-darker;
@@ -136,7 +139,7 @@ section#debate {
               align-items: center;
               margin-left: 10px;
               @media (max-width: $screen-sm-max) {
-                // margin: 0px;
+                margin-left: 13px;
               }
 
               .opinion__choice {
