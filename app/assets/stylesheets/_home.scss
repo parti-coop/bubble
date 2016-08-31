@@ -9,6 +9,14 @@ body.app-pages-home {
       width: 747px;
       margin-top: 26px;
       margin-bottom: 26px;
+      @media (max-width: $screen-xs-max) {
+        width: 300px;
+        margin-top: 36px;
+        margin-bottom: 22px;
+      }
+      @media (max-width: $screen-sm-max) {
+        width: 300px;
+      }
     }
     .intro {
       color: #fff;
@@ -18,6 +26,14 @@ body.app-pages-home {
       width: 947px;
       margin-top: 18px;
       margin-bottom: 18px;
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 50px;
+      }
+      @media (max-width: $screen-sm-max) {
+        width: 100%;
+      }
     }
   }
 
@@ -36,6 +52,15 @@ body.app-pages-home {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 22px;
+        @media (max-width: $screen-xs-max) {
+          margin-bottom: 9px;
+        }
+      }
+
+      @media (max-width: $screen-xs-max) {
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-size: $font-size-h4;
       }
     }
   }
@@ -46,25 +71,41 @@ body.app-pages-home {
     padding-bottom: 60px;
     border-bottom: 2px solid $gray-lighter;
 
+    @media (max-width: $screen-xs-max) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
     .main {
       margin-top: 10px;
-      .row {
-        display: flex;
-        align-items: center;
-      }
-      .icon img {
-        width: 100px;
+      .icon {
+        height: 145px;
+        line-height: 128px;
+        @media (max-width: $screen-xs-max) {
+          height: 120px;
+        }
+        img {
+          width: 100px;
+          vertical-align: middle;
+          @media (max-width: $screen-xs-max) {
+            width: 75px;
+          }
+        }
       }
       .item {
-        margin-top: 30px;
         .count {
           font-size: 64px;
           color: $brand-primary;
           line-height: 64px;
+          @media (max-width: $screen-xs-max) {
+            font-size: 40px;
+          }
         }
         .description {
           color: #000;
           font-size: $font-size-h3;
+          @media (max-width: $screen-xs-max) {
+            font-size: $font-size-base;
+          }
         }
       }
     }
@@ -98,13 +139,24 @@ body.app-pages-home {
       .items {
         cursor: pointer;
         text-align: left;
+
         .item {
           .video-thumbnail img {
-            height: 75px;
+            height: 87px;
+            border: 2px solid transparent;
           }
           &.active {
             .video-thumbnail img {
               border: 2px solid $brand-primary;
+            }
+          }
+        }
+
+        @media (max-width: $screen-xs-max) {
+          margin-top: 10px;
+          .item {
+            .video-thumbnail img {
+              height: 50px;
             }
           }
         }

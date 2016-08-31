@@ -22,7 +22,7 @@ body.working {
   }
 
   color: $gray-darker;
-  @media (min-width: 1200px) {
+  @media (min-width: $screen-sm-max) {
     .container {
       width: 900px;
     }

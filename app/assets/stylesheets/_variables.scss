@@ -34,7 +34,6 @@ $font-size-medium: 16px;
 $border-radius-base: 2px;
 
 /*
-$font-size-base:          14px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
 
@@ -45,3 +44,9 @@ $font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-h5:            $font-size-base !default;
 $font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
 */
+$font-size-base:          14px !default;
+$font-size-smaller: ceil(($font-size-base * 0.70));
+
+$line-height-smaller: 18px;
+
+$grid-float-breakpoint:     1000px;

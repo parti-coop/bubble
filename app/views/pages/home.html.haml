@@ -1,13 +1,17 @@
 %section#key-visual
   .container
-    .h3 GMO 완전표시제법 통과를 위한 국내 최초 온라인 프로젝트 정당 실험
+    .h3.hidden-xs GMO 완전표시제법 통과를 위한 국내 최초 온라인 프로젝트 정당 실험
     .title= image_tag 'key_visual_title.png'
-    .intro 세상에 없던 정당의 당원이 되세요
+    .intro.hidden-xs 세상에 없던 정당의 당원이 되세요
+    .h4.visible-xs-block
+      GMO 완전표시제법 통과를 위한
+      %br
+      국내 최초 온라인 프로젝트 정당 실험
     .main= image_tag 'key_visual_main.png'
 
 %section#counts
   .container
-    %p.page-description
+    %p.page-description.hidden-xs
       오로지 GMO 완전표시제 도입을 목표로 한,
       %br
       국내 최초 온라인 프로젝트 정당 ‘나는 알아야겠당’
@@ -16,36 +20,31 @@
       당원 활동
     .main
       .row
-        .col-xs-3
+        .col-sm-3.col-xs-6
           .icon.icon-bill-choices
             = image_tag 'icon_home_bill_choices.png'
-        .col-xs-3
-          .icon.icon-users
-            = image_tag 'icon_home_users.png'
-        .col-xs-3
-          .icon.icon-opinions
-            = image_tag 'icon_home_opinions.png'
-        .col-xs-3
-          .icon.icon-posts
-            = image_tag 'icon_home_posts.png'
-      .row
-        .col-xs-3
           .item.bill-choices
             .count= Bill.sum(:upvotes_count)
             .description 법안 선택 참여
-        .col-xs-3
+        .col-sm-3.col-xs-6
+          .icon.icon-users
+            = image_tag 'icon_home_users.png'
           .item.users
             .count= User.count
             .description 당원
-        .col-xs-3
+        .clearfix.visible-xs-block
+        .col-sm-3.col-xs-6
+          .icon.icon-opinions
+            = image_tag 'icon_home_opinions.png'
           .item.opinions
             .count= Opinion.count
             .description 쟁점 댓글
-        .col-xs-3
+        .col-sm-3.col-xs-6
+          .icon.icon-posts
+            = image_tag 'icon_home_posts.png'
           .item.posts
             .count= Post.count
             .description 게시글
-
 %section#videos
   .container
     .section-title
@@ -54,39 +53,22 @@
     .main
       .row
         - last_index = videos_urls.size - 1
-        .col-sm-8
+        .col-sm-8.col-xs-12
           .players
             - videos_urls.each_with_index do |video_url, index|
               - video = VideoInfo.new(video_url)
               .player(style="#{'display: none' unless index == last_index}" id="up-video-#{index}")
                 %iframe(id="video-#{index}" src="#{video.embed_url}?enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen")
-        .col-sm-4
+        .col-sm-4.col-xs-12
           .items
-            - videos_urls.each_with_index do |video_url, index|
-              - video = VideoInfo.new(video_url)
-              .item.media{class: ('active' if index == last_index), data: {action: 'video-show', target: "#up-video-#{index}", 'video-group': 'section#videos .players .player', 'navigator-group': 'section#videos .items .item'}}
-                .media-left
-                  .video-thumbnail
-                    %img.media-object{src: video.thumbnail_small}
-                .media-body
-                  .video-title= video_long_titles[index]
-
-%section#posts
-  .container
-    .section-title
-      .bar
-      게시판
-    .main
-      .posts-panel
-        .post-page
-          %table
-            - @posts.each do |post|
-              - as_sticky = as_best = false
-              - if post.sticky?
-                - as_sticky = true
-              - else
-                - as_best = true
-              = render post, as_sticky: as_sticky, as_best: as_best
-      .show-more
-        = link_to '더보기', posts_path, class: 'btn btn-primary'
+            .row
+              - videos_urls.each_with_index do |video_url, index|
+                - video = VideoInfo.new(video_url)
+                .col-xs-6.col-sm-12
+                  .item.media{class: ('active' if index == last_index), data: {action: 'video-show', target: "#up-video-#{index}", 'video-group': 'section#videos .players .player', 'navigator-group': 'section#videos .items .item'}}
+                    .media-left
+                      .video-thumbnail
+                        %img.media-object{src: video.thumbnail_small}
+                    .media-body
+                      .video-title= video_long_titles[index]
 

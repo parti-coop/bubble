@@ -5,10 +5,17 @@ section#header {
     padding-bottom: 6px;
     border-bottom: 3px solid black;
 
+    .container {
+      @media (min-width: $screen-md-min) {
+        width: 970px;
+      }
+    }
     .navbar-header {
       .navbar-brand {
         margin-top: -26px;
-        margin-left: -56px;
+        @media (max-width: $screen-xs-max) {
+          margin-left: -56px;
+        }
         img {
           width: 108px;
           @media (max-width: $screen-xs-max) {
@@ -58,7 +65,6 @@ section#header {
       li.login {
         padding-left: 64px;
         margin-top: 8px;
-        margin-right: -100px;
 
         & > a {
           font-size: $font-size-base;
@@ -87,44 +93,42 @@ section#header {
         display: inline-block;
       }
     }
-
-    .receive-news {
-      position: fixed;
-      right: 0;
-      top: 75px;
-      color: #fff;
-      font-weight: 100;
-      &__button,
-      &__channels {
-        display: inline-block;
-        padding: 3px 6px;
-        background-color: black;
-      }
-      &__button {
-        vertical-align: top;
-        position: relative;
-        left: 4px;
-        img {
-          width: 16px;
-          height: 16px;
-        }
-      }
-      &__channels {
-        width: 90px;
-        border-left: 1px solid $gray-light;
-      }
-      &__channel {
-        display: inline-block;
-        text-align: center;
-        img {
-          width: 34px;
-          margin-bottom: 8px;
-        }
-      }
-      .receive-news__on {
-        display: none;
+  }
+  .receive-news {
+    position: fixed;
+    right: 0;
+    top: 75px;
+    color: #fff;
+    font-weight: 100;
+    &__button,
+    &__channels {
+      display: inline-block;
+      padding: 3px 6px;
+      background-color: black;
+    }
+    &__button {
+      vertical-align: top;
+      position: relative;
+      left: 4px;
+      img {
+        width: 16px;
+        height: 16px;
       }
     }
-
+    &__channels {
+      width: 90px;
+      border-left: 1px solid $gray-light;
+    }
+    &__channel {
+      display: inline-block;
+      text-align: center;
+      img {
+        width: 34px;
+        margin-bottom: 8px;
+      }
+    }
+    .receive-news__on {
+      display: none;
+    }
   }
 }

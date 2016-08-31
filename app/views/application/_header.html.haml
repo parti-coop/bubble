@@ -39,22 +39,22 @@
             %li.login
               = link_to '당원가입 / 로그인', join_path
 
-      .receive-news{data: {'action': 'bubble-channel', 'trigger': (is_hoverable? ? 'hover' : 'click')}}
-        .receive-news__off
-          .receive-news__button
-            = image_tag 'news_plus'
-          .receive-news__channels
-            대화방 입장
-        .receive-news__on
-          .receive-news__button
-            = image_tag 'news_close'
-          .receive-news__channels
-            .receive-news__channel
-              %a(href='https://telegram.me/gmolabeling' target='_blank')
-                = image_tag('telegram_news.png')
-            .receive-news__channel
-              %a(href='https://open.kakao.com/o/gMwxmtm' target='_blank')
-                = image_tag('kakaotalk_news.png')
+  .receive-news{data: {'action': 'bubble-channel', 'trigger': (is_hoverable? ? 'hover' : 'click')}}
+    .receive-news__off
+      .receive-news__button
+        = image_tag 'news_plus'
+      .receive-news__channels
+        대화방 입장
+    .receive-news__on
+      .receive-news__button
+        = image_tag 'news_close'
+      .receive-news__channels
+        .receive-news__channel
+          %a(href='https://telegram.me/gmolabeling' target='_blank')
+            = image_tag('telegram_news.png')
+        .receive-news__channel
+          %a(href='https://open.kakao.com/o/gMwxmtm' target='_blank')
+            = image_tag('kakaotalk_news.png')
 
 
 
