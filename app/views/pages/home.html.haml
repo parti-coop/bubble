@@ -53,18 +53,18 @@
     .main
       .row
         - last_index = videos_urls.size - 1
-        .col-sm-8.col-xs-12
+        .col-md-8.col-xs-12
           .players
             - videos_urls.each_with_index do |video_url, index|
               - video = VideoInfo.new(video_url)
               .player(style="#{'display: none' unless index == last_index}" id="up-video-#{index}")
                 %iframe(id="video-#{index}" src="#{video.embed_url}?enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen")
-        .col-sm-4.col-xs-12
+        .col-md-4.col-xs-12
           .items
             .row
               - videos_urls.each_with_index do |video_url, index|
                 - video = VideoInfo.new(video_url)
-                .col-xs-6.col-sm-12
+                .col-xs-6.col-md-12.col-item
                   .item.media{class: ('active' if index == last_index), data: {action: 'video-show', target: "#up-video-#{index}", 'video-group': 'section#videos .players .player', 'navigator-group': 'section#videos .items .item'}}
                     .media-left
                       .video-thumbnail
