@@ -122,7 +122,7 @@ section#join {
       @media (max-width: $screen-xs-max) {
         border: none;
         margin-top: 0;
-        padding: 60px 10px 30px;
+        padding: 140px 10px 70px;
       }
 
       &__title {
@@ -130,7 +130,7 @@ section#join {
         margin-bottom: 20px;
         @media (max-width: $screen-xs-max) {
           font-size: $font-size-h3-small;
-          margin-bottom: 40px;
+          margin-bottom: 22px;
         }
       }
 
@@ -150,8 +150,8 @@ section#join {
         text-align: left;
         margin-bottom: 12px;
         @media (max-width: $screen-xs-max) {
-          font-size: $font-size-h3-small;
-          width: 100%;
+          font-size: $font-size-base;
+          width: 244px;
           padding: 7px 0px;
           text-align: center;
           color: #fff !important;
@@ -226,6 +226,8 @@ section#join {
             background-image: asset_url('login-facebook.png');
             @media (max-width: $screen-xs-max) {
               background-image: asset_url('login-facebook-white.png');
+              width: 15px;
+              height: 21px;
             }
           }
           &__twitter {
@@ -237,6 +239,8 @@ section#join {
             background-image: asset_url('login-twitter.png');
             @media (max-width: $screen-xs-max) {
               background-image: asset_url('login-twitter-white.png');
+              width: 28px;
+              height: 18px;
             }
             &:hover {
               background-image: asset_url('login-twitter-white.png');
@@ -251,6 +255,8 @@ section#join {
             background-image: asset_url('login-naver.png');
             @media (max-width: $screen-xs-max) {
               background-image: asset_url('login-naver-white.png');
+              width: 25px;
+              height: 21px;
             }
             &:hover {
               background-image: asset_url('login-naver-white.png');
