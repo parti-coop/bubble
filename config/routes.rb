@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'base#index'
     get 'download_emails', to: 'base#download_emails'
+    get 'download_suggestions', to: 'base#download_suggestions'
   end
 
   resources :comments

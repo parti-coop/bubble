@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Suggestions #{l(Date.today)}") do |sheet|
+  sheet.add_row ["이름", "이메일", "제목", "내용", "작성일"]
+  @suggestions.each do |data|
+    sheet.add_row [data[:name], data[:guest_email], data[:title], data[:body], data[:created_at]]
+  end
+end

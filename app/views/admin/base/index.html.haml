@@ -2,3 +2,5 @@
   .container
     %h4 엑셀다운로드
     = link_to '당원 이메일 다운로드 받기', admin_download_emails_path(format: :xlsx)
+    %br
+    = link_to '당원 활동제안 다운로드 받기', admin_download_suggestions_path(format: :xlsx)
