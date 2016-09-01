@@ -1,5 +1,5 @@
 class Opinion < ActiveRecord::Base
-  paginates_per 10
+  paginates_per 5
   validates :body, presence: true
   validates :choice, presence: true
 

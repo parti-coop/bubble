@@ -34,6 +34,11 @@ section#debate {
     }
   }
 
+  .debate-topic:first-of-type {
+    @media (max-width: $screen-sm-max) {
+      margin-top: -75px;
+    }
+  }
   .debate-topic {
 
     .debate-topic-content-wrapper {
@@ -43,8 +48,13 @@ section#debate {
         margin-left: -15px;
         margin-right: -15px;
         border: none;
+        margin-bottom: -30px;
       }
-
+      .debate-topic-title:first-of-type {
+        @media (max-width: $screen-sm-max) {
+          padding-top: 70px;
+        }
+      }
       .debate-topic-title {
         text-align: center;
         color: black;
@@ -78,7 +88,9 @@ section#debate {
           color: $brand-gray-color;
         }
         @media (max-width: $screen-sm-max) {
-          font-size: $font-size-h4;
+          font-size: $font-size-h3-small;
+          margin-top: 20px;
+          padding: 0px 20px;
         }
       }
 
@@ -87,7 +99,7 @@ section#debate {
         margin-left: 142px;
         margin-right: 142px;
         @media (max-width: 767px) {
-          margin: 30px 14px 20px;
+          margin: 30px 15px;
         }
       }
     }
@@ -133,13 +145,15 @@ section#debate {
             border-bottom: 1px solid $border-gray-color;
             @media (max-width: $screen-sm-max) {
               margin: 0px;
+              padding-top: 5px;
+              padding-bottom: 7px;
             }
             .row{
               display: flex;
               align-items: center;
               margin-left: 10px;
               @media (max-width: $screen-sm-max) {
-                margin-left: 13px;
+                margin-left: 15px;
               }
 
               .opinion__choice {
@@ -198,6 +212,7 @@ section#debate {
                 vertical-align: middle;
                 text-align: center;
                 padding-left: 0px;
+                padding-right: 0px;
                 padding-top: 7px;
                 padding-bottom: 7px;
                 @media (max-width: $screen-sm-max) {
@@ -206,8 +221,7 @@ section#debate {
                 }
               }
               .col-md-9{
-                padding-top: 10px;
-                padding-bottom: 10px;
+                padding: 19px 22px;
                 border-left: 1px solid $border-gray-color;
                 @media (max-width: $screen-sm-max) {
                   border: none;
@@ -218,6 +232,8 @@ section#debate {
                 }
                 .opinion__name{
                   color: $brand-gray-color;
+                  margin-right: 14px;
+
                 }
                 .opinion__date{
                   color: $brand-gray-color;
@@ -280,7 +296,7 @@ section#debate {
         position: relative;
         border: 1px solid $gray-darker;
         @media (max-width: 767px) {
-          margin: 30px 14px 20px;
+          margin: 40px 14px 20px;
         }
 
         .debate-voted {
@@ -344,7 +360,8 @@ section#debate {
           font-size: $font-size-h3;
           @media (max-width: $screen-sm-max) {
             width: 48%;
-            padding: 7px 0px;
+            padding: 9px 0px;
+            margin-top: 20px;
             margin-right: 4px;
             font-size: $font-size-h4;
           }
@@ -374,7 +391,8 @@ section#debate {
           font-size: $font-size-h3;
           @media (max-width: $screen-sm-max) {
             width: 48%;
-            padding: 7px 0px;
+            padding: 9px 0px;
+            margin-top: 20px;
             margin-left: 4px;
             font-size: $font-size-h4;
           }
@@ -398,8 +416,8 @@ section#debate {
           margin-bottom: 20px;
           font-size: $font-size-medium;
           @media (max-width: $screen-sm-max) {
-            padding: 7px;
-            padding-bottom: 0px;
+            padding: 10px;
+            padding-bottom: 10px;
             margin-bottom: 5px;
           }
           a {

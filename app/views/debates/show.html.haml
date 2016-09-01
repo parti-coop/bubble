@@ -12,11 +12,18 @@
         .debate-topic-content-wrapper
           .debate-topic-title
             = raw debate.title
-          .debate-topic-options
-            %span= debate.alpha_label
-            %span.vs VS
-            %span= debate.beta_label
-          %p.debate-topic-description= debate.body
+          - if browser.device.mobile?
+            %p.debate-topic-description= debate.body
+            .debate-topic-options
+              %span= debate.alpha_label
+              %span.vs VS
+              %span= debate.beta_label
+          - else
+            .debate-topic-options
+              %span= debate.alpha_label
+              %span.vs VS
+              %span= debate.beta_label
+            %p.debate-topic-description= debate.body
           .debate-panel
             .debate-panel--header
               = render 'opinions/header', debate: debate
