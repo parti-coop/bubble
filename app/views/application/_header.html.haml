@@ -1,4 +1,3 @@
-- parties = {'dig': '발굴하장', 'living': '살림하장', 'tell': '알리장', 'see': '외국보장', 'go': '찾아가장'}
 %section#header
   %nav.navbar.navbar-default.navbar-fixed-top
     .container
@@ -34,9 +33,9 @@
                 %ul.dropdown-menu
                   %li
                     %a(href="http://do.parti.xyz/" target='_blank') 모든 빠띠
-                  - parties.each do |slug, title|
+                  - all_parties.each do |parti|
                     %li
-                      %a(href="http://do.parti.xyz/p/#{slug}" target='_blank') #{title}
+                      %a(href="http://do.parti.xyz/p/#{parti[:slug]}" target='_blank') #{parti[:name]}
           - if user_signed_in?
             %li.dropdown.login.collapse-hidden
               %a.dropdown-toggle{"data-toggle": "dropdown", href: "#"}
@@ -57,9 +56,9 @@
         %ul.nav.navbar-nav
           %li.menu
             %a(href="http://do.parti.xyz/" target='_blank') 모든 빠띠
-          - parties.each do |slug, title|
+          - all_parties.each do |parti|
             %li.menu
-              %a(href="http://do.parti.xyz/p/#{slug}" target='_blank') #{title}
+              %a(href="http://do.parti.xyz/p/#{parti[:slug]}" target='_blank') #{parti[:name]}
 
   .receive-news{data: {'action': 'bubble-channel', 'trigger': (is_hoverable? ? 'hover' : 'click')}}
     .receive-news__off

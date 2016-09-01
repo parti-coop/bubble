@@ -9,11 +9,17 @@
       ‘나는 알아야겠당’을 소개합니다.
 
     %p.about-description
-      오로지 ‘GMO 완전표시제법’ 국회 통과를 목적으로 창당한 ‘나는 알아야겠당’.
+      %strong 오로지 ‘GMO 완전표시제법’ 국회 통과를 목적으로 창당한 ‘나는 알아야겠당’.
       %br
       온라인 플랫폼을 기반으로 특정 이슈를 해결하겠다며 시민들이 뭉친 국내 최초의 ‘온라인 프로젝트’ 정당입니다.
       %br
-      정치권에 “우리를 진지하게 대하라, 우리한테 물어라, 우리를 참여시켜라.”하고 요구하고 싶은 사람이라면 누구나 당원이 될 수 있습니다. ‘GMO 완전표시제법’이 통과되는 순간 흩어지는 정당, 단일 이슈(법안) 해결을 목적으로 ‘온라인 프로젝트 정당’이 출범한 사례는 없었습니다. 바로 ‘세상에 없던 정당’을 시민들이 만드는 것입니다.
+      정치권에
+      %strong “우리를 진지하게 대하라, 우리한테 물어라, 우리를 참여시켜라.”
+      하고 요구하고 싶은 사람이라면 누구나 당원이 될 수 있습니다. ‘GMO 완전표시제법’이 통과되는 순간 흩어지는 정당!
+      단일 이슈(법안) 해결을 목적으로
+      %span.no-wrap ‘온라인 프로젝트 정당’
+      이 출범한 사례는 없었습니다. 세상에 없던 정당의 당원이 되세요!
+
       %br
       = link_to timeline_path, class: 'about-description__important about-description__underline', target: '_blank' do
         더 자세한 내용이 궁금하시다면?
@@ -48,7 +54,7 @@
       %span.about-description__important.about-circled-number
         ③
       %span.about-description__normal
-        하루에 한 번 이상 빠띠에 접속한당
+        하루에 한 번 이상 업빠띠에 접속한당
     %p.about-description
       %span.about-description__important.about-circled-number
         ④
@@ -58,7 +64,11 @@
       %span.about-description__important.about-circled-number
         ⑤
       %span.about-description__normal
-        살림하장·알아보장·외국가장·찾아가장·발굴하장 중 한 곳 이상에서 활동한당
+        - all_parties.each_with_index do |parti, index|
+          - if index != 0
+            &middot;
+          %a(href="http://do.parti.xyz/p/#{parti[:slug]}" target='_blank') #{parti[:name]}
+        중 한 곳 이상에서 활동한당
     %p.about-description
       %span.about-description__important.about-circled-number
         ⑥

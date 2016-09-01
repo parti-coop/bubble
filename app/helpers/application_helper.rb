@@ -99,4 +99,29 @@ module ApplicationHelper
   def is_hoverable?
     !browser.device.mobile? and !browser.device.tablet?
   end
+
+  def all_parties
+    [
+      {
+        slug: 'dig',
+        name: '발굴하장'
+      },
+      {
+        slug: 'go',
+        name: '찾아가장'
+      },
+      {
+        slug: 'tell',
+        name: '알리장'
+      },
+      {
+        slug: 'see',
+        name: '외국보장'
+      },
+      {
+        slug: 'living',
+        name: '살림하장'
+      }
+    ]
+  end
 end
