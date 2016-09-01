@@ -4,7 +4,7 @@
   = form_for Opinion.new(debate_slug: debate.slug) , html: {id: debate.slug} do |f|
     = f.hidden_field :debate_slug
     .form-group
-      = f.text_field :name, class: "opinion-name-form-control_#{debate.slug}", placeholder: '이름', data: {'rule-required': true}
+      = f.text_field :name, class: "opinion-name-form-control_#{debate.slug} form-control", placeholder: '이름', data: {'rule-required': true}
     .form-group
       = f.text_area :body, class: 'opinion-body form-control', placeholder: "왜 그렇게 생각하는지 의견을 남겨봐.", data: {'rule-required': true}
     .row

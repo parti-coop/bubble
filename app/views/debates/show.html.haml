@@ -6,7 +6,7 @@
       해 주세요.
 
     - [@overall_adoption_debate, @non_gmo_debate, @exemption_range_debate].each do |debate|
-      %a{id: "opinion-anchor-#{debate.slug}"}
+      %a.anchor{id: "opinion-anchor-#{debate.slug}"}
       .debate-topic(id="debate-topic-#{debate.slug}")
         = render 'debates/debates_index', debate: debate
         .debate-topic-content-wrapper
