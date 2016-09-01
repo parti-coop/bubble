@@ -2,7 +2,7 @@
   .opinion__choice{class: "select_#{opinion.choice} opinion__choice--#{opinion.debate_slug}" }
     %span.flag
     = opinion.debate.send("#{opinion.choice}_label") if opinion.choice.present?
-  .opinion__body
+  .opinion__body{class: "opinion__body--#{opinion.debate_slug}" }
     = opinion.body
     .opinion__meta
       %span.opinion__name

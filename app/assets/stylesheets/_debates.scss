@@ -4,6 +4,9 @@ section#debate {
   }
   .page-description {
     margin-bottom: 20px;
+    @media (max-width: $screen-md-min) {
+      margin-bottom: 160px;
+    }
   }
   .debates-index {
     text-align: center;
@@ -219,9 +222,29 @@ section#debate {
               display: inline-block;
               border-left: 1px solid $border-gray-color;
               padding: 14px 22px 14px;
+              word-break: break-word;
               @media (max-width: $screen-sm-max) {
                 padding: 0;
                 border: none;
+              }
+
+              &--overall_adoption {
+                width: 642px;
+                @media (max-width: $screen-sm-max) {
+                  width: 100%;
+                }
+              }
+              &--non_gmo {
+                width: 587px;
+                @media (max-width: $screen-sm-max) {
+                  width: 100%;
+                }
+              }
+              &--exemption_range {
+                width: 600px;
+                @media (max-width: $screen-sm-max) {
+                  width: 100%;
+                }
               }
             }
 
@@ -357,7 +380,7 @@ section#debate {
             padding: 9px 0px;
             margin-top: 20px;
             margin-right: 4px;
-            font-size: $font-size-h4;
+            font-size: $font-size-base;
           }
           &.active {
             color: $gray-darker;
@@ -389,7 +412,7 @@ section#debate {
             padding: 9px 0px;
             margin-top: 20px;
             margin-left: 4px;
-            font-size: $font-size-h4;
+            font-size: $font-size-base;
           }
 
           &.active {
@@ -414,6 +437,7 @@ section#debate {
             padding: 10px;
             padding-bottom: 10px;
             margin-bottom: 5px;
+            font-size: $font-size-base;
           }
           a {
             color: $brand-gray-color;
