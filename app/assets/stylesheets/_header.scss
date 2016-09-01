@@ -83,6 +83,22 @@ section#header {
               color: black;
               background-color: transparent;
             }
+          }
+          .parties-dropdown > a {
+            &:hover {
+              color: #fff;
+              background-color: black;
+            }
+            text-align: center;
+            color: black;
+            border: 1px solid black;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            margin-top: 8px;
+            margin-left: 15px;
+            padding-left: 22px;
+            padding-right: 22px;
+            background-color: white;
             &.open {
               & > a,
               & > a:hover,
