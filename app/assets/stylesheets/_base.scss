@@ -6,10 +6,7 @@ body.retired {
   }
 
   padding-top: 0;
-  background-color: #fafafa;
-  @media (max-width: $screen-xs-max) {
-    background-color: #fff;
-  }
+  background-color: #fff;
 }
 
 * , body {
@@ -21,7 +18,10 @@ body.working {
   @media (max-width: $screen-xs-max) {
     padding-top: 90px;
   }
-  background-color: #fff;
+  background-color: #fafafa;
+  @media (max-width: $screen-xs-max) {
+    background-color: #fff;
+  }
 
   &.app-pages-home {
     padding-top: 0;
