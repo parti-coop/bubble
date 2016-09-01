@@ -1,4 +1,7 @@
 section#debate {
+  @media (max-width: $screen-sm-max) {
+    margin-top: 30px;
+  }
   .page-description {
     margin-bottom: 20px;
   }
@@ -60,6 +63,7 @@ section#debate {
         color: black;
         padding-top: 86px;
         font-size: $font-size-h1;
+        word-break: keep-all;
         @media (max-width: $screen-sm-max) {
           font-size: $font-size-h3;
           padding-top: 22px;
@@ -105,8 +109,6 @@ section#debate {
     }
 
     .debate-panel {
-      .debate-panel--header{
-      }
       .debate-opinions-panel{
         border-top: 1px solid $brand-primary-lighter;
         padding: 50px 50px;
@@ -143,103 +145,88 @@ section#debate {
           }
           .opinion {
             border-bottom: 1px solid $border-gray-color;
+            padding-top: 4px;
+            padding-bottom: 4px;
             @media (max-width: $screen-sm-max) {
               margin: 0px;
-              padding-top: 5px;
-              padding-bottom: 7px;
+              padding: 13px 14px 7px;
             }
-            .row{
-              display: flex;
-              align-items: center;
-              margin-left: 10px;
+
+            &__choice {
+              width: 20%;
+
+              &--overall_adoption {
+                width: 122px;
+              }
+              &--non_gmo {
+                width: 177px;
+              }
+              &--exemption_range {
+                width: 164px;
+              }
+              margin-top: 22px;
+              text-align: left;
+              display: inline-block;
+              vertical-align: top;
               @media (max-width: $screen-sm-max) {
-                margin-left: 15px;
-              }
-
-              .opinion__choice {
-                &.select_alpha {
-                  margin-right: -20px;
-                  .col-md-1{
-                    vertical-align: middle;
-                    text-align: right;
-                    @media (max-width: $screen-sm-max) {
-                      padding-right: 5px;
-                      padding-left: 0px;
-                    }
-                    .square {
-                      width: 24px;
-                      height: 24px;
-                      background: $brand-yellow-color;
-                    }
-                  }
-                }
-                &.select_beta {
-                  margin-right: -20px;
-                  .col-md-1{
-                    vertical-align: middle;
-                    text-align: right;
-                    @media (max-width: $screen-sm-max) {
-                      padding-right: 5px;
-                      padding-left: 0px;
-                    }
-                    .square {
-                      width: 24px;
-                      height: 24px;
-                      background: $brand-lime-green-color;
-                    }
-                  }
-                }
-                &.select_hold {
-                  margin-right: -20px;
-                  .col-md-1{
-                    vertical-align: middle;
-                    text-align: right;
-                    @media (max-width: $screen-sm-max) {
-                      padding-right: 5px;
-                      padding-left: 0px;
-                    }
-                    .square {
-                      width: 24px;
-                      height: 24px;
-                      background: $brand-gray-color;
-                    }
-                  }
-                }
-              }
-
-              .col-md-2{
-                border-bottom: none;
-                vertical-align: middle;
-                text-align: center;
+                padding-right: 5px;
                 padding-left: 0px;
-                padding-right: 0px;
-                padding-top: 7px;
-                padding-bottom: 7px;
+                padding-bottom: 9px;
+                display: block;
+                margin-top: 0;
+              }
+
+
+
+              .flag {
+                width: 24px;
+                height: 24px;
+                margin-right: 5px;
+                margin-left: 13px;
+                display: inline-block;
+                vertical-align: middle;
                 @media (max-width: $screen-sm-max) {
-                  padding-top: 10px;
-                  margin-left: 20px;
+                  margin-left: 0;
                 }
               }
-              .col-md-9{
-                padding: 19px 22px;
-                border-left: 1px solid $border-gray-color;
-                @media (max-width: $screen-sm-max) {
-                  border: none;
-                  padding: 0px;
-                }
-                .opinion__body{
 
+              &.select_alpha {
+                .flag {
+                  background: $brand-yellow-color;
                 }
-                .opinion__name{
-                  color: $brand-gray-color;
-                  margin-right: 14px;
+              }
 
+              &.select_beta {
+                .flag {
+                  background: $brand-lime-green-color;
                 }
-                .opinion__date{
-                  color: $brand-gray-color;
+              }
+
+              &.select_hold {
+                .flag {
+                  background: $brand-gray-color;
                 }
               }
             }
+
+            &__body {
+              display: inline-block;
+              border-left: 1px solid $border-gray-color;
+              padding: 14px 22px 14px;
+              @media (max-width: $screen-sm-max) {
+                padding: 0;
+                border: none;
+              }
+            }
+
+            &__meta {
+              color: $brand-gray-color;
+            }
+
+            &__name {
+              padding-right: 14px;
+            }
+
           }
         }
       }

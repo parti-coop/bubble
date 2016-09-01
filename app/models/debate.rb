@@ -42,6 +42,10 @@ class Debate < ActiveRecord::Base
     Debate::CHOICE_LABEL[slug][:beta]
   end
 
+  def hold_label
+    "모르겠습니다"
+  end
+
   def title
     Debate::CHOICE_LABEL[slug][:title]
   end
