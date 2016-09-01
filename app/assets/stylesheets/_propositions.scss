@@ -25,6 +25,8 @@ section#propositions {
         padding-top: 33px;
         padding-bottom: 12px;
         text-align: center;
+        background-color: $gray-lighter;
+        border-bottom-color: $propositions-border-color;
         img {
           width: 80px;
           position: absolute;
@@ -53,6 +55,7 @@ section#propositions {
           color: $gray-darker;
           border-color: $propositions-border-color;
           border-bottom-color: transparent;
+          background-color: #fff;
         }
       }
 

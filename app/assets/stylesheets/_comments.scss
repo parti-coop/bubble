@@ -17,9 +17,13 @@
 
 .comment-content {
   border-bottom: 1px solid $border-gray-color;
-
-  &:last-child {
-    border-bottom: none;
+  &:first-child {
+    border-top: 2px solid $border-gray-color;
+  }
+  @media (max-width: $screen-xs-max) {
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
   .comment-meta-wrapper {
@@ -49,8 +53,10 @@
   }
 }
 
-.comments-panel {
-  .pagination-wrapper {
-    border-top: 1px solid $border-gray-color;
+@media (max-width: $screen-xs-max) {
+  .comments-panel {
+    .pagination-wrapper {
+      border-top: 1px solid $border-gray-color;
+    }
   }
 }
