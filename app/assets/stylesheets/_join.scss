@@ -28,7 +28,7 @@ section#join {
       font-size: $font-size-h3;
       @media (max-width: $screen-xs-max) {
         border: none;
-        padding: 80px 30px 100px;
+        padding: 130px 30px 100px;
       }
 
 
@@ -36,6 +36,10 @@ section#join {
         margin-bottom: 20px;
         @media (max-width: $screen-xs-max) {
           font-size: $font-size-h3-small;
+        }
+
+        @media (max-width: $screen-xxs-max) {
+          font-size: $font-size-medium;
         }
 
         .important {
@@ -54,6 +58,9 @@ section#join {
             width: auto;
             height: 60px;
             cursor: pointer;
+            @media (max-width: $screen-xs-max) {
+              height: 42px;
+            }
           }
 
           &__facebook {
