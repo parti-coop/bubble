@@ -14,9 +14,12 @@ section#debate {
       align-items: center;
     }
     .title {
-      position: relative;
-      font-size: $font-size-medium;
-      color: $brand-gray-color;
+      a{
+        position: relative;
+        font-size: $font-size-medium;
+        color: $brand-gray-color;
+      }
+
       img {
         display: none;
         position: absolute;
@@ -29,7 +32,9 @@ section#debate {
         margin-right: auto;
       }
       &.active {
-        color: $gray-darker;
+        a{
+          color: $gray-darker;
+        }
         img {
           display: inline-block;
         }
@@ -47,6 +52,7 @@ section#debate {
     .debate-topic-content-wrapper {
       background-color: #fff;
       border: 1px solid $brand-primary-lighter;
+      margin-top: 10px;
       @media (max-width: $screen-sm-max) {
         margin-left: -15px;
         margin-right: -15px;
@@ -345,6 +351,7 @@ section#debate {
           background-color: $gray-lighter;
           text-decoration: none;
           font-size: $font-size-h3;
+          box-shadow: none;
           @media (max-width: $screen-sm-max) {
             width: 48%;
             padding: 9px 0px;
@@ -376,6 +383,7 @@ section#debate {
           background-color: $gray-lighter;
           text-decoration: none;
           font-size: $font-size-h3;
+          box-shadow: none;
           @media (max-width: $screen-sm-max) {
             width: 48%;
             padding: 9px 0px;

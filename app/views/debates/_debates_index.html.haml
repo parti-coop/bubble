@@ -3,12 +3,12 @@
     .col-md-4
       .title{class: ("active" if debate.slug == 'overall_adoption')}
         = image_tag 'point_icon.png'
-        1. GMO 완전표시제 시행 시기는?
+        = link_to '1. GMO 완전표시제 시행 시기는?', debates_path(anchor: "opinion-anchor-overall_adoption")
     .col-md-4
       .title{class: ("active" if debate.slug == 'non_gmo')}
         = image_tag 'point_icon.png'
-        2. GMO 표시 대상이 아닌 국내산 농산물에 Non-GMO(비GMO)라 표시해도 될까?
+        = link_to '2. GMO 표시 대상이 아닌 국내산 농산물에 Non-GMO(비GMO)라 표시해도 될까?', debates_path(anchor: "opinion-anchor-non_gmo")
     .col-md-4
       .title{class: ("active" if debate.slug == 'exemption_range')}
         = image_tag 'point_icon.png'
-        3. GMO 표시 면제 범위는?
+        = link_to '3. GMO 표시 면제 범위는?', debates_path(anchor: "opinion-anchor-exemption_range")
