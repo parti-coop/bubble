@@ -24,12 +24,12 @@
       .help-block
         %span{style: 'white-space: nowrap;'}
           또는
-          = link_to join_path(redirect_to: post_path(@post)), class: 'login-link' do
+          = link_to join_path(redirect_to: polymorphic_path(commentable)), class: 'login-link' do
             당원가입
           하거나,
         %span{style: 'white-space: nowrap;'}
           이미 당원이라면
-          = link_to join_path(redirect_to: post_path(@post)), class: 'login-link' do
+          = link_to join_path(redirect_to: polymorphic_path(commentable)), class: 'login-link' do
             로그인
           해봐
           %i !
