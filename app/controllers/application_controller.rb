@@ -29,12 +29,12 @@ class ApplicationController < ActionController::Base
   end
 
   def build_meta_options(options)
-    site_name = "시민 입법 프로젝트"
-    title = "한겨레21 x 빠띠 유쾌하고 진지한 정치실험 '바글시민 와글입법'"
+    site_name = "나는 알아야겠당"
+    title = "시민 입법 프로젝트: 나는 알아야겠당"
     image = options[:image] || view_context.image_url('step3/seo-2.png')
     url = options[:url] || root_url
 
-    description = "GMO완전표시제 입법을 위한 프로젝트정당, ‘나는 알아야겠당' 창당파티"
+    description = "GMO완전표시제법 통과를 위한 국내 최초 온라인 프로젝트 정당 실험"
     {
       title:       title,
       reverse:     true,

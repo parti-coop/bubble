@@ -26,7 +26,7 @@
               - hide_kakao_link = (! browser.device.mobile?) ? ' hide' : ''
               - data = data.merge('share-image': meta_tags['image'], 'share-image-width': '1200', 'share-image-height': '630')
             - if provider == 'twitter'
-              - data = data.merge('share-text': "유쾌하고 진지한 정치실험! #GMO완전표시제 입법을 위한 프로젝트정당, #나는알아야겠당 창당파티 한겨레21x빠띠 @han21_editor @parti_xyz", 'share-logo': image_url('footer_share_twitter.png'))
+              - data = data.merge('share-text': "#GMO완전표시제 입법을 위한 프로젝트 정당, #나는알아야겠당 http://up.parti.xyz - #바글시민와글입법 - 한겨레21x빠띠 @han21_editor @parti_xyz", 'share-logo': image_url('footer_share_twitter.png'))
             - if provider == 'facebook'
               - data = data.merge('share-logo': image_url('footer_share_facebook.png'))
             %li.share-item{class: "share-#{provider}#{hide_kakao_link}", data: data }
