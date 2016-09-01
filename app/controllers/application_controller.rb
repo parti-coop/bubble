@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   def build_meta_options(options)
     site_name = "나는 알아야겠당"
     title = "시민 입법 프로젝트: 나는 알아야겠당"
-    image = options[:image] || view_context.image_url('step3/seo-2.png')
+    image = options[:image] || view_context.image_url('seo.png')
     url = options[:url] || root_url
 
     description = "GMO완전표시제법 통과를 위한 국내 최초 온라인 프로젝트 정당 실험"
