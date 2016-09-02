@@ -24,26 +24,26 @@
           .icon.icon-bill-choices
             = image_tag 'icon_home_bill_choices.png'
           .item.bill-choices
-            .count= Bill.sum(:upvotes_count)
+            .count= number_with_delimiter(Bill.sum(:upvotes_count))
             .description 법안 선택 참여
         .col-sm-3.col-xs-6
           .icon.icon-users
             = image_tag 'icon_home_users.png'
           .item.users
-            .count= User.count
+            .count= number_with_delimiter(User.count)
             .description 당원
         .clearfix.visible-xs-block
         .col-sm-3.col-xs-6
           .icon.icon-opinions
             = image_tag 'icon_home_opinions.png'
           .item.opinions
-            .count= Opinion.count
+            .count= number_with_delimiter(Opinion.count)
             .description 쟁점 댓글
         .col-sm-3.col-xs-6
           .icon.icon-posts
             = image_tag 'icon_home_posts.png'
           .item.posts
-            .count= Post.count
+            .count= number_with_delimiter(Post.count)
             .description 게시글
 %section#videos
   .container
