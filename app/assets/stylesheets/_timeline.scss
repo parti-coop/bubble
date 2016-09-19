@@ -7,7 +7,7 @@ section#timeline {
   .timeline-panel {
     margin-top: 90px;
     @media (max-width: $screen-xs-max) {
-      margin-top: 16px;
+      margin-top: 60px;
     }
 
     .panel-meta {
@@ -54,6 +54,8 @@ section#timeline {
           color: $brand-primary;
           padding: 0 7px;
           position: absolute;
+          width: 34px;
+          height: 34px;
           right: 0;
           top: 3px;
         }
