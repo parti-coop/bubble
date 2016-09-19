@@ -1,0 +1,19 @@
+.debate-bar{style: ("background-color:$brand-gray-color" if debate.total_count == 0)}
+  - total_count = debate.total_count
+  .debate-voted{style: "width: #{debate.alpha_percentage}%"}
+  .selected-group
+    %span.selected-alpha
+      #{debate.alpha_count}표
+    %span.selected-alpha-percentage
+      #{debate.alpha_percentage}%
+
+    %span.selected-beta
+      #{debate.beta_count}표
+    %span.selected-beta-percentage.pull-right
+      #{debate.beta_percentage}%
+.debate-options
+  = link_to debate.alpha_label, "http://up.parti.xyz/debates", class:"option-alpha-button btn"
+  = link_to debate.beta_label, "http://up.parti.xyz/debates", class:"option-beta-button btn"
+  .option-hold-button
+    = link_to '모르겠다', "http://up.parti.xyz/debates", class:"option-hold-button btn"
+
