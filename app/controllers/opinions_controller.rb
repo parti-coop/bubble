@@ -2,8 +2,10 @@ class OpinionsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @debate = Debate.find_by slug: params[:debate_slug]
-    @opinions = Opinion.in_debate(@debate).recent.page(params[:page])
+    if request.format == 'text/javascript'
+      @debate = Debate.find_by slug: params[:debate_slug]
+      @opinions = Opinion.in_debate(@debate).recent.page(params[:page])
+    end
 
     respond_to do |format|
       format.js
