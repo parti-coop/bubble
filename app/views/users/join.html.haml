@@ -63,6 +63,16 @@
             .icon-image.icon-image__naver
             네이버로 가입하기 / 로그인
           %p.join-before__closing
+            '가입하기'를 클릭하면
+            %a.text-primary{href: '/user_agreement', target: '_blank'}
+              %b 이용약관
+            ,
+            %a.text-primary{href: '/privacy', target: '_blank'}
+              %b 개인정보취급방침
+            내용을
+            %br
+            이해하고 동의하게 됩니다.
+          %p.join-before__closing
             올해 연말, 프로젝트가 끝나는 시점에 모든 정보는 삭제됩니다.
 
       .join-benefit.hidden-xs

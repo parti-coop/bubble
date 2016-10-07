@@ -11,6 +11,11 @@
     .hidden-xs
       = logos_block
     .info
+      .agreement
+        %span.privacy
+          = link_to '개인정보취급방침', privacy_path
+        %span.user-agreement
+          = link_to '이용약관', user_agreement_path
       .contact
         = link_to 'mailto:trans@hani.co.kr' do
           문의하기

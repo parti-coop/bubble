@@ -57,6 +57,24 @@ footer.footer {
       vertical-align: bottom;
     }
 
+    .agreement {
+      position: absolute;
+      margin-bottom: 12px;
+      @media (max-width: $screen-xs-max) {
+        position: relative;
+      }
+      a {
+        font-size: $font-size-medium;
+        @media (max-width: $screen-xs-max) {
+          font-size: $font-size-base;
+        }
+        color: $border-gray-color;
+      }
+      .privacy {
+        margin-right: 6px;
+      }
+    }
+
     .contact a {
       font-size: $font-size-medium;
       @media (max-width: $screen-xs-max) {

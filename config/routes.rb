@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root 'pages#home'
+  get '/user_agreement', to: "pages#user_agreement", as: 'user_agreement'
+  get '/privacy', to: "pages#privacy", as: 'privacy'
 
   get 'step1', to: 'pages#step1'
   get 'step2', to: 'pages#step2'
