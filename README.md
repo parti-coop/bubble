@@ -27,6 +27,7 @@ production:
   NAVER_KEY: xx
   NAVER_SECRET: xx
   SLACK_WEBHOOK_URL: xx
+  POSTMARKER_API_KEY: xx
 ```
 
 ## 로컬 개발 환경 구축 방법

@@ -219,6 +219,8 @@ $(function(){
     });
   });
 
+  $('form#letter-form').validate();
+
   $('[data-action="bubble-naming-option"]').change(function() {
     $($(this).data('sibling')).removeClass("selected")
     $(this).closest("label").toggleClass("selected", this.checked);

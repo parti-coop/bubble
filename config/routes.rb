@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get 'propositions/:slug', to: 'propositions#show', as: 'proposition'
   get 'debates', to: 'debates#show'
 
+  post 'letters/send_mail', to: 'letters#send_mail'
+
   get 'quiz', to: 'quizzes#show'
   get 'result_quiz', to: 'quizzes#result'
   get 'report_quiz', to: 'quizzes#report'
@@ -43,5 +45,9 @@ Rails.application.routes.draw do
       post :stick
       post :unstick
     end
+  end
+
+  unless Rails.env.production?
+    mount LetterOpenerWeb::Engine, at: "/dev/emails"
   end
 end

@@ -57,6 +57,7 @@ group :development, :test do
 end
 
 # notification
+gem 'postmark-rails', '~> 0.12.0'
 gem 'slack-notifier', '~> 1.4'
 gem 'exception_notification', '~> 4.1', '>= 4.1.4'
 gem 'sidekiq', '~> 4.1'
@@ -67,6 +68,7 @@ gem 'redis-namespace', '~> 1.5', '>= 1.5.2'
 gem 'newrelic_rpm'
 gem 'ey_config'
 
+gem 'letter_opener_web'
 group :development, :test do
   gem 'byebug'
 end
