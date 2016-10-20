@@ -24,6 +24,8 @@
             = link_to '발의안', propositions_path
           %li.menu{class: ('active' if controller_name == 'debates')}
             = link_to '쟁점토론', debates_path
+          %li.menu{class: ('active' if current_page?(controller: '/pages', action: :letter))}
+            = link_to '레터보내기', letter_path
           %li.menu.collapse-hidden
             %ul.nav.navbar-nav.collapse-hidden
               %li.dropdown.parties-dropdown

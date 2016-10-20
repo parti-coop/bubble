@@ -30,4 +30,7 @@ class PagesController < ApplicationController
 
     render layout: 'retired'
   end
+
+  def letter
+  end
 end

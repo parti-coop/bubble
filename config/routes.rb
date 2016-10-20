@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'step2', to: 'pages#step2'
   get 'step3', to: 'pages#step3'
   get 'about', to: 'pages#about'
+  get 'letter', to: 'pages#letter'
   get 'timeline', to: 'pages#timeline'
   get 'propositions', to: 'propositions#show'
   get 'propositions/:slug', to: 'propositions#show', as: 'proposition'
