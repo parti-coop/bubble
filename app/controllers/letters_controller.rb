@@ -14,6 +14,7 @@ class LettersController < ApplicationController
 
   def send_mail
     congressman = LettersController::CONGRESSMEN.detect{|c| c.id == params[:congressman]}
+    redirect_to letter_path and return if congressman.blank? or params[:name].blank? or params[:title].blank?
 
     LetterMailer.memorial_email(congressman.email, congressman.name, congressman.party,
       params[:email], params[:name], params[:title]).deliver_later

@@ -219,7 +219,7 @@ $(function(){
     });
   });
 
-  $('form#letter-form').validate();
+  $('form#letter-form').each(function() { $(this).validate() });
 
   $('[data-action="bubble-naming-option"]').change(function() {
     $($(this).data('sibling')).removeClass("selected")
