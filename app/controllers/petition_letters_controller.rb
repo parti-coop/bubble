@@ -1,7 +1,7 @@
 class PetitionLettersController < ApplicationController
   CONGRESSMEN = [
-    %w(1 새누리당  김상훈 kshdg11@gmail.com),
-    %w(2 더불어민주당  인재근  ijgalso@daum.net),
+    %w(1 더불어민주당  인재근  ijgalso@daum.net),
+    %w(2 새누리당  김상훈 kshdg11@gmail.com),
     %w(3 국민의당  김광수  ks-1958@naver.com),
     %w(4 새누리당  김승희  shkim2756@naver.com),
     %w(5 새누리당  박인숙  ispark0530@naver.com),
