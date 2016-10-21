@@ -62,4 +62,4 @@
         = text_field_tag :email, '', placeholder: 'email@test.com', class: 'form-control input-lg'
 
       .form-group
-        = submit_tag "#{PetitionLetter.current_send_count + 1} 번째 메일 보내기", class: 'btn btn-primary btn-lg btn-block'
+        = submit_tag "#{PetitionLetter.current_send_count + 1} 번째 메일 보내기", class: 'btn btn-primary btn-lg btn-block', data: { disable_with: "보내는 중입니다..." }
