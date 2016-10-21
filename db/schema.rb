@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021033248) do
+ActiveRecord::Schema.define(version: 20161021042304) do
 
   create_table "bills", force: :cascade do |t|
     t.string   "slug",          limit: 255,             null: false
@@ -42,10 +42,6 @@ ActiveRecord::Schema.define(version: 20161021033248) do
     t.datetime "updated_at",                          null: false
   end
 
-  create_table "letters", force: :cascade do |t|
-    t.integer "send_count", limit: 4
-  end
-
   create_table "opinions", force: :cascade do |t|
     t.string   "name",        limit: 255,   null: false
     t.text     "body",        limit: 65535
@@ -61,6 +57,10 @@ ActiveRecord::Schema.define(version: 20161021033248) do
     t.integer  "upvotes_count", limit: 4,   default: 0
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+  end
+
+  create_table "petition_letters", force: :cascade do |t|
+    t.integer "send_count", limit: 4
   end
 
   create_table "posts", force: :cascade do |t|

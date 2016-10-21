@@ -1,4 +1,4 @@
-class Letter < ActiveRecord::Base
+class PetitionLetter < ActiveRecord::Base
   def self.increase_send_count
     self.first.update_columns(send_count: self.first.send_count + 1)
   end

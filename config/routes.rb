@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'propositions/:slug', to: 'propositions#show', as: 'proposition'
   get 'debates', to: 'debates#show'
 
-  post 'letters/send_mail', to: 'letters#send_mail'
+  post 'petition_letters/send_mail', to: 'petition_letters#send_mail'
 
   get 'quiz', to: 'quizzes#show'
   get 'result_quiz', to: 'quizzes#result'
