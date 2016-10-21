@@ -18,6 +18,8 @@ class LettersController < ApplicationController
 
     LetterMailer.memorial_email(congressman.email, congressman.name, congressman.party,
       params[:email], params[:name], params[:title]).deliver_later
+
+    Letter.increase_send_count
     redirect_to letter_path, notice: "#{congressman.party} #{congressman.name}님께 메일을 보냈습니다!"
   end
 end

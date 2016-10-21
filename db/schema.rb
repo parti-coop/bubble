@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160831101349) do
+ActiveRecord::Schema.define(version: 20161021033248) do
 
   create_table "bills", force: :cascade do |t|
     t.string   "slug",          limit: 255,             null: false
@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(version: 20160831101349) do
     t.integer  "beta_count",  limit: 4,   default: 0
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+  end
+
+  create_table "letters", force: :cascade do |t|
+    t.integer "send_count", limit: 4
   end
 
   create_table "opinions", force: :cascade do |t|
