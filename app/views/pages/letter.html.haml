@@ -12,12 +12,28 @@
 
     =form_tag petition_letters_send_mail_path, id: 'letter-form', style: 'background-color: #fff; border: 1px solid #ec1179; padding: 28px;' do
 
+
+      - last_congressman = find_congressman(session[:last_letter_to])
+      - if last_congressman
+        .well
+          마지막으로 #{last_congressman.party} #{last_congressman.name} 의원님께 메일을 보냈습니다.
+
       .form-group
         %label{:for => ""} 편지 보낼 국회의원
-        %select.form-control{:name => "congressman", class: 'form-control input-lg', data: { 'rule-required': true }}
+        %select.form-control{:name => "congressman", id: 'petition-letters-form-congressman', class: 'form-control input-lg', data: { 'rule-required': true, action: 'bubble-congressman-select' }}
           - PetitionLettersController::CONGRESSMEN.each do |congressman|
-            %option{value: congressman.id}
+            %option{value: congressman.id, data: {email: congressman.email}}
               #{congressman.party} #{congressman.name}
+              #{congressman.email}
+        .help-block#direct-mail
+          - first_congressman = PetitionLettersController::CONGRESSMEN.first
+          %a(href="mailto:#{ first_congressman.email}")
+            %span.desc
+              = first_congressman.party
+              = first_congressman.name
+              = first_congressman.email
+            의원님께 직접 메일 쓰기
+            %i.fa.fa-arrow-right
 
       .form-group
         %label 제목

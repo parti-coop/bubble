@@ -269,5 +269,12 @@ $(function(){
     }
   });
 
+  $('[data-action="bubble-congressman-select"').on('change', function(e) {
+    var $selected = $(this).find('option:selected');
+    var email = $selected.data('email');
+    $('#direct-mail .desc').text($selected.text());
+    $('#direct-mail a').attr('href', 'mailto:' + email);
+  });
+
 });
 
