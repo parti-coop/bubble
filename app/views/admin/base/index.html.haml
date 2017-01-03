@@ -1,6 +1,10 @@
 %section#user
   .container
     %h4 엑셀다운로드
-    = link_to '당원 이메일 다운로드 받기', admin_download_emails_path(format: :xlsx)
+    = link_to '당원 이메일 다운로드', admin_download_emails_path(format: :xlsx)
     %br
-    = link_to '당원 활동제안 다운로드 받기', admin_download_suggestions_path(format: :xlsx)
+    = link_to '당명투표 관련 의견 다운로드', admin_download_suggestions_path(type: 'party-building', format: :xlsx)
+    %br
+    = link_to '법안투표 관련 의견 다운로드', admin_download_suggestions_path(type: 'bill-choice', format: :xlsx)
+    %br
+    = link_to '정당활동제안 다운로드', admin_download_suggestions_path(type: 'party-suggest', format: :xlsx)

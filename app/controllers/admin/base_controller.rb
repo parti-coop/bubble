@@ -9,7 +9,7 @@ class Admin::BaseController < ApplicationController
   end
 
   def download_suggestions
-    @suggestions = Post.where("board_slug = 'party-suggest'").map do |p|
+    @suggestions = Post.where("board_slug = '#{params[:type]}'").map do |p|
       name = p.user_id.present? ? p.user.name : p.guest_name
       {name: name, guest_email: p.guest_email, title: p.title, body: p.body, created_at: p.created_at.to_formatted_s(:db)}
     end

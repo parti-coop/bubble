@@ -71,6 +71,7 @@ gem 'ey_config'
 gem 'letter_opener_web'
 group :development, :test do
   gem 'byebug'
+  gem 'puma'
 end
 
 group :development do
