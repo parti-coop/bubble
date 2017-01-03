@@ -1,5 +1,15 @@
 wb = xlsx_package.workbook
+if params[:type] == 'bill-choice'
+  type = '법안투표 관련 의견'
+end
+if params[:type] == 'party-building'
+  type = '당명투표 관련 의견'
+end
+if params[:type] == 'party-suggest'
+  type = '정당활동제안'
+end
 wb.add_worksheet(name: "Suggestions #{l(Date.today)}") do |sheet|
+  sheet.add_row [type]
   sheet.add_row ["이름", "이메일", "제목", "내용", "작성일"]
   @suggestions.each do |data|
     sheet.add_row [data[:name], data[:guest_email], data[:title], data[:body], data[:created_at]]
