@@ -48,7 +48,7 @@ gem 'unobtrusive_flash', '~> 3.1'
 gem 'sequenced', '~> 3.1', '>= 3.1.1'
 gem 'ruby_dig', '~> 0.0.2'
 gem 'scoped_search', '~> 3.2', '>= 3.2.2'
-
+gem 'json', '~> 1.8', '>= 1.8.5'
 
 # image
 gem 'imgkit', '~> 1.6', '>= 1.6.1'
