@@ -26,7 +26,7 @@ gem 'axlsx_rails', '~> 0.4.0'
 # auth
 gem 'cancancan', '~> 1.10'
 gem 'devise', '~> 3.5', '>= 3.5.2'
-gem 'omniauth', '~> 1.3', '>= 1.3.1'
+gem 'omniauth', '~> 1.9'
 gem 'omniauth-facebook', '~> 3.0'
 gem 'omniauth-twitter', '~> 1.2', '>= 1.2.1'
 gem 'omniauth-google-oauth2', '~> 0.3.1'
